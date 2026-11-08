@@ -48,7 +48,8 @@
         "schema": {
           "$ref": "#/components/schemas/COMMAND_RPC_GETBLOCKCOUNT.response_t"
         }
-      }
+      },
+      "x-alias-of": "get_block_count"
     },
     {
       "name": "on_get_block_hash",
@@ -88,7 +89,8 @@
         "schema": {
           "type": "string"
         }
-      }
+      },
+      "x-alias-of": "on_get_block_hash"
     },
     {
       "name": "get_block_template",
@@ -170,7 +172,8 @@
         "schema": {
           "$ref": "#/components/schemas/COMMAND_RPC_GETBLOCKTEMPLATE.response_t"
         }
-      }
+      },
+      "x-alias-of": "get_block_template"
     },
     {
       "name": "get_miner_data",
@@ -223,7 +226,8 @@
         "schema": {
           "type": "string"
         }
-      }
+      },
+      "x-hidden-in-restricted-mode": true
     },
     {
       "name": "add_aux_pow",
@@ -290,7 +294,8 @@
         "schema": {
           "$ref": "#/components/schemas/COMMAND_RPC_SUBMITBLOCK.response_t"
         }
-      }
+      },
+      "x-alias-of": "submit_block"
     },
     {
       "name": "generateblocks",
@@ -332,7 +337,8 @@
         "schema": {
           "$ref": "#/components/schemas/COMMAND_RPC_GENERATEBLOCKS.response_t"
         }
-      }
+      },
+      "x-hidden-in-restricted-mode": true
     },
     {
       "name": "get_last_block_header",
@@ -384,7 +390,8 @@
         "schema": {
           "$ref": "#/components/schemas/COMMAND_RPC_GET_LAST_BLOCK_HEADER.response_t"
         }
-      }
+      },
+      "x-alias-of": "get_last_block_header"
     },
     {
       "name": "get_block_header_by_hash",
@@ -470,7 +477,8 @@
         "schema": {
           "$ref": "#/components/schemas/COMMAND_RPC_GET_BLOCK_HEADER_BY_HASH.response_t"
         }
-      }
+      },
+      "x-alias-of": "get_block_header_by_hash"
     },
     {
       "name": "get_block_header_by_height",
@@ -538,7 +546,8 @@
         "schema": {
           "$ref": "#/components/schemas/COMMAND_RPC_GET_BLOCK_HEADER_BY_HEIGHT.response_t"
         }
-      }
+      },
+      "x-alias-of": "get_block_header_by_height"
     },
     {
       "name": "get_block_headers_range",
@@ -622,7 +631,8 @@
         "schema": {
           "$ref": "#/components/schemas/COMMAND_RPC_GET_BLOCK_HEADERS_RANGE.response_t"
         }
-      }
+      },
+      "x-alias-of": "get_block_headers_range"
     },
     {
       "name": "get_block",
@@ -704,7 +714,8 @@
         "schema": {
           "$ref": "#/components/schemas/COMMAND_RPC_GET_BLOCK.response_t"
         }
-      }
+      },
+      "x-alias-of": "get_block"
     },
     {
       "name": "get_connections",
@@ -715,7 +726,8 @@
         "schema": {
           "$ref": "#/components/schemas/COMMAND_RPC_GET_CONNECTIONS.response_t"
         }
-      }
+      },
+      "x-hidden-in-restricted-mode": true
     },
     {
       "name": "get_info",
@@ -783,7 +795,8 @@
         "schema": {
           "$ref": "#/components/schemas/COMMAND_RPC_SETBANS.response_t"
         }
-      }
+      },
+      "x-hidden-in-restricted-mode": true
     },
     {
       "name": "get_bans",
@@ -794,7 +807,8 @@
         "schema": {
           "$ref": "#/components/schemas/COMMAND_RPC_GETBANS.response_t"
         }
-      }
+      },
+      "x-hidden-in-restricted-mode": true
     },
     {
       "name": "banned",
@@ -813,7 +827,8 @@
         "schema": {
           "$ref": "#/components/schemas/COMMAND_RPC_BANNED.response_t"
         }
-      }
+      },
+      "x-hidden-in-restricted-mode": true
     },
     {
       "name": "flush_txpool",
@@ -835,7 +850,8 @@
         "schema": {
           "$ref": "#/components/schemas/COMMAND_RPC_FLUSH_TRANSACTION_POOL.response_t"
         }
-      }
+      },
+      "x-hidden-in-restricted-mode": true
     },
     {
       "name": "get_output_histogram",
@@ -942,7 +958,8 @@
         "schema": {
           "$ref": "#/components/schemas/COMMAND_RPC_GET_COINBASE_TX_SUM.response_t"
         }
-      }
+      },
+      "x-hidden-in-restricted-mode": true
     },
     {
       "name": "get_fee_estimate",
@@ -980,7 +997,8 @@
         "schema": {
           "$ref": "#/components/schemas/COMMAND_RPC_GET_ALTERNATE_CHAINS.response_t"
         }
-      }
+      },
+      "x-hidden-in-restricted-mode": true
     },
     {
       "name": "relay_tx",
@@ -1009,7 +1027,8 @@
         "schema": {
           "$ref": "#/components/schemas/COMMAND_RPC_RELAY_TX.response_t"
         }
-      }
+      },
+      "x-hidden-in-restricted-mode": true
     },
     {
       "name": "sync_info",
@@ -1028,7 +1047,8 @@
         "schema": {
           "$ref": "#/components/schemas/COMMAND_RPC_SYNC_INFO.response_t"
         }
-      }
+      },
+      "x-hidden-in-restricted-mode": true
     },
     {
       "name": "get_txpool_backlog",
@@ -1133,7 +1153,8 @@
         "schema": {
           "$ref": "#/components/schemas/COMMAND_RPC_PRUNE_BLOCKCHAIN.response_t"
         }
-      }
+      },
+      "x-hidden-in-restricted-mode": true
     },
     {
       "name": "flush_cache",
@@ -1152,7 +1173,8 @@
         "schema": {
           "$ref": "#/components/schemas/COMMAND_RPC_FLUSH_CACHE.response_t"
         }
-      }
+      },
+      "x-hidden-in-restricted-mode": true
     },
     {
       "name": "get_txids_loose",
@@ -1694,6 +1716,44 @@
           "chains"
         ]
       },
+      "COMMAND_RPC_GET_ALT_BLOCKS_HASHES.request_t": {
+        "type": "object",
+        "properties": {
+          "client": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "client"
+        ]
+      },
+      "COMMAND_RPC_GET_ALT_BLOCKS_HASHES.response_t": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string"
+          },
+          "credits": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "top_hash": {
+            "type": "string"
+          },
+          "blks_hashes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "required": [
+          "status",
+          "credits",
+          "top_hash",
+          "blks_hashes"
+        ]
+      },
       "COMMAND_RPC_GET_BASE_FEE_ESTIMATE.request_t": {
         "type": "object",
         "properties": {
@@ -1811,6 +1871,214 @@
           "tx_hashes",
           "blob",
           "json"
+        ]
+      },
+      "COMMAND_RPC_GET_BLOCKS_BY_HEIGHT.request_t": {
+        "type": "object",
+        "properties": {
+          "client": {
+            "type": "string"
+          },
+          "heights": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "minimum": 0
+            }
+          }
+        },
+        "required": [
+          "client",
+          "heights"
+        ]
+      },
+      "COMMAND_RPC_GET_BLOCKS_BY_HEIGHT.response_t": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string"
+          },
+          "credits": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "top_hash": {
+            "type": "string"
+          },
+          "blocks": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/block_complete_entry"
+            }
+          }
+        },
+        "required": [
+          "status",
+          "credits",
+          "top_hash",
+          "blocks"
+        ]
+      },
+      "COMMAND_RPC_GET_BLOCKS_FAST.block_output_indices": {
+        "type": "object",
+        "properties": {
+          "indices": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/COMMAND_RPC_GET_BLOCKS_FAST.tx_output_indices"
+            }
+          }
+        },
+        "required": [
+          "indices"
+        ]
+      },
+      "COMMAND_RPC_GET_BLOCKS_FAST.pool_tx_info": {
+        "type": "object",
+        "properties": {
+          "tx_hash": {
+            "type": "string",
+            "contentEncoding": "binary"
+          },
+          "tx_blob": {
+            "type": "string"
+          },
+          "double_spend_seen": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "tx_hash",
+          "tx_blob",
+          "double_spend_seen"
+        ]
+      },
+      "COMMAND_RPC_GET_BLOCKS_FAST.request_t": {
+        "type": "object",
+        "properties": {
+          "client": {
+            "type": "string"
+          },
+          "requested_info": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "block_ids": {
+            "type": "string",
+            "contentEncoding": "binary"
+          },
+          "start_height": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "prune": {
+            "type": "boolean"
+          },
+          "no_miner_tx": {
+            "type": "boolean"
+          },
+          "block_ids_exclusive": {
+            "type": "boolean"
+          },
+          "pool_info_since": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "max_block_count": {
+            "type": "integer",
+            "minimum": 0
+          }
+        },
+        "required": [
+          "client",
+          "block_ids",
+          "start_height",
+          "prune"
+        ]
+      },
+      "COMMAND_RPC_GET_BLOCKS_FAST.response_t": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string"
+          },
+          "credits": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "top_hash": {
+            "type": "string"
+          },
+          "blocks": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/block_complete_entry"
+            }
+          },
+          "start_height": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "current_height": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "top_block_hash": {
+            "type": "string",
+            "contentEncoding": "binary"
+          },
+          "output_indices": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/COMMAND_RPC_GET_BLOCKS_FAST.block_output_indices"
+            }
+          },
+          "daemon_time": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "pool_info_extent": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "added_pool_txs": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/COMMAND_RPC_GET_BLOCKS_FAST.pool_tx_info"
+            }
+          },
+          "remaining_added_pool_txids": {
+            "type": "string",
+            "contentEncoding": "binary"
+          },
+          "removed_pool_txids": {
+            "type": "string",
+            "contentEncoding": "binary"
+          }
+        },
+        "required": [
+          "status",
+          "credits",
+          "top_hash",
+          "blocks",
+          "start_height",
+          "current_height",
+          "output_indices"
+        ]
+      },
+      "COMMAND_RPC_GET_BLOCKS_FAST.tx_output_indices": {
+        "type": "object",
+        "properties": {
+          "indices": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "minimum": 0
+            }
+          }
+        },
+        "required": [
+          "indices"
         ]
       },
       "COMMAND_RPC_GET_BLOCK_HEADERS_RANGE.request_t": {
@@ -2054,6 +2322,86 @@
           "connections"
         ]
       },
+      "COMMAND_RPC_GET_HASHES_FAST.request_t": {
+        "type": "object",
+        "properties": {
+          "client": {
+            "type": "string"
+          },
+          "block_ids": {
+            "type": "string",
+            "contentEncoding": "binary"
+          },
+          "start_height": {
+            "type": "integer",
+            "minimum": 0
+          }
+        },
+        "required": [
+          "client",
+          "block_ids",
+          "start_height"
+        ]
+      },
+      "COMMAND_RPC_GET_HASHES_FAST.response_t": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string"
+          },
+          "credits": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "top_hash": {
+            "type": "string"
+          },
+          "m_block_ids": {
+            "type": "string",
+            "contentEncoding": "binary"
+          },
+          "start_height": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "current_height": {
+            "type": "integer",
+            "minimum": 0
+          }
+        },
+        "required": [
+          "status",
+          "credits",
+          "top_hash",
+          "m_block_ids",
+          "start_height",
+          "current_height"
+        ]
+      },
+      "COMMAND_RPC_GET_HEIGHT.request_t": {
+        "type": "object",
+        "properties": {}
+      },
+      "COMMAND_RPC_GET_HEIGHT.response_t": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string"
+          },
+          "height": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "hash": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "status",
+          "height",
+          "hash"
+        ]
+      },
       "COMMAND_RPC_GET_INFO.request_t": {
         "type": "object",
         "properties": {
@@ -2288,6 +2636,227 @@
           "block_header"
         ]
       },
+      "COMMAND_RPC_GET_LIMIT.request_t": {
+        "type": "object",
+        "properties": {}
+      },
+      "COMMAND_RPC_GET_LIMIT.response_t": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string"
+          },
+          "limit_up": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "limit_down": {
+            "type": "integer",
+            "minimum": 0
+          }
+        },
+        "required": [
+          "status",
+          "limit_up",
+          "limit_down"
+        ]
+      },
+      "COMMAND_RPC_GET_NET_STATS.request_t": {
+        "type": "object",
+        "properties": {}
+      },
+      "COMMAND_RPC_GET_NET_STATS.response_t": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string"
+          },
+          "start_time": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "total_packets_in": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "total_bytes_in": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "total_packets_out": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "total_bytes_out": {
+            "type": "integer",
+            "minimum": 0
+          }
+        },
+        "required": [
+          "status",
+          "start_time",
+          "total_packets_in",
+          "total_bytes_in",
+          "total_packets_out",
+          "total_bytes_out"
+        ]
+      },
+      "COMMAND_RPC_GET_OUTPUTS.outkey": {
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": "string"
+          },
+          "mask": {
+            "type": "string"
+          },
+          "unlocked": {
+            "type": "boolean"
+          },
+          "height": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "txid": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "key",
+          "mask",
+          "unlocked",
+          "height",
+          "txid"
+        ]
+      },
+      "COMMAND_RPC_GET_OUTPUTS.request_t": {
+        "type": "object",
+        "properties": {
+          "client": {
+            "type": "string"
+          },
+          "outputs": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/get_outputs_out"
+            }
+          },
+          "get_txid": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "client",
+          "outputs",
+          "get_txid"
+        ]
+      },
+      "COMMAND_RPC_GET_OUTPUTS.response_t": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string"
+          },
+          "credits": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "top_hash": {
+            "type": "string"
+          },
+          "outs": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/COMMAND_RPC_GET_OUTPUTS.outkey"
+            }
+          }
+        },
+        "required": [
+          "status",
+          "credits",
+          "top_hash",
+          "outs"
+        ]
+      },
+      "COMMAND_RPC_GET_OUTPUTS_BIN.outkey": {
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": "string",
+            "contentEncoding": "binary"
+          },
+          "mask": {
+            "type": "string",
+            "contentEncoding": "binary"
+          },
+          "unlocked": {
+            "type": "boolean"
+          },
+          "height": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "txid": {
+            "type": "string",
+            "contentEncoding": "binary"
+          }
+        },
+        "required": [
+          "key",
+          "mask",
+          "unlocked",
+          "height",
+          "txid"
+        ]
+      },
+      "COMMAND_RPC_GET_OUTPUTS_BIN.request_t": {
+        "type": "object",
+        "properties": {
+          "client": {
+            "type": "string"
+          },
+          "outputs": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/get_outputs_out"
+            }
+          },
+          "get_txid": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "client",
+          "outputs"
+        ]
+      },
+      "COMMAND_RPC_GET_OUTPUTS_BIN.response_t": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string"
+          },
+          "credits": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "top_hash": {
+            "type": "string"
+          },
+          "outs": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/COMMAND_RPC_GET_OUTPUTS_BIN.outkey"
+            }
+          }
+        },
+        "required": [
+          "status",
+          "credits",
+          "top_hash",
+          "outs"
+        ]
+      },
       "COMMAND_RPC_GET_OUTPUT_DISTRIBUTION.distribution": {
         "type": "object",
         "properties": {
@@ -2484,6 +3053,267 @@
           "histogram"
         ]
       },
+      "COMMAND_RPC_GET_PEER_LIST.request_t": {
+        "type": "object",
+        "properties": {
+          "public_only": {
+            "type": "boolean"
+          },
+          "include_blocked": {
+            "type": "boolean"
+          }
+        }
+      },
+      "COMMAND_RPC_GET_PEER_LIST.response_t": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string"
+          },
+          "white_list": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/peer"
+            }
+          },
+          "gray_list": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/peer"
+            }
+          }
+        },
+        "required": [
+          "status",
+          "white_list",
+          "gray_list"
+        ]
+      },
+      "COMMAND_RPC_GET_PUBLIC_NODES.request_t": {
+        "type": "object",
+        "properties": {
+          "gray": {
+            "type": "boolean"
+          },
+          "white": {
+            "type": "boolean"
+          },
+          "include_blocked": {
+            "type": "boolean"
+          }
+        }
+      },
+      "COMMAND_RPC_GET_PUBLIC_NODES.response_t": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string"
+          },
+          "gray": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/public_node"
+            }
+          },
+          "white": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/public_node"
+            }
+          }
+        },
+        "required": [
+          "status",
+          "gray",
+          "white"
+        ]
+      },
+      "COMMAND_RPC_GET_TRANSACTIONS.entry": {
+        "type": "object",
+        "properties": {
+          "tx_hash": {
+            "type": "string"
+          },
+          "as_hex": {
+            "type": "string"
+          },
+          "pruned_as_hex": {
+            "type": "string"
+          },
+          "prunable_as_hex": {
+            "type": "string"
+          },
+          "prunable_hash": {
+            "type": "string"
+          },
+          "as_json": {
+            "type": "string"
+          },
+          "in_pool": {
+            "type": "boolean"
+          },
+          "double_spend_seen": {
+            "type": "boolean"
+          },
+          "block_height": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "confirmations": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "block_timestamp": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "output_indices": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "minimum": 0
+            }
+          },
+          "relayed": {
+            "type": "boolean"
+          },
+          "received_timestamp": {
+            "type": "integer",
+            "minimum": 0
+          }
+        },
+        "required": [
+          "tx_hash",
+          "as_hex",
+          "pruned_as_hex",
+          "prunable_as_hex",
+          "prunable_hash",
+          "as_json",
+          "in_pool",
+          "double_spend_seen"
+        ]
+      },
+      "COMMAND_RPC_GET_TRANSACTIONS.request_t": {
+        "type": "object",
+        "properties": {
+          "client": {
+            "type": "string"
+          },
+          "txs_hashes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "decode_as_json": {
+            "type": "boolean"
+          },
+          "prune": {
+            "type": "boolean"
+          },
+          "split": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "client",
+          "txs_hashes",
+          "decode_as_json"
+        ]
+      },
+      "COMMAND_RPC_GET_TRANSACTIONS.response_t": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string"
+          },
+          "credits": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "top_hash": {
+            "type": "string"
+          },
+          "txs_as_hex": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "txs_as_json": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "txs": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/COMMAND_RPC_GET_TRANSACTIONS.entry"
+            }
+          },
+          "missed_tx": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "required": [
+          "status",
+          "credits",
+          "top_hash",
+          "txs_as_hex",
+          "txs_as_json",
+          "txs",
+          "missed_tx"
+        ]
+      },
+      "COMMAND_RPC_GET_TRANSACTION_POOL.request_t": {
+        "type": "object",
+        "properties": {
+          "client": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "client"
+        ]
+      },
+      "COMMAND_RPC_GET_TRANSACTION_POOL.response_t": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string"
+          },
+          "credits": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "top_hash": {
+            "type": "string"
+          },
+          "transactions": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/tx_info"
+            }
+          },
+          "spent_key_images": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/spent_key_image_info"
+            }
+          }
+        },
+        "required": [
+          "status",
+          "credits",
+          "top_hash",
+          "transactions",
+          "spent_key_images"
+        ]
+      },
       "COMMAND_RPC_GET_TRANSACTION_POOL_BACKLOG.request_t": {
         "type": "object",
         "properties": {
@@ -2520,6 +3350,115 @@
           "backlog"
         ]
       },
+      "COMMAND_RPC_GET_TRANSACTION_POOL_HASHES.request_t": {
+        "type": "object",
+        "properties": {
+          "client": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "client"
+        ]
+      },
+      "COMMAND_RPC_GET_TRANSACTION_POOL_HASHES.response_t": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string"
+          },
+          "credits": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "top_hash": {
+            "type": "string"
+          },
+          "tx_hashes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "required": [
+          "status",
+          "credits",
+          "top_hash",
+          "tx_hashes"
+        ]
+      },
+      "COMMAND_RPC_GET_TRANSACTION_POOL_HASHES_BIN.request_t": {
+        "type": "object",
+        "properties": {
+          "client": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "client"
+        ]
+      },
+      "COMMAND_RPC_GET_TRANSACTION_POOL_HASHES_BIN.response_t": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string"
+          },
+          "credits": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "top_hash": {
+            "type": "string"
+          },
+          "tx_hashes": {
+            "type": "string",
+            "contentEncoding": "binary"
+          }
+        },
+        "required": [
+          "status",
+          "credits",
+          "top_hash",
+          "tx_hashes"
+        ]
+      },
+      "COMMAND_RPC_GET_TRANSACTION_POOL_STATS.request_t": {
+        "type": "object",
+        "properties": {
+          "client": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "client"
+        ]
+      },
+      "COMMAND_RPC_GET_TRANSACTION_POOL_STATS.response_t": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string"
+          },
+          "credits": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "top_hash": {
+            "type": "string"
+          },
+          "pool_stats": {
+            "$ref": "#/components/schemas/txpool_stats"
+          }
+        },
+        "required": [
+          "status",
+          "credits",
+          "top_hash",
+          "pool_stats"
+        ]
+      },
       "COMMAND_RPC_GET_TXIDS_LOOSE.request_t": {
         "type": "object",
         "properties": {
@@ -2552,6 +3491,50 @@
         "required": [
           "status",
           "txids"
+        ]
+      },
+      "COMMAND_RPC_GET_TX_GLOBAL_OUTPUTS_INDEXES.request_t": {
+        "type": "object",
+        "properties": {
+          "client": {
+            "type": "string"
+          },
+          "txid": {
+            "type": "string",
+            "contentEncoding": "binary"
+          }
+        },
+        "required": [
+          "client",
+          "txid"
+        ]
+      },
+      "COMMAND_RPC_GET_TX_GLOBAL_OUTPUTS_INDEXES.response_t": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string"
+          },
+          "credits": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "top_hash": {
+            "type": "string"
+          },
+          "o_indexes": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "minimum": 0
+            }
+          }
+        },
+        "required": [
+          "status",
+          "credits",
+          "top_hash",
+          "o_indexes"
         ]
       },
       "COMMAND_RPC_GET_VERSION.hf_entry": {
@@ -2687,6 +3670,228 @@
           "earliest_height"
         ]
       },
+      "COMMAND_RPC_IN_PEERS.request_t": {
+        "type": "object",
+        "properties": {
+          "set": {
+            "type": "boolean"
+          },
+          "in_peers": {
+            "type": "integer",
+            "minimum": 0
+          }
+        },
+        "required": [
+          "in_peers"
+        ]
+      },
+      "COMMAND_RPC_IN_PEERS.response_t": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string"
+          },
+          "in_peers": {
+            "type": "integer",
+            "minimum": 0
+          }
+        },
+        "required": [
+          "status",
+          "in_peers"
+        ]
+      },
+      "COMMAND_RPC_IS_KEY_IMAGE_SPENT.request_t": {
+        "type": "object",
+        "properties": {
+          "client": {
+            "type": "string"
+          },
+          "key_images": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "required": [
+          "client",
+          "key_images"
+        ]
+      },
+      "COMMAND_RPC_IS_KEY_IMAGE_SPENT.response_t": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string"
+          },
+          "credits": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "top_hash": {
+            "type": "string"
+          },
+          "spent_status": {
+            "type": "array",
+            "items": {
+              "type": "integer"
+            }
+          }
+        },
+        "required": [
+          "status",
+          "credits",
+          "top_hash",
+          "spent_status"
+        ]
+      },
+      "COMMAND_RPC_MINING_STATUS.request_t": {
+        "type": "object",
+        "properties": {}
+      },
+      "COMMAND_RPC_MINING_STATUS.response_t": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string"
+          },
+          "active": {
+            "type": "boolean"
+          },
+          "speed": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "threads_count": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "address": {
+            "type": "string"
+          },
+          "pow_algorithm": {
+            "type": "string"
+          },
+          "is_background_mining_enabled": {
+            "type": "boolean"
+          },
+          "bg_idle_threshold": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "bg_min_idle_seconds": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "bg_ignore_battery": {
+            "type": "boolean"
+          },
+          "bg_target": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "block_target": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "block_reward": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "difficulty": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "wide_difficulty": {
+            "type": "string"
+          },
+          "difficulty_top64": {
+            "type": "integer",
+            "minimum": 0
+          }
+        },
+        "required": [
+          "status",
+          "active",
+          "speed",
+          "threads_count",
+          "address",
+          "pow_algorithm",
+          "is_background_mining_enabled",
+          "bg_idle_threshold",
+          "bg_min_idle_seconds",
+          "bg_ignore_battery",
+          "bg_target",
+          "block_target",
+          "block_reward",
+          "difficulty",
+          "wide_difficulty",
+          "difficulty_top64"
+        ]
+      },
+      "COMMAND_RPC_OUT_PEERS.request_t": {
+        "type": "object",
+        "properties": {
+          "set": {
+            "type": "boolean"
+          },
+          "out_peers": {
+            "type": "integer",
+            "minimum": 0
+          }
+        },
+        "required": [
+          "out_peers"
+        ]
+      },
+      "COMMAND_RPC_OUT_PEERS.response_t": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string"
+          },
+          "out_peers": {
+            "type": "integer",
+            "minimum": 0
+          }
+        },
+        "required": [
+          "status",
+          "out_peers"
+        ]
+      },
+      "COMMAND_RPC_POP_BLOCKS.request_t": {
+        "type": "object",
+        "properties": {
+          "nblocks": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "keep_txs": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "nblocks"
+        ]
+      },
+      "COMMAND_RPC_POP_BLOCKS.response_t": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string"
+          },
+          "height": {
+            "type": "integer",
+            "minimum": 0
+          }
+        },
+        "required": [
+          "status",
+          "height"
+        ]
+      },
       "COMMAND_RPC_PRUNE_BLOCKCHAIN.request_t": {
         "type": "object",
         "properties": {
@@ -2753,6 +3958,114 @@
           "top_hash"
         ]
       },
+      "COMMAND_RPC_SAVE_BC.request_t": {
+        "type": "object",
+        "properties": {}
+      },
+      "COMMAND_RPC_SAVE_BC.response_t": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "status"
+        ]
+      },
+      "COMMAND_RPC_SEND_RAW_TX.request_t": {
+        "type": "object",
+        "properties": {
+          "client": {
+            "type": "string"
+          },
+          "tx_as_hex": {
+            "type": "string"
+          },
+          "do_not_relay": {
+            "type": "boolean"
+          },
+          "do_sanity_checks": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "client",
+          "tx_as_hex"
+        ]
+      },
+      "COMMAND_RPC_SEND_RAW_TX.response_t": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string"
+          },
+          "credits": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "top_hash": {
+            "type": "string"
+          },
+          "reason": {
+            "type": "string"
+          },
+          "not_relayed": {
+            "type": "boolean"
+          },
+          "low_mixin": {
+            "type": "boolean"
+          },
+          "double_spend": {
+            "type": "boolean"
+          },
+          "invalid_input": {
+            "type": "boolean"
+          },
+          "invalid_output": {
+            "type": "boolean"
+          },
+          "too_big": {
+            "type": "boolean"
+          },
+          "overspend": {
+            "type": "boolean"
+          },
+          "fee_too_low": {
+            "type": "boolean"
+          },
+          "too_few_outputs": {
+            "type": "boolean"
+          },
+          "sanity_check_failed": {
+            "type": "boolean"
+          },
+          "tx_extra_too_big": {
+            "type": "boolean"
+          },
+          "nonzero_unlock_time": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "status",
+          "credits",
+          "top_hash",
+          "reason",
+          "not_relayed",
+          "low_mixin",
+          "double_spend",
+          "invalid_input",
+          "invalid_output",
+          "too_big",
+          "overspend",
+          "fee_too_low",
+          "too_few_outputs",
+          "sanity_check_failed",
+          "tx_extra_too_big",
+          "nonzero_unlock_time"
+        ]
+      },
       "COMMAND_RPC_SETBANS.ban": {
         "type": "object",
         "properties": {
@@ -2793,6 +4106,175 @@
         ]
       },
       "COMMAND_RPC_SETBANS.response_t": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "status"
+        ]
+      },
+      "COMMAND_RPC_SET_LIMIT.request_t": {
+        "type": "object",
+        "properties": {
+          "limit_down": {
+            "type": "integer"
+          },
+          "limit_up": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "limit_down",
+          "limit_up"
+        ]
+      },
+      "COMMAND_RPC_SET_LIMIT.response_t": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string"
+          },
+          "limit_up": {
+            "type": "integer"
+          },
+          "limit_down": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "status",
+          "limit_up",
+          "limit_down"
+        ]
+      },
+      "COMMAND_RPC_SET_LOG_CATEGORIES.request_t": {
+        "type": "object",
+        "properties": {
+          "categories": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "categories"
+        ]
+      },
+      "COMMAND_RPC_SET_LOG_CATEGORIES.response_t": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string"
+          },
+          "categories": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "status",
+          "categories"
+        ]
+      },
+      "COMMAND_RPC_SET_LOG_HASH_RATE.request_t": {
+        "type": "object",
+        "properties": {
+          "visible": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "visible"
+        ]
+      },
+      "COMMAND_RPC_SET_LOG_HASH_RATE.response_t": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "status"
+        ]
+      },
+      "COMMAND_RPC_SET_LOG_LEVEL.request_t": {
+        "type": "object",
+        "properties": {
+          "level": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "level"
+        ]
+      },
+      "COMMAND_RPC_SET_LOG_LEVEL.response_t": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "status"
+        ]
+      },
+      "COMMAND_RPC_START_MINING.request_t": {
+        "type": "object",
+        "properties": {
+          "miner_address": {
+            "type": "string"
+          },
+          "threads_count": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "do_background_mining": {
+            "type": "boolean"
+          },
+          "ignore_battery": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "miner_address",
+          "threads_count",
+          "do_background_mining",
+          "ignore_battery"
+        ]
+      },
+      "COMMAND_RPC_START_MINING.response_t": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "status"
+        ]
+      },
+      "COMMAND_RPC_STOP_DAEMON.request_t": {
+        "type": "object",
+        "properties": {}
+      },
+      "COMMAND_RPC_STOP_DAEMON.response_t": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "status"
+        ]
+      },
+      "COMMAND_RPC_STOP_MINING.request_t": {
+        "type": "object",
+        "properties": {}
+      },
+      "COMMAND_RPC_STOP_MINING.response_t": {
         "type": "object",
         "properties": {
           "status": {
@@ -2931,6 +4413,80 @@
           "speed",
           "size",
           "remote_address"
+        ]
+      },
+      "COMMAND_RPC_UPDATE.request_t": {
+        "type": "object",
+        "properties": {
+          "command": {
+            "type": "string"
+          },
+          "path": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "command",
+          "path"
+        ]
+      },
+      "COMMAND_RPC_UPDATE.response_t": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string"
+          },
+          "update": {
+            "type": "boolean"
+          },
+          "version": {
+            "type": "string"
+          },
+          "user_uri": {
+            "type": "string"
+          },
+          "auto_uri": {
+            "type": "string"
+          },
+          "hash": {
+            "type": "string"
+          },
+          "path": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "status",
+          "update",
+          "version",
+          "user_uri",
+          "auto_uri",
+          "hash",
+          "path"
+        ]
+      },
+      "block_complete_entry": {
+        "type": "object",
+        "properties": {
+          "pruned": {
+            "type": "boolean"
+          },
+          "block": {
+            "type": "string"
+          },
+          "block_weight": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "txs": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/tx_blob_entry"
+            }
+          }
+        },
+        "required": [
+          "block"
         ]
       },
       "block_header_response": {
@@ -3162,7 +4718,772 @@
           "pruning_seed",
           "address_type"
         ]
+      },
+      "get_outputs_out": {
+        "type": "object",
+        "properties": {
+          "amount": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "index": {
+            "type": "integer",
+            "minimum": 0
+          }
+        },
+        "required": [
+          "amount",
+          "index"
+        ]
+      },
+      "peer": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "host": {
+            "type": "string"
+          },
+          "ip": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "port": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "rpc_port": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "rpc_credits_per_hash": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "last_seen": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "pruning_seed": {
+            "type": "integer",
+            "minimum": 0
+          }
+        },
+        "required": [
+          "id",
+          "host",
+          "ip",
+          "port",
+          "last_seen"
+        ]
+      },
+      "public_node": {
+        "type": "object",
+        "properties": {
+          "host": {
+            "type": "string"
+          },
+          "last_seen": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "rpc_port": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "rpc_credits_per_hash": {
+            "type": "integer",
+            "minimum": 0
+          }
+        },
+        "required": [
+          "host",
+          "last_seen",
+          "rpc_port",
+          "rpc_credits_per_hash"
+        ]
+      },
+      "spent_key_image_info": {
+        "type": "object",
+        "properties": {
+          "id_hash": {
+            "type": "string"
+          },
+          "txs_hashes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "required": [
+          "id_hash",
+          "txs_hashes"
+        ]
+      },
+      "tx_blob_entry": {
+        "type": "object",
+        "properties": {
+          "blob": {
+            "type": "string"
+          },
+          "prunable_hash": {
+            "type": "string",
+            "contentEncoding": "binary"
+          }
+        },
+        "required": [
+          "blob",
+          "prunable_hash"
+        ]
+      },
+      "tx_info": {
+        "type": "object",
+        "properties": {
+          "id_hash": {
+            "type": "string"
+          },
+          "tx_json": {
+            "type": "string"
+          },
+          "blob_size": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "weight": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "fee": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "max_used_block_id_hash": {
+            "type": "string"
+          },
+          "max_used_block_height": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "kept_by_block": {
+            "type": "boolean"
+          },
+          "last_failed_height": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "last_failed_id_hash": {
+            "type": "string"
+          },
+          "receive_time": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "relayed": {
+            "type": "boolean"
+          },
+          "last_relayed_time": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "do_not_relay": {
+            "type": "boolean"
+          },
+          "double_spend_seen": {
+            "type": "boolean"
+          },
+          "tx_blob": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id_hash",
+          "tx_json",
+          "blob_size",
+          "fee",
+          "max_used_block_id_hash",
+          "max_used_block_height",
+          "kept_by_block",
+          "last_failed_height",
+          "last_failed_id_hash",
+          "receive_time",
+          "relayed",
+          "last_relayed_time",
+          "do_not_relay",
+          "double_spend_seen",
+          "tx_blob"
+        ]
+      },
+      "txpool_histo": {
+        "type": "object",
+        "properties": {
+          "txs": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "bytes": {
+            "type": "integer",
+            "minimum": 0
+          }
+        },
+        "required": [
+          "txs",
+          "bytes"
+        ]
+      },
+      "txpool_stats": {
+        "type": "object",
+        "properties": {
+          "bytes_total": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "bytes_min": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "bytes_max": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "bytes_med": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "fee_total": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "oldest": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "txs_total": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "num_failing": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "num_10m": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "num_not_relayed": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "histo_98pc": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "histo": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/txpool_histo"
+            }
+          },
+          "num_double_spends": {
+            "type": "integer",
+            "minimum": 0
+          }
+        },
+        "required": [
+          "bytes_total",
+          "bytes_min",
+          "bytes_max",
+          "bytes_med",
+          "fee_total",
+          "oldest",
+          "txs_total",
+          "num_failing",
+          "num_10m",
+          "num_not_relayed",
+          "histo_98pc",
+          "histo",
+          "num_double_spends"
+        ]
       }
     }
-  }
+  },
+  "x-uri-endpoints": [
+    {
+      "path": "/get_height",
+      "httpMethod": "POST",
+      "encoding": "json",
+      "request": {
+        "$ref": "#/components/schemas/COMMAND_RPC_GET_HEIGHT.request_t"
+      },
+      "response": {
+        "$ref": "#/components/schemas/COMMAND_RPC_GET_HEIGHT.response_t"
+      }
+    },
+    {
+      "path": "/getheight",
+      "httpMethod": "POST",
+      "encoding": "json",
+      "request": {
+        "$ref": "#/components/schemas/COMMAND_RPC_GET_HEIGHT.request_t"
+      },
+      "response": {
+        "$ref": "#/components/schemas/COMMAND_RPC_GET_HEIGHT.response_t"
+      },
+      "x-alias-of": "/get_height"
+    },
+    {
+      "path": "/get_blocks.bin",
+      "httpMethod": "POST",
+      "encoding": "epee-binary",
+      "request": {
+        "$ref": "#/components/schemas/COMMAND_RPC_GET_BLOCKS_FAST.request_t"
+      },
+      "response": {
+        "$ref": "#/components/schemas/COMMAND_RPC_GET_BLOCKS_FAST.response_t"
+      }
+    },
+    {
+      "path": "/getblocks.bin",
+      "httpMethod": "POST",
+      "encoding": "epee-binary",
+      "request": {
+        "$ref": "#/components/schemas/COMMAND_RPC_GET_BLOCKS_FAST.request_t"
+      },
+      "response": {
+        "$ref": "#/components/schemas/COMMAND_RPC_GET_BLOCKS_FAST.response_t"
+      },
+      "x-alias-of": "/get_blocks.bin"
+    },
+    {
+      "path": "/get_blocks_by_height.bin",
+      "httpMethod": "POST",
+      "encoding": "epee-binary",
+      "request": {
+        "$ref": "#/components/schemas/COMMAND_RPC_GET_BLOCKS_BY_HEIGHT.request_t"
+      },
+      "response": {
+        "$ref": "#/components/schemas/COMMAND_RPC_GET_BLOCKS_BY_HEIGHT.response_t"
+      }
+    },
+    {
+      "path": "/getblocks_by_height.bin",
+      "httpMethod": "POST",
+      "encoding": "epee-binary",
+      "request": {
+        "$ref": "#/components/schemas/COMMAND_RPC_GET_BLOCKS_BY_HEIGHT.request_t"
+      },
+      "response": {
+        "$ref": "#/components/schemas/COMMAND_RPC_GET_BLOCKS_BY_HEIGHT.response_t"
+      },
+      "x-alias-of": "/get_blocks_by_height.bin"
+    },
+    {
+      "path": "/get_hashes.bin",
+      "httpMethod": "POST",
+      "encoding": "epee-binary",
+      "request": {
+        "$ref": "#/components/schemas/COMMAND_RPC_GET_HASHES_FAST.request_t"
+      },
+      "response": {
+        "$ref": "#/components/schemas/COMMAND_RPC_GET_HASHES_FAST.response_t"
+      }
+    },
+    {
+      "path": "/gethashes.bin",
+      "httpMethod": "POST",
+      "encoding": "epee-binary",
+      "request": {
+        "$ref": "#/components/schemas/COMMAND_RPC_GET_HASHES_FAST.request_t"
+      },
+      "response": {
+        "$ref": "#/components/schemas/COMMAND_RPC_GET_HASHES_FAST.response_t"
+      },
+      "x-alias-of": "/get_hashes.bin"
+    },
+    {
+      "path": "/get_o_indexes.bin",
+      "httpMethod": "POST",
+      "encoding": "epee-binary",
+      "request": {
+        "$ref": "#/components/schemas/COMMAND_RPC_GET_TX_GLOBAL_OUTPUTS_INDEXES.request_t"
+      },
+      "response": {
+        "$ref": "#/components/schemas/COMMAND_RPC_GET_TX_GLOBAL_OUTPUTS_INDEXES.response_t"
+      }
+    },
+    {
+      "path": "/get_outs.bin",
+      "httpMethod": "POST",
+      "encoding": "epee-binary",
+      "request": {
+        "$ref": "#/components/schemas/COMMAND_RPC_GET_OUTPUTS_BIN.request_t"
+      },
+      "response": {
+        "$ref": "#/components/schemas/COMMAND_RPC_GET_OUTPUTS_BIN.response_t"
+      }
+    },
+    {
+      "path": "/get_transactions",
+      "httpMethod": "POST",
+      "encoding": "json",
+      "request": {
+        "$ref": "#/components/schemas/COMMAND_RPC_GET_TRANSACTIONS.request_t"
+      },
+      "response": {
+        "$ref": "#/components/schemas/COMMAND_RPC_GET_TRANSACTIONS.response_t"
+      }
+    },
+    {
+      "path": "/gettransactions",
+      "httpMethod": "POST",
+      "encoding": "json",
+      "request": {
+        "$ref": "#/components/schemas/COMMAND_RPC_GET_TRANSACTIONS.request_t"
+      },
+      "response": {
+        "$ref": "#/components/schemas/COMMAND_RPC_GET_TRANSACTIONS.response_t"
+      },
+      "x-alias-of": "/get_transactions"
+    },
+    {
+      "path": "/get_alt_blocks_hashes",
+      "httpMethod": "POST",
+      "encoding": "json",
+      "request": {
+        "$ref": "#/components/schemas/COMMAND_RPC_GET_ALT_BLOCKS_HASHES.request_t"
+      },
+      "response": {
+        "$ref": "#/components/schemas/COMMAND_RPC_GET_ALT_BLOCKS_HASHES.response_t"
+      },
+      "x-hidden-in-restricted-mode": true
+    },
+    {
+      "path": "/is_key_image_spent",
+      "httpMethod": "POST",
+      "encoding": "json",
+      "request": {
+        "$ref": "#/components/schemas/COMMAND_RPC_IS_KEY_IMAGE_SPENT.request_t"
+      },
+      "response": {
+        "$ref": "#/components/schemas/COMMAND_RPC_IS_KEY_IMAGE_SPENT.response_t"
+      }
+    },
+    {
+      "path": "/send_raw_transaction",
+      "httpMethod": "POST",
+      "encoding": "json",
+      "request": {
+        "$ref": "#/components/schemas/COMMAND_RPC_SEND_RAW_TX.request_t"
+      },
+      "response": {
+        "$ref": "#/components/schemas/COMMAND_RPC_SEND_RAW_TX.response_t"
+      }
+    },
+    {
+      "path": "/sendrawtransaction",
+      "httpMethod": "POST",
+      "encoding": "json",
+      "request": {
+        "$ref": "#/components/schemas/COMMAND_RPC_SEND_RAW_TX.request_t"
+      },
+      "response": {
+        "$ref": "#/components/schemas/COMMAND_RPC_SEND_RAW_TX.response_t"
+      },
+      "x-alias-of": "/send_raw_transaction"
+    },
+    {
+      "path": "/start_mining",
+      "httpMethod": "POST",
+      "encoding": "json",
+      "request": {
+        "$ref": "#/components/schemas/COMMAND_RPC_START_MINING.request_t"
+      },
+      "response": {
+        "$ref": "#/components/schemas/COMMAND_RPC_START_MINING.response_t"
+      },
+      "x-hidden-in-restricted-mode": true
+    },
+    {
+      "path": "/stop_mining",
+      "httpMethod": "POST",
+      "encoding": "json",
+      "request": {
+        "$ref": "#/components/schemas/COMMAND_RPC_STOP_MINING.request_t"
+      },
+      "response": {
+        "$ref": "#/components/schemas/COMMAND_RPC_STOP_MINING.response_t"
+      },
+      "x-hidden-in-restricted-mode": true
+    },
+    {
+      "path": "/mining_status",
+      "httpMethod": "POST",
+      "encoding": "json",
+      "request": {
+        "$ref": "#/components/schemas/COMMAND_RPC_MINING_STATUS.request_t"
+      },
+      "response": {
+        "$ref": "#/components/schemas/COMMAND_RPC_MINING_STATUS.response_t"
+      },
+      "x-hidden-in-restricted-mode": true
+    },
+    {
+      "path": "/save_bc",
+      "httpMethod": "POST",
+      "encoding": "json",
+      "request": {
+        "$ref": "#/components/schemas/COMMAND_RPC_SAVE_BC.request_t"
+      },
+      "response": {
+        "$ref": "#/components/schemas/COMMAND_RPC_SAVE_BC.response_t"
+      },
+      "x-hidden-in-restricted-mode": true
+    },
+    {
+      "path": "/get_peer_list",
+      "httpMethod": "POST",
+      "encoding": "json",
+      "request": {
+        "$ref": "#/components/schemas/COMMAND_RPC_GET_PEER_LIST.request_t"
+      },
+      "response": {
+        "$ref": "#/components/schemas/COMMAND_RPC_GET_PEER_LIST.response_t"
+      },
+      "x-hidden-in-restricted-mode": true
+    },
+    {
+      "path": "/get_public_nodes",
+      "httpMethod": "POST",
+      "encoding": "json",
+      "request": {
+        "$ref": "#/components/schemas/COMMAND_RPC_GET_PUBLIC_NODES.request_t"
+      },
+      "response": {
+        "$ref": "#/components/schemas/COMMAND_RPC_GET_PUBLIC_NODES.response_t"
+      }
+    },
+    {
+      "path": "/set_log_hash_rate",
+      "httpMethod": "POST",
+      "encoding": "json",
+      "request": {
+        "$ref": "#/components/schemas/COMMAND_RPC_SET_LOG_HASH_RATE.request_t"
+      },
+      "response": {
+        "$ref": "#/components/schemas/COMMAND_RPC_SET_LOG_HASH_RATE.response_t"
+      },
+      "x-hidden-in-restricted-mode": true
+    },
+    {
+      "path": "/set_log_level",
+      "httpMethod": "POST",
+      "encoding": "json",
+      "request": {
+        "$ref": "#/components/schemas/COMMAND_RPC_SET_LOG_LEVEL.request_t"
+      },
+      "response": {
+        "$ref": "#/components/schemas/COMMAND_RPC_SET_LOG_LEVEL.response_t"
+      },
+      "x-hidden-in-restricted-mode": true
+    },
+    {
+      "path": "/set_log_categories",
+      "httpMethod": "POST",
+      "encoding": "json",
+      "request": {
+        "$ref": "#/components/schemas/COMMAND_RPC_SET_LOG_CATEGORIES.request_t"
+      },
+      "response": {
+        "$ref": "#/components/schemas/COMMAND_RPC_SET_LOG_CATEGORIES.response_t"
+      },
+      "x-hidden-in-restricted-mode": true
+    },
+    {
+      "path": "/get_transaction_pool",
+      "httpMethod": "POST",
+      "encoding": "json",
+      "request": {
+        "$ref": "#/components/schemas/COMMAND_RPC_GET_TRANSACTION_POOL.request_t"
+      },
+      "response": {
+        "$ref": "#/components/schemas/COMMAND_RPC_GET_TRANSACTION_POOL.response_t"
+      },
+      "x-hidden-in-restricted-mode": true
+    },
+    {
+      "path": "/get_transaction_pool_hashes.bin",
+      "httpMethod": "POST",
+      "encoding": "json",
+      "request": {
+        "$ref": "#/components/schemas/COMMAND_RPC_GET_TRANSACTION_POOL_HASHES_BIN.request_t"
+      },
+      "response": {
+        "$ref": "#/components/schemas/COMMAND_RPC_GET_TRANSACTION_POOL_HASHES_BIN.response_t"
+      }
+    },
+    {
+      "path": "/get_transaction_pool_hashes",
+      "httpMethod": "POST",
+      "encoding": "json",
+      "request": {
+        "$ref": "#/components/schemas/COMMAND_RPC_GET_TRANSACTION_POOL_HASHES.request_t"
+      },
+      "response": {
+        "$ref": "#/components/schemas/COMMAND_RPC_GET_TRANSACTION_POOL_HASHES.response_t"
+      }
+    },
+    {
+      "path": "/get_transaction_pool_stats",
+      "httpMethod": "POST",
+      "encoding": "json",
+      "request": {
+        "$ref": "#/components/schemas/COMMAND_RPC_GET_TRANSACTION_POOL_STATS.request_t"
+      },
+      "response": {
+        "$ref": "#/components/schemas/COMMAND_RPC_GET_TRANSACTION_POOL_STATS.response_t"
+      }
+    },
+    {
+      "path": "/stop_daemon",
+      "httpMethod": "POST",
+      "encoding": "json",
+      "request": {
+        "$ref": "#/components/schemas/COMMAND_RPC_STOP_DAEMON.request_t"
+      },
+      "response": {
+        "$ref": "#/components/schemas/COMMAND_RPC_STOP_DAEMON.response_t"
+      },
+      "x-hidden-in-restricted-mode": true
+    },
+    {
+      "path": "/get_info",
+      "httpMethod": "POST",
+      "encoding": "json",
+      "request": {
+        "$ref": "#/components/schemas/COMMAND_RPC_GET_INFO.request_t"
+      },
+      "response": {
+        "$ref": "#/components/schemas/COMMAND_RPC_GET_INFO.response_t"
+      }
+    },
+    {
+      "path": "/getinfo",
+      "httpMethod": "POST",
+      "encoding": "json",
+      "request": {
+        "$ref": "#/components/schemas/COMMAND_RPC_GET_INFO.request_t"
+      },
+      "response": {
+        "$ref": "#/components/schemas/COMMAND_RPC_GET_INFO.response_t"
+      },
+      "x-alias-of": "/get_info"
+    },
+    {
+      "path": "/get_net_stats",
+      "httpMethod": "POST",
+      "encoding": "json",
+      "request": {
+        "$ref": "#/components/schemas/COMMAND_RPC_GET_NET_STATS.request_t"
+      },
+      "response": {
+        "$ref": "#/components/schemas/COMMAND_RPC_GET_NET_STATS.response_t"
+      },
+      "x-hidden-in-restricted-mode": true
+    },
+    {
+      "path": "/get_limit",
+      "httpMethod": "POST",
+      "encoding": "json",
+      "request": {
+        "$ref": "#/components/schemas/COMMAND_RPC_GET_LIMIT.request_t"
+      },
+      "response": {
+        "$ref": "#/components/schemas/COMMAND_RPC_GET_LIMIT.response_t"
+      }
+    },
+    {
+      "path": "/set_limit",
+      "httpMethod": "POST",
+      "encoding": "json",
+      "request": {
+        "$ref": "#/components/schemas/COMMAND_RPC_SET_LIMIT.request_t"
+      },
+      "response": {
+        "$ref": "#/components/schemas/COMMAND_RPC_SET_LIMIT.response_t"
+      },
+      "x-hidden-in-restricted-mode": true
+    },
+    {
+      "path": "/out_peers",
+      "httpMethod": "POST",
+      "encoding": "json",
+      "request": {
+        "$ref": "#/components/schemas/COMMAND_RPC_OUT_PEERS.request_t"
+      },
+      "response": {
+        "$ref": "#/components/schemas/COMMAND_RPC_OUT_PEERS.response_t"
+      },
+      "x-hidden-in-restricted-mode": true
+    },
+    {
+      "path": "/in_peers",
+      "httpMethod": "POST",
+      "encoding": "json",
+      "request": {
+        "$ref": "#/components/schemas/COMMAND_RPC_IN_PEERS.request_t"
+      },
+      "response": {
+        "$ref": "#/components/schemas/COMMAND_RPC_IN_PEERS.response_t"
+      },
+      "x-hidden-in-restricted-mode": true
+    },
+    {
+      "path": "/get_outs",
+      "httpMethod": "POST",
+      "encoding": "json",
+      "request": {
+        "$ref": "#/components/schemas/COMMAND_RPC_GET_OUTPUTS.request_t"
+      },
+      "response": {
+        "$ref": "#/components/schemas/COMMAND_RPC_GET_OUTPUTS.response_t"
+      }
+    },
+    {
+      "path": "/update",
+      "httpMethod": "POST",
+      "encoding": "json",
+      "request": {
+        "$ref": "#/components/schemas/COMMAND_RPC_UPDATE.request_t"
+      },
+      "response": {
+        "$ref": "#/components/schemas/COMMAND_RPC_UPDATE.response_t"
+      },
+      "x-hidden-in-restricted-mode": true
+    },
+    {
+      "path": "/get_output_distribution.bin",
+      "httpMethod": "POST",
+      "encoding": "epee-binary",
+      "request": {
+        "$ref": "#/components/schemas/COMMAND_RPC_GET_OUTPUT_DISTRIBUTION.request_t"
+      },
+      "response": {
+        "$ref": "#/components/schemas/COMMAND_RPC_GET_OUTPUT_DISTRIBUTION.response_t"
+      }
+    },
+    {
+      "path": "/pop_blocks",
+      "httpMethod": "POST",
+      "encoding": "json",
+      "request": {
+        "$ref": "#/components/schemas/COMMAND_RPC_POP_BLOCKS.request_t"
+      },
+      "response": {
+        "$ref": "#/components/schemas/COMMAND_RPC_POP_BLOCKS.response_t"
+      },
+      "x-hidden-in-restricted-mode": true
+    }
+  ]
 }

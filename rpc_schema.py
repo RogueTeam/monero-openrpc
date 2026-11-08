@@ -1,8 +1,8 @@
 """Shared code for node_schema.py and wallet_schema.py: reads a Monero source
 checkout and builds an OpenRPC document for one RPC server.
 
-Fields come from the epee KV_SERIALIZE maps, methods from the JSON-RPC route
-map in the server header. Python 3.8+, standard library only.
+Fields come from the epee KV_SERIALIZE maps, methods from the URI / JSON-RPC
+route maps in the server header. Python 3.8+, standard library only.
 """
 import argparse
 import json
@@ -20,7 +20,7 @@ class Target:
     url: str                # default JSON-RPC endpoint
     version_macro: str      # e.g. CORE_RPC_VERSION (_MAJOR / _MINOR are appended)
     defs: List[str]         # headers with the request/response structs
-    server: str             # header with the JSON-RPC route map
+    server: str             # header with the URI / JSON-RPC route maps
 
 # ----------------------------------------------------------------- C++ types
 STRINGS = {"std::string", "string", "blobdata", "cryptonote::blobdata",
@@ -239,18 +239,19 @@ def parse_header(text, reg):
                 depth -= 1
 
 
-ROUTE_RE = re.compile(r"^(MAP_JON_RPC)(?:_WE)?(?:_IF)?\s*\((.*)\)\s*;?$")
+ROUTE_RE = re.compile(r"^(MAP_URI_AUTO_JON2|MAP_URI_AUTO_BIN2|MAP_JON_RPC)(?:_WE)?(?:_IF)?"
+                      r"\s*\((.*)\)\s*;?$")
 
 
 def parse_routes(text, warn):
-    """Entries of BEGIN_JSON_RPC_MAP in a server header."""
+    """Entries of BEGIN_URI_MAP2 / BEGIN_JSON_RPC_MAP in a server header."""
     routes = []
     for code, _ in code_lines(text):
         m = ROUTE_RE.match(code)
         if m and len(a := split_args(m.group(2))) >= 3:
             routes.append({"macro": m.group(1), "name": a[0].strip('"'), "handler": a[1],
                            "command": a[2], "cond": a[3] if len(a) > 3 else None})
-        elif re.match(r"^MAP_JON_RPC\w*\s*\(", code):
+        elif re.match(r"^MAP_\w+\s*\(", code):
             warn(f"unhandled route: {code}")
     return routes
 
@@ -428,14 +429,28 @@ def build(repo, target):
     if len(ver) != 2:
         b.warn(f"{target.version_macro}_MAJOR/MINOR not found")
 
-    methods = []
+    methods, endpoints, first_seen = [], [], {}
     for r in parse_routes(read(target.server), b.warn):
         req, res = b.io(r["command"], "request"), b.io(r["command"], "response")
         if req is None or res is None:
             continue
-        structure, params = b.params(req)
-        methods.append({"name": r["name"], "paramStructure": structure, "params": params,
-                        "result": {"name": "result", "schema": res}})
+        extra = {}
+        key = (r["macro"], r["command"], r["handler"])
+        if key in first_seen:
+            extra["x-alias-of"] = first_seen[key]
+        first_seen.setdefault(key, r["name"])
+        if r["cond"] and r["cond"].replace(" ", "") == "!m_restricted":
+            extra["x-hidden-in-restricted-mode"] = True
+        elif r["cond"]:
+            b.warn(f"{r['name']}: unknown route condition {r['cond']}")
+        if r["macro"] == "MAP_JON_RPC":
+            structure, params = b.params(req)
+            methods.append({"name": r["name"], "paramStructure": structure, "params": params,
+                            "result": {"name": "result", "schema": res}, **extra})
+        else:
+            endpoints.append({"path": r["name"], "httpMethod": "POST",
+                              "encoding": "json" if "JON" in r["macro"] else "epee-binary",
+                              "request": req, "response": res, **extra})
 
     doc = {
         "openrpc": "1.3.2",
@@ -445,6 +460,7 @@ def build(repo, target):
         "servers": [{"name": "json_rpc", "url": target.url}],
         "methods": methods,
         "components": {"schemas": dict(sorted(b.schemas.items()))},
+        "x-uri-endpoints": endpoints,
     }
     return doc, sorted(set(b.warnings))
 
