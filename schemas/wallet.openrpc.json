@@ -1,0 +1,6736 @@
+{
+  "openrpc": "1.3.2",
+  "info": {
+    "title": "monero-wallet-rpc",
+    "version": "1.38",
+    "description": "Generated from the Monero C++ source."
+  },
+  "servers": [
+    {
+      "name": "json_rpc",
+      "url": "http://127.0.0.1:18082/json_rpc"
+    }
+  ],
+  "methods": [
+    {
+      "name": "get_wallet_info",
+      "paramStructure": "by-name",
+      "params": [],
+      "result": {
+        "name": "result",
+        "schema": {
+          "$ref": "#/components/schemas/COMMAND_RPC_GET_WALLET_INFO.response_t"
+        }
+      }
+    },
+    {
+      "name": "get_balance",
+      "paramStructure": "by-name",
+      "params": [
+        {
+          "name": "account_index",
+          "schema": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "required": false
+        },
+        {
+          "name": "address_indices",
+          "schema": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "minimum": 0
+            }
+          },
+          "required": false
+        },
+        {
+          "name": "all_accounts",
+          "schema": {
+            "type": "boolean"
+          },
+          "required": false
+        },
+        {
+          "name": "strict",
+          "schema": {
+            "type": "boolean"
+          },
+          "required": false
+        }
+      ],
+      "result": {
+        "name": "result",
+        "schema": {
+          "$ref": "#/components/schemas/COMMAND_RPC_GET_BALANCE.response_t"
+        }
+      }
+    },
+    {
+      "name": "get_address",
+      "paramStructure": "by-name",
+      "params": [
+        {
+          "name": "account_index",
+          "schema": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "required": false
+        },
+        {
+          "name": "address_index",
+          "schema": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "minimum": 0
+            }
+          },
+          "required": false
+        },
+        {
+          "name": "all_accounts",
+          "schema": {
+            "type": "boolean"
+          },
+          "required": false
+        }
+      ],
+      "result": {
+        "name": "result",
+        "schema": {
+          "$ref": "#/components/schemas/COMMAND_RPC_GET_ADDRESS.response_t"
+        }
+      }
+    },
+    {
+      "name": "get_address_index",
+      "paramStructure": "by-name",
+      "params": [
+        {
+          "name": "address",
+          "schema": {
+            "type": "string"
+          },
+          "required": false
+        }
+      ],
+      "result": {
+        "name": "result",
+        "schema": {
+          "$ref": "#/components/schemas/COMMAND_RPC_GET_ADDRESS_INDEX.response_t"
+        }
+      }
+    },
+    {
+      "name": "set_subaddress_lookahead",
+      "paramStructure": "by-name",
+      "params": [
+        {
+          "name": "password",
+          "schema": {
+            "type": "string"
+          },
+          "required": false
+        },
+        {
+          "name": "major_idx",
+          "schema": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "required": false
+        },
+        {
+          "name": "minor_idx",
+          "schema": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "required": false
+        }
+      ],
+      "result": {
+        "name": "result",
+        "schema": {
+          "$ref": "#/components/schemas/COMMAND_RPC_SET_SUBADDR_LOOKAHEAD.response_t"
+        }
+      }
+    },
+    {
+      "name": "getbalance",
+      "paramStructure": "by-name",
+      "params": [
+        {
+          "name": "account_index",
+          "schema": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "required": false
+        },
+        {
+          "name": "address_indices",
+          "schema": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "minimum": 0
+            }
+          },
+          "required": false
+        },
+        {
+          "name": "all_accounts",
+          "schema": {
+            "type": "boolean"
+          },
+          "required": false
+        },
+        {
+          "name": "strict",
+          "schema": {
+            "type": "boolean"
+          },
+          "required": false
+        }
+      ],
+      "result": {
+        "name": "result",
+        "schema": {
+          "$ref": "#/components/schemas/COMMAND_RPC_GET_BALANCE.response_t"
+        }
+      }
+    },
+    {
+      "name": "getaddress",
+      "paramStructure": "by-name",
+      "params": [
+        {
+          "name": "account_index",
+          "schema": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "required": false
+        },
+        {
+          "name": "address_index",
+          "schema": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "minimum": 0
+            }
+          },
+          "required": false
+        },
+        {
+          "name": "all_accounts",
+          "schema": {
+            "type": "boolean"
+          },
+          "required": false
+        }
+      ],
+      "result": {
+        "name": "result",
+        "schema": {
+          "$ref": "#/components/schemas/COMMAND_RPC_GET_ADDRESS.response_t"
+        }
+      }
+    },
+    {
+      "name": "create_address",
+      "paramStructure": "by-name",
+      "params": [
+        {
+          "name": "account_index",
+          "schema": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "required": false
+        },
+        {
+          "name": "count",
+          "schema": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "required": false
+        },
+        {
+          "name": "label",
+          "schema": {
+            "type": "string"
+          },
+          "required": false
+        }
+      ],
+      "result": {
+        "name": "result",
+        "schema": {
+          "$ref": "#/components/schemas/COMMAND_RPC_CREATE_ADDRESS.response_t"
+        }
+      }
+    },
+    {
+      "name": "label_address",
+      "paramStructure": "by-name",
+      "params": [
+        {
+          "name": "index",
+          "schema": {
+            "$ref": "#/components/schemas/subaddress_index"
+          },
+          "required": false
+        },
+        {
+          "name": "label",
+          "schema": {
+            "type": "string"
+          },
+          "required": false
+        }
+      ],
+      "result": {
+        "name": "result",
+        "schema": {
+          "$ref": "#/components/schemas/COMMAND_RPC_LABEL_ADDRESS.response_t"
+        }
+      }
+    },
+    {
+      "name": "get_accounts",
+      "paramStructure": "by-name",
+      "params": [
+        {
+          "name": "tag",
+          "schema": {
+            "type": "string"
+          },
+          "required": false
+        },
+        {
+          "name": "strict_balances",
+          "schema": {
+            "type": "boolean"
+          },
+          "required": false
+        },
+        {
+          "name": "regexp",
+          "schema": {
+            "type": "boolean"
+          },
+          "required": false
+        }
+      ],
+      "result": {
+        "name": "result",
+        "schema": {
+          "$ref": "#/components/schemas/COMMAND_RPC_GET_ACCOUNTS.response_t"
+        }
+      }
+    },
+    {
+      "name": "create_account",
+      "paramStructure": "by-name",
+      "params": [
+        {
+          "name": "label",
+          "schema": {
+            "type": "string"
+          },
+          "required": false
+        }
+      ],
+      "result": {
+        "name": "result",
+        "schema": {
+          "$ref": "#/components/schemas/COMMAND_RPC_CREATE_ACCOUNT.response_t"
+        }
+      }
+    },
+    {
+      "name": "label_account",
+      "paramStructure": "by-name",
+      "params": [
+        {
+          "name": "account_index",
+          "schema": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "required": false
+        },
+        {
+          "name": "label",
+          "schema": {
+            "type": "string"
+          },
+          "required": false
+        }
+      ],
+      "result": {
+        "name": "result",
+        "schema": {
+          "$ref": "#/components/schemas/COMMAND_RPC_LABEL_ACCOUNT.response_t"
+        }
+      }
+    },
+    {
+      "name": "get_account_tags",
+      "paramStructure": "by-name",
+      "params": [],
+      "result": {
+        "name": "result",
+        "schema": {
+          "$ref": "#/components/schemas/COMMAND_RPC_GET_ACCOUNT_TAGS.response_t"
+        }
+      }
+    },
+    {
+      "name": "tag_accounts",
+      "paramStructure": "by-name",
+      "params": [
+        {
+          "name": "tag",
+          "schema": {
+            "type": "string"
+          },
+          "required": false
+        },
+        {
+          "name": "accounts",
+          "schema": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "minimum": 0
+            }
+          },
+          "required": false
+        }
+      ],
+      "result": {
+        "name": "result",
+        "schema": {
+          "$ref": "#/components/schemas/COMMAND_RPC_TAG_ACCOUNTS.response_t"
+        }
+      }
+    },
+    {
+      "name": "untag_accounts",
+      "paramStructure": "by-name",
+      "params": [
+        {
+          "name": "accounts",
+          "schema": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "minimum": 0
+            }
+          },
+          "required": false
+        }
+      ],
+      "result": {
+        "name": "result",
+        "schema": {
+          "$ref": "#/components/schemas/COMMAND_RPC_UNTAG_ACCOUNTS.response_t"
+        }
+      }
+    },
+    {
+      "name": "set_account_tag_description",
+      "paramStructure": "by-name",
+      "params": [
+        {
+          "name": "tag",
+          "schema": {
+            "type": "string"
+          },
+          "required": false
+        },
+        {
+          "name": "description",
+          "schema": {
+            "type": "string"
+          },
+          "required": false
+        }
+      ],
+      "result": {
+        "name": "result",
+        "schema": {
+          "$ref": "#/components/schemas/COMMAND_RPC_SET_ACCOUNT_TAG_DESCRIPTION.response_t"
+        }
+      }
+    },
+    {
+      "name": "get_height",
+      "paramStructure": "by-name",
+      "params": [],
+      "result": {
+        "name": "result",
+        "schema": {
+          "$ref": "#/components/schemas/tools.wallet_rpc.COMMAND_RPC_GET_HEIGHT.response_t"
+        }
+      }
+    },
+    {
+      "name": "getheight",
+      "paramStructure": "by-name",
+      "params": [],
+      "result": {
+        "name": "result",
+        "schema": {
+          "$ref": "#/components/schemas/tools.wallet_rpc.COMMAND_RPC_GET_HEIGHT.response_t"
+        }
+      }
+    },
+    {
+      "name": "freeze",
+      "paramStructure": "by-name",
+      "params": [
+        {
+          "name": "key_image",
+          "schema": {
+            "type": "string"
+          },
+          "required": false
+        }
+      ],
+      "result": {
+        "name": "result",
+        "schema": {
+          "$ref": "#/components/schemas/COMMAND_RPC_FREEZE.response_t"
+        }
+      }
+    },
+    {
+      "name": "thaw",
+      "paramStructure": "by-name",
+      "params": [
+        {
+          "name": "key_image",
+          "schema": {
+            "type": "string"
+          },
+          "required": false
+        }
+      ],
+      "result": {
+        "name": "result",
+        "schema": {
+          "$ref": "#/components/schemas/COMMAND_RPC_THAW.response_t"
+        }
+      }
+    },
+    {
+      "name": "frozen",
+      "paramStructure": "by-name",
+      "params": [
+        {
+          "name": "key_image",
+          "schema": {
+            "type": "string"
+          },
+          "required": false
+        }
+      ],
+      "result": {
+        "name": "result",
+        "schema": {
+          "$ref": "#/components/schemas/COMMAND_RPC_FROZEN.response_t"
+        }
+      }
+    },
+    {
+      "name": "transfer",
+      "paramStructure": "by-name",
+      "params": [
+        {
+          "name": "destinations",
+          "schema": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/transfer_destination"
+            }
+          },
+          "required": false
+        },
+        {
+          "name": "account_index",
+          "schema": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "required": false
+        },
+        {
+          "name": "subaddr_indices",
+          "schema": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "minimum": 0
+            }
+          },
+          "required": false
+        },
+        {
+          "name": "subtract_fee_from_outputs",
+          "schema": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "minimum": 0
+            }
+          },
+          "required": false
+        },
+        {
+          "name": "priority",
+          "schema": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "required": false
+        },
+        {
+          "name": "ring_size",
+          "schema": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "required": false
+        },
+        {
+          "name": "unlock_time",
+          "schema": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "required": false
+        },
+        {
+          "name": "payment_id",
+          "schema": {
+            "type": "string"
+          },
+          "required": false
+        },
+        {
+          "name": "get_tx_key",
+          "schema": {
+            "type": "boolean"
+          },
+          "required": false
+        },
+        {
+          "name": "do_not_relay",
+          "schema": {
+            "type": "boolean"
+          },
+          "required": false
+        },
+        {
+          "name": "get_tx_hex",
+          "schema": {
+            "type": "boolean"
+          },
+          "required": false
+        },
+        {
+          "name": "get_tx_metadata",
+          "schema": {
+            "type": "boolean"
+          },
+          "required": false
+        }
+      ],
+      "result": {
+        "name": "result",
+        "schema": {
+          "$ref": "#/components/schemas/single_transfer_response"
+        }
+      }
+    },
+    {
+      "name": "transfer_split",
+      "paramStructure": "by-name",
+      "params": [
+        {
+          "name": "destinations",
+          "schema": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/transfer_destination"
+            }
+          },
+          "required": false
+        },
+        {
+          "name": "account_index",
+          "schema": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "required": false
+        },
+        {
+          "name": "subaddr_indices",
+          "schema": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "minimum": 0
+            }
+          },
+          "required": false
+        },
+        {
+          "name": "priority",
+          "schema": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "required": false
+        },
+        {
+          "name": "ring_size",
+          "schema": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "required": false
+        },
+        {
+          "name": "unlock_time",
+          "schema": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "required": false
+        },
+        {
+          "name": "payment_id",
+          "schema": {
+            "type": "string"
+          },
+          "required": false
+        },
+        {
+          "name": "get_tx_keys",
+          "schema": {
+            "type": "boolean"
+          },
+          "required": false
+        },
+        {
+          "name": "do_not_relay",
+          "schema": {
+            "type": "boolean"
+          },
+          "required": false
+        },
+        {
+          "name": "get_tx_hex",
+          "schema": {
+            "type": "boolean"
+          },
+          "required": false
+        },
+        {
+          "name": "get_tx_metadata",
+          "schema": {
+            "type": "boolean"
+          },
+          "required": false
+        }
+      ],
+      "result": {
+        "name": "result",
+        "schema": {
+          "$ref": "#/components/schemas/split_transfer_response"
+        }
+      }
+    },
+    {
+      "name": "sign_transfer",
+      "paramStructure": "by-name",
+      "params": [
+        {
+          "name": "unsigned_txset",
+          "schema": {
+            "type": "string"
+          },
+          "required": false
+        },
+        {
+          "name": "export_raw",
+          "schema": {
+            "type": "boolean"
+          },
+          "required": false
+        },
+        {
+          "name": "get_tx_keys",
+          "schema": {
+            "type": "boolean"
+          },
+          "required": false
+        }
+      ],
+      "result": {
+        "name": "result",
+        "schema": {
+          "$ref": "#/components/schemas/COMMAND_RPC_SIGN_TRANSFER.response_t"
+        }
+      }
+    },
+    {
+      "name": "describe_transfer",
+      "paramStructure": "by-name",
+      "params": [
+        {
+          "name": "unsigned_txset",
+          "schema": {
+            "type": "string"
+          },
+          "required": false
+        },
+        {
+          "name": "multisig_txset",
+          "schema": {
+            "type": "string"
+          },
+          "required": false
+        }
+      ],
+      "result": {
+        "name": "result",
+        "schema": {
+          "$ref": "#/components/schemas/COMMAND_RPC_DESCRIBE_TRANSFER.response_t"
+        }
+      }
+    },
+    {
+      "name": "submit_transfer",
+      "paramStructure": "by-name",
+      "params": [
+        {
+          "name": "tx_data_hex",
+          "schema": {
+            "type": "string"
+          },
+          "required": false
+        }
+      ],
+      "result": {
+        "name": "result",
+        "schema": {
+          "$ref": "#/components/schemas/COMMAND_RPC_SUBMIT_TRANSFER.response_t"
+        }
+      }
+    },
+    {
+      "name": "sweep_dust",
+      "paramStructure": "by-name",
+      "params": [
+        {
+          "name": "get_tx_keys",
+          "schema": {
+            "type": "boolean"
+          },
+          "required": false
+        },
+        {
+          "name": "do_not_relay",
+          "schema": {
+            "type": "boolean"
+          },
+          "required": false
+        },
+        {
+          "name": "get_tx_hex",
+          "schema": {
+            "type": "boolean"
+          },
+          "required": false
+        },
+        {
+          "name": "get_tx_metadata",
+          "schema": {
+            "type": "boolean"
+          },
+          "required": false
+        }
+      ],
+      "result": {
+        "name": "result",
+        "schema": {
+          "$ref": "#/components/schemas/split_transfer_response"
+        }
+      }
+    },
+    {
+      "name": "sweep_unmixable",
+      "paramStructure": "by-name",
+      "params": [
+        {
+          "name": "get_tx_keys",
+          "schema": {
+            "type": "boolean"
+          },
+          "required": false
+        },
+        {
+          "name": "do_not_relay",
+          "schema": {
+            "type": "boolean"
+          },
+          "required": false
+        },
+        {
+          "name": "get_tx_hex",
+          "schema": {
+            "type": "boolean"
+          },
+          "required": false
+        },
+        {
+          "name": "get_tx_metadata",
+          "schema": {
+            "type": "boolean"
+          },
+          "required": false
+        }
+      ],
+      "result": {
+        "name": "result",
+        "schema": {
+          "$ref": "#/components/schemas/split_transfer_response"
+        }
+      }
+    },
+    {
+      "name": "sweep_all",
+      "paramStructure": "by-name",
+      "params": [
+        {
+          "name": "address",
+          "schema": {
+            "type": "string"
+          },
+          "required": false
+        },
+        {
+          "name": "account_index",
+          "schema": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "required": false
+        },
+        {
+          "name": "subaddr_indices",
+          "schema": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "minimum": 0
+            }
+          },
+          "required": false
+        },
+        {
+          "name": "subaddr_indices_all",
+          "schema": {
+            "type": "boolean"
+          },
+          "required": false
+        },
+        {
+          "name": "priority",
+          "schema": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "required": false
+        },
+        {
+          "name": "ring_size",
+          "schema": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "required": false
+        },
+        {
+          "name": "outputs",
+          "schema": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "required": false
+        },
+        {
+          "name": "unlock_time",
+          "schema": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "required": false
+        },
+        {
+          "name": "payment_id",
+          "schema": {
+            "type": "string"
+          },
+          "required": false
+        },
+        {
+          "name": "get_tx_keys",
+          "schema": {
+            "type": "boolean"
+          },
+          "required": false
+        },
+        {
+          "name": "below_amount",
+          "schema": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "required": false
+        },
+        {
+          "name": "do_not_relay",
+          "schema": {
+            "type": "boolean"
+          },
+          "required": false
+        },
+        {
+          "name": "get_tx_hex",
+          "schema": {
+            "type": "boolean"
+          },
+          "required": false
+        },
+        {
+          "name": "get_tx_metadata",
+          "schema": {
+            "type": "boolean"
+          },
+          "required": false
+        }
+      ],
+      "result": {
+        "name": "result",
+        "schema": {
+          "$ref": "#/components/schemas/split_transfer_response"
+        }
+      }
+    },
+    {
+      "name": "sweep_single",
+      "paramStructure": "by-name",
+      "params": [
+        {
+          "name": "address",
+          "schema": {
+            "type": "string"
+          },
+          "required": false
+        },
+        {
+          "name": "priority",
+          "schema": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "required": false
+        },
+        {
+          "name": "ring_size",
+          "schema": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "required": false
+        },
+        {
+          "name": "outputs",
+          "schema": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "required": false
+        },
+        {
+          "name": "unlock_time",
+          "schema": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "required": false
+        },
+        {
+          "name": "payment_id",
+          "schema": {
+            "type": "string"
+          },
+          "required": false
+        },
+        {
+          "name": "get_tx_key",
+          "schema": {
+            "type": "boolean"
+          },
+          "required": false
+        },
+        {
+          "name": "key_image",
+          "schema": {
+            "type": "string"
+          },
+          "required": false
+        },
+        {
+          "name": "do_not_relay",
+          "schema": {
+            "type": "boolean"
+          },
+          "required": false
+        },
+        {
+          "name": "get_tx_hex",
+          "schema": {
+            "type": "boolean"
+          },
+          "required": false
+        },
+        {
+          "name": "get_tx_metadata",
+          "schema": {
+            "type": "boolean"
+          },
+          "required": false
+        }
+      ],
+      "result": {
+        "name": "result",
+        "schema": {
+          "$ref": "#/components/schemas/single_transfer_response"
+        }
+      }
+    },
+    {
+      "name": "relay_tx",
+      "paramStructure": "by-name",
+      "params": [
+        {
+          "name": "hex",
+          "schema": {
+            "type": "string"
+          },
+          "required": false
+        }
+      ],
+      "result": {
+        "name": "result",
+        "schema": {
+          "$ref": "#/components/schemas/tools.wallet_rpc.COMMAND_RPC_RELAY_TX.response_t"
+        }
+      }
+    },
+    {
+      "name": "store",
+      "paramStructure": "by-name",
+      "params": [],
+      "result": {
+        "name": "result",
+        "schema": {
+          "$ref": "#/components/schemas/COMMAND_RPC_STORE.response_t"
+        }
+      }
+    },
+    {
+      "name": "get_payments",
+      "paramStructure": "by-name",
+      "params": [
+        {
+          "name": "payment_id",
+          "schema": {
+            "type": "string"
+          },
+          "required": false
+        }
+      ],
+      "result": {
+        "name": "result",
+        "schema": {
+          "$ref": "#/components/schemas/COMMAND_RPC_GET_PAYMENTS.response_t"
+        }
+      }
+    },
+    {
+      "name": "get_bulk_payments",
+      "paramStructure": "by-name",
+      "params": [
+        {
+          "name": "payment_ids",
+          "schema": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "required": false
+        },
+        {
+          "name": "min_block_height",
+          "schema": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "required": false
+        }
+      ],
+      "result": {
+        "name": "result",
+        "schema": {
+          "$ref": "#/components/schemas/COMMAND_RPC_GET_BULK_PAYMENTS.response_t"
+        }
+      }
+    },
+    {
+      "name": "incoming_transfers",
+      "paramStructure": "by-name",
+      "params": [
+        {
+          "name": "transfer_type",
+          "schema": {
+            "type": "string"
+          },
+          "required": false
+        },
+        {
+          "name": "account_index",
+          "schema": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "required": false
+        },
+        {
+          "name": "subaddr_indices",
+          "schema": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "minimum": 0
+            }
+          },
+          "required": false
+        },
+        {
+          "name": "all_accounts",
+          "schema": {
+            "type": "boolean"
+          },
+          "required": false
+        }
+      ],
+      "result": {
+        "name": "result",
+        "schema": {
+          "$ref": "#/components/schemas/COMMAND_RPC_INCOMING_TRANSFERS.response_t"
+        }
+      }
+    },
+    {
+      "name": "query_key",
+      "paramStructure": "by-name",
+      "params": [
+        {
+          "name": "key_type",
+          "schema": {
+            "type": "string"
+          },
+          "required": false
+        }
+      ],
+      "result": {
+        "name": "result",
+        "schema": {
+          "$ref": "#/components/schemas/COMMAND_RPC_QUERY_KEY.response_t"
+        }
+      }
+    },
+    {
+      "name": "make_integrated_address",
+      "paramStructure": "by-name",
+      "params": [
+        {
+          "name": "standard_address",
+          "schema": {
+            "type": "string"
+          },
+          "required": false
+        },
+        {
+          "name": "payment_id",
+          "schema": {
+            "type": "string"
+          },
+          "required": false
+        }
+      ],
+      "result": {
+        "name": "result",
+        "schema": {
+          "$ref": "#/components/schemas/COMMAND_RPC_MAKE_INTEGRATED_ADDRESS.response_t"
+        }
+      }
+    },
+    {
+      "name": "split_integrated_address",
+      "paramStructure": "by-name",
+      "params": [
+        {
+          "name": "integrated_address",
+          "schema": {
+            "type": "string"
+          },
+          "required": false
+        }
+      ],
+      "result": {
+        "name": "result",
+        "schema": {
+          "$ref": "#/components/schemas/COMMAND_RPC_SPLIT_INTEGRATED_ADDRESS.response_t"
+        }
+      }
+    },
+    {
+      "name": "stop_wallet",
+      "paramStructure": "by-name",
+      "params": [],
+      "result": {
+        "name": "result",
+        "schema": {
+          "$ref": "#/components/schemas/COMMAND_RPC_STOP_WALLET.response_t"
+        }
+      }
+    },
+    {
+      "name": "rescan_blockchain",
+      "paramStructure": "by-name",
+      "params": [
+        {
+          "name": "hard",
+          "schema": {
+            "type": "boolean"
+          },
+          "required": false
+        },
+        {
+          "name": "keep_key_images",
+          "schema": {
+            "type": "boolean"
+          },
+          "required": false
+        }
+      ],
+      "result": {
+        "name": "result",
+        "schema": {
+          "$ref": "#/components/schemas/COMMAND_RPC_RESCAN_BLOCKCHAIN.response_t"
+        }
+      }
+    },
+    {
+      "name": "set_tx_notes",
+      "paramStructure": "by-name",
+      "params": [
+        {
+          "name": "txids",
+          "schema": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "required": false
+        },
+        {
+          "name": "notes",
+          "schema": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "required": false
+        }
+      ],
+      "result": {
+        "name": "result",
+        "schema": {
+          "$ref": "#/components/schemas/COMMAND_RPC_SET_TX_NOTES.response_t"
+        }
+      }
+    },
+    {
+      "name": "get_tx_notes",
+      "paramStructure": "by-name",
+      "params": [
+        {
+          "name": "txids",
+          "schema": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "required": false
+        }
+      ],
+      "result": {
+        "name": "result",
+        "schema": {
+          "$ref": "#/components/schemas/COMMAND_RPC_GET_TX_NOTES.response_t"
+        }
+      }
+    },
+    {
+      "name": "set_attribute",
+      "paramStructure": "by-name",
+      "params": [
+        {
+          "name": "key",
+          "schema": {
+            "type": "string"
+          },
+          "required": false
+        },
+        {
+          "name": "value",
+          "schema": {
+            "type": "string"
+          },
+          "required": false
+        }
+      ],
+      "result": {
+        "name": "result",
+        "schema": {
+          "$ref": "#/components/schemas/COMMAND_RPC_SET_ATTRIBUTE.response_t"
+        }
+      }
+    },
+    {
+      "name": "get_attribute",
+      "paramStructure": "by-name",
+      "params": [
+        {
+          "name": "key",
+          "schema": {
+            "type": "string"
+          },
+          "required": false
+        }
+      ],
+      "result": {
+        "name": "result",
+        "schema": {
+          "$ref": "#/components/schemas/COMMAND_RPC_GET_ATTRIBUTE.response_t"
+        }
+      }
+    },
+    {
+      "name": "get_tx_key",
+      "paramStructure": "by-name",
+      "params": [
+        {
+          "name": "txid",
+          "schema": {
+            "type": "string"
+          },
+          "required": false
+        }
+      ],
+      "result": {
+        "name": "result",
+        "schema": {
+          "$ref": "#/components/schemas/COMMAND_RPC_GET_TX_KEY.response_t"
+        }
+      }
+    },
+    {
+      "name": "check_tx_key",
+      "paramStructure": "by-name",
+      "params": [
+        {
+          "name": "txid",
+          "schema": {
+            "type": "string"
+          },
+          "required": false
+        },
+        {
+          "name": "tx_key",
+          "schema": {
+            "type": "string"
+          },
+          "required": false
+        },
+        {
+          "name": "address",
+          "schema": {
+            "type": "string"
+          },
+          "required": false
+        }
+      ],
+      "result": {
+        "name": "result",
+        "schema": {
+          "$ref": "#/components/schemas/COMMAND_RPC_CHECK_TX_KEY.response_t"
+        }
+      }
+    },
+    {
+      "name": "get_tx_proof",
+      "paramStructure": "by-name",
+      "params": [
+        {
+          "name": "txid",
+          "schema": {
+            "type": "string"
+          },
+          "required": false
+        },
+        {
+          "name": "address",
+          "schema": {
+            "type": "string"
+          },
+          "required": false
+        },
+        {
+          "name": "message",
+          "schema": {
+            "type": "string"
+          },
+          "required": false
+        }
+      ],
+      "result": {
+        "name": "result",
+        "schema": {
+          "$ref": "#/components/schemas/COMMAND_RPC_GET_TX_PROOF.response_t"
+        }
+      }
+    },
+    {
+      "name": "check_tx_proof",
+      "paramStructure": "by-name",
+      "params": [
+        {
+          "name": "txid",
+          "schema": {
+            "type": "string"
+          },
+          "required": false
+        },
+        {
+          "name": "address",
+          "schema": {
+            "type": "string"
+          },
+          "required": false
+        },
+        {
+          "name": "message",
+          "schema": {
+            "type": "string"
+          },
+          "required": false
+        },
+        {
+          "name": "signature",
+          "schema": {
+            "type": "string"
+          },
+          "required": false
+        }
+      ],
+      "result": {
+        "name": "result",
+        "schema": {
+          "$ref": "#/components/schemas/COMMAND_RPC_CHECK_TX_PROOF.response_t"
+        }
+      }
+    },
+    {
+      "name": "get_spend_proof",
+      "paramStructure": "by-name",
+      "params": [
+        {
+          "name": "txid",
+          "schema": {
+            "type": "string"
+          },
+          "required": false
+        },
+        {
+          "name": "message",
+          "schema": {
+            "type": "string"
+          },
+          "required": false
+        }
+      ],
+      "result": {
+        "name": "result",
+        "schema": {
+          "$ref": "#/components/schemas/COMMAND_RPC_GET_SPEND_PROOF.response_t"
+        }
+      }
+    },
+    {
+      "name": "check_spend_proof",
+      "paramStructure": "by-name",
+      "params": [
+        {
+          "name": "txid",
+          "schema": {
+            "type": "string"
+          },
+          "required": false
+        },
+        {
+          "name": "message",
+          "schema": {
+            "type": "string"
+          },
+          "required": false
+        },
+        {
+          "name": "signature",
+          "schema": {
+            "type": "string"
+          },
+          "required": false
+        }
+      ],
+      "result": {
+        "name": "result",
+        "schema": {
+          "$ref": "#/components/schemas/COMMAND_RPC_CHECK_SPEND_PROOF.response_t"
+        }
+      }
+    },
+    {
+      "name": "get_reserve_proof",
+      "paramStructure": "by-name",
+      "params": [
+        {
+          "name": "all",
+          "schema": {
+            "type": "boolean"
+          },
+          "required": false
+        },
+        {
+          "name": "account_index",
+          "schema": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "required": false
+        },
+        {
+          "name": "amount",
+          "schema": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "required": false
+        },
+        {
+          "name": "message",
+          "schema": {
+            "type": "string"
+          },
+          "required": false
+        }
+      ],
+      "result": {
+        "name": "result",
+        "schema": {
+          "$ref": "#/components/schemas/COMMAND_RPC_GET_RESERVE_PROOF.response_t"
+        }
+      }
+    },
+    {
+      "name": "check_reserve_proof",
+      "paramStructure": "by-name",
+      "params": [
+        {
+          "name": "address",
+          "schema": {
+            "type": "string"
+          },
+          "required": false
+        },
+        {
+          "name": "message",
+          "schema": {
+            "type": "string"
+          },
+          "required": false
+        },
+        {
+          "name": "signature",
+          "schema": {
+            "type": "string"
+          },
+          "required": false
+        }
+      ],
+      "result": {
+        "name": "result",
+        "schema": {
+          "$ref": "#/components/schemas/COMMAND_RPC_CHECK_RESERVE_PROOF.response_t"
+        }
+      }
+    },
+    {
+      "name": "get_transfers",
+      "paramStructure": "by-name",
+      "params": [
+        {
+          "name": "in",
+          "schema": {
+            "type": "boolean"
+          },
+          "required": false
+        },
+        {
+          "name": "out",
+          "schema": {
+            "type": "boolean"
+          },
+          "required": false
+        },
+        {
+          "name": "pending",
+          "schema": {
+            "type": "boolean"
+          },
+          "required": false
+        },
+        {
+          "name": "failed",
+          "schema": {
+            "type": "boolean"
+          },
+          "required": false
+        },
+        {
+          "name": "pool",
+          "schema": {
+            "type": "boolean"
+          },
+          "required": false
+        },
+        {
+          "name": "refresh_pool",
+          "schema": {
+            "type": "boolean"
+          },
+          "required": false
+        },
+        {
+          "name": "filter_by_height",
+          "schema": {
+            "type": "boolean"
+          },
+          "required": false
+        },
+        {
+          "name": "min_height",
+          "schema": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "required": false
+        },
+        {
+          "name": "max_height",
+          "schema": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "required": false
+        },
+        {
+          "name": "account_index",
+          "schema": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "required": false
+        },
+        {
+          "name": "subaddr_indices",
+          "schema": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "minimum": 0
+            }
+          },
+          "required": false
+        },
+        {
+          "name": "all_accounts",
+          "schema": {
+            "type": "boolean"
+          },
+          "required": false
+        }
+      ],
+      "result": {
+        "name": "result",
+        "schema": {
+          "$ref": "#/components/schemas/COMMAND_RPC_GET_TRANSFERS.response_t"
+        }
+      }
+    },
+    {
+      "name": "get_transfer_by_txid",
+      "paramStructure": "by-name",
+      "params": [
+        {
+          "name": "txid",
+          "schema": {
+            "type": "string"
+          },
+          "required": false
+        },
+        {
+          "name": "account_index",
+          "schema": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "required": false
+        },
+        {
+          "name": "all_accounts",
+          "schema": {
+            "type": "boolean"
+          },
+          "required": false
+        }
+      ],
+      "result": {
+        "name": "result",
+        "schema": {
+          "$ref": "#/components/schemas/COMMAND_RPC_GET_TRANSFER_BY_TXID.response_t"
+        }
+      }
+    },
+    {
+      "name": "sign",
+      "paramStructure": "by-name",
+      "params": [
+        {
+          "name": "data",
+          "schema": {
+            "type": "string"
+          },
+          "required": false
+        },
+        {
+          "name": "account_index",
+          "schema": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "required": false
+        },
+        {
+          "name": "address_index",
+          "schema": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "required": false
+        },
+        {
+          "name": "signature_type",
+          "schema": {
+            "type": "string"
+          },
+          "required": false
+        }
+      ],
+      "result": {
+        "name": "result",
+        "schema": {
+          "$ref": "#/components/schemas/COMMAND_RPC_SIGN.response_t"
+        }
+      }
+    },
+    {
+      "name": "verify",
+      "paramStructure": "by-name",
+      "params": [
+        {
+          "name": "data",
+          "schema": {
+            "type": "string"
+          },
+          "required": false
+        },
+        {
+          "name": "address",
+          "schema": {
+            "type": "string"
+          },
+          "required": false
+        },
+        {
+          "name": "signature",
+          "schema": {
+            "type": "string"
+          },
+          "required": false
+        }
+      ],
+      "result": {
+        "name": "result",
+        "schema": {
+          "$ref": "#/components/schemas/COMMAND_RPC_VERIFY.response_t"
+        }
+      }
+    },
+    {
+      "name": "export_outputs",
+      "paramStructure": "by-name",
+      "params": [
+        {
+          "name": "all",
+          "schema": {
+            "type": "boolean"
+          },
+          "required": false
+        },
+        {
+          "name": "start",
+          "schema": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "required": false
+        },
+        {
+          "name": "count",
+          "schema": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "required": false
+        }
+      ],
+      "result": {
+        "name": "result",
+        "schema": {
+          "$ref": "#/components/schemas/COMMAND_RPC_EXPORT_OUTPUTS.response_t"
+        }
+      }
+    },
+    {
+      "name": "import_outputs",
+      "paramStructure": "by-name",
+      "params": [
+        {
+          "name": "outputs_data_hex",
+          "schema": {
+            "type": "string"
+          },
+          "required": false
+        }
+      ],
+      "result": {
+        "name": "result",
+        "schema": {
+          "$ref": "#/components/schemas/COMMAND_RPC_IMPORT_OUTPUTS.response_t"
+        }
+      }
+    },
+    {
+      "name": "export_key_images",
+      "paramStructure": "by-name",
+      "params": [
+        {
+          "name": "all",
+          "schema": {
+            "type": "boolean"
+          },
+          "required": false
+        }
+      ],
+      "result": {
+        "name": "result",
+        "schema": {
+          "$ref": "#/components/schemas/COMMAND_RPC_EXPORT_KEY_IMAGES.response_t"
+        }
+      }
+    },
+    {
+      "name": "import_key_images",
+      "paramStructure": "by-name",
+      "params": [
+        {
+          "name": "offset",
+          "schema": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "required": false
+        },
+        {
+          "name": "signed_key_images",
+          "schema": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/COMMAND_RPC_IMPORT_KEY_IMAGES.signed_key_image"
+            }
+          },
+          "required": false
+        }
+      ],
+      "result": {
+        "name": "result",
+        "schema": {
+          "$ref": "#/components/schemas/COMMAND_RPC_IMPORT_KEY_IMAGES.response_t"
+        }
+      }
+    },
+    {
+      "name": "make_uri",
+      "paramStructure": "by-name",
+      "params": [],
+      "result": {
+        "name": "result",
+        "schema": {
+          "$ref": "#/components/schemas/COMMAND_RPC_MAKE_URI.response_t"
+        }
+      }
+    },
+    {
+      "name": "parse_uri",
+      "paramStructure": "by-name",
+      "params": [
+        {
+          "name": "uri",
+          "schema": {
+            "type": "string"
+          },
+          "required": false
+        }
+      ],
+      "result": {
+        "name": "result",
+        "schema": {
+          "$ref": "#/components/schemas/COMMAND_RPC_PARSE_URI.response_t"
+        }
+      }
+    },
+    {
+      "name": "get_address_book",
+      "paramStructure": "by-name",
+      "params": [
+        {
+          "name": "entries",
+          "schema": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "minimum": 0
+            }
+          },
+          "required": false
+        }
+      ],
+      "result": {
+        "name": "result",
+        "schema": {
+          "$ref": "#/components/schemas/COMMAND_RPC_GET_ADDRESS_BOOK_ENTRY.response_t"
+        }
+      }
+    },
+    {
+      "name": "add_address_book",
+      "paramStructure": "by-name",
+      "params": [
+        {
+          "name": "address",
+          "schema": {
+            "type": "string"
+          },
+          "required": false
+        },
+        {
+          "name": "description",
+          "schema": {
+            "type": "string"
+          },
+          "required": false
+        }
+      ],
+      "result": {
+        "name": "result",
+        "schema": {
+          "$ref": "#/components/schemas/COMMAND_RPC_ADD_ADDRESS_BOOK_ENTRY.response_t"
+        }
+      }
+    },
+    {
+      "name": "edit_address_book",
+      "paramStructure": "by-name",
+      "params": [
+        {
+          "name": "index",
+          "schema": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "required": false
+        },
+        {
+          "name": "set_address",
+          "schema": {
+            "type": "boolean"
+          },
+          "required": false
+        },
+        {
+          "name": "address",
+          "schema": {
+            "type": "string"
+          },
+          "required": false
+        },
+        {
+          "name": "set_description",
+          "schema": {
+            "type": "boolean"
+          },
+          "required": false
+        },
+        {
+          "name": "description",
+          "schema": {
+            "type": "string"
+          },
+          "required": false
+        }
+      ],
+      "result": {
+        "name": "result",
+        "schema": {
+          "$ref": "#/components/schemas/COMMAND_RPC_EDIT_ADDRESS_BOOK_ENTRY.response_t"
+        }
+      }
+    },
+    {
+      "name": "delete_address_book",
+      "paramStructure": "by-name",
+      "params": [
+        {
+          "name": "index",
+          "schema": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "required": false
+        }
+      ],
+      "result": {
+        "name": "result",
+        "schema": {
+          "$ref": "#/components/schemas/COMMAND_RPC_DELETE_ADDRESS_BOOK_ENTRY.response_t"
+        }
+      }
+    },
+    {
+      "name": "refresh",
+      "paramStructure": "by-name",
+      "params": [
+        {
+          "name": "start_height",
+          "schema": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "required": false
+        }
+      ],
+      "result": {
+        "name": "result",
+        "schema": {
+          "$ref": "#/components/schemas/COMMAND_RPC_REFRESH.response_t"
+        }
+      }
+    },
+    {
+      "name": "auto_refresh",
+      "paramStructure": "by-name",
+      "params": [
+        {
+          "name": "enable",
+          "schema": {
+            "type": "boolean"
+          },
+          "required": false
+        },
+        {
+          "name": "period",
+          "schema": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "required": false
+        }
+      ],
+      "result": {
+        "name": "result",
+        "schema": {
+          "$ref": "#/components/schemas/COMMAND_RPC_AUTO_REFRESH.response_t"
+        }
+      }
+    },
+    {
+      "name": "scan_tx",
+      "paramStructure": "by-name",
+      "params": [
+        {
+          "name": "txids",
+          "schema": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "required": false
+        }
+      ],
+      "result": {
+        "name": "result",
+        "schema": {
+          "$ref": "#/components/schemas/COMMAND_RPC_SCAN_TX.response_t"
+        }
+      }
+    },
+    {
+      "name": "rescan_spent",
+      "paramStructure": "by-name",
+      "params": [],
+      "result": {
+        "name": "result",
+        "schema": {
+          "$ref": "#/components/schemas/COMMAND_RPC_RESCAN_SPENT.response_t"
+        }
+      }
+    },
+    {
+      "name": "start_mining",
+      "paramStructure": "by-name",
+      "params": [
+        {
+          "name": "threads_count",
+          "schema": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "required": false
+        },
+        {
+          "name": "do_background_mining",
+          "schema": {
+            "type": "boolean"
+          },
+          "required": false
+        },
+        {
+          "name": "ignore_battery",
+          "schema": {
+            "type": "boolean"
+          },
+          "required": false
+        }
+      ],
+      "result": {
+        "name": "result",
+        "schema": {
+          "$ref": "#/components/schemas/tools.wallet_rpc.COMMAND_RPC_START_MINING.response_t"
+        }
+      }
+    },
+    {
+      "name": "stop_mining",
+      "paramStructure": "by-name",
+      "params": [],
+      "result": {
+        "name": "result",
+        "schema": {
+          "$ref": "#/components/schemas/tools.wallet_rpc.COMMAND_RPC_STOP_MINING.response_t"
+        }
+      }
+    },
+    {
+      "name": "get_languages",
+      "paramStructure": "by-name",
+      "params": [
+        {
+          "name": "polyseed",
+          "schema": {
+            "type": "boolean"
+          },
+          "required": false
+        }
+      ],
+      "result": {
+        "name": "result",
+        "schema": {
+          "$ref": "#/components/schemas/COMMAND_RPC_GET_LANGUAGES.response_t"
+        }
+      }
+    },
+    {
+      "name": "create_wallet",
+      "paramStructure": "by-name",
+      "params": [
+        {
+          "name": "filename",
+          "schema": {
+            "type": "string"
+          },
+          "required": false
+        },
+        {
+          "name": "password",
+          "schema": {
+            "type": "string"
+          },
+          "required": false
+        },
+        {
+          "name": "language",
+          "schema": {
+            "type": "string"
+          },
+          "required": false
+        },
+        {
+          "name": "polyseed",
+          "schema": {
+            "type": "boolean"
+          },
+          "required": false
+        }
+      ],
+      "result": {
+        "name": "result",
+        "schema": {
+          "$ref": "#/components/schemas/COMMAND_RPC_CREATE_WALLET.response_t"
+        }
+      }
+    },
+    {
+      "name": "open_wallet",
+      "paramStructure": "by-name",
+      "params": [
+        {
+          "name": "filename",
+          "schema": {
+            "type": "string"
+          },
+          "required": false
+        },
+        {
+          "name": "password",
+          "schema": {
+            "type": "string"
+          },
+          "required": false
+        },
+        {
+          "name": "autosave_current",
+          "schema": {
+            "type": "boolean"
+          },
+          "required": false
+        }
+      ],
+      "result": {
+        "name": "result",
+        "schema": {
+          "$ref": "#/components/schemas/COMMAND_RPC_OPEN_WALLET.response_t"
+        }
+      }
+    },
+    {
+      "name": "wallet_exists",
+      "paramStructure": "by-name",
+      "params": [
+        {
+          "name": "filename",
+          "schema": {
+            "type": "string"
+          },
+          "required": false
+        }
+      ],
+      "result": {
+        "name": "result",
+        "schema": {
+          "$ref": "#/components/schemas/COMMAND_RPC_WALLET_EXISTS.response_t"
+        }
+      }
+    },
+    {
+      "name": "close_wallet",
+      "paramStructure": "by-name",
+      "params": [
+        {
+          "name": "autosave_current",
+          "schema": {
+            "type": "boolean"
+          },
+          "required": false
+        }
+      ],
+      "result": {
+        "name": "result",
+        "schema": {
+          "$ref": "#/components/schemas/COMMAND_RPC_CLOSE_WALLET.response_t"
+        }
+      }
+    },
+    {
+      "name": "change_wallet_password",
+      "paramStructure": "by-name",
+      "params": [
+        {
+          "name": "old_password",
+          "schema": {
+            "type": "string"
+          },
+          "required": false
+        },
+        {
+          "name": "new_password",
+          "schema": {
+            "type": "string"
+          },
+          "required": false
+        }
+      ],
+      "result": {
+        "name": "result",
+        "schema": {
+          "$ref": "#/components/schemas/COMMAND_RPC_CHANGE_WALLET_PASSWORD.response_t"
+        }
+      }
+    },
+    {
+      "name": "generate_from_keys",
+      "paramStructure": "by-name",
+      "params": [
+        {
+          "name": "restore_height",
+          "schema": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "required": false
+        },
+        {
+          "name": "filename",
+          "schema": {
+            "type": "string"
+          },
+          "required": false
+        },
+        {
+          "name": "address",
+          "schema": {
+            "type": "string"
+          },
+          "required": false
+        },
+        {
+          "name": "spendkey",
+          "schema": {
+            "type": "string"
+          },
+          "required": false
+        },
+        {
+          "name": "viewkey",
+          "schema": {
+            "type": "string"
+          },
+          "required": false
+        },
+        {
+          "name": "password",
+          "schema": {
+            "type": "string"
+          },
+          "required": false
+        },
+        {
+          "name": "autosave_current",
+          "schema": {
+            "type": "boolean"
+          },
+          "required": false
+        },
+        {
+          "name": "language",
+          "schema": {
+            "type": "string"
+          },
+          "required": false
+        }
+      ],
+      "result": {
+        "name": "result",
+        "schema": {
+          "$ref": "#/components/schemas/COMMAND_RPC_GENERATE_FROM_KEYS.response"
+        }
+      }
+    },
+    {
+      "name": "restore_deterministic_wallet",
+      "paramStructure": "by-name",
+      "params": [
+        {
+          "name": "restore_height",
+          "schema": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "required": false
+        },
+        {
+          "name": "filename",
+          "schema": {
+            "type": "string"
+          },
+          "required": false
+        },
+        {
+          "name": "seed",
+          "schema": {
+            "type": "string"
+          },
+          "required": false
+        },
+        {
+          "name": "seed_offset",
+          "schema": {
+            "type": "string"
+          },
+          "required": false
+        },
+        {
+          "name": "password",
+          "schema": {
+            "type": "string"
+          },
+          "required": false
+        },
+        {
+          "name": "language",
+          "schema": {
+            "type": "string"
+          },
+          "required": false
+        },
+        {
+          "name": "autosave_current",
+          "schema": {
+            "type": "boolean"
+          },
+          "required": false
+        },
+        {
+          "name": "enable_multisig_experimental",
+          "schema": {
+            "type": "boolean"
+          },
+          "required": false
+        }
+      ],
+      "result": {
+        "name": "result",
+        "schema": {
+          "$ref": "#/components/schemas/COMMAND_RPC_RESTORE_DETERMINISTIC_WALLET.response_t"
+        }
+      }
+    },
+    {
+      "name": "is_multisig",
+      "paramStructure": "by-name",
+      "params": [],
+      "result": {
+        "name": "result",
+        "schema": {
+          "$ref": "#/components/schemas/COMMAND_RPC_IS_MULTISIG.response_t"
+        }
+      }
+    },
+    {
+      "name": "prepare_multisig",
+      "paramStructure": "by-name",
+      "params": [
+        {
+          "name": "enable_multisig_experimental",
+          "schema": {
+            "type": "boolean"
+          },
+          "required": false
+        }
+      ],
+      "result": {
+        "name": "result",
+        "schema": {
+          "$ref": "#/components/schemas/COMMAND_RPC_PREPARE_MULTISIG.response_t"
+        }
+      }
+    },
+    {
+      "name": "make_multisig",
+      "paramStructure": "by-name",
+      "params": [
+        {
+          "name": "multisig_info",
+          "schema": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "required": false
+        },
+        {
+          "name": "threshold",
+          "schema": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "required": false
+        },
+        {
+          "name": "password",
+          "schema": {
+            "type": "string"
+          },
+          "required": false
+        }
+      ],
+      "result": {
+        "name": "result",
+        "schema": {
+          "$ref": "#/components/schemas/COMMAND_RPC_MAKE_MULTISIG.response_t"
+        }
+      }
+    },
+    {
+      "name": "export_multisig_info",
+      "paramStructure": "by-name",
+      "params": [],
+      "result": {
+        "name": "result",
+        "schema": {
+          "$ref": "#/components/schemas/COMMAND_RPC_EXPORT_MULTISIG.response_t"
+        }
+      }
+    },
+    {
+      "name": "import_multisig_info",
+      "paramStructure": "by-name",
+      "params": [
+        {
+          "name": "info",
+          "schema": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "required": false
+        },
+        {
+          "name": "refresh_after_import",
+          "schema": {
+            "type": "boolean"
+          },
+          "required": false
+        }
+      ],
+      "result": {
+        "name": "result",
+        "schema": {
+          "$ref": "#/components/schemas/COMMAND_RPC_IMPORT_MULTISIG.response_t"
+        }
+      }
+    },
+    {
+      "name": "exchange_multisig_keys",
+      "paramStructure": "by-name",
+      "params": [
+        {
+          "name": "password",
+          "schema": {
+            "type": "string"
+          },
+          "required": false
+        },
+        {
+          "name": "multisig_info",
+          "schema": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "required": false
+        },
+        {
+          "name": "force_update_use_with_caution",
+          "schema": {
+            "type": "boolean"
+          },
+          "required": false
+        }
+      ],
+      "result": {
+        "name": "result",
+        "schema": {
+          "$ref": "#/components/schemas/COMMAND_RPC_EXCHANGE_MULTISIG_KEYS.response_t"
+        }
+      }
+    },
+    {
+      "name": "get_multisig_key_exchange_booster",
+      "paramStructure": "by-name",
+      "params": [
+        {
+          "name": "password",
+          "schema": {
+            "type": "string"
+          },
+          "required": false
+        },
+        {
+          "name": "multisig_info",
+          "schema": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "required": false
+        },
+        {
+          "name": "threshold",
+          "schema": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "required": false
+        },
+        {
+          "name": "num_signers",
+          "schema": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "required": false
+        }
+      ],
+      "result": {
+        "name": "result",
+        "schema": {
+          "$ref": "#/components/schemas/COMMAND_RPC_GET_MULTISIG_KEY_EXCHANGE_BOOSTER.response_t"
+        }
+      }
+    },
+    {
+      "name": "sign_multisig",
+      "paramStructure": "by-name",
+      "params": [
+        {
+          "name": "tx_data_hex",
+          "schema": {
+            "type": "string"
+          },
+          "required": false
+        }
+      ],
+      "result": {
+        "name": "result",
+        "schema": {
+          "$ref": "#/components/schemas/COMMAND_RPC_SIGN_MULTISIG.response_t"
+        }
+      }
+    },
+    {
+      "name": "submit_multisig",
+      "paramStructure": "by-name",
+      "params": [
+        {
+          "name": "tx_data_hex",
+          "schema": {
+            "type": "string"
+          },
+          "required": false
+        }
+      ],
+      "result": {
+        "name": "result",
+        "schema": {
+          "$ref": "#/components/schemas/COMMAND_RPC_SUBMIT_MULTISIG.response_t"
+        }
+      }
+    },
+    {
+      "name": "validate_address",
+      "paramStructure": "by-name",
+      "params": [
+        {
+          "name": "address",
+          "schema": {
+            "type": "string"
+          },
+          "required": false
+        },
+        {
+          "name": "any_net_type",
+          "schema": {
+            "type": "boolean"
+          },
+          "required": false
+        },
+        {
+          "name": "allow_openalias",
+          "schema": {
+            "type": "boolean"
+          },
+          "required": false
+        }
+      ],
+      "result": {
+        "name": "result",
+        "schema": {
+          "$ref": "#/components/schemas/COMMAND_RPC_VALIDATE_ADDRESS.response_t"
+        }
+      }
+    },
+    {
+      "name": "set_daemon",
+      "paramStructure": "by-name",
+      "params": [
+        {
+          "name": "address",
+          "schema": {
+            "type": "string"
+          },
+          "required": false
+        },
+        {
+          "name": "username",
+          "schema": {
+            "type": "string"
+          },
+          "required": false
+        },
+        {
+          "name": "password",
+          "schema": {
+            "type": "string"
+          },
+          "required": false
+        },
+        {
+          "name": "trusted",
+          "schema": {
+            "type": "boolean"
+          },
+          "required": false
+        },
+        {
+          "name": "ssl_support",
+          "schema": {
+            "type": "string"
+          },
+          "required": false
+        },
+        {
+          "name": "ssl_private_key_path",
+          "schema": {
+            "type": "string"
+          },
+          "required": false
+        },
+        {
+          "name": "ssl_certificate_path",
+          "schema": {
+            "type": "string"
+          },
+          "required": false
+        },
+        {
+          "name": "ssl_ca_file",
+          "schema": {
+            "type": "string"
+          },
+          "required": false
+        },
+        {
+          "name": "ssl_allowed_fingerprints",
+          "schema": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "required": false
+        },
+        {
+          "name": "ssl_allow_any_cert",
+          "schema": {
+            "type": "boolean"
+          },
+          "required": false
+        },
+        {
+          "name": "proxy",
+          "schema": {
+            "type": "string"
+          },
+          "required": false
+        }
+      ],
+      "result": {
+        "name": "result",
+        "schema": {
+          "$ref": "#/components/schemas/COMMAND_RPC_SET_DAEMON.response_t"
+        }
+      }
+    },
+    {
+      "name": "set_log_level",
+      "paramStructure": "by-name",
+      "params": [
+        {
+          "name": "level",
+          "schema": {
+            "type": "integer"
+          },
+          "required": false
+        }
+      ],
+      "result": {
+        "name": "result",
+        "schema": {
+          "$ref": "#/components/schemas/tools.wallet_rpc.COMMAND_RPC_SET_LOG_LEVEL.response_t"
+        }
+      }
+    },
+    {
+      "name": "set_log_categories",
+      "paramStructure": "by-name",
+      "params": [
+        {
+          "name": "categories",
+          "schema": {
+            "type": "string"
+          },
+          "required": false
+        }
+      ],
+      "result": {
+        "name": "result",
+        "schema": {
+          "$ref": "#/components/schemas/tools.wallet_rpc.COMMAND_RPC_SET_LOG_CATEGORIES.response_t"
+        }
+      }
+    },
+    {
+      "name": "estimate_tx_size_and_weight",
+      "paramStructure": "by-name",
+      "params": [
+        {
+          "name": "n_inputs",
+          "schema": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "required": false
+        },
+        {
+          "name": "n_outputs",
+          "schema": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "required": false
+        },
+        {
+          "name": "ring_size",
+          "schema": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "required": false
+        },
+        {
+          "name": "rct",
+          "schema": {
+            "type": "boolean"
+          },
+          "required": false
+        }
+      ],
+      "result": {
+        "name": "result",
+        "schema": {
+          "$ref": "#/components/schemas/COMMAND_RPC_ESTIMATE_TX_SIZE_AND_WEIGHT.response_t"
+        }
+      }
+    },
+    {
+      "name": "get_default_fee_priority",
+      "paramStructure": "by-name",
+      "params": [],
+      "result": {
+        "name": "result",
+        "schema": {
+          "$ref": "#/components/schemas/COMMAND_RPC_GET_DEFAULT_FEE_PRIORITY.response_t"
+        }
+      }
+    },
+    {
+      "name": "get_version",
+      "paramStructure": "by-name",
+      "params": [],
+      "result": {
+        "name": "result",
+        "schema": {
+          "$ref": "#/components/schemas/tools.wallet_rpc.COMMAND_RPC_GET_VERSION.response_t"
+        }
+      }
+    },
+    {
+      "name": "setup_background_sync",
+      "paramStructure": "by-name",
+      "params": [
+        {
+          "name": "background_sync_type",
+          "schema": {
+            "type": "string"
+          },
+          "required": false
+        },
+        {
+          "name": "wallet_password",
+          "schema": {
+            "type": "string"
+          },
+          "required": false
+        },
+        {
+          "name": "background_cache_password",
+          "schema": {
+            "type": "string"
+          },
+          "required": false
+        }
+      ],
+      "result": {
+        "name": "result",
+        "schema": {
+          "$ref": "#/components/schemas/COMMAND_RPC_SETUP_BACKGROUND_SYNC.response_t"
+        }
+      }
+    },
+    {
+      "name": "start_background_sync",
+      "paramStructure": "by-name",
+      "params": [],
+      "result": {
+        "name": "result",
+        "schema": {
+          "$ref": "#/components/schemas/COMMAND_RPC_START_BACKGROUND_SYNC.response_t"
+        }
+      }
+    },
+    {
+      "name": "stop_background_sync",
+      "paramStructure": "by-name",
+      "params": [
+        {
+          "name": "wallet_password",
+          "schema": {
+            "type": "string"
+          },
+          "required": false
+        },
+        {
+          "name": "seed",
+          "schema": {
+            "type": "string"
+          },
+          "required": false
+        },
+        {
+          "name": "seed_offset",
+          "schema": {
+            "type": "string"
+          },
+          "required": false
+        }
+      ],
+      "result": {
+        "name": "result",
+        "schema": {
+          "$ref": "#/components/schemas/COMMAND_RPC_STOP_BACKGROUND_SYNC.response_t"
+        }
+      }
+    }
+  ],
+  "components": {
+    "schemas": {
+      "COMMAND_RPC_ADD_ADDRESS_BOOK_ENTRY.request_t": {
+        "type": "object",
+        "properties": {
+          "address": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "address",
+          "description"
+        ]
+      },
+      "COMMAND_RPC_ADD_ADDRESS_BOOK_ENTRY.response_t": {
+        "type": "object",
+        "properties": {
+          "index": {
+            "type": "integer",
+            "minimum": 0
+          }
+        },
+        "required": [
+          "index"
+        ]
+      },
+      "COMMAND_RPC_AUTO_REFRESH.request_t": {
+        "type": "object",
+        "properties": {
+          "enable": {
+            "type": "boolean"
+          },
+          "period": {
+            "type": "integer",
+            "minimum": 0
+          }
+        }
+      },
+      "COMMAND_RPC_AUTO_REFRESH.response_t": {
+        "type": "object",
+        "properties": {}
+      },
+      "COMMAND_RPC_CHANGE_WALLET_PASSWORD.request_t": {
+        "type": "object",
+        "properties": {
+          "old_password": {
+            "type": "string"
+          },
+          "new_password": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "old_password",
+          "new_password"
+        ]
+      },
+      "COMMAND_RPC_CHANGE_WALLET_PASSWORD.response_t": {
+        "type": "object",
+        "properties": {}
+      },
+      "COMMAND_RPC_CHECK_RESERVE_PROOF.request_t": {
+        "type": "object",
+        "properties": {
+          "address": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          },
+          "signature": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "address",
+          "message",
+          "signature"
+        ]
+      },
+      "COMMAND_RPC_CHECK_RESERVE_PROOF.response_t": {
+        "type": "object",
+        "properties": {
+          "good": {
+            "type": "boolean"
+          },
+          "total": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "spent": {
+            "type": "integer",
+            "minimum": 0
+          }
+        },
+        "required": [
+          "good",
+          "total",
+          "spent"
+        ]
+      },
+      "COMMAND_RPC_CHECK_SPEND_PROOF.request_t": {
+        "type": "object",
+        "properties": {
+          "txid": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          },
+          "signature": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "txid",
+          "message",
+          "signature"
+        ]
+      },
+      "COMMAND_RPC_CHECK_SPEND_PROOF.response_t": {
+        "type": "object",
+        "properties": {
+          "good": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "good"
+        ]
+      },
+      "COMMAND_RPC_CHECK_TX_KEY.request_t": {
+        "type": "object",
+        "properties": {
+          "txid": {
+            "type": "string"
+          },
+          "tx_key": {
+            "type": "string"
+          },
+          "address": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "txid",
+          "tx_key",
+          "address"
+        ]
+      },
+      "COMMAND_RPC_CHECK_TX_KEY.response_t": {
+        "type": "object",
+        "properties": {
+          "received": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "in_pool": {
+            "type": "boolean"
+          },
+          "confirmations": {
+            "type": "integer",
+            "minimum": 0
+          }
+        },
+        "required": [
+          "received",
+          "in_pool",
+          "confirmations"
+        ]
+      },
+      "COMMAND_RPC_CHECK_TX_PROOF.request_t": {
+        "type": "object",
+        "properties": {
+          "txid": {
+            "type": "string"
+          },
+          "address": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          },
+          "signature": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "txid",
+          "address",
+          "message",
+          "signature"
+        ]
+      },
+      "COMMAND_RPC_CHECK_TX_PROOF.response_t": {
+        "type": "object",
+        "properties": {
+          "good": {
+            "type": "boolean"
+          },
+          "received": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "in_pool": {
+            "type": "boolean"
+          },
+          "confirmations": {
+            "type": "integer",
+            "minimum": 0
+          }
+        },
+        "required": [
+          "good",
+          "received",
+          "in_pool",
+          "confirmations"
+        ]
+      },
+      "COMMAND_RPC_CLOSE_WALLET.request_t": {
+        "type": "object",
+        "properties": {
+          "autosave_current": {
+            "type": "boolean"
+          }
+        }
+      },
+      "COMMAND_RPC_CLOSE_WALLET.response_t": {
+        "type": "object",
+        "properties": {}
+      },
+      "COMMAND_RPC_CREATE_ACCOUNT.request_t": {
+        "type": "object",
+        "properties": {
+          "label": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "label"
+        ]
+      },
+      "COMMAND_RPC_CREATE_ACCOUNT.response_t": {
+        "type": "object",
+        "properties": {
+          "account_index": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "address": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "account_index",
+          "address"
+        ]
+      },
+      "COMMAND_RPC_CREATE_ADDRESS.request_t": {
+        "type": "object",
+        "properties": {
+          "account_index": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "count": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "label": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "account_index",
+          "label"
+        ]
+      },
+      "COMMAND_RPC_CREATE_ADDRESS.response_t": {
+        "type": "object",
+        "properties": {
+          "address": {
+            "type": "string"
+          },
+          "address_index": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "addresses": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "address_indices": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "minimum": 0
+            }
+          }
+        },
+        "required": [
+          "address",
+          "address_index",
+          "addresses",
+          "address_indices"
+        ]
+      },
+      "COMMAND_RPC_CREATE_WALLET.request_t": {
+        "type": "object",
+        "properties": {
+          "filename": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          },
+          "language": {
+            "type": "string"
+          },
+          "polyseed": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "filename",
+          "password",
+          "language"
+        ]
+      },
+      "COMMAND_RPC_CREATE_WALLET.response_t": {
+        "type": "object",
+        "properties": {}
+      },
+      "COMMAND_RPC_DELETE_ADDRESS_BOOK_ENTRY.request_t": {
+        "type": "object",
+        "properties": {
+          "index": {
+            "type": "integer",
+            "minimum": 0
+          }
+        },
+        "required": [
+          "index"
+        ]
+      },
+      "COMMAND_RPC_DELETE_ADDRESS_BOOK_ENTRY.response_t": {
+        "type": "object",
+        "properties": {}
+      },
+      "COMMAND_RPC_DESCRIBE_TRANSFER.recipient": {
+        "type": "object",
+        "properties": {
+          "address": {
+            "type": "string"
+          },
+          "amount": {
+            "type": "integer",
+            "minimum": 0
+          }
+        },
+        "required": [
+          "address",
+          "amount"
+        ]
+      },
+      "COMMAND_RPC_DESCRIBE_TRANSFER.request_t": {
+        "type": "object",
+        "properties": {
+          "unsigned_txset": {
+            "type": "string"
+          },
+          "multisig_txset": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "unsigned_txset",
+          "multisig_txset"
+        ]
+      },
+      "COMMAND_RPC_DESCRIBE_TRANSFER.response_t": {
+        "type": "object",
+        "properties": {
+          "summary": {
+            "$ref": "#/components/schemas/COMMAND_RPC_DESCRIBE_TRANSFER.txset_summary"
+          },
+          "desc": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/COMMAND_RPC_DESCRIBE_TRANSFER.transfer_description"
+            }
+          }
+        },
+        "required": [
+          "summary",
+          "desc"
+        ]
+      },
+      "COMMAND_RPC_DESCRIBE_TRANSFER.source": {
+        "type": "object",
+        "properties": {
+          "amount": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "global_index": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "rct": {
+            "type": "boolean"
+          },
+          "pubkey": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "amount",
+          "global_index",
+          "rct",
+          "pubkey"
+        ]
+      },
+      "COMMAND_RPC_DESCRIBE_TRANSFER.transfer_description": {
+        "type": "object",
+        "properties": {
+          "amount_in": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "amount_out": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "ring_size": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "unlock_time": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "sources": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/COMMAND_RPC_DESCRIBE_TRANSFER.source"
+            }
+          },
+          "recipients": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/COMMAND_RPC_DESCRIBE_TRANSFER.recipient"
+            }
+          },
+          "payment_id": {
+            "type": "string"
+          },
+          "change_amount": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "change_address": {
+            "type": "string"
+          },
+          "fee": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "weight": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "dummy_outputs": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "extra": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "amount_in",
+          "amount_out",
+          "ring_size",
+          "unlock_time",
+          "sources",
+          "recipients",
+          "payment_id",
+          "change_amount",
+          "change_address",
+          "fee",
+          "dummy_outputs",
+          "extra"
+        ]
+      },
+      "COMMAND_RPC_DESCRIBE_TRANSFER.txset_summary": {
+        "type": "object",
+        "properties": {
+          "amount_in": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "amount_out": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "recipients": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/COMMAND_RPC_DESCRIBE_TRANSFER.recipient"
+            }
+          },
+          "change_amount": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "change_address": {
+            "type": "string"
+          },
+          "fee": {
+            "type": "integer",
+            "minimum": 0
+          }
+        },
+        "required": [
+          "amount_in",
+          "amount_out",
+          "recipients",
+          "change_amount",
+          "change_address",
+          "fee"
+        ]
+      },
+      "COMMAND_RPC_EDIT_ADDRESS_BOOK_ENTRY.request_t": {
+        "type": "object",
+        "properties": {
+          "index": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "set_address": {
+            "type": "boolean"
+          },
+          "address": {
+            "type": "string"
+          },
+          "set_description": {
+            "type": "boolean"
+          },
+          "description": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "index",
+          "set_address",
+          "address",
+          "set_description",
+          "description"
+        ]
+      },
+      "COMMAND_RPC_EDIT_ADDRESS_BOOK_ENTRY.response_t": {
+        "type": "object",
+        "properties": {}
+      },
+      "COMMAND_RPC_ESTIMATE_TX_SIZE_AND_WEIGHT.request_t": {
+        "type": "object",
+        "properties": {
+          "n_inputs": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "n_outputs": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "ring_size": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "rct": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "n_inputs",
+          "n_outputs"
+        ]
+      },
+      "COMMAND_RPC_ESTIMATE_TX_SIZE_AND_WEIGHT.response_t": {
+        "type": "object",
+        "properties": {
+          "size": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "weight": {
+            "type": "integer",
+            "minimum": 0
+          }
+        },
+        "required": [
+          "size",
+          "weight"
+        ]
+      },
+      "COMMAND_RPC_EXCHANGE_MULTISIG_KEYS.request_t": {
+        "type": "object",
+        "properties": {
+          "password": {
+            "type": "string"
+          },
+          "multisig_info": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "force_update_use_with_caution": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "password",
+          "multisig_info"
+        ]
+      },
+      "COMMAND_RPC_EXCHANGE_MULTISIG_KEYS.response_t": {
+        "type": "object",
+        "properties": {
+          "address": {
+            "type": "string"
+          },
+          "multisig_info": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "address",
+          "multisig_info"
+        ]
+      },
+      "COMMAND_RPC_EXPORT_KEY_IMAGES.request_t": {
+        "type": "object",
+        "properties": {
+          "all": {
+            "type": "boolean"
+          }
+        }
+      },
+      "COMMAND_RPC_EXPORT_KEY_IMAGES.response_t": {
+        "type": "object",
+        "properties": {
+          "offset": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "signed_key_images": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/COMMAND_RPC_EXPORT_KEY_IMAGES.signed_key_image"
+            }
+          }
+        },
+        "required": [
+          "offset",
+          "signed_key_images"
+        ]
+      },
+      "COMMAND_RPC_EXPORT_KEY_IMAGES.signed_key_image": {
+        "type": "object",
+        "properties": {
+          "key_image": {
+            "type": "string"
+          },
+          "signature": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "key_image",
+          "signature"
+        ]
+      },
+      "COMMAND_RPC_EXPORT_MULTISIG.request_t": {
+        "type": "object",
+        "properties": {}
+      },
+      "COMMAND_RPC_EXPORT_MULTISIG.response_t": {
+        "type": "object",
+        "properties": {
+          "info": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "info"
+        ]
+      },
+      "COMMAND_RPC_EXPORT_OUTPUTS.request_t": {
+        "type": "object",
+        "properties": {
+          "all": {
+            "type": "boolean"
+          },
+          "start": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "count": {
+            "type": "integer",
+            "minimum": 0
+          }
+        },
+        "required": [
+          "all"
+        ]
+      },
+      "COMMAND_RPC_EXPORT_OUTPUTS.response_t": {
+        "type": "object",
+        "properties": {
+          "outputs_data_hex": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "outputs_data_hex"
+        ]
+      },
+      "COMMAND_RPC_FREEZE.request_t": {
+        "type": "object",
+        "properties": {
+          "key_image": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "key_image"
+        ]
+      },
+      "COMMAND_RPC_FREEZE.response_t": {
+        "type": "object",
+        "properties": {}
+      },
+      "COMMAND_RPC_FROZEN.request_t": {
+        "type": "object",
+        "properties": {
+          "key_image": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "key_image"
+        ]
+      },
+      "COMMAND_RPC_FROZEN.response_t": {
+        "type": "object",
+        "properties": {
+          "frozen": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "frozen"
+        ]
+      },
+      "COMMAND_RPC_GENERATE_FROM_KEYS.request": {
+        "type": "object",
+        "properties": {
+          "restore_height": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "filename": {
+            "type": "string"
+          },
+          "address": {
+            "type": "string"
+          },
+          "spendkey": {
+            "type": "string"
+          },
+          "viewkey": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          },
+          "autosave_current": {
+            "type": "boolean"
+          },
+          "language": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "filename",
+          "address",
+          "spendkey",
+          "viewkey",
+          "password",
+          "language"
+        ]
+      },
+      "COMMAND_RPC_GENERATE_FROM_KEYS.response": {
+        "type": "object",
+        "properties": {
+          "address": {
+            "type": "string"
+          },
+          "info": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "address",
+          "info"
+        ]
+      },
+      "COMMAND_RPC_GET_ACCOUNTS.request_t": {
+        "type": "object",
+        "properties": {
+          "tag": {
+            "type": "string"
+          },
+          "strict_balances": {
+            "type": "boolean"
+          },
+          "regexp": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "tag"
+        ]
+      },
+      "COMMAND_RPC_GET_ACCOUNTS.response_t": {
+        "type": "object",
+        "properties": {
+          "total_balance": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "total_unlocked_balance": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "subaddress_accounts": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/COMMAND_RPC_GET_ACCOUNTS.subaddress_account_info"
+            }
+          }
+        },
+        "required": [
+          "total_balance",
+          "total_unlocked_balance",
+          "subaddress_accounts"
+        ]
+      },
+      "COMMAND_RPC_GET_ACCOUNTS.subaddress_account_info": {
+        "type": "object",
+        "properties": {
+          "account_index": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "base_address": {
+            "type": "string"
+          },
+          "balance": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "unlocked_balance": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "label": {
+            "type": "string"
+          },
+          "tag": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "account_index",
+          "base_address",
+          "balance",
+          "unlocked_balance",
+          "label",
+          "tag"
+        ]
+      },
+      "COMMAND_RPC_GET_ACCOUNT_TAGS.account_tag_info": {
+        "type": "object",
+        "properties": {
+          "tag": {
+            "type": "string"
+          },
+          "label": {
+            "type": "string"
+          },
+          "accounts": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "minimum": 0
+            }
+          }
+        },
+        "required": [
+          "tag",
+          "label",
+          "accounts"
+        ]
+      },
+      "COMMAND_RPC_GET_ACCOUNT_TAGS.request_t": {
+        "type": "object",
+        "properties": {}
+      },
+      "COMMAND_RPC_GET_ACCOUNT_TAGS.response_t": {
+        "type": "object",
+        "properties": {
+          "account_tags": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/COMMAND_RPC_GET_ACCOUNT_TAGS.account_tag_info"
+            }
+          }
+        },
+        "required": [
+          "account_tags"
+        ]
+      },
+      "COMMAND_RPC_GET_ADDRESS.address_info": {
+        "type": "object",
+        "properties": {
+          "address": {
+            "type": "string"
+          },
+          "label": {
+            "type": "string"
+          },
+          "account_index": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "address_index": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "used": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "address",
+          "label",
+          "account_index",
+          "address_index",
+          "used"
+        ]
+      },
+      "COMMAND_RPC_GET_ADDRESS.request_t": {
+        "type": "object",
+        "properties": {
+          "account_index": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "address_index": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "minimum": 0
+            }
+          },
+          "all_accounts": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "account_index",
+          "address_index"
+        ]
+      },
+      "COMMAND_RPC_GET_ADDRESS.response_t": {
+        "type": "object",
+        "properties": {
+          "address": {
+            "type": "string"
+          },
+          "addresses": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/COMMAND_RPC_GET_ADDRESS.address_info"
+            }
+          }
+        },
+        "required": [
+          "address",
+          "addresses"
+        ]
+      },
+      "COMMAND_RPC_GET_ADDRESS_BOOK_ENTRY.entry": {
+        "type": "object",
+        "properties": {
+          "index": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "address": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "index",
+          "address",
+          "description"
+        ]
+      },
+      "COMMAND_RPC_GET_ADDRESS_BOOK_ENTRY.request_t": {
+        "type": "object",
+        "properties": {
+          "entries": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "minimum": 0
+            }
+          }
+        },
+        "required": [
+          "entries"
+        ]
+      },
+      "COMMAND_RPC_GET_ADDRESS_BOOK_ENTRY.response_t": {
+        "type": "object",
+        "properties": {
+          "entries": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/COMMAND_RPC_GET_ADDRESS_BOOK_ENTRY.entry"
+            }
+          }
+        },
+        "required": [
+          "entries"
+        ]
+      },
+      "COMMAND_RPC_GET_ADDRESS_INDEX.request_t": {
+        "type": "object",
+        "properties": {
+          "address": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "address"
+        ]
+      },
+      "COMMAND_RPC_GET_ADDRESS_INDEX.response_t": {
+        "type": "object",
+        "properties": {
+          "index": {
+            "$ref": "#/components/schemas/subaddress_index"
+          }
+        },
+        "required": [
+          "index"
+        ]
+      },
+      "COMMAND_RPC_GET_ATTRIBUTE.request_t": {
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "key"
+        ]
+      },
+      "COMMAND_RPC_GET_ATTRIBUTE.response_t": {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "value"
+        ]
+      },
+      "COMMAND_RPC_GET_BALANCE.per_subaddress_info": {
+        "type": "object",
+        "properties": {
+          "account_index": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "address_index": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "address": {
+            "type": "string"
+          },
+          "balance": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "unlocked_balance": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "label": {
+            "type": "string"
+          },
+          "num_unspent_outputs": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "blocks_to_unlock": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "time_to_unlock": {
+            "type": "integer",
+            "minimum": 0
+          }
+        },
+        "required": [
+          "account_index",
+          "address_index",
+          "address",
+          "balance",
+          "unlocked_balance",
+          "label",
+          "num_unspent_outputs",
+          "blocks_to_unlock",
+          "time_to_unlock"
+        ]
+      },
+      "COMMAND_RPC_GET_BALANCE.request_t": {
+        "type": "object",
+        "properties": {
+          "account_index": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "address_indices": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "minimum": 0
+            }
+          },
+          "all_accounts": {
+            "type": "boolean"
+          },
+          "strict": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "account_index",
+          "address_indices"
+        ]
+      },
+      "COMMAND_RPC_GET_BALANCE.response_t": {
+        "type": "object",
+        "properties": {
+          "balance": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "unlocked_balance": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "multisig_import_needed": {
+            "type": "boolean"
+          },
+          "per_subaddress": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/COMMAND_RPC_GET_BALANCE.per_subaddress_info"
+            }
+          },
+          "blocks_to_unlock": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "time_to_unlock": {
+            "type": "integer",
+            "minimum": 0
+          }
+        },
+        "required": [
+          "balance",
+          "unlocked_balance",
+          "multisig_import_needed",
+          "per_subaddress",
+          "blocks_to_unlock",
+          "time_to_unlock"
+        ]
+      },
+      "COMMAND_RPC_GET_BULK_PAYMENTS.request_t": {
+        "type": "object",
+        "properties": {
+          "payment_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "min_block_height": {
+            "type": "integer",
+            "minimum": 0
+          }
+        },
+        "required": [
+          "payment_ids",
+          "min_block_height"
+        ]
+      },
+      "COMMAND_RPC_GET_BULK_PAYMENTS.response_t": {
+        "type": "object",
+        "properties": {
+          "payments": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/payment_details"
+            }
+          }
+        },
+        "required": [
+          "payments"
+        ]
+      },
+      "COMMAND_RPC_GET_DEFAULT_FEE_PRIORITY.request_t": {
+        "type": "object",
+        "properties": {}
+      },
+      "COMMAND_RPC_GET_DEFAULT_FEE_PRIORITY.response_t": {
+        "type": "object",
+        "properties": {
+          "priority": {
+            "type": "integer",
+            "minimum": 0
+          }
+        },
+        "required": [
+          "priority"
+        ]
+      },
+      "COMMAND_RPC_GET_LANGUAGES.request_t": {
+        "type": "object",
+        "properties": {
+          "polyseed": {
+            "type": "boolean"
+          }
+        }
+      },
+      "COMMAND_RPC_GET_LANGUAGES.response_t": {
+        "type": "object",
+        "properties": {
+          "languages": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "languages_local": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "required": [
+          "languages",
+          "languages_local"
+        ]
+      },
+      "COMMAND_RPC_GET_MULTISIG_KEY_EXCHANGE_BOOSTER.request_t": {
+        "type": "object",
+        "properties": {
+          "password": {
+            "type": "string"
+          },
+          "multisig_info": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "threshold": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "num_signers": {
+            "type": "integer",
+            "minimum": 0
+          }
+        },
+        "required": [
+          "password",
+          "multisig_info",
+          "threshold",
+          "num_signers"
+        ]
+      },
+      "COMMAND_RPC_GET_MULTISIG_KEY_EXCHANGE_BOOSTER.response_t": {
+        "type": "object",
+        "properties": {
+          "multisig_info": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "multisig_info"
+        ]
+      },
+      "COMMAND_RPC_GET_PAYMENTS.request_t": {
+        "type": "object",
+        "properties": {
+          "payment_id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "payment_id"
+        ]
+      },
+      "COMMAND_RPC_GET_PAYMENTS.response_t": {
+        "type": "object",
+        "properties": {
+          "payments": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/payment_details"
+            }
+          }
+        },
+        "required": [
+          "payments"
+        ]
+      },
+      "COMMAND_RPC_GET_RESERVE_PROOF.request_t": {
+        "type": "object",
+        "properties": {
+          "all": {
+            "type": "boolean"
+          },
+          "account_index": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "amount": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "message": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "all",
+          "account_index",
+          "amount",
+          "message"
+        ]
+      },
+      "COMMAND_RPC_GET_RESERVE_PROOF.response_t": {
+        "type": "object",
+        "properties": {
+          "signature": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "signature"
+        ]
+      },
+      "COMMAND_RPC_GET_SPEND_PROOF.request_t": {
+        "type": "object",
+        "properties": {
+          "txid": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "txid",
+          "message"
+        ]
+      },
+      "COMMAND_RPC_GET_SPEND_PROOF.response_t": {
+        "type": "object",
+        "properties": {
+          "signature": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "signature"
+        ]
+      },
+      "COMMAND_RPC_GET_TRANSFERS.request_t": {
+        "type": "object",
+        "properties": {
+          "in": {
+            "type": "boolean"
+          },
+          "out": {
+            "type": "boolean"
+          },
+          "pending": {
+            "type": "boolean"
+          },
+          "failed": {
+            "type": "boolean"
+          },
+          "pool": {
+            "type": "boolean"
+          },
+          "refresh_pool": {
+            "type": "boolean"
+          },
+          "filter_by_height": {
+            "type": "boolean"
+          },
+          "min_height": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "max_height": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "account_index": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "subaddr_indices": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "minimum": 0
+            }
+          },
+          "all_accounts": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "in",
+          "out",
+          "pending",
+          "failed",
+          "pool",
+          "filter_by_height",
+          "min_height",
+          "account_index",
+          "subaddr_indices"
+        ]
+      },
+      "COMMAND_RPC_GET_TRANSFERS.response_t": {
+        "type": "object",
+        "properties": {
+          "in": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/transfer_entry"
+            }
+          },
+          "out": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/transfer_entry"
+            }
+          },
+          "pending": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/transfer_entry"
+            }
+          },
+          "failed": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/transfer_entry"
+            }
+          },
+          "pool": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/transfer_entry"
+            }
+          }
+        },
+        "required": [
+          "in",
+          "out",
+          "pending",
+          "failed",
+          "pool"
+        ]
+      },
+      "COMMAND_RPC_GET_TRANSFER_BY_TXID.request_t": {
+        "type": "object",
+        "properties": {
+          "txid": {
+            "type": "string"
+          },
+          "account_index": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "all_accounts": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "txid"
+        ]
+      },
+      "COMMAND_RPC_GET_TRANSFER_BY_TXID.response_t": {
+        "type": "object",
+        "properties": {
+          "transfer": {
+            "$ref": "#/components/schemas/transfer_entry"
+          },
+          "transfers": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/transfer_entry"
+            }
+          }
+        },
+        "required": [
+          "transfer",
+          "transfers"
+        ]
+      },
+      "COMMAND_RPC_GET_TX_KEY.request_t": {
+        "type": "object",
+        "properties": {
+          "txid": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "txid"
+        ]
+      },
+      "COMMAND_RPC_GET_TX_KEY.response_t": {
+        "type": "object",
+        "properties": {
+          "tx_key": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "tx_key"
+        ]
+      },
+      "COMMAND_RPC_GET_TX_NOTES.request_t": {
+        "type": "object",
+        "properties": {
+          "txids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "required": [
+          "txids"
+        ]
+      },
+      "COMMAND_RPC_GET_TX_NOTES.response_t": {
+        "type": "object",
+        "properties": {
+          "notes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "required": [
+          "notes"
+        ]
+      },
+      "COMMAND_RPC_GET_TX_PROOF.request_t": {
+        "type": "object",
+        "properties": {
+          "txid": {
+            "type": "string"
+          },
+          "address": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "txid",
+          "address",
+          "message"
+        ]
+      },
+      "COMMAND_RPC_GET_TX_PROOF.response_t": {
+        "type": "object",
+        "properties": {
+          "signature": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "signature"
+        ]
+      },
+      "COMMAND_RPC_GET_WALLET_INFO.request_t": {
+        "type": "object",
+        "properties": {}
+      },
+      "COMMAND_RPC_GET_WALLET_INFO.response_t": {
+        "type": "object",
+        "properties": {
+          "filename": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "address": {
+            "type": "string"
+          },
+          "wallet_type": {
+            "type": "string"
+          },
+          "seed_type": {
+            "type": "string"
+          },
+          "network_type": {
+            "type": "string"
+          },
+          "daemon_address": {
+            "type": "string"
+          },
+          "daemon_proxy": {
+            "type": "string"
+          },
+          "wallet_block_height": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "daemon_block_height": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "daemon_rpc_version": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "daemon_ssl": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "filename",
+          "description",
+          "address",
+          "wallet_type",
+          "seed_type",
+          "network_type",
+          "daemon_address",
+          "daemon_proxy",
+          "wallet_block_height",
+          "daemon_block_height",
+          "daemon_rpc_version",
+          "daemon_ssl"
+        ]
+      },
+      "COMMAND_RPC_IMPORT_KEY_IMAGES.request_t": {
+        "type": "object",
+        "properties": {
+          "offset": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "signed_key_images": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/COMMAND_RPC_IMPORT_KEY_IMAGES.signed_key_image"
+            }
+          }
+        },
+        "required": [
+          "signed_key_images"
+        ]
+      },
+      "COMMAND_RPC_IMPORT_KEY_IMAGES.response_t": {
+        "type": "object",
+        "properties": {
+          "height": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "spent": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "unspent": {
+            "type": "integer",
+            "minimum": 0
+          }
+        },
+        "required": [
+          "height",
+          "spent",
+          "unspent"
+        ]
+      },
+      "COMMAND_RPC_IMPORT_KEY_IMAGES.signed_key_image": {
+        "type": "object",
+        "properties": {
+          "key_image": {
+            "type": "string"
+          },
+          "signature": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "key_image",
+          "signature"
+        ]
+      },
+      "COMMAND_RPC_IMPORT_MULTISIG.request_t": {
+        "type": "object",
+        "properties": {
+          "info": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "refresh_after_import": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "info"
+        ]
+      },
+      "COMMAND_RPC_IMPORT_MULTISIG.response_t": {
+        "type": "object",
+        "properties": {
+          "n_outputs": {
+            "type": "integer",
+            "minimum": 0
+          }
+        },
+        "required": [
+          "n_outputs"
+        ]
+      },
+      "COMMAND_RPC_IMPORT_OUTPUTS.request_t": {
+        "type": "object",
+        "properties": {
+          "outputs_data_hex": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "outputs_data_hex"
+        ]
+      },
+      "COMMAND_RPC_IMPORT_OUTPUTS.response_t": {
+        "type": "object",
+        "properties": {
+          "num_imported": {
+            "type": "integer",
+            "minimum": 0
+          }
+        },
+        "required": [
+          "num_imported"
+        ]
+      },
+      "COMMAND_RPC_INCOMING_TRANSFERS.request_t": {
+        "type": "object",
+        "properties": {
+          "transfer_type": {
+            "type": "string"
+          },
+          "account_index": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "subaddr_indices": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "minimum": 0
+            }
+          },
+          "all_accounts": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "transfer_type",
+          "account_index",
+          "subaddr_indices"
+        ]
+      },
+      "COMMAND_RPC_INCOMING_TRANSFERS.response_t": {
+        "type": "object",
+        "properties": {
+          "transfers": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/transfer_details"
+            }
+          }
+        },
+        "required": [
+          "transfers"
+        ]
+      },
+      "COMMAND_RPC_IS_MULTISIG.request_t": {
+        "type": "object",
+        "properties": {}
+      },
+      "COMMAND_RPC_IS_MULTISIG.response_t": {
+        "type": "object",
+        "properties": {
+          "multisig": {
+            "type": "boolean"
+          },
+          "kex_is_done": {
+            "type": "boolean"
+          },
+          "ready": {
+            "type": "boolean"
+          },
+          "threshold": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "total": {
+            "type": "integer",
+            "minimum": 0
+          }
+        },
+        "required": [
+          "multisig",
+          "kex_is_done",
+          "ready",
+          "threshold",
+          "total"
+        ]
+      },
+      "COMMAND_RPC_LABEL_ACCOUNT.request_t": {
+        "type": "object",
+        "properties": {
+          "account_index": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "label": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "account_index",
+          "label"
+        ]
+      },
+      "COMMAND_RPC_LABEL_ACCOUNT.response_t": {
+        "type": "object",
+        "properties": {}
+      },
+      "COMMAND_RPC_LABEL_ADDRESS.request_t": {
+        "type": "object",
+        "properties": {
+          "index": {
+            "$ref": "#/components/schemas/subaddress_index"
+          },
+          "label": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "index",
+          "label"
+        ]
+      },
+      "COMMAND_RPC_LABEL_ADDRESS.response_t": {
+        "type": "object",
+        "properties": {}
+      },
+      "COMMAND_RPC_MAKE_INTEGRATED_ADDRESS.request_t": {
+        "type": "object",
+        "properties": {
+          "standard_address": {
+            "type": "string"
+          },
+          "payment_id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "standard_address",
+          "payment_id"
+        ]
+      },
+      "COMMAND_RPC_MAKE_INTEGRATED_ADDRESS.response_t": {
+        "type": "object",
+        "properties": {
+          "integrated_address": {
+            "type": "string"
+          },
+          "payment_id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "integrated_address",
+          "payment_id"
+        ]
+      },
+      "COMMAND_RPC_MAKE_MULTISIG.request_t": {
+        "type": "object",
+        "properties": {
+          "multisig_info": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "threshold": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "password": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "multisig_info",
+          "threshold",
+          "password"
+        ]
+      },
+      "COMMAND_RPC_MAKE_MULTISIG.response_t": {
+        "type": "object",
+        "properties": {
+          "address": {
+            "type": "string"
+          },
+          "multisig_info": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "address",
+          "multisig_info"
+        ]
+      },
+      "COMMAND_RPC_MAKE_URI.request_t": {
+        "type": "object",
+        "properties": {}
+      },
+      "COMMAND_RPC_MAKE_URI.response_t": {
+        "type": "object",
+        "properties": {
+          "uri": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "uri"
+        ]
+      },
+      "COMMAND_RPC_OPEN_WALLET.request_t": {
+        "type": "object",
+        "properties": {
+          "filename": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          },
+          "autosave_current": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "filename",
+          "password"
+        ]
+      },
+      "COMMAND_RPC_OPEN_WALLET.response_t": {
+        "type": "object",
+        "properties": {}
+      },
+      "COMMAND_RPC_PARSE_URI.request_t": {
+        "type": "object",
+        "properties": {
+          "uri": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "uri"
+        ]
+      },
+      "COMMAND_RPC_PARSE_URI.response_t": {
+        "type": "object",
+        "properties": {
+          "uri": {
+            "$ref": "#/components/schemas/uri_spec"
+          },
+          "unknown_parameters": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "required": [
+          "uri",
+          "unknown_parameters"
+        ]
+      },
+      "COMMAND_RPC_PREPARE_MULTISIG.request_t": {
+        "type": "object",
+        "properties": {
+          "enable_multisig_experimental": {
+            "type": "boolean"
+          }
+        }
+      },
+      "COMMAND_RPC_PREPARE_MULTISIG.response_t": {
+        "type": "object",
+        "properties": {
+          "multisig_info": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "multisig_info"
+        ]
+      },
+      "COMMAND_RPC_QUERY_KEY.request_t": {
+        "type": "object",
+        "properties": {
+          "key_type": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "key_type"
+        ]
+      },
+      "COMMAND_RPC_QUERY_KEY.response_t": {
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": "string"
+          },
+          "polyseed_birthday": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "polyseed_is_encrypted": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "key",
+          "polyseed_birthday",
+          "polyseed_is_encrypted"
+        ]
+      },
+      "COMMAND_RPC_REFRESH.request_t": {
+        "type": "object",
+        "properties": {
+          "start_height": {
+            "type": "integer",
+            "minimum": 0
+          }
+        }
+      },
+      "COMMAND_RPC_REFRESH.response_t": {
+        "type": "object",
+        "properties": {
+          "blocks_fetched": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "received_money": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "blocks_fetched",
+          "received_money"
+        ]
+      },
+      "COMMAND_RPC_RESCAN_BLOCKCHAIN.request_t": {
+        "type": "object",
+        "properties": {
+          "hard": {
+            "type": "boolean"
+          },
+          "keep_key_images": {
+            "type": "boolean"
+          }
+        }
+      },
+      "COMMAND_RPC_RESCAN_BLOCKCHAIN.response_t": {
+        "type": "object",
+        "properties": {}
+      },
+      "COMMAND_RPC_RESCAN_SPENT.request_t": {
+        "type": "object",
+        "properties": {}
+      },
+      "COMMAND_RPC_RESCAN_SPENT.response_t": {
+        "type": "object",
+        "properties": {}
+      },
+      "COMMAND_RPC_RESTORE_DETERMINISTIC_WALLET.request_t": {
+        "type": "object",
+        "properties": {
+          "restore_height": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "filename": {
+            "type": "string"
+          },
+          "seed": {
+            "type": "string"
+          },
+          "seed_offset": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          },
+          "language": {
+            "type": "string"
+          },
+          "autosave_current": {
+            "type": "boolean"
+          },
+          "enable_multisig_experimental": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "filename",
+          "seed",
+          "seed_offset",
+          "password",
+          "language"
+        ]
+      },
+      "COMMAND_RPC_RESTORE_DETERMINISTIC_WALLET.response_t": {
+        "type": "object",
+        "properties": {
+          "address": {
+            "type": "string"
+          },
+          "seed": {
+            "type": "string"
+          },
+          "info": {
+            "type": "string"
+          },
+          "was_deprecated": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "address",
+          "seed",
+          "info",
+          "was_deprecated"
+        ]
+      },
+      "COMMAND_RPC_SCAN_TX.request_t": {
+        "type": "object",
+        "properties": {
+          "txids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "required": [
+          "txids"
+        ]
+      },
+      "COMMAND_RPC_SCAN_TX.response_t": {
+        "type": "object",
+        "properties": {}
+      },
+      "COMMAND_RPC_SETUP_BACKGROUND_SYNC.request_t": {
+        "type": "object",
+        "properties": {
+          "background_sync_type": {
+            "type": "string"
+          },
+          "wallet_password": {
+            "type": "string"
+          },
+          "background_cache_password": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "background_sync_type",
+          "wallet_password"
+        ]
+      },
+      "COMMAND_RPC_SETUP_BACKGROUND_SYNC.response_t": {
+        "type": "object",
+        "properties": {}
+      },
+      "COMMAND_RPC_SET_ACCOUNT_TAG_DESCRIPTION.request_t": {
+        "type": "object",
+        "properties": {
+          "tag": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "tag",
+          "description"
+        ]
+      },
+      "COMMAND_RPC_SET_ACCOUNT_TAG_DESCRIPTION.response_t": {
+        "type": "object",
+        "properties": {}
+      },
+      "COMMAND_RPC_SET_ATTRIBUTE.request_t": {
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": "string"
+          },
+          "value": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "key",
+          "value"
+        ]
+      },
+      "COMMAND_RPC_SET_ATTRIBUTE.response_t": {
+        "type": "object",
+        "properties": {}
+      },
+      "COMMAND_RPC_SET_DAEMON.request_t": {
+        "type": "object",
+        "properties": {
+          "address": {
+            "type": "string"
+          },
+          "username": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          },
+          "trusted": {
+            "type": "boolean"
+          },
+          "ssl_support": {
+            "type": "string"
+          },
+          "ssl_private_key_path": {
+            "type": "string"
+          },
+          "ssl_certificate_path": {
+            "type": "string"
+          },
+          "ssl_ca_file": {
+            "type": "string"
+          },
+          "ssl_allowed_fingerprints": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "ssl_allow_any_cert": {
+            "type": "boolean"
+          },
+          "proxy": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "address",
+          "username",
+          "password",
+          "ssl_private_key_path",
+          "ssl_certificate_path",
+          "ssl_ca_file",
+          "ssl_allowed_fingerprints"
+        ]
+      },
+      "COMMAND_RPC_SET_DAEMON.response_t": {
+        "type": "object",
+        "properties": {}
+      },
+      "COMMAND_RPC_SET_SUBADDR_LOOKAHEAD.request_t": {
+        "type": "object",
+        "properties": {
+          "password": {
+            "type": "string"
+          },
+          "major_idx": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "minor_idx": {
+            "type": "integer",
+            "minimum": 0
+          }
+        },
+        "required": [
+          "password",
+          "major_idx",
+          "minor_idx"
+        ]
+      },
+      "COMMAND_RPC_SET_SUBADDR_LOOKAHEAD.response_t": {
+        "type": "object",
+        "properties": {}
+      },
+      "COMMAND_RPC_SET_TX_NOTES.request_t": {
+        "type": "object",
+        "properties": {
+          "txids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "notes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "required": [
+          "txids",
+          "notes"
+        ]
+      },
+      "COMMAND_RPC_SET_TX_NOTES.response_t": {
+        "type": "object",
+        "properties": {}
+      },
+      "COMMAND_RPC_SIGN.request_t": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "string"
+          },
+          "account_index": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "address_index": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "signature_type": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "data",
+          "signature_type"
+        ]
+      },
+      "COMMAND_RPC_SIGN.response_t": {
+        "type": "object",
+        "properties": {
+          "signature": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "signature"
+        ]
+      },
+      "COMMAND_RPC_SIGN_MULTISIG.request_t": {
+        "type": "object",
+        "properties": {
+          "tx_data_hex": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "tx_data_hex"
+        ]
+      },
+      "COMMAND_RPC_SIGN_MULTISIG.response_t": {
+        "type": "object",
+        "properties": {
+          "tx_data_hex": {
+            "type": "string"
+          },
+          "tx_hash_list": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "required": [
+          "tx_data_hex",
+          "tx_hash_list"
+        ]
+      },
+      "COMMAND_RPC_SIGN_TRANSFER.request_t": {
+        "type": "object",
+        "properties": {
+          "unsigned_txset": {
+            "type": "string"
+          },
+          "export_raw": {
+            "type": "boolean"
+          },
+          "get_tx_keys": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "unsigned_txset"
+        ]
+      },
+      "COMMAND_RPC_SIGN_TRANSFER.response_t": {
+        "type": "object",
+        "properties": {
+          "signed_txset": {
+            "type": "string"
+          },
+          "tx_hash_list": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "tx_raw_list": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "tx_key_list": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "required": [
+          "signed_txset",
+          "tx_hash_list",
+          "tx_raw_list",
+          "tx_key_list"
+        ]
+      },
+      "COMMAND_RPC_SPLIT_INTEGRATED_ADDRESS.request_t": {
+        "type": "object",
+        "properties": {
+          "integrated_address": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "integrated_address"
+        ]
+      },
+      "COMMAND_RPC_SPLIT_INTEGRATED_ADDRESS.response_t": {
+        "type": "object",
+        "properties": {
+          "standard_address": {
+            "type": "string"
+          },
+          "payment_id": {
+            "type": "string"
+          },
+          "is_subaddress": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "standard_address",
+          "payment_id",
+          "is_subaddress"
+        ]
+      },
+      "COMMAND_RPC_START_BACKGROUND_SYNC.request_t": {
+        "type": "object",
+        "properties": {}
+      },
+      "COMMAND_RPC_START_BACKGROUND_SYNC.response_t": {
+        "type": "object",
+        "properties": {}
+      },
+      "COMMAND_RPC_STOP_BACKGROUND_SYNC.request_t": {
+        "type": "object",
+        "properties": {
+          "wallet_password": {
+            "type": "string"
+          },
+          "seed": {
+            "type": "string"
+          },
+          "seed_offset": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "wallet_password"
+        ]
+      },
+      "COMMAND_RPC_STOP_BACKGROUND_SYNC.response_t": {
+        "type": "object",
+        "properties": {}
+      },
+      "COMMAND_RPC_STOP_WALLET.request_t": {
+        "type": "object",
+        "properties": {}
+      },
+      "COMMAND_RPC_STOP_WALLET.response_t": {
+        "type": "object",
+        "properties": {}
+      },
+      "COMMAND_RPC_STORE.request_t": {
+        "type": "object",
+        "properties": {}
+      },
+      "COMMAND_RPC_STORE.response_t": {
+        "type": "object",
+        "properties": {}
+      },
+      "COMMAND_RPC_SUBMIT_MULTISIG.request_t": {
+        "type": "object",
+        "properties": {
+          "tx_data_hex": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "tx_data_hex"
+        ]
+      },
+      "COMMAND_RPC_SUBMIT_MULTISIG.response_t": {
+        "type": "object",
+        "properties": {
+          "tx_hash_list": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "required": [
+          "tx_hash_list"
+        ]
+      },
+      "COMMAND_RPC_SUBMIT_TRANSFER.request_t": {
+        "type": "object",
+        "properties": {
+          "tx_data_hex": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "tx_data_hex"
+        ]
+      },
+      "COMMAND_RPC_SUBMIT_TRANSFER.response_t": {
+        "type": "object",
+        "properties": {
+          "tx_hash_list": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "required": [
+          "tx_hash_list"
+        ]
+      },
+      "COMMAND_RPC_SWEEP_ALL.request_t": {
+        "type": "object",
+        "properties": {
+          "address": {
+            "type": "string"
+          },
+          "account_index": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "subaddr_indices": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "minimum": 0
+            }
+          },
+          "subaddr_indices_all": {
+            "type": "boolean"
+          },
+          "priority": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "ring_size": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "outputs": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "unlock_time": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "payment_id": {
+            "type": "string"
+          },
+          "get_tx_keys": {
+            "type": "boolean"
+          },
+          "below_amount": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "do_not_relay": {
+            "type": "boolean"
+          },
+          "get_tx_hex": {
+            "type": "boolean"
+          },
+          "get_tx_metadata": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "address",
+          "account_index",
+          "subaddr_indices",
+          "priority",
+          "unlock_time",
+          "payment_id",
+          "get_tx_keys",
+          "below_amount"
+        ]
+      },
+      "COMMAND_RPC_SWEEP_DUST.request_t": {
+        "type": "object",
+        "properties": {
+          "get_tx_keys": {
+            "type": "boolean"
+          },
+          "do_not_relay": {
+            "type": "boolean"
+          },
+          "get_tx_hex": {
+            "type": "boolean"
+          },
+          "get_tx_metadata": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "get_tx_keys"
+        ]
+      },
+      "COMMAND_RPC_SWEEP_SINGLE.request_t": {
+        "type": "object",
+        "properties": {
+          "address": {
+            "type": "string"
+          },
+          "priority": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "ring_size": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "outputs": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "unlock_time": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "payment_id": {
+            "type": "string"
+          },
+          "get_tx_key": {
+            "type": "boolean"
+          },
+          "key_image": {
+            "type": "string"
+          },
+          "do_not_relay": {
+            "type": "boolean"
+          },
+          "get_tx_hex": {
+            "type": "boolean"
+          },
+          "get_tx_metadata": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "address",
+          "priority",
+          "unlock_time",
+          "payment_id",
+          "get_tx_key",
+          "key_image"
+        ]
+      },
+      "COMMAND_RPC_TAG_ACCOUNTS.request_t": {
+        "type": "object",
+        "properties": {
+          "tag": {
+            "type": "string"
+          },
+          "accounts": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "minimum": 0
+            }
+          }
+        },
+        "required": [
+          "tag",
+          "accounts"
+        ]
+      },
+      "COMMAND_RPC_TAG_ACCOUNTS.response_t": {
+        "type": "object",
+        "properties": {}
+      },
+      "COMMAND_RPC_THAW.request_t": {
+        "type": "object",
+        "properties": {
+          "key_image": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "key_image"
+        ]
+      },
+      "COMMAND_RPC_THAW.response_t": {
+        "type": "object",
+        "properties": {}
+      },
+      "COMMAND_RPC_TRANSFER.request_t": {
+        "type": "object",
+        "properties": {
+          "destinations": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/transfer_destination"
+            }
+          },
+          "account_index": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "subaddr_indices": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "minimum": 0
+            }
+          },
+          "subtract_fee_from_outputs": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "minimum": 0
+            }
+          },
+          "priority": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "ring_size": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "unlock_time": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "payment_id": {
+            "type": "string"
+          },
+          "get_tx_key": {
+            "type": "boolean"
+          },
+          "do_not_relay": {
+            "type": "boolean"
+          },
+          "get_tx_hex": {
+            "type": "boolean"
+          },
+          "get_tx_metadata": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "destinations",
+          "account_index",
+          "subaddr_indices",
+          "priority",
+          "unlock_time",
+          "payment_id",
+          "get_tx_key"
+        ]
+      },
+      "COMMAND_RPC_TRANSFER_SPLIT.request_t": {
+        "type": "object",
+        "properties": {
+          "destinations": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/transfer_destination"
+            }
+          },
+          "account_index": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "subaddr_indices": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "minimum": 0
+            }
+          },
+          "priority": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "ring_size": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "unlock_time": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "payment_id": {
+            "type": "string"
+          },
+          "get_tx_keys": {
+            "type": "boolean"
+          },
+          "do_not_relay": {
+            "type": "boolean"
+          },
+          "get_tx_hex": {
+            "type": "boolean"
+          },
+          "get_tx_metadata": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "destinations",
+          "account_index",
+          "subaddr_indices",
+          "priority",
+          "unlock_time",
+          "payment_id",
+          "get_tx_keys"
+        ]
+      },
+      "COMMAND_RPC_UNTAG_ACCOUNTS.request_t": {
+        "type": "object",
+        "properties": {
+          "accounts": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "minimum": 0
+            }
+          }
+        },
+        "required": [
+          "accounts"
+        ]
+      },
+      "COMMAND_RPC_UNTAG_ACCOUNTS.response_t": {
+        "type": "object",
+        "properties": {}
+      },
+      "COMMAND_RPC_VALIDATE_ADDRESS.request_t": {
+        "type": "object",
+        "properties": {
+          "address": {
+            "type": "string"
+          },
+          "any_net_type": {
+            "type": "boolean"
+          },
+          "allow_openalias": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "address"
+        ]
+      },
+      "COMMAND_RPC_VALIDATE_ADDRESS.response_t": {
+        "type": "object",
+        "properties": {
+          "valid": {
+            "type": "boolean"
+          },
+          "integrated": {
+            "type": "boolean"
+          },
+          "subaddress": {
+            "type": "boolean"
+          },
+          "nettype": {
+            "type": "string"
+          },
+          "openalias_address": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "valid",
+          "integrated",
+          "subaddress",
+          "nettype",
+          "openalias_address"
+        ]
+      },
+      "COMMAND_RPC_VERIFY.request_t": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "string"
+          },
+          "address": {
+            "type": "string"
+          },
+          "signature": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "data",
+          "address",
+          "signature"
+        ]
+      },
+      "COMMAND_RPC_VERIFY.response_t": {
+        "type": "object",
+        "properties": {
+          "good": {
+            "type": "boolean"
+          },
+          "version": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "old": {
+            "type": "boolean"
+          },
+          "signature_type": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "good",
+          "version",
+          "old",
+          "signature_type"
+        ]
+      },
+      "COMMAND_RPC_WALLET_EXISTS.request_t": {
+        "type": "object",
+        "properties": {
+          "filename": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "filename"
+        ]
+      },
+      "COMMAND_RPC_WALLET_EXISTS.response_t": {
+        "type": "object",
+        "properties": {
+          "keys_file_exists": {
+            "type": "boolean"
+          },
+          "wallet_file_exists": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "keys_file_exists",
+          "wallet_file_exists"
+        ]
+      },
+      "amounts_list": {
+        "type": "object",
+        "properties": {
+          "amounts": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "minimum": 0
+            }
+          }
+        },
+        "required": [
+          "amounts"
+        ]
+      },
+      "key_image_list": {
+        "type": "object",
+        "properties": {
+          "key_images": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "required": [
+          "key_images"
+        ]
+      },
+      "payment_details": {
+        "type": "object",
+        "properties": {
+          "payment_id": {
+            "type": "string"
+          },
+          "tx_hash": {
+            "type": "string"
+          },
+          "amount": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "block_height": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "unlock_time": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "locked": {
+            "type": "boolean"
+          },
+          "subaddr_index": {
+            "$ref": "#/components/schemas/subaddress_index"
+          },
+          "address": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "payment_id",
+          "tx_hash",
+          "amount",
+          "block_height",
+          "unlock_time",
+          "locked",
+          "subaddr_index",
+          "address"
+        ]
+      },
+      "single_transfer_response": {
+        "type": "object",
+        "properties": {
+          "tx_hash": {
+            "type": "string"
+          },
+          "tx_key": {
+            "type": "string"
+          },
+          "amount": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "amounts_by_dest": {
+            "$ref": "#/components/schemas/amounts_list"
+          },
+          "fee": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "weight": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "tx_blob": {
+            "type": "string"
+          },
+          "tx_metadata": {
+            "type": "string"
+          },
+          "multisig_txset": {
+            "type": "string"
+          },
+          "unsigned_txset": {
+            "type": "string"
+          },
+          "spent_key_images": {
+            "$ref": "#/components/schemas/key_image_list"
+          }
+        },
+        "required": [
+          "tx_hash",
+          "tx_key",
+          "amount",
+          "fee",
+          "weight",
+          "tx_blob",
+          "tx_metadata",
+          "multisig_txset",
+          "unsigned_txset",
+          "spent_key_images"
+        ]
+      },
+      "split_transfer_response": {
+        "type": "object",
+        "properties": {
+          "tx_hash_list": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "tx_key_list": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "amount_list": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "minimum": 0
+            }
+          },
+          "amounts_by_dest_list": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/amounts_list"
+            }
+          },
+          "fee_list": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "minimum": 0
+            }
+          },
+          "weight_list": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "minimum": 0
+            }
+          },
+          "tx_blob_list": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "tx_metadata_list": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "multisig_txset": {
+            "type": "string"
+          },
+          "unsigned_txset": {
+            "type": "string"
+          },
+          "spent_key_images_list": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/key_image_list"
+            }
+          }
+        },
+        "required": [
+          "tx_hash_list",
+          "tx_key_list",
+          "amount_list",
+          "fee_list",
+          "weight_list",
+          "tx_blob_list",
+          "tx_metadata_list",
+          "multisig_txset",
+          "unsigned_txset",
+          "spent_key_images_list"
+        ]
+      },
+      "subaddress_index": {
+        "type": "object",
+        "properties": {
+          "major": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "minor": {
+            "type": "integer",
+            "minimum": 0
+          }
+        },
+        "required": [
+          "major",
+          "minor"
+        ]
+      },
+      "tools.wallet_rpc.COMMAND_RPC_GET_HEIGHT.request_t": {
+        "type": "object",
+        "properties": {}
+      },
+      "tools.wallet_rpc.COMMAND_RPC_GET_HEIGHT.response_t": {
+        "type": "object",
+        "properties": {
+          "height": {
+            "type": "integer",
+            "minimum": 0
+          }
+        },
+        "required": [
+          "height"
+        ]
+      },
+      "tools.wallet_rpc.COMMAND_RPC_GET_VERSION.request_t": {
+        "type": "object",
+        "properties": {}
+      },
+      "tools.wallet_rpc.COMMAND_RPC_GET_VERSION.response_t": {
+        "type": "object",
+        "properties": {
+          "version": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "release": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "version",
+          "release"
+        ]
+      },
+      "tools.wallet_rpc.COMMAND_RPC_RELAY_TX.request_t": {
+        "type": "object",
+        "properties": {
+          "hex": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "hex"
+        ]
+      },
+      "tools.wallet_rpc.COMMAND_RPC_RELAY_TX.response_t": {
+        "type": "object",
+        "properties": {
+          "tx_hash": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "tx_hash"
+        ]
+      },
+      "tools.wallet_rpc.COMMAND_RPC_SET_LOG_CATEGORIES.request_t": {
+        "type": "object",
+        "properties": {
+          "categories": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "categories"
+        ]
+      },
+      "tools.wallet_rpc.COMMAND_RPC_SET_LOG_CATEGORIES.response_t": {
+        "type": "object",
+        "properties": {
+          "categories": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "categories"
+        ]
+      },
+      "tools.wallet_rpc.COMMAND_RPC_SET_LOG_LEVEL.request_t": {
+        "type": "object",
+        "properties": {
+          "level": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "level"
+        ]
+      },
+      "tools.wallet_rpc.COMMAND_RPC_SET_LOG_LEVEL.response_t": {
+        "type": "object",
+        "properties": {}
+      },
+      "tools.wallet_rpc.COMMAND_RPC_START_MINING.request_t": {
+        "type": "object",
+        "properties": {
+          "threads_count": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "do_background_mining": {
+            "type": "boolean"
+          },
+          "ignore_battery": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "threads_count",
+          "do_background_mining",
+          "ignore_battery"
+        ]
+      },
+      "tools.wallet_rpc.COMMAND_RPC_START_MINING.response_t": {
+        "type": "object",
+        "properties": {}
+      },
+      "tools.wallet_rpc.COMMAND_RPC_STOP_MINING.request_t": {
+        "type": "object",
+        "properties": {}
+      },
+      "tools.wallet_rpc.COMMAND_RPC_STOP_MINING.response_t": {
+        "type": "object",
+        "properties": {}
+      },
+      "transfer_destination": {
+        "type": "object",
+        "properties": {
+          "amount": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "address": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "amount",
+          "address"
+        ]
+      },
+      "transfer_details": {
+        "type": "object",
+        "properties": {
+          "amount": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "spent": {
+            "type": "boolean"
+          },
+          "global_index": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "tx_hash": {
+            "type": "string"
+          },
+          "subaddr_index": {
+            "$ref": "#/components/schemas/subaddress_index"
+          },
+          "key_image": {
+            "type": "string"
+          },
+          "pubkey": {
+            "type": "string"
+          },
+          "block_height": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "frozen": {
+            "type": "boolean"
+          },
+          "unlocked": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "amount",
+          "spent",
+          "global_index",
+          "tx_hash",
+          "subaddr_index",
+          "key_image",
+          "pubkey",
+          "block_height",
+          "frozen",
+          "unlocked"
+        ]
+      },
+      "transfer_entry": {
+        "type": "object",
+        "properties": {
+          "txid": {
+            "type": "string"
+          },
+          "payment_id": {
+            "type": "string"
+          },
+          "height": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "timestamp": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "amount": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "amounts": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "minimum": 0
+            }
+          },
+          "fee": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "change_amount": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "note": {
+            "type": "string"
+          },
+          "destinations": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/transfer_destination"
+            }
+          },
+          "type": {
+            "type": "string"
+          },
+          "unlock_time": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "locked": {
+            "type": "boolean"
+          },
+          "subaddr_index": {
+            "$ref": "#/components/schemas/subaddress_index"
+          },
+          "subaddr_indices": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/subaddress_index"
+            }
+          },
+          "address": {
+            "type": "string"
+          },
+          "double_spend_seen": {
+            "type": "boolean"
+          },
+          "confirmations": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "suggested_confirmations_threshold": {
+            "type": "integer",
+            "minimum": 0
+          }
+        },
+        "required": [
+          "txid",
+          "payment_id",
+          "height",
+          "timestamp",
+          "amount",
+          "amounts",
+          "fee",
+          "note",
+          "destinations",
+          "type",
+          "unlock_time",
+          "locked",
+          "subaddr_index",
+          "subaddr_indices",
+          "address",
+          "double_spend_seen"
+        ]
+      },
+      "uri_spec": {
+        "type": "object",
+        "properties": {
+          "address": {
+            "type": "string"
+          },
+          "payment_id": {
+            "type": "string"
+          },
+          "amount": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "tx_description": {
+            "type": "string"
+          },
+          "recipient_name": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "address",
+          "payment_id",
+          "amount",
+          "tx_description",
+          "recipient_name"
+        ]
+      }
+    }
+  }
+}
