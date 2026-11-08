@@ -1,0 +1,3168 @@
+{
+  "openrpc": "1.3.2",
+  "info": {
+    "title": "monerod RPC",
+    "version": "3.19",
+    "description": "Generated from the Monero C++ source."
+  },
+  "servers": [
+    {
+      "name": "json_rpc",
+      "url": "http://127.0.0.1:18081/json_rpc"
+    }
+  ],
+  "methods": [
+    {
+      "name": "get_block_count",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "arg",
+          "schema": {
+            "type": "string"
+          },
+          "required": false
+        }
+      ],
+      "result": {
+        "name": "result",
+        "schema": {
+          "$ref": "#/components/schemas/COMMAND_RPC_GETBLOCKCOUNT.response_t"
+        }
+      }
+    },
+    {
+      "name": "getblockcount",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "arg",
+          "schema": {
+            "type": "string"
+          },
+          "required": false
+        }
+      ],
+      "result": {
+        "name": "result",
+        "schema": {
+          "$ref": "#/components/schemas/COMMAND_RPC_GETBLOCKCOUNT.response_t"
+        }
+      }
+    },
+    {
+      "name": "on_get_block_hash",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "arg",
+          "schema": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "required": false
+        }
+      ],
+      "result": {
+        "name": "result",
+        "schema": {
+          "type": "string"
+        }
+      }
+    },
+    {
+      "name": "on_getblockhash",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "arg",
+          "schema": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "required": false
+        }
+      ],
+      "result": {
+        "name": "result",
+        "schema": {
+          "type": "string"
+        }
+      }
+    },
+    {
+      "name": "get_block_template",
+      "paramStructure": "by-name",
+      "params": [
+        {
+          "name": "reserve_size",
+          "schema": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "required": false
+        },
+        {
+          "name": "wallet_address",
+          "schema": {
+            "type": "string"
+          },
+          "required": false
+        },
+        {
+          "name": "prev_block",
+          "schema": {
+            "type": "string"
+          },
+          "required": false
+        },
+        {
+          "name": "extra_nonce",
+          "schema": {
+            "type": "string"
+          },
+          "required": false
+        }
+      ],
+      "result": {
+        "name": "result",
+        "schema": {
+          "$ref": "#/components/schemas/COMMAND_RPC_GETBLOCKTEMPLATE.response_t"
+        }
+      }
+    },
+    {
+      "name": "getblocktemplate",
+      "paramStructure": "by-name",
+      "params": [
+        {
+          "name": "reserve_size",
+          "schema": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "required": false
+        },
+        {
+          "name": "wallet_address",
+          "schema": {
+            "type": "string"
+          },
+          "required": false
+        },
+        {
+          "name": "prev_block",
+          "schema": {
+            "type": "string"
+          },
+          "required": false
+        },
+        {
+          "name": "extra_nonce",
+          "schema": {
+            "type": "string"
+          },
+          "required": false
+        }
+      ],
+      "result": {
+        "name": "result",
+        "schema": {
+          "$ref": "#/components/schemas/COMMAND_RPC_GETBLOCKTEMPLATE.response_t"
+        }
+      }
+    },
+    {
+      "name": "get_miner_data",
+      "paramStructure": "by-name",
+      "params": [],
+      "result": {
+        "name": "result",
+        "schema": {
+          "$ref": "#/components/schemas/COMMAND_RPC_GETMINERDATA.response_t"
+        }
+      }
+    },
+    {
+      "name": "calc_pow",
+      "paramStructure": "by-name",
+      "params": [
+        {
+          "name": "major_version",
+          "schema": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "required": false
+        },
+        {
+          "name": "height",
+          "schema": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "required": false
+        },
+        {
+          "name": "block_blob",
+          "schema": {
+            "type": "string"
+          },
+          "required": false
+        },
+        {
+          "name": "seed_hash",
+          "schema": {
+            "type": "string"
+          },
+          "required": false
+        }
+      ],
+      "result": {
+        "name": "result",
+        "schema": {
+          "type": "string"
+        }
+      }
+    },
+    {
+      "name": "add_aux_pow",
+      "paramStructure": "by-name",
+      "params": [
+        {
+          "name": "blocktemplate_blob",
+          "schema": {
+            "type": "string"
+          },
+          "required": false
+        },
+        {
+          "name": "aux_pow",
+          "schema": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/COMMAND_RPC_ADD_AUX_POW.aux_pow_t"
+            }
+          },
+          "required": false
+        }
+      ],
+      "result": {
+        "name": "result",
+        "schema": {
+          "$ref": "#/components/schemas/COMMAND_RPC_ADD_AUX_POW.response_t"
+        }
+      }
+    },
+    {
+      "name": "submit_block",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "arg",
+          "schema": {
+            "type": "string"
+          },
+          "required": false
+        }
+      ],
+      "result": {
+        "name": "result",
+        "schema": {
+          "$ref": "#/components/schemas/COMMAND_RPC_SUBMITBLOCK.response_t"
+        }
+      }
+    },
+    {
+      "name": "submitblock",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "arg",
+          "schema": {
+            "type": "string"
+          },
+          "required": false
+        }
+      ],
+      "result": {
+        "name": "result",
+        "schema": {
+          "$ref": "#/components/schemas/COMMAND_RPC_SUBMITBLOCK.response_t"
+        }
+      }
+    },
+    {
+      "name": "generateblocks",
+      "paramStructure": "by-name",
+      "params": [
+        {
+          "name": "amount_of_blocks",
+          "schema": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "required": false
+        },
+        {
+          "name": "wallet_address",
+          "schema": {
+            "type": "string"
+          },
+          "required": false
+        },
+        {
+          "name": "prev_block",
+          "schema": {
+            "type": "string"
+          },
+          "required": false
+        },
+        {
+          "name": "starting_nonce",
+          "schema": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "required": false
+        }
+      ],
+      "result": {
+        "name": "result",
+        "schema": {
+          "$ref": "#/components/schemas/COMMAND_RPC_GENERATEBLOCKS.response_t"
+        }
+      }
+    },
+    {
+      "name": "get_last_block_header",
+      "paramStructure": "by-name",
+      "params": [
+        {
+          "name": "client",
+          "schema": {
+            "type": "string"
+          },
+          "required": false
+        },
+        {
+          "name": "fill_pow_hash",
+          "schema": {
+            "type": "boolean"
+          },
+          "required": false
+        }
+      ],
+      "result": {
+        "name": "result",
+        "schema": {
+          "$ref": "#/components/schemas/COMMAND_RPC_GET_LAST_BLOCK_HEADER.response_t"
+        }
+      }
+    },
+    {
+      "name": "getlastblockheader",
+      "paramStructure": "by-name",
+      "params": [
+        {
+          "name": "client",
+          "schema": {
+            "type": "string"
+          },
+          "required": false
+        },
+        {
+          "name": "fill_pow_hash",
+          "schema": {
+            "type": "boolean"
+          },
+          "required": false
+        }
+      ],
+      "result": {
+        "name": "result",
+        "schema": {
+          "$ref": "#/components/schemas/COMMAND_RPC_GET_LAST_BLOCK_HEADER.response_t"
+        }
+      }
+    },
+    {
+      "name": "get_block_header_by_hash",
+      "paramStructure": "by-name",
+      "params": [
+        {
+          "name": "client",
+          "schema": {
+            "type": "string"
+          },
+          "required": false
+        },
+        {
+          "name": "hash",
+          "schema": {
+            "type": "string"
+          },
+          "required": false
+        },
+        {
+          "name": "hashes",
+          "schema": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "required": false
+        },
+        {
+          "name": "fill_pow_hash",
+          "schema": {
+            "type": "boolean"
+          },
+          "required": false
+        }
+      ],
+      "result": {
+        "name": "result",
+        "schema": {
+          "$ref": "#/components/schemas/COMMAND_RPC_GET_BLOCK_HEADER_BY_HASH.response_t"
+        }
+      }
+    },
+    {
+      "name": "getblockheaderbyhash",
+      "paramStructure": "by-name",
+      "params": [
+        {
+          "name": "client",
+          "schema": {
+            "type": "string"
+          },
+          "required": false
+        },
+        {
+          "name": "hash",
+          "schema": {
+            "type": "string"
+          },
+          "required": false
+        },
+        {
+          "name": "hashes",
+          "schema": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "required": false
+        },
+        {
+          "name": "fill_pow_hash",
+          "schema": {
+            "type": "boolean"
+          },
+          "required": false
+        }
+      ],
+      "result": {
+        "name": "result",
+        "schema": {
+          "$ref": "#/components/schemas/COMMAND_RPC_GET_BLOCK_HEADER_BY_HASH.response_t"
+        }
+      }
+    },
+    {
+      "name": "get_block_header_by_height",
+      "paramStructure": "by-name",
+      "params": [
+        {
+          "name": "client",
+          "schema": {
+            "type": "string"
+          },
+          "required": false
+        },
+        {
+          "name": "height",
+          "schema": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "required": false
+        },
+        {
+          "name": "fill_pow_hash",
+          "schema": {
+            "type": "boolean"
+          },
+          "required": false
+        }
+      ],
+      "result": {
+        "name": "result",
+        "schema": {
+          "$ref": "#/components/schemas/COMMAND_RPC_GET_BLOCK_HEADER_BY_HEIGHT.response_t"
+        }
+      }
+    },
+    {
+      "name": "getblockheaderbyheight",
+      "paramStructure": "by-name",
+      "params": [
+        {
+          "name": "client",
+          "schema": {
+            "type": "string"
+          },
+          "required": false
+        },
+        {
+          "name": "height",
+          "schema": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "required": false
+        },
+        {
+          "name": "fill_pow_hash",
+          "schema": {
+            "type": "boolean"
+          },
+          "required": false
+        }
+      ],
+      "result": {
+        "name": "result",
+        "schema": {
+          "$ref": "#/components/schemas/COMMAND_RPC_GET_BLOCK_HEADER_BY_HEIGHT.response_t"
+        }
+      }
+    },
+    {
+      "name": "get_block_headers_range",
+      "paramStructure": "by-name",
+      "params": [
+        {
+          "name": "client",
+          "schema": {
+            "type": "string"
+          },
+          "required": false
+        },
+        {
+          "name": "start_height",
+          "schema": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "required": false
+        },
+        {
+          "name": "end_height",
+          "schema": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "required": false
+        },
+        {
+          "name": "fill_pow_hash",
+          "schema": {
+            "type": "boolean"
+          },
+          "required": false
+        }
+      ],
+      "result": {
+        "name": "result",
+        "schema": {
+          "$ref": "#/components/schemas/COMMAND_RPC_GET_BLOCK_HEADERS_RANGE.response_t"
+        }
+      }
+    },
+    {
+      "name": "getblockheadersrange",
+      "paramStructure": "by-name",
+      "params": [
+        {
+          "name": "client",
+          "schema": {
+            "type": "string"
+          },
+          "required": false
+        },
+        {
+          "name": "start_height",
+          "schema": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "required": false
+        },
+        {
+          "name": "end_height",
+          "schema": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "required": false
+        },
+        {
+          "name": "fill_pow_hash",
+          "schema": {
+            "type": "boolean"
+          },
+          "required": false
+        }
+      ],
+      "result": {
+        "name": "result",
+        "schema": {
+          "$ref": "#/components/schemas/COMMAND_RPC_GET_BLOCK_HEADERS_RANGE.response_t"
+        }
+      }
+    },
+    {
+      "name": "get_block",
+      "paramStructure": "by-name",
+      "params": [
+        {
+          "name": "client",
+          "schema": {
+            "type": "string"
+          },
+          "required": false
+        },
+        {
+          "name": "hash",
+          "schema": {
+            "type": "string"
+          },
+          "required": false
+        },
+        {
+          "name": "height",
+          "schema": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "required": false
+        },
+        {
+          "name": "fill_pow_hash",
+          "schema": {
+            "type": "boolean"
+          },
+          "required": false
+        }
+      ],
+      "result": {
+        "name": "result",
+        "schema": {
+          "$ref": "#/components/schemas/COMMAND_RPC_GET_BLOCK.response_t"
+        }
+      }
+    },
+    {
+      "name": "getblock",
+      "paramStructure": "by-name",
+      "params": [
+        {
+          "name": "client",
+          "schema": {
+            "type": "string"
+          },
+          "required": false
+        },
+        {
+          "name": "hash",
+          "schema": {
+            "type": "string"
+          },
+          "required": false
+        },
+        {
+          "name": "height",
+          "schema": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "required": false
+        },
+        {
+          "name": "fill_pow_hash",
+          "schema": {
+            "type": "boolean"
+          },
+          "required": false
+        }
+      ],
+      "result": {
+        "name": "result",
+        "schema": {
+          "$ref": "#/components/schemas/COMMAND_RPC_GET_BLOCK.response_t"
+        }
+      }
+    },
+    {
+      "name": "get_connections",
+      "paramStructure": "by-name",
+      "params": [],
+      "result": {
+        "name": "result",
+        "schema": {
+          "$ref": "#/components/schemas/COMMAND_RPC_GET_CONNECTIONS.response_t"
+        }
+      }
+    },
+    {
+      "name": "get_info",
+      "paramStructure": "by-name",
+      "params": [
+        {
+          "name": "client",
+          "schema": {
+            "type": "string"
+          },
+          "required": false
+        }
+      ],
+      "result": {
+        "name": "result",
+        "schema": {
+          "$ref": "#/components/schemas/COMMAND_RPC_GET_INFO.response_t"
+        }
+      }
+    },
+    {
+      "name": "hard_fork_info",
+      "paramStructure": "by-name",
+      "params": [
+        {
+          "name": "client",
+          "schema": {
+            "type": "string"
+          },
+          "required": false
+        },
+        {
+          "name": "version",
+          "schema": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "required": false
+        }
+      ],
+      "result": {
+        "name": "result",
+        "schema": {
+          "$ref": "#/components/schemas/COMMAND_RPC_HARD_FORK_INFO.response_t"
+        }
+      }
+    },
+    {
+      "name": "set_bans",
+      "paramStructure": "by-name",
+      "params": [
+        {
+          "name": "bans",
+          "schema": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/COMMAND_RPC_SETBANS.ban"
+            }
+          },
+          "required": false
+        }
+      ],
+      "result": {
+        "name": "result",
+        "schema": {
+          "$ref": "#/components/schemas/COMMAND_RPC_SETBANS.response_t"
+        }
+      }
+    },
+    {
+      "name": "get_bans",
+      "paramStructure": "by-name",
+      "params": [],
+      "result": {
+        "name": "result",
+        "schema": {
+          "$ref": "#/components/schemas/COMMAND_RPC_GETBANS.response_t"
+        }
+      }
+    },
+    {
+      "name": "banned",
+      "paramStructure": "by-name",
+      "params": [
+        {
+          "name": "address",
+          "schema": {
+            "type": "string"
+          },
+          "required": false
+        }
+      ],
+      "result": {
+        "name": "result",
+        "schema": {
+          "$ref": "#/components/schemas/COMMAND_RPC_BANNED.response_t"
+        }
+      }
+    },
+    {
+      "name": "flush_txpool",
+      "paramStructure": "by-name",
+      "params": [
+        {
+          "name": "txids",
+          "schema": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "required": false
+        }
+      ],
+      "result": {
+        "name": "result",
+        "schema": {
+          "$ref": "#/components/schemas/COMMAND_RPC_FLUSH_TRANSACTION_POOL.response_t"
+        }
+      }
+    },
+    {
+      "name": "get_output_histogram",
+      "paramStructure": "by-name",
+      "params": [
+        {
+          "name": "client",
+          "schema": {
+            "type": "string"
+          },
+          "required": false
+        },
+        {
+          "name": "amounts",
+          "schema": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "minimum": 0
+            }
+          },
+          "required": false
+        },
+        {
+          "name": "min_count",
+          "schema": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "required": false
+        },
+        {
+          "name": "max_count",
+          "schema": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "required": false
+        },
+        {
+          "name": "unlocked",
+          "schema": {
+            "type": "boolean"
+          },
+          "required": false
+        },
+        {
+          "name": "recent_cutoff",
+          "schema": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "required": false
+        }
+      ],
+      "result": {
+        "name": "result",
+        "schema": {
+          "$ref": "#/components/schemas/COMMAND_RPC_GET_OUTPUT_HISTOGRAM.response_t"
+        }
+      }
+    },
+    {
+      "name": "get_version",
+      "paramStructure": "by-name",
+      "params": [],
+      "result": {
+        "name": "result",
+        "schema": {
+          "$ref": "#/components/schemas/COMMAND_RPC_GET_VERSION.response_t"
+        }
+      }
+    },
+    {
+      "name": "get_coinbase_tx_sum",
+      "paramStructure": "by-name",
+      "params": [
+        {
+          "name": "client",
+          "schema": {
+            "type": "string"
+          },
+          "required": false
+        },
+        {
+          "name": "height",
+          "schema": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "required": false
+        },
+        {
+          "name": "count",
+          "schema": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "required": false
+        }
+      ],
+      "result": {
+        "name": "result",
+        "schema": {
+          "$ref": "#/components/schemas/COMMAND_RPC_GET_COINBASE_TX_SUM.response_t"
+        }
+      }
+    },
+    {
+      "name": "get_fee_estimate",
+      "paramStructure": "by-name",
+      "params": [
+        {
+          "name": "client",
+          "schema": {
+            "type": "string"
+          },
+          "required": false
+        },
+        {
+          "name": "grace_blocks",
+          "schema": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "required": false
+        }
+      ],
+      "result": {
+        "name": "result",
+        "schema": {
+          "$ref": "#/components/schemas/COMMAND_RPC_GET_BASE_FEE_ESTIMATE.response_t"
+        }
+      }
+    },
+    {
+      "name": "get_alternate_chains",
+      "paramStructure": "by-name",
+      "params": [],
+      "result": {
+        "name": "result",
+        "schema": {
+          "$ref": "#/components/schemas/COMMAND_RPC_GET_ALTERNATE_CHAINS.response_t"
+        }
+      }
+    },
+    {
+      "name": "relay_tx",
+      "paramStructure": "by-name",
+      "params": [
+        {
+          "name": "client",
+          "schema": {
+            "type": "string"
+          },
+          "required": false
+        },
+        {
+          "name": "txids",
+          "schema": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "required": false
+        }
+      ],
+      "result": {
+        "name": "result",
+        "schema": {
+          "$ref": "#/components/schemas/COMMAND_RPC_RELAY_TX.response_t"
+        }
+      }
+    },
+    {
+      "name": "sync_info",
+      "paramStructure": "by-name",
+      "params": [
+        {
+          "name": "client",
+          "schema": {
+            "type": "string"
+          },
+          "required": false
+        }
+      ],
+      "result": {
+        "name": "result",
+        "schema": {
+          "$ref": "#/components/schemas/COMMAND_RPC_SYNC_INFO.response_t"
+        }
+      }
+    },
+    {
+      "name": "get_txpool_backlog",
+      "paramStructure": "by-name",
+      "params": [
+        {
+          "name": "client",
+          "schema": {
+            "type": "string"
+          },
+          "required": false
+        }
+      ],
+      "result": {
+        "name": "result",
+        "schema": {
+          "$ref": "#/components/schemas/COMMAND_RPC_GET_TRANSACTION_POOL_BACKLOG.response_t"
+        }
+      }
+    },
+    {
+      "name": "get_output_distribution",
+      "paramStructure": "by-name",
+      "params": [
+        {
+          "name": "client",
+          "schema": {
+            "type": "string"
+          },
+          "required": false
+        },
+        {
+          "name": "amounts",
+          "schema": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "minimum": 0
+            }
+          },
+          "required": false
+        },
+        {
+          "name": "from_height",
+          "schema": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "required": false
+        },
+        {
+          "name": "to_height",
+          "schema": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "required": false
+        },
+        {
+          "name": "cumulative",
+          "schema": {
+            "type": "boolean"
+          },
+          "required": false
+        },
+        {
+          "name": "binary",
+          "schema": {
+            "type": "boolean"
+          },
+          "required": false
+        },
+        {
+          "name": "compress",
+          "schema": {
+            "type": "boolean"
+          },
+          "required": false
+        }
+      ],
+      "result": {
+        "name": "result",
+        "schema": {
+          "$ref": "#/components/schemas/COMMAND_RPC_GET_OUTPUT_DISTRIBUTION.response_t"
+        }
+      }
+    },
+    {
+      "name": "prune_blockchain",
+      "paramStructure": "by-name",
+      "params": [
+        {
+          "name": "check",
+          "schema": {
+            "type": "boolean"
+          },
+          "required": false
+        }
+      ],
+      "result": {
+        "name": "result",
+        "schema": {
+          "$ref": "#/components/schemas/COMMAND_RPC_PRUNE_BLOCKCHAIN.response_t"
+        }
+      }
+    },
+    {
+      "name": "flush_cache",
+      "paramStructure": "by-name",
+      "params": [
+        {
+          "name": "bad_blocks",
+          "schema": {
+            "type": "boolean"
+          },
+          "required": false
+        }
+      ],
+      "result": {
+        "name": "result",
+        "schema": {
+          "$ref": "#/components/schemas/COMMAND_RPC_FLUSH_CACHE.response_t"
+        }
+      }
+    },
+    {
+      "name": "get_txids_loose",
+      "paramStructure": "by-name",
+      "params": [
+        {
+          "name": "txid_template",
+          "schema": {
+            "type": "string"
+          },
+          "required": false
+        },
+        {
+          "name": "num_matching_bits",
+          "schema": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "required": false
+        }
+      ],
+      "result": {
+        "name": "result",
+        "schema": {
+          "$ref": "#/components/schemas/COMMAND_RPC_GET_TXIDS_LOOSE.response_t"
+        }
+      }
+    }
+  ],
+  "components": {
+    "schemas": {
+      "COMMAND_RPC_ADD_AUX_POW.aux_pow_t": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "hash": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "hash"
+        ]
+      },
+      "COMMAND_RPC_ADD_AUX_POW.request_t": {
+        "type": "object",
+        "properties": {
+          "blocktemplate_blob": {
+            "type": "string"
+          },
+          "aux_pow": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/COMMAND_RPC_ADD_AUX_POW.aux_pow_t"
+            }
+          }
+        },
+        "required": [
+          "blocktemplate_blob",
+          "aux_pow"
+        ]
+      },
+      "COMMAND_RPC_ADD_AUX_POW.response_t": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string"
+          },
+          "blocktemplate_blob": {
+            "type": "string"
+          },
+          "blockhashing_blob": {
+            "type": "string"
+          },
+          "merkle_root": {
+            "type": "string"
+          },
+          "merkle_tree_depth": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "aux_pow": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/COMMAND_RPC_ADD_AUX_POW.aux_pow_t"
+            }
+          }
+        },
+        "required": [
+          "status",
+          "blocktemplate_blob",
+          "blockhashing_blob",
+          "merkle_root",
+          "merkle_tree_depth",
+          "aux_pow"
+        ]
+      },
+      "COMMAND_RPC_BANNED.request_t": {
+        "type": "object",
+        "properties": {
+          "address": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "address"
+        ]
+      },
+      "COMMAND_RPC_BANNED.response_t": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string"
+          },
+          "banned": {
+            "type": "boolean"
+          },
+          "seconds": {
+            "type": "integer",
+            "minimum": 0
+          }
+        },
+        "required": [
+          "status",
+          "banned",
+          "seconds"
+        ]
+      },
+      "COMMAND_RPC_CALCPOW.request_t": {
+        "type": "object",
+        "properties": {
+          "major_version": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "height": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "block_blob": {
+            "type": "string"
+          },
+          "seed_hash": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "major_version",
+          "height",
+          "block_blob",
+          "seed_hash"
+        ]
+      },
+      "COMMAND_RPC_FLUSH_CACHE.request_t": {
+        "type": "object",
+        "properties": {
+          "bad_blocks": {
+            "type": "boolean"
+          }
+        }
+      },
+      "COMMAND_RPC_FLUSH_CACHE.response_t": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "status"
+        ]
+      },
+      "COMMAND_RPC_FLUSH_TRANSACTION_POOL.request_t": {
+        "type": "object",
+        "properties": {
+          "txids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "required": [
+          "txids"
+        ]
+      },
+      "COMMAND_RPC_FLUSH_TRANSACTION_POOL.response_t": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "status"
+        ]
+      },
+      "COMMAND_RPC_GENERATEBLOCKS.request_t": {
+        "type": "object",
+        "properties": {
+          "amount_of_blocks": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "wallet_address": {
+            "type": "string"
+          },
+          "prev_block": {
+            "type": "string"
+          },
+          "starting_nonce": {
+            "type": "integer",
+            "minimum": 0
+          }
+        },
+        "required": [
+          "amount_of_blocks",
+          "wallet_address",
+          "prev_block"
+        ]
+      },
+      "COMMAND_RPC_GENERATEBLOCKS.response_t": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string"
+          },
+          "height": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "blocks": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "required": [
+          "status",
+          "height",
+          "blocks"
+        ]
+      },
+      "COMMAND_RPC_GETBANS.ban": {
+        "type": "object",
+        "properties": {
+          "host": {
+            "type": "string"
+          },
+          "ip": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "seconds": {
+            "type": "integer",
+            "minimum": 0
+          }
+        },
+        "required": [
+          "host",
+          "ip",
+          "seconds"
+        ]
+      },
+      "COMMAND_RPC_GETBANS.request_t": {
+        "type": "object",
+        "properties": {}
+      },
+      "COMMAND_RPC_GETBANS.response_t": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string"
+          },
+          "bans": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/COMMAND_RPC_GETBANS.ban"
+            }
+          }
+        },
+        "required": [
+          "status",
+          "bans"
+        ]
+      },
+      "COMMAND_RPC_GETBLOCKCOUNT.response_t": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string"
+          },
+          "count": {
+            "type": "integer",
+            "minimum": 0
+          }
+        },
+        "required": [
+          "status",
+          "count"
+        ]
+      },
+      "COMMAND_RPC_GETBLOCKTEMPLATE.request_t": {
+        "type": "object",
+        "properties": {
+          "reserve_size": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "wallet_address": {
+            "type": "string"
+          },
+          "prev_block": {
+            "type": "string"
+          },
+          "extra_nonce": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "reserve_size",
+          "wallet_address",
+          "prev_block",
+          "extra_nonce"
+        ]
+      },
+      "COMMAND_RPC_GETBLOCKTEMPLATE.response_t": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string"
+          },
+          "difficulty": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "wide_difficulty": {
+            "type": "string"
+          },
+          "difficulty_top64": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "height": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "reserved_offset": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "expected_reward": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "cumulative_weight": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "prev_hash": {
+            "type": "string"
+          },
+          "seed_height": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "blocktemplate_blob": {
+            "type": "string"
+          },
+          "blockhashing_blob": {
+            "type": "string"
+          },
+          "seed_hash": {
+            "type": "string"
+          },
+          "next_seed_hash": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "status",
+          "difficulty",
+          "wide_difficulty",
+          "difficulty_top64",
+          "height",
+          "reserved_offset",
+          "expected_reward",
+          "prev_hash",
+          "seed_height",
+          "blocktemplate_blob",
+          "blockhashing_blob",
+          "seed_hash",
+          "next_seed_hash"
+        ]
+      },
+      "COMMAND_RPC_GETMINERDATA.request_t": {
+        "type": "object",
+        "properties": {}
+      },
+      "COMMAND_RPC_GETMINERDATA.response_t": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string"
+          },
+          "major_version": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "height": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "prev_id": {
+            "type": "string"
+          },
+          "seed_hash": {
+            "type": "string"
+          },
+          "difficulty": {
+            "type": "string"
+          },
+          "median_weight": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "already_generated_coins": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "tx_backlog": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/COMMAND_RPC_GETMINERDATA.response_t.tx_backlog_entry"
+            }
+          }
+        },
+        "required": [
+          "status",
+          "major_version",
+          "height",
+          "prev_id",
+          "seed_hash",
+          "difficulty",
+          "median_weight",
+          "already_generated_coins",
+          "tx_backlog"
+        ]
+      },
+      "COMMAND_RPC_GETMINERDATA.response_t.tx_backlog_entry": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "weight": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "fee": {
+            "type": "integer",
+            "minimum": 0
+          }
+        },
+        "required": [
+          "id",
+          "weight",
+          "fee"
+        ]
+      },
+      "COMMAND_RPC_GET_ALTERNATE_CHAINS.chain_info": {
+        "type": "object",
+        "properties": {
+          "block_hash": {
+            "type": "string"
+          },
+          "height": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "length": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "difficulty": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "wide_difficulty": {
+            "type": "string"
+          },
+          "difficulty_top64": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "block_hashes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "main_chain_parent_block": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "block_hash",
+          "height",
+          "length",
+          "difficulty",
+          "wide_difficulty",
+          "difficulty_top64",
+          "block_hashes",
+          "main_chain_parent_block"
+        ]
+      },
+      "COMMAND_RPC_GET_ALTERNATE_CHAINS.request_t": {
+        "type": "object",
+        "properties": {}
+      },
+      "COMMAND_RPC_GET_ALTERNATE_CHAINS.response_t": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string"
+          },
+          "chains": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/COMMAND_RPC_GET_ALTERNATE_CHAINS.chain_info"
+            }
+          }
+        },
+        "required": [
+          "status",
+          "chains"
+        ]
+      },
+      "COMMAND_RPC_GET_BASE_FEE_ESTIMATE.request_t": {
+        "type": "object",
+        "properties": {
+          "client": {
+            "type": "string"
+          },
+          "grace_blocks": {
+            "type": "integer",
+            "minimum": 0
+          }
+        },
+        "required": [
+          "client",
+          "grace_blocks"
+        ]
+      },
+      "COMMAND_RPC_GET_BASE_FEE_ESTIMATE.response_t": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string"
+          },
+          "credits": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "top_hash": {
+            "type": "string"
+          },
+          "fee": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "quantization_mask": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "fees": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "minimum": 0
+            }
+          }
+        },
+        "required": [
+          "status",
+          "credits",
+          "top_hash",
+          "fee",
+          "fees"
+        ]
+      },
+      "COMMAND_RPC_GET_BLOCK.request_t": {
+        "type": "object",
+        "properties": {
+          "client": {
+            "type": "string"
+          },
+          "hash": {
+            "type": "string"
+          },
+          "height": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "fill_pow_hash": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "client",
+          "hash",
+          "height"
+        ]
+      },
+      "COMMAND_RPC_GET_BLOCK.response_t": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string"
+          },
+          "credits": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "top_hash": {
+            "type": "string"
+          },
+          "block_header": {
+            "$ref": "#/components/schemas/block_header_response"
+          },
+          "miner_tx_hash": {
+            "type": "string"
+          },
+          "tx_hashes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "blob": {
+            "type": "string"
+          },
+          "json": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "status",
+          "credits",
+          "top_hash",
+          "block_header",
+          "miner_tx_hash",
+          "tx_hashes",
+          "blob",
+          "json"
+        ]
+      },
+      "COMMAND_RPC_GET_BLOCK_HEADERS_RANGE.request_t": {
+        "type": "object",
+        "properties": {
+          "client": {
+            "type": "string"
+          },
+          "start_height": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "end_height": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "fill_pow_hash": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "client",
+          "start_height",
+          "end_height"
+        ]
+      },
+      "COMMAND_RPC_GET_BLOCK_HEADERS_RANGE.response_t": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string"
+          },
+          "credits": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "top_hash": {
+            "type": "string"
+          },
+          "headers": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/block_header_response"
+            }
+          }
+        },
+        "required": [
+          "status",
+          "credits",
+          "top_hash",
+          "headers"
+        ]
+      },
+      "COMMAND_RPC_GET_BLOCK_HEADER_BY_HASH.request_t": {
+        "type": "object",
+        "properties": {
+          "client": {
+            "type": "string"
+          },
+          "hash": {
+            "type": "string"
+          },
+          "hashes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "fill_pow_hash": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "client",
+          "hash",
+          "hashes"
+        ]
+      },
+      "COMMAND_RPC_GET_BLOCK_HEADER_BY_HASH.response_t": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string"
+          },
+          "credits": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "top_hash": {
+            "type": "string"
+          },
+          "block_header": {
+            "$ref": "#/components/schemas/block_header_response"
+          },
+          "block_headers": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/block_header_response"
+            }
+          }
+        },
+        "required": [
+          "status",
+          "credits",
+          "top_hash",
+          "block_header",
+          "block_headers"
+        ]
+      },
+      "COMMAND_RPC_GET_BLOCK_HEADER_BY_HEIGHT.request_t": {
+        "type": "object",
+        "properties": {
+          "client": {
+            "type": "string"
+          },
+          "height": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "fill_pow_hash": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "client",
+          "height"
+        ]
+      },
+      "COMMAND_RPC_GET_BLOCK_HEADER_BY_HEIGHT.response_t": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string"
+          },
+          "credits": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "top_hash": {
+            "type": "string"
+          },
+          "block_header": {
+            "$ref": "#/components/schemas/block_header_response"
+          }
+        },
+        "required": [
+          "status",
+          "credits",
+          "top_hash",
+          "block_header"
+        ]
+      },
+      "COMMAND_RPC_GET_COINBASE_TX_SUM.request_t": {
+        "type": "object",
+        "properties": {
+          "client": {
+            "type": "string"
+          },
+          "height": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "count": {
+            "type": "integer",
+            "minimum": 0
+          }
+        },
+        "required": [
+          "client",
+          "height",
+          "count"
+        ]
+      },
+      "COMMAND_RPC_GET_COINBASE_TX_SUM.response_t": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string"
+          },
+          "credits": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "top_hash": {
+            "type": "string"
+          },
+          "emission_amount": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "wide_emission_amount": {
+            "type": "string"
+          },
+          "emission_amount_top64": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "fee_amount": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "wide_fee_amount": {
+            "type": "string"
+          },
+          "fee_amount_top64": {
+            "type": "integer",
+            "minimum": 0
+          }
+        },
+        "required": [
+          "status",
+          "credits",
+          "top_hash",
+          "emission_amount",
+          "wide_emission_amount",
+          "emission_amount_top64",
+          "fee_amount",
+          "wide_fee_amount",
+          "fee_amount_top64"
+        ]
+      },
+      "COMMAND_RPC_GET_CONNECTIONS.request_t": {
+        "type": "object",
+        "properties": {}
+      },
+      "COMMAND_RPC_GET_CONNECTIONS.response_t": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string"
+          },
+          "connections": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/connection_info"
+            }
+          }
+        },
+        "required": [
+          "status",
+          "connections"
+        ]
+      },
+      "COMMAND_RPC_GET_INFO.request_t": {
+        "type": "object",
+        "properties": {
+          "client": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "client"
+        ]
+      },
+      "COMMAND_RPC_GET_INFO.response_t": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string"
+          },
+          "credits": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "top_hash": {
+            "type": "string"
+          },
+          "height": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "target_height": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "difficulty": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "wide_difficulty": {
+            "type": "string"
+          },
+          "difficulty_top64": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "target": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "tx_count": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "tx_pool_size": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "alt_blocks_count": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "outgoing_connections_count": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "incoming_connections_count": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "rpc_connections_count": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "white_peerlist_size": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "grey_peerlist_size": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "mainnet": {
+            "type": "boolean"
+          },
+          "testnet": {
+            "type": "boolean"
+          },
+          "stagenet": {
+            "type": "boolean"
+          },
+          "nettype": {
+            "type": "string"
+          },
+          "top_block_hash": {
+            "type": "string"
+          },
+          "cumulative_difficulty": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "wide_cumulative_difficulty": {
+            "type": "string"
+          },
+          "cumulative_difficulty_top64": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "block_size_limit": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "block_weight_limit": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "block_size_median": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "block_weight_median": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "adjusted_time": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "start_time": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "free_space": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "offline": {
+            "type": "boolean"
+          },
+          "database_size": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "update_available": {
+            "type": "boolean"
+          },
+          "busy_syncing": {
+            "type": "boolean"
+          },
+          "version": {
+            "type": "string"
+          },
+          "synchronized": {
+            "type": "boolean"
+          },
+          "restricted": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "status",
+          "credits",
+          "top_hash",
+          "height",
+          "target_height",
+          "difficulty",
+          "wide_difficulty",
+          "difficulty_top64",
+          "target",
+          "tx_count",
+          "tx_pool_size",
+          "alt_blocks_count",
+          "outgoing_connections_count",
+          "incoming_connections_count",
+          "rpc_connections_count",
+          "white_peerlist_size",
+          "grey_peerlist_size",
+          "mainnet",
+          "testnet",
+          "stagenet",
+          "nettype",
+          "top_block_hash",
+          "cumulative_difficulty",
+          "wide_cumulative_difficulty",
+          "cumulative_difficulty_top64",
+          "block_size_limit",
+          "block_size_median",
+          "adjusted_time",
+          "start_time",
+          "free_space",
+          "offline",
+          "database_size",
+          "update_available",
+          "busy_syncing",
+          "version",
+          "synchronized",
+          "restricted"
+        ]
+      },
+      "COMMAND_RPC_GET_LAST_BLOCK_HEADER.request_t": {
+        "type": "object",
+        "properties": {
+          "client": {
+            "type": "string"
+          },
+          "fill_pow_hash": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "client"
+        ]
+      },
+      "COMMAND_RPC_GET_LAST_BLOCK_HEADER.response_t": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string"
+          },
+          "credits": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "top_hash": {
+            "type": "string"
+          },
+          "block_header": {
+            "$ref": "#/components/schemas/block_header_response"
+          }
+        },
+        "required": [
+          "status",
+          "credits",
+          "top_hash",
+          "block_header"
+        ]
+      },
+      "COMMAND_RPC_GET_OUTPUT_DISTRIBUTION.distribution": {
+        "type": "object",
+        "properties": {
+          "amount": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "start_height": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "binary": {
+            "type": "boolean"
+          },
+          "compress": {
+            "type": "boolean"
+          },
+          "compressed_data": {
+            "type": "string"
+          },
+          "distribution": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "minimum": 0
+            }
+          },
+          "base": {
+            "type": "integer",
+            "minimum": 0
+          }
+        },
+        "required": [
+          "amount",
+          "start_height",
+          "binary",
+          "compress",
+          "distribution",
+          "base"
+        ]
+      },
+      "COMMAND_RPC_GET_OUTPUT_DISTRIBUTION.request_t": {
+        "type": "object",
+        "properties": {
+          "client": {
+            "type": "string"
+          },
+          "amounts": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "minimum": 0
+            }
+          },
+          "from_height": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "to_height": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "cumulative": {
+            "type": "boolean"
+          },
+          "binary": {
+            "type": "boolean"
+          },
+          "compress": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "client",
+          "amounts"
+        ]
+      },
+      "COMMAND_RPC_GET_OUTPUT_DISTRIBUTION.response_t": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string"
+          },
+          "credits": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "top_hash": {
+            "type": "string"
+          },
+          "distributions": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/COMMAND_RPC_GET_OUTPUT_DISTRIBUTION.distribution"
+            }
+          }
+        },
+        "required": [
+          "status",
+          "credits",
+          "top_hash",
+          "distributions"
+        ]
+      },
+      "COMMAND_RPC_GET_OUTPUT_HISTOGRAM.entry": {
+        "type": "object",
+        "properties": {
+          "amount": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "total_instances": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "unlocked_instances": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "recent_instances": {
+            "type": "integer",
+            "minimum": 0
+          }
+        },
+        "required": [
+          "amount",
+          "total_instances",
+          "unlocked_instances",
+          "recent_instances"
+        ]
+      },
+      "COMMAND_RPC_GET_OUTPUT_HISTOGRAM.request_t": {
+        "type": "object",
+        "properties": {
+          "client": {
+            "type": "string"
+          },
+          "amounts": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "minimum": 0
+            }
+          },
+          "min_count": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "max_count": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "unlocked": {
+            "type": "boolean"
+          },
+          "recent_cutoff": {
+            "type": "integer",
+            "minimum": 0
+          }
+        },
+        "required": [
+          "client",
+          "amounts",
+          "min_count",
+          "max_count",
+          "unlocked",
+          "recent_cutoff"
+        ]
+      },
+      "COMMAND_RPC_GET_OUTPUT_HISTOGRAM.response_t": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string"
+          },
+          "credits": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "top_hash": {
+            "type": "string"
+          },
+          "histogram": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/COMMAND_RPC_GET_OUTPUT_HISTOGRAM.entry"
+            }
+          }
+        },
+        "required": [
+          "status",
+          "credits",
+          "top_hash",
+          "histogram"
+        ]
+      },
+      "COMMAND_RPC_GET_TRANSACTION_POOL_BACKLOG.request_t": {
+        "type": "object",
+        "properties": {
+          "client": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "client"
+        ]
+      },
+      "COMMAND_RPC_GET_TRANSACTION_POOL_BACKLOG.response_t": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string"
+          },
+          "credits": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "top_hash": {
+            "type": "string"
+          },
+          "backlog": {
+            "type": "string",
+            "contentEncoding": "binary"
+          }
+        },
+        "required": [
+          "status",
+          "credits",
+          "top_hash",
+          "backlog"
+        ]
+      },
+      "COMMAND_RPC_GET_TXIDS_LOOSE.request_t": {
+        "type": "object",
+        "properties": {
+          "txid_template": {
+            "type": "string"
+          },
+          "num_matching_bits": {
+            "type": "integer",
+            "minimum": 0
+          }
+        },
+        "required": [
+          "txid_template",
+          "num_matching_bits"
+        ]
+      },
+      "COMMAND_RPC_GET_TXIDS_LOOSE.response_t": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string"
+          },
+          "txids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "required": [
+          "status",
+          "txids"
+        ]
+      },
+      "COMMAND_RPC_GET_VERSION.hf_entry": {
+        "type": "object",
+        "properties": {
+          "hf_version": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "height": {
+            "type": "integer",
+            "minimum": 0
+          }
+        },
+        "required": [
+          "hf_version",
+          "height"
+        ]
+      },
+      "COMMAND_RPC_GET_VERSION.request_t": {
+        "type": "object",
+        "properties": {}
+      },
+      "COMMAND_RPC_GET_VERSION.response_t": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string"
+          },
+          "version": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "release": {
+            "type": "boolean"
+          },
+          "current_height": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "target_height": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "hard_forks": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/COMMAND_RPC_GET_VERSION.hf_entry"
+            }
+          },
+          "nettype": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "status",
+          "version",
+          "release"
+        ]
+      },
+      "COMMAND_RPC_HARD_FORK_INFO.request_t": {
+        "type": "object",
+        "properties": {
+          "client": {
+            "type": "string"
+          },
+          "version": {
+            "type": "integer",
+            "minimum": 0
+          }
+        },
+        "required": [
+          "client",
+          "version"
+        ]
+      },
+      "COMMAND_RPC_HARD_FORK_INFO.response_t": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string"
+          },
+          "credits": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "top_hash": {
+            "type": "string"
+          },
+          "version": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "enabled": {
+            "type": "boolean"
+          },
+          "window": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "votes": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "threshold": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "voting": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "state": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "earliest_height": {
+            "type": "integer",
+            "minimum": 0
+          }
+        },
+        "required": [
+          "status",
+          "credits",
+          "top_hash",
+          "version",
+          "enabled",
+          "window",
+          "votes",
+          "threshold",
+          "voting",
+          "state",
+          "earliest_height"
+        ]
+      },
+      "COMMAND_RPC_PRUNE_BLOCKCHAIN.request_t": {
+        "type": "object",
+        "properties": {
+          "check": {
+            "type": "boolean"
+          }
+        }
+      },
+      "COMMAND_RPC_PRUNE_BLOCKCHAIN.response_t": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string"
+          },
+          "pruned": {
+            "type": "boolean"
+          },
+          "pruning_seed": {
+            "type": "integer",
+            "minimum": 0
+          }
+        },
+        "required": [
+          "status",
+          "pruned",
+          "pruning_seed"
+        ]
+      },
+      "COMMAND_RPC_RELAY_TX.request_t": {
+        "type": "object",
+        "properties": {
+          "client": {
+            "type": "string"
+          },
+          "txids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "required": [
+          "client",
+          "txids"
+        ]
+      },
+      "COMMAND_RPC_RELAY_TX.response_t": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string"
+          },
+          "credits": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "top_hash": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "status",
+          "credits",
+          "top_hash"
+        ]
+      },
+      "COMMAND_RPC_SETBANS.ban": {
+        "type": "object",
+        "properties": {
+          "host": {
+            "type": "string"
+          },
+          "ip": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "ban": {
+            "type": "boolean"
+          },
+          "seconds": {
+            "type": "integer",
+            "minimum": 0
+          }
+        },
+        "required": [
+          "host",
+          "ip",
+          "ban",
+          "seconds"
+        ]
+      },
+      "COMMAND_RPC_SETBANS.request_t": {
+        "type": "object",
+        "properties": {
+          "bans": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/COMMAND_RPC_SETBANS.ban"
+            }
+          }
+        },
+        "required": [
+          "bans"
+        ]
+      },
+      "COMMAND_RPC_SETBANS.response_t": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "status"
+        ]
+      },
+      "COMMAND_RPC_SUBMITBLOCK.response_t": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string"
+          },
+          "block_id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "status",
+          "block_id"
+        ]
+      },
+      "COMMAND_RPC_SYNC_INFO.peer": {
+        "type": "object",
+        "properties": {
+          "info": {
+            "$ref": "#/components/schemas/connection_info"
+          }
+        },
+        "required": [
+          "info"
+        ]
+      },
+      "COMMAND_RPC_SYNC_INFO.request_t": {
+        "type": "object",
+        "properties": {
+          "client": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "client"
+        ]
+      },
+      "COMMAND_RPC_SYNC_INFO.response_t": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string"
+          },
+          "credits": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "top_hash": {
+            "type": "string"
+          },
+          "height": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "target_height": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "next_needed_pruning_seed": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "peers": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/COMMAND_RPC_SYNC_INFO.peer"
+            }
+          },
+          "spans": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/COMMAND_RPC_SYNC_INFO.span"
+            }
+          },
+          "overview": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "status",
+          "credits",
+          "top_hash",
+          "height",
+          "target_height",
+          "next_needed_pruning_seed",
+          "peers",
+          "spans",
+          "overview"
+        ]
+      },
+      "COMMAND_RPC_SYNC_INFO.span": {
+        "type": "object",
+        "properties": {
+          "start_block_height": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "nblocks": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "connection_id": {
+            "type": "string"
+          },
+          "rate": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "speed": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "size": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "remote_address": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "start_block_height",
+          "nblocks",
+          "connection_id",
+          "rate",
+          "speed",
+          "size",
+          "remote_address"
+        ]
+      },
+      "block_header_response": {
+        "type": "object",
+        "properties": {
+          "major_version": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "minor_version": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "timestamp": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "prev_hash": {
+            "type": "string"
+          },
+          "nonce": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "orphan_status": {
+            "type": "boolean"
+          },
+          "height": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "depth": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "hash": {
+            "type": "string"
+          },
+          "difficulty": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "wide_difficulty": {
+            "type": "string"
+          },
+          "difficulty_top64": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "cumulative_difficulty": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "wide_cumulative_difficulty": {
+            "type": "string"
+          },
+          "cumulative_difficulty_top64": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "reward": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "block_size": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "block_weight": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "num_txes": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "pow_hash": {
+            "type": "string"
+          },
+          "long_term_weight": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "miner_tx_hash": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "major_version",
+          "minor_version",
+          "timestamp",
+          "prev_hash",
+          "nonce",
+          "orphan_status",
+          "height",
+          "depth",
+          "hash",
+          "difficulty",
+          "wide_difficulty",
+          "difficulty_top64",
+          "cumulative_difficulty",
+          "wide_cumulative_difficulty",
+          "cumulative_difficulty_top64",
+          "reward",
+          "block_size",
+          "num_txes",
+          "pow_hash",
+          "miner_tx_hash"
+        ]
+      },
+      "connection_info": {
+        "type": "object",
+        "properties": {
+          "incoming": {
+            "type": "boolean"
+          },
+          "localhost": {
+            "type": "boolean"
+          },
+          "local_ip": {
+            "type": "boolean"
+          },
+          "address": {
+            "type": "string"
+          },
+          "host": {
+            "type": "string"
+          },
+          "ip": {
+            "type": "string"
+          },
+          "port": {
+            "type": "string"
+          },
+          "rpc_port": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "rpc_credits_per_hash": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "peer_id": {
+            "type": "string"
+          },
+          "recv_count": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "recv_idle_time": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "send_count": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "send_idle_time": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "state": {
+            "type": "string"
+          },
+          "live_time": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "avg_download": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "current_download": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "avg_upload": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "current_upload": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "support_flags": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "connection_id": {
+            "type": "string"
+          },
+          "height": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "pruning_seed": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "address_type": {
+            "type": "integer",
+            "minimum": 0
+          }
+        },
+        "required": [
+          "incoming",
+          "localhost",
+          "local_ip",
+          "address",
+          "host",
+          "ip",
+          "port",
+          "rpc_port",
+          "rpc_credits_per_hash",
+          "peer_id",
+          "recv_count",
+          "recv_idle_time",
+          "send_count",
+          "send_idle_time",
+          "state",
+          "live_time",
+          "avg_download",
+          "current_download",
+          "avg_upload",
+          "current_upload",
+          "support_flags",
+          "connection_id",
+          "height",
+          "pruning_seed",
+          "address_type"
+        ]
+      }
+    }
+  }
+}
