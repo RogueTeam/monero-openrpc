@@ -48,8 +48,15 @@ def primitive(name):
     """JSON Schema for a C++ scalar or string type, or None."""
     m = re.fullmatch(r"(?:std::)?(u?)int(8|16|32|64)_t", name)
     if m or name in ("int", "unsigned", "unsigned int", "size_t"):
-        unsigned = m.group(1) == "u" if m else name != "int"
-        return {"type": "integer", "minimum": 0} if unsigned else {"type": "integer"}
+        unsigned, bits = (m.group(1) == "u", int(m.group(2))) if m else \
+            (name != "int", 64 if name == "size_t" else 32)
+        # The width goes in standard minimum/maximum bounds, as in docs/schema/*.json.
+        # A custom "format" (uint64, ...) makes strict validators such as ajv fail.
+        lo, hi = (0, 2 ** bits - 1) if unsigned else (-2 ** (bits - 1), 2 ** (bits - 1) - 1)
+        s = {"type": "integer", "minimum": lo, "maximum": hi}
+        if bits == 64:
+            s["x-bigint"] = True        # can exceed 2^53: unsafe as a JS number
+        return s
     if name == "bool":
         return {"type": "boolean"}
     if name in ("double", "float"):
@@ -335,7 +342,21 @@ def positional_shape(impl, handler):
 # ---------------------------------------------------------- schema building
 class Builder:
     def __init__(self, reg):
-        self.reg, self.schemas, self.warnings = reg, {}, []
+        self.reg, self.schemas, self.warnings, self.titles = reg, {}, [], set()
+
+    def title(self, s):
+        """Readable, unique type name for code generators:
+        COMMAND_RPC_GET_INFO::response_t -> GetInfoResponse."""
+        parts = list(s.path)
+        parts[0] = re.sub(r"^COMMAND_RPC_", "", parts[0])
+        parts = [re.sub(r"_t$", "", p) for p in parts]      # request_t -> request
+        title = "".join(w.capitalize() for p in parts for w in p.split("_") if w)
+        if title in self.titles:                # same name in another namespace
+            title = "".join(w.capitalize() for w in re.split(r"::|_", s.ns) if w) + title
+        while title in self.titles:
+            title += "_"
+        self.titles.add(title)
+        return title
 
     def warn(self, msg):
         self.warnings.append(msg)
@@ -346,7 +367,8 @@ class Builder:
             name = s.ns.replace("::", ".") + "." + name
         if name not in self.schemas:
             self.schemas[name] = {}                     # placeholder for recursion
-            self.schemas[name] = self.struct_schema(s)
+            title = self.title(s)
+            self.schemas[name] = {"title": title, **self.struct_schema(s)}
         return {"$ref": "#/components/schemas/" + name}
 
     def type_schema(self, t, ctx):
