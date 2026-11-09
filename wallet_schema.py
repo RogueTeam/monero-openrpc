@@ -14,6 +14,7 @@ WALLET_RPC = Target(
           "src/cryptonote_protocol/cryptonote_protocol_defs.h",
           "src/cryptonote_basic/subaddress_index.h"],
     server="src/wallet/wallet_rpc_server.h",
+    impl="src/wallet/wallet_rpc_server.cpp",
 )
 
 if __name__ == "__main__":

@@ -21,6 +21,7 @@ class Target:
     version_macro: str      # e.g. CORE_RPC_VERSION (_MAJOR / _MINOR are appended)
     defs: List[str]         # headers with the request/response structs
     server: str             # header with the URI / JSON-RPC route maps
+    impl: str               # handler source, read only to count positional params
 
 # ----------------------------------------------------------------- C++ types
 STRINGS = {"std::string", "string", "blobdata", "cryptonote::blobdata",
@@ -285,6 +286,21 @@ def parse_routes(text, warn):
     return routes
 
 
+def positional_shape(impl, handler):
+    """For a request that isn't a struct: 0 if the handler never reads req,
+    N if it rejects arrays whose length isn't N, None if unknown."""
+    m = re.search(rf"\b\w+::{re.escape(handler)}\s*\(", impl)
+    start = impl.find("{", m.end()) if m else -1
+    if start < 0:
+        return None
+    nxt = re.search(r"\n\s*(?:bool|void|int)\s+\w+::\w+\s*\(", impl[start:])
+    body = impl[start:start + (nxt.start() if nxt else 4000)]
+    if not re.search(r"\breq\b", body):
+        return 0
+    m = re.search(r"\breq\.size\(\)\s*!=\s*(\d+)", body)
+    return int(m.group(1)) if m else None
+
+
 # ---------------------------------------------------------- schema building
 class Builder:
     def __init__(self, reg):
@@ -447,14 +463,20 @@ class Builder:
             return {"type": "integer"}
         return self.type_schema(r[1], r[2])     # typedef: struct_init<T>, std::vector<T>
 
-    def params(self, req):
+    def params(self, req, shape, method):
         if "$ref" in req:                       # struct: one named param per field
             params = []
             for k, v in self.schemas[req["$ref"].rsplit("/", 1)[-1]]["properties"].items():
                 params.append({"name": k, "schema": v, "required": False})
             return "by-name", params
-        # not a struct (std::vector<T>, ...): the params are sent as an array
-        return "by-position", [{"name": "arg", "schema": req.get("items", req), "required": False}]
+        if shape == 0:                          # handler never reads the request
+            return "either", []
+        if shape is None:
+            self.warn(f"{method}: couldn't find how many positional params it takes")
+        items = req.get("items", req)
+        names = ["arg"] if (shape or 1) == 1 else [f"arg{i}" for i in range(shape)]
+        return "by-position", [{"name": n, "schema": items, "required": shape is not None}
+                               for n in names]
 
 
 def build(repo, target):
@@ -471,6 +493,7 @@ def build(repo, target):
     for text in defs:
         parse_header(text, reg)
     b = Builder(reg)
+    impl = read(target.impl)
     ver = dict(re.findall(rf"#define\s+{target.version_macro}_(MAJOR|MINOR)\s+(\d+)", "\n".join(defs)))
     if len(ver) != 2:
         b.warn(f"{target.version_macro}_MAJOR/MINOR not found")
@@ -490,7 +513,8 @@ def build(repo, target):
         elif r["cond"]:
             b.warn(f"{r['name']}: unknown route condition {r['cond']}")
         if r["macro"] == "MAP_JON_RPC":
-            structure, params = b.params(req)
+            shape = None if "$ref" in req else positional_shape(impl, r["handler"])
+            structure, params = b.params(req, shape, r["name"])
             methods.append({"name": r["name"], "paramStructure": structure, "params": params,
                             "result": {"name": "result", "schema": res}, **extra})
         else:

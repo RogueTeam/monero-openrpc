@@ -13,6 +13,7 @@ MONEROD = Target(
           "src/cryptonote_protocol/cryptonote_protocol_defs.h",
           "src/rpc/rpc_handler.h"],
     server="src/rpc/core_rpc_server.h",
+    impl="src/rpc/core_rpc_server.cpp",
 )
 
 if __name__ == "__main__":
