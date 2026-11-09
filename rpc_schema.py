@@ -26,6 +26,10 @@ class Target:
 STRINGS = {"std::string", "string", "blobdata", "cryptonote::blobdata",
            "epee::wipeable_string"}
 SEQUENCES = {"vector", "list", "deque", "set", "unordered_set"}
+# epee calls written by hand inside a KV map, and the macro each one equals.
+RAW_CALLS = {"serialize": "KV_SERIALIZE_N",
+             "serialize_t_val_as_blob": "KV_SERIALIZE_VAL_POD_AS_BLOB_N",
+             "serialize_stl_container_pod_val_as_blob": "KV_SERIALIZE_CONTAINER_POD_AS_BLOB_N"}
 
 
 def primitive(name):
@@ -150,6 +154,8 @@ USING_RE = re.compile(r"^using\s+(\w+)\s*=\s*(.+?)\s*;")
 DECL_RE = re.compile(r"^(?P<type>[\w:]+(?:\s*<.*>)?(?:\s+(?:int|long|char|short))*)"
                      r"\s+(?P<rest>.+)$", re.S)
 MACRO_RE = re.compile(r"^(KV_SERIALIZE\w*)\s*\((.*)\)\s*;?$")
+RAW_RE = re.compile(r"selector<\s*is_store\s*>::(\w+)\s*\(\s*([\w.]+)\s*,\s*stg\s*,"
+                    r"\s*hparent_section\s*,\s*(\"\w+\")\s*\)")
 NOT_A_TYPE = {"return", "typedef", "using", "static", "friend", "delete", "throw", "else",
               "goto", "break", "continue", "case", "template", "virtual", "explicit",
               "inline", "mutable", "if", "for", "while", "do", "switch", "public",
@@ -172,10 +178,24 @@ def parse_decl(code):
     return m.group("type"), names
 
 
+def is_branch(code):
+    """True if the line is only braces and/or a branch: 'if (...)', 'else',
+    '} else {', 'else if (...) {'. A branch followed by a statement on the same
+    line returns False, so the statement gets a "hand-written C++" warning
+    instead of being lost."""
+    m = re.fullmatch(r"\}?\s*(?:else\b\s*)?(?:if\s*(\(.*\)))?\s*\{?", code)
+    depth, cond = 0, (m.group(1) or "") if m else None
+    for i, ch in enumerate(cond or ""):
+        depth += (ch == "(") - (ch == ")")
+        if depth == 0 and i < len(cond) - 1:
+            return False                        # condition closed before the end
+    return m is not None
+
+
 def parse_header(text, reg):
     """Collect structs, members, typedefs, enums and KV_SERIALIZE entries."""
     stack, depth, pending = [], 0, None
-    kv, kv_depth, in_define = None, 0, False
+    kv, kv_depth, cond_next, kv_locals, in_define = None, 0, False, {}, False
     for code, comment in code_lines(text):
         if in_define or code.startswith("#"):          # preprocessor + continuations
             in_define = code.endswith("\\")
@@ -190,13 +210,22 @@ def parse_header(text, reg):
         if kv is not None:                              # inside a KV_SERIALIZE map
             if code.startswith("END_KV_SERIALIZE_MAP"):
                 kv = None
-            elif code in ("{", "}"):
-                pass
-            elif (m := MACRO_RE.match(code)):
-                kv.kv.append({"macro": m.group(1), "args": split_args(m.group(2)),
-                              "cond": depth > kv_depth, "comment": comment})
+            elif is_branch(code):
+                cond_next = cond_next or bool(re.search(r"\b(?:if|else)\b", code))
             else:
-                kv.custom.append(code)
+                stmt, cond, cond_next = code, cond_next or depth > kv_depth, False
+                if (m := MACRO_RE.match(stmt)):
+                    kv.kv.append({"macro": m.group(1), "args": split_args(m.group(2)),
+                                  "cond": cond, "comment": comment})
+                elif (m := RAW_RE.search(stmt)) and m.group(1) in RAW_CALLS:
+                    var = m.group(2).replace("this_ref.", "")
+                    kv.kv.append({"macro": RAW_CALLS[m.group(1)], "args": [var, m.group(3)],
+                                  "cond": cond, "comment": comment,
+                                  "local_type": kv_locals.get(var)})
+                elif (d := parse_decl(stmt)):
+                    kv_locals.update((n, d[0]) for n in d[1])
+                else:
+                    kv.custom.append(stmt)
         elif (m := NS_RE.match(code)):
             pending = ("ns", m.group(1), None)
         elif (m := STRUCT_RE.match(code)) and not (code.endswith(";") and "{" not in code):
@@ -210,7 +239,7 @@ def parse_header(text, reg):
         elif at_struct:
             s = top["obj"]
             if code.startswith("BEGIN_KV_SERIALIZE_MAP"):
-                s.kv, kv, kv_depth = [], s, depth
+                s.kv, kv, kv_depth, kv_locals, cond_next = [], s, depth, {}, False
             elif (m := TYPEDEF_RE.match(code)):
                 s.aliases[m.group(2)] = m.group(1)
             elif (m := USING_RE.match(code)):
@@ -232,7 +261,7 @@ def parse_header(text, reg):
                     obj = Struct(ns, spath + (name,), extra)
                     reg.structs.setdefault(obj.path, []).append(obj)
                 stack.append({"kind": kind, "name": name, "depth": depth, "obj": obj})
-                pending = None
+                pending, cond_next = None, False
             elif ch == "}":
                 if stack and stack[-1]["depth"] == depth:
                     stack.pop()
@@ -313,6 +342,15 @@ class Builder:
             if r and r[0] == "struct" and r[1] is not s:
                 yield r[1]
 
+    def map_owner(self, s, seen=()):
+        """Struct whose KV map s uses: its own, or else the one inherited from a base."""
+        if s.kv is not None:
+            return s
+        for b in self.bases(s):
+            if b not in seen and (owner := self.map_owner(b, seen + (s,))):
+                return owner
+        return None
+
     def kv_entries(self, s, seen, visited):
         """Yield (entry, owner) with KV_SERIALIZE_PARENT flattened."""
         visited.append(s)
@@ -321,7 +359,7 @@ class Builder:
                 yield e, s
                 continue
             r = self.reg.resolve(e["args"][0], s)
-            parent = r[1] if r and r[0] == "struct" and r[1].kv is not None else None
+            parent = self.map_owner(r[1]) if r and r[0] == "struct" else None
             if parent is None or parent in seen:
                 self.warn(f"{s.qualname}: cannot resolve parent {e['args'][0]}")
                 continue
@@ -358,7 +396,7 @@ class Builder:
         m, args = e["macro"], e["args"]
         var = args[0].strip().replace("this_ref.", "")
         wire = args[1].strip().strip('"') if m.endswith("_N") and len(args) > 1 else var
-        hit = self.field_type(owner, var)
+        hit = (e["local_type"], owner, "") if e.get("local_type") else self.field_type(owner, var)
         if hit is None:
             self.warn(f"{owner.qualname}: no declaration for serialized member '{var}'")
             return wire, {}, False
@@ -372,15 +410,23 @@ class Builder:
 
     def struct_schema(self, s):
         out = {"type": "object", "properties": {}}
-        owner = s if s.kv is not None else None
+        owner = self.map_owner(s)
         if owner is None:
             self.warn(f"{s.qualname}: no KV_SERIALIZE map")
             return out
-        required, visited = [], []
+        variants, visited = {}, []
         for e, eowner in self.kv_entries(owner, (), visited):
-            wire, prop, req = self.kv_property(e, eowner)
-            out["properties"][wire] = prop
-            if req and wire not in required:
+            wire, prop, required = self.kv_property(e, eowner)
+            variants.setdefault(wire, []).append((prop, required))
+        required = []
+        for wire, vs in variants.items():
+            # The same key can be written in several if/else branches: keep each shape.
+            alts = []
+            for prop, _ in vs:
+                if prop not in alts:
+                    alts.append(prop)
+            out["properties"][wire] = alts[0] if len(alts) == 1 else {"anyOf": alts}
+            if len(vs) == 1 and vs[0][1]:
                 required.append(wire)
         if required:
             out["required"] = required

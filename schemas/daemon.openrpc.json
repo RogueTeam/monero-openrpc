@@ -2878,11 +2878,19 @@
             "type": "string"
           },
           "distribution": {
-            "type": "array",
-            "items": {
-              "type": "integer",
-              "minimum": 0
-            }
+            "anyOf": [
+              {
+                "type": "string",
+                "contentEncoding": "binary"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "integer",
+                  "minimum": 0
+                }
+              }
+            ]
           },
           "base": {
             "type": "integer",
@@ -2894,7 +2902,6 @@
           "start_height",
           "binary",
           "compress",
-          "distribution",
           "base"
         ]
       },
@@ -4479,10 +4486,20 @@
             "minimum": 0
           },
           "txs": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/tx_blob_entry"
-            }
+            "anyOf": [
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/tx_blob_entry"
+                }
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ]
           }
         },
         "required": [

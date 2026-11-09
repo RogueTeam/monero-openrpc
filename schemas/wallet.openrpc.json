@@ -2039,7 +2039,44 @@
     {
       "name": "make_uri",
       "paramStructure": "by-name",
-      "params": [],
+      "params": [
+        {
+          "name": "address",
+          "schema": {
+            "type": "string"
+          },
+          "required": false
+        },
+        {
+          "name": "payment_id",
+          "schema": {
+            "type": "string"
+          },
+          "required": false
+        },
+        {
+          "name": "amount",
+          "schema": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "required": false
+        },
+        {
+          "name": "tx_description",
+          "schema": {
+            "type": "string"
+          },
+          "required": false
+        },
+        {
+          "name": "recipient_name",
+          "schema": {
+            "type": "string"
+          },
+          "required": false
+        }
+      ],
       "result": {
         "name": "result",
         "schema": {
@@ -5124,7 +5161,31 @@
       },
       "COMMAND_RPC_MAKE_URI.request_t": {
         "type": "object",
-        "properties": {}
+        "properties": {
+          "address": {
+            "type": "string"
+          },
+          "payment_id": {
+            "type": "string"
+          },
+          "amount": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "tx_description": {
+            "type": "string"
+          },
+          "recipient_name": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "address",
+          "payment_id",
+          "amount",
+          "tx_description",
+          "recipient_name"
+        ]
       },
       "COMMAND_RPC_MAKE_URI.response_t": {
         "type": "object",
