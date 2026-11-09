@@ -1293,11 +1293,7 @@
               "$ref": "#/components/schemas/COMMAND_RPC_ADD_AUX_POW.aux_pow_t"
             }
           }
-        },
-        "required": [
-          "blocktemplate_blob",
-          "aux_pow"
-        ]
+        }
       },
       "COMMAND_RPC_ADD_AUX_POW.response_t": {
         "title": "AddAuxPowResponse",
@@ -1333,8 +1329,7 @@
           "blocktemplate_blob",
           "blockhashing_blob",
           "merkle_root",
-          "merkle_tree_depth",
-          "aux_pow"
+          "merkle_tree_depth"
         ]
       },
       "COMMAND_RPC_BANNED.request_t": {
@@ -1344,10 +1339,7 @@
           "address": {
             "type": "string"
           }
-        },
-        "required": [
-          "address"
-        ]
+        }
       },
       "COMMAND_RPC_BANNED.response_t": {
         "title": "BannedResponse",
@@ -1392,13 +1384,7 @@
           "seed_hash": {
             "type": "string"
           }
-        },
-        "required": [
-          "major_version",
-          "height",
-          "block_blob",
-          "seed_hash"
-        ]
+        }
       },
       "COMMAND_RPC_FLUSH_CACHE.request_t": {
         "title": "FlushCacheRequest",
@@ -1432,10 +1418,7 @@
               "type": "string"
             }
           }
-        },
-        "required": [
-          "txids"
-        ]
+        }
       },
       "COMMAND_RPC_FLUSH_TRANSACTION_POOL.response_t": {
         "title": "FlushTransactionPoolResponse",
@@ -1471,12 +1454,7 @@
             "maximum": 4294967295,
             "default": 0
           }
-        },
-        "required": [
-          "amount_of_blocks",
-          "wallet_address",
-          "prev_block"
-        ]
+        }
       },
       "COMMAND_RPC_GENERATEBLOCKS.response_t": {
         "title": "GenerateblocksResponse",
@@ -1500,8 +1478,7 @@
         },
         "required": [
           "status",
-          "height",
-          "blocks"
+          "height"
         ]
       },
       "COMMAND_RPC_GETBANS.ban": {
@@ -1548,8 +1525,7 @@
           }
         },
         "required": [
-          "status",
-          "bans"
+          "status"
         ]
       },
       "COMMAND_RPC_GETBLOCKCOUNT.response_t": {
@@ -1591,13 +1567,7 @@
           "extra_nonce": {
             "type": "string"
           }
-        },
-        "required": [
-          "reserve_size",
-          "wallet_address",
-          "prev_block",
-          "extra_nonce"
-        ]
+        }
       },
       "COMMAND_RPC_GETBLOCKTEMPLATE.response_t": {
         "title": "GetblocktemplateResponse",
@@ -1743,8 +1713,7 @@
           "seed_hash",
           "difficulty",
           "median_weight",
-          "already_generated_coins",
-          "tx_backlog"
+          "already_generated_coins"
         ]
       },
       "COMMAND_RPC_GETMINERDATA.response_t.tx_backlog_entry": {
@@ -1824,7 +1793,6 @@
           "difficulty",
           "wide_difficulty",
           "difficulty_top64",
-          "block_hashes",
           "main_chain_parent_block"
         ]
       },
@@ -1848,8 +1816,7 @@
           }
         },
         "required": [
-          "status",
-          "chains"
+          "status"
         ]
       },
       "COMMAND_RPC_GET_ALT_BLOCKS_HASHES.request_t": {
@@ -1859,10 +1826,7 @@
           "client": {
             "type": "string"
           }
-        },
-        "required": [
-          "client"
-        ]
+        }
       },
       "COMMAND_RPC_GET_ALT_BLOCKS_HASHES.response_t": {
         "title": "GetAltBlocksHashesResponse",
@@ -1890,8 +1854,7 @@
         "required": [
           "status",
           "credits",
-          "top_hash",
-          "blks_hashes"
+          "top_hash"
         ]
       },
       "COMMAND_RPC_GET_BASE_FEE_ESTIMATE.request_t": {
@@ -1907,11 +1870,7 @@
             "maximum": 18446744073709551615,
             "x-bigint": true
           }
-        },
-        "required": [
-          "client",
-          "grace_blocks"
-        ]
+        }
       },
       "COMMAND_RPC_GET_BASE_FEE_ESTIMATE.response_t": {
         "title": "GetBaseFeeEstimateResponse",
@@ -1956,8 +1915,7 @@
           "status",
           "credits",
           "top_hash",
-          "fee",
-          "fees"
+          "fee"
         ]
       },
       "COMMAND_RPC_GET_BLOCK.request_t": {
@@ -1980,12 +1938,7 @@
             "type": "boolean",
             "default": false
           }
-        },
-        "required": [
-          "client",
-          "hash",
-          "height"
-        ]
+        }
       },
       "COMMAND_RPC_GET_BLOCK.response_t": {
         "title": "GetBlockResponse",
@@ -2028,7 +1981,6 @@
           "top_hash",
           "block_header",
           "miner_tx_hash",
-          "tx_hashes",
           "blob",
           "json"
         ]
@@ -2049,11 +2001,7 @@
               "x-bigint": true
             }
           }
-        },
-        "required": [
-          "client",
-          "heights"
-        ]
+        }
       },
       "COMMAND_RPC_GET_BLOCKS_BY_HEIGHT.response_t": {
         "title": "GetBlocksByHeightResponse",
@@ -2081,8 +2029,7 @@
         "required": [
           "status",
           "credits",
-          "top_hash",
-          "blocks"
+          "top_hash"
         ]
       },
       "COMMAND_RPC_GET_BLOCKS_FAST.block_output_indices": {
@@ -2095,10 +2042,7 @@
               "$ref": "#/components/schemas/COMMAND_RPC_GET_BLOCKS_FAST.tx_output_indices"
             }
           }
-        },
-        "required": [
-          "indices"
-        ]
+        }
       },
       "COMMAND_RPC_GET_BLOCKS_FAST.pool_tx_info": {
         "title": "GetBlocksFastPoolTxInfo",
@@ -2170,13 +2114,7 @@
             "x-bigint": true,
             "default": 0
           }
-        },
-        "required": [
-          "client",
-          "block_ids",
-          "start_height",
-          "prune"
-        ]
+        }
       },
       "COMMAND_RPC_GET_BLOCKS_FAST.response_t": {
         "title": "GetBlocksFastResponse",
@@ -2254,10 +2192,8 @@
           "status",
           "credits",
           "top_hash",
-          "blocks",
           "start_height",
-          "current_height",
-          "output_indices"
+          "current_height"
         ]
       },
       "COMMAND_RPC_GET_BLOCKS_FAST.tx_output_indices": {
@@ -2273,10 +2209,7 @@
               "x-bigint": true
             }
           }
-        },
-        "required": [
-          "indices"
-        ]
+        }
       },
       "COMMAND_RPC_GET_BLOCK_HEADERS_RANGE.request_t": {
         "title": "GetBlockHeadersRangeRequest",
@@ -2301,12 +2234,7 @@
             "type": "boolean",
             "default": false
           }
-        },
-        "required": [
-          "client",
-          "start_height",
-          "end_height"
-        ]
+        }
       },
       "COMMAND_RPC_GET_BLOCK_HEADERS_RANGE.response_t": {
         "title": "GetBlockHeadersRangeResponse",
@@ -2334,8 +2262,7 @@
         "required": [
           "status",
           "credits",
-          "top_hash",
-          "headers"
+          "top_hash"
         ]
       },
       "COMMAND_RPC_GET_BLOCK_HEADER_BY_HASH.request_t": {
@@ -2358,12 +2285,7 @@
             "type": "boolean",
             "default": false
           }
-        },
-        "required": [
-          "client",
-          "hash",
-          "hashes"
-        ]
+        }
       },
       "COMMAND_RPC_GET_BLOCK_HEADER_BY_HASH.response_t": {
         "title": "GetBlockHeaderByHashResponse",
@@ -2395,8 +2317,7 @@
           "status",
           "credits",
           "top_hash",
-          "block_header",
-          "block_headers"
+          "block_header"
         ]
       },
       "COMMAND_RPC_GET_BLOCK_HEADER_BY_HEIGHT.request_t": {
@@ -2416,11 +2337,7 @@
             "type": "boolean",
             "default": false
           }
-        },
-        "required": [
-          "client",
-          "height"
-        ]
+        }
       },
       "COMMAND_RPC_GET_BLOCK_HEADER_BY_HEIGHT.response_t": {
         "title": "GetBlockHeaderByHeightResponse",
@@ -2468,12 +2385,7 @@
             "maximum": 18446744073709551615,
             "x-bigint": true
           }
-        },
-        "required": [
-          "client",
-          "height",
-          "count"
-        ]
+        }
       },
       "COMMAND_RPC_GET_COINBASE_TX_SUM.response_t": {
         "title": "GetCoinbaseTxSumResponse",
@@ -2554,8 +2466,7 @@
           }
         },
         "required": [
-          "status",
-          "connections"
+          "status"
         ]
       },
       "COMMAND_RPC_GET_HASHES_FAST.request_t": {
@@ -2576,12 +2487,7 @@
             "maximum": 18446744073709551615,
             "x-bigint": true
           }
-        },
-        "required": [
-          "client",
-          "block_ids",
-          "start_height"
-        ]
+        }
       },
       "COMMAND_RPC_GET_HASHES_FAST.response_t": {
         "title": "GetHashesFastResponse",
@@ -2620,7 +2526,6 @@
           "status",
           "credits",
           "top_hash",
-          "m_block_ids",
           "start_height",
           "current_height"
         ]
@@ -2660,10 +2565,7 @@
           "client": {
             "type": "string"
           }
-        },
-        "required": [
-          "client"
-        ]
+        }
       },
       "COMMAND_RPC_GET_INFO.response_t": {
         "title": "GetInfoResponse",
@@ -2912,10 +2814,7 @@
             "type": "boolean",
             "default": false
           }
-        },
-        "required": [
-          "client"
-        ]
+        }
       },
       "COMMAND_RPC_GET_LAST_BLOCK_HEADER.response_t": {
         "title": "GetLastBlockHeaderResponse",
@@ -3074,12 +2973,7 @@
           "get_txid": {
             "type": "boolean"
           }
-        },
-        "required": [
-          "client",
-          "outputs",
-          "get_txid"
-        ]
+        }
       },
       "COMMAND_RPC_GET_OUTPUTS.response_t": {
         "title": "GetOutputsResponse",
@@ -3107,8 +3001,7 @@
         "required": [
           "status",
           "credits",
-          "top_hash",
-          "outs"
+          "top_hash"
         ]
       },
       "COMMAND_RPC_GET_OUTPUTS_BIN.outkey": {
@@ -3162,11 +3055,7 @@
             "type": "boolean",
             "default": true
           }
-        },
-        "required": [
-          "client",
-          "outputs"
-        ]
+        }
       },
       "COMMAND_RPC_GET_OUTPUTS_BIN.response_t": {
         "title": "GetOutputsBinResponse",
@@ -3194,8 +3083,7 @@
         "required": [
           "status",
           "credits",
-          "top_hash",
-          "outs"
+          "top_hash"
         ]
       },
       "COMMAND_RPC_GET_OUTPUT_DISTRIBUTION.distribution": {
@@ -3297,11 +3185,7 @@
             "type": "boolean",
             "default": false
           }
-        },
-        "required": [
-          "client",
-          "amounts"
-        ]
+        }
       },
       "COMMAND_RPC_GET_OUTPUT_DISTRIBUTION.response_t": {
         "title": "GetOutputDistributionResponse",
@@ -3329,8 +3213,7 @@
         "required": [
           "status",
           "credits",
-          "top_hash",
-          "distributions"
+          "top_hash"
         ]
       },
       "COMMAND_RPC_GET_OUTPUT_HISTOGRAM.entry": {
@@ -3406,15 +3289,7 @@
             "maximum": 18446744073709551615,
             "x-bigint": true
           }
-        },
-        "required": [
-          "client",
-          "amounts",
-          "min_count",
-          "max_count",
-          "unlocked",
-          "recent_cutoff"
-        ]
+        }
       },
       "COMMAND_RPC_GET_OUTPUT_HISTOGRAM.response_t": {
         "title": "GetOutputHistogramResponse",
@@ -3442,8 +3317,7 @@
         "required": [
           "status",
           "credits",
-          "top_hash",
-          "histogram"
+          "top_hash"
         ]
       },
       "COMMAND_RPC_GET_PEER_LIST.request_t": {
@@ -3481,9 +3355,7 @@
           }
         },
         "required": [
-          "status",
-          "white_list",
-          "gray_list"
+          "status"
         ]
       },
       "COMMAND_RPC_GET_PUBLIC_NODES.request_t": {
@@ -3525,9 +3397,7 @@
           }
         },
         "required": [
-          "status",
-          "gray",
-          "white"
+          "status"
         ]
       },
       "COMMAND_RPC_GET_TRANSACTIONS.entry": {
@@ -3630,12 +3500,7 @@
             "type": "boolean",
             "default": false
           }
-        },
-        "required": [
-          "client",
-          "txs_hashes",
-          "decode_as_json"
-        ]
+        }
       },
       "COMMAND_RPC_GET_TRANSACTIONS.response_t": {
         "title": "GetTransactionsResponse",
@@ -3684,11 +3549,7 @@
         "required": [
           "status",
           "credits",
-          "top_hash",
-          "txs_as_hex",
-          "txs_as_json",
-          "txs",
-          "missed_tx"
+          "top_hash"
         ]
       },
       "COMMAND_RPC_GET_TRANSACTION_POOL.request_t": {
@@ -3698,10 +3559,7 @@
           "client": {
             "type": "string"
           }
-        },
-        "required": [
-          "client"
-        ]
+        }
       },
       "COMMAND_RPC_GET_TRANSACTION_POOL.response_t": {
         "title": "GetTransactionPoolResponse",
@@ -3735,9 +3593,7 @@
         "required": [
           "status",
           "credits",
-          "top_hash",
-          "transactions",
-          "spent_key_images"
+          "top_hash"
         ]
       },
       "COMMAND_RPC_GET_TRANSACTION_POOL_BACKLOG.request_t": {
@@ -3747,10 +3603,7 @@
           "client": {
             "type": "string"
           }
-        },
-        "required": [
-          "client"
-        ]
+        }
       },
       "COMMAND_RPC_GET_TRANSACTION_POOL_BACKLOG.response_t": {
         "title": "GetTransactionPoolBacklogResponse",
@@ -3776,8 +3629,7 @@
         "required": [
           "status",
           "credits",
-          "top_hash",
-          "backlog"
+          "top_hash"
         ]
       },
       "COMMAND_RPC_GET_TRANSACTION_POOL_HASHES.request_t": {
@@ -3787,10 +3639,7 @@
           "client": {
             "type": "string"
           }
-        },
-        "required": [
-          "client"
-        ]
+        }
       },
       "COMMAND_RPC_GET_TRANSACTION_POOL_HASHES.response_t": {
         "title": "GetTransactionPoolHashesResponse",
@@ -3818,8 +3667,7 @@
         "required": [
           "status",
           "credits",
-          "top_hash",
-          "tx_hashes"
+          "top_hash"
         ]
       },
       "COMMAND_RPC_GET_TRANSACTION_POOL_HASHES_BIN.request_t": {
@@ -3829,10 +3677,7 @@
           "client": {
             "type": "string"
           }
-        },
-        "required": [
-          "client"
-        ]
+        }
       },
       "COMMAND_RPC_GET_TRANSACTION_POOL_HASHES_BIN.response_t": {
         "title": "GetTransactionPoolHashesBinResponse",
@@ -3858,8 +3703,7 @@
         "required": [
           "status",
           "credits",
-          "top_hash",
-          "tx_hashes"
+          "top_hash"
         ]
       },
       "COMMAND_RPC_GET_TRANSACTION_POOL_STATS.request_t": {
@@ -3869,10 +3713,7 @@
           "client": {
             "type": "string"
           }
-        },
-        "required": [
-          "client"
-        ]
+        }
       },
       "COMMAND_RPC_GET_TRANSACTION_POOL_STATS.response_t": {
         "title": "GetTransactionPoolStatsResponse",
@@ -3913,11 +3754,7 @@
             "minimum": 0,
             "maximum": 4294967295
           }
-        },
-        "required": [
-          "txid_template",
-          "num_matching_bits"
-        ]
+        }
       },
       "COMMAND_RPC_GET_TXIDS_LOOSE.response_t": {
         "title": "GetTxidsLooseResponse",
@@ -3934,8 +3771,7 @@
           }
         },
         "required": [
-          "status",
-          "txids"
+          "status"
         ]
       },
       "COMMAND_RPC_GET_TX_GLOBAL_OUTPUTS_INDEXES.request_t": {
@@ -3949,11 +3785,7 @@
             "type": "string",
             "contentEncoding": "binary"
           }
-        },
-        "required": [
-          "client",
-          "txid"
-        ]
+        }
       },
       "COMMAND_RPC_GET_TX_GLOBAL_OUTPUTS_INDEXES.response_t": {
         "title": "GetTxGlobalOutputsIndexesResponse",
@@ -3984,8 +3816,7 @@
         "required": [
           "status",
           "credits",
-          "top_hash",
-          "o_indexes"
+          "top_hash"
         ]
       },
       "COMMAND_RPC_GET_VERSION.hf_entry": {
@@ -4073,11 +3904,7 @@
             "minimum": 0,
             "maximum": 255
           }
-        },
-        "required": [
-          "client",
-          "version"
-        ]
+        }
       },
       "COMMAND_RPC_HARD_FORK_INFO.response_t": {
         "title": "HardForkInfoResponse",
@@ -4162,10 +3989,7 @@
             "minimum": 0,
             "maximum": 4294967295
           }
-        },
-        "required": [
-          "in_peers"
-        ]
+        }
       },
       "COMMAND_RPC_IN_PEERS.response_t": {
         "title": "InPeersResponse",
@@ -4198,11 +4022,7 @@
               "type": "string"
             }
           }
-        },
-        "required": [
-          "client",
-          "key_images"
-        ]
+        }
       },
       "COMMAND_RPC_IS_KEY_IMAGE_SPENT.response_t": {
         "title": "IsKeyImageSpentResponse",
@@ -4232,8 +4052,7 @@
         "required": [
           "status",
           "credits",
-          "top_hash",
-          "spent_status"
+          "top_hash"
         ]
       },
       "COMMAND_RPC_MINING_STATUS.request_t": {
@@ -4348,10 +4167,7 @@
             "minimum": 0,
             "maximum": 4294967295
           }
-        },
-        "required": [
-          "out_peers"
-        ]
+        }
       },
       "COMMAND_RPC_OUT_PEERS.response_t": {
         "title": "OutPeersResponse",
@@ -4385,10 +4201,7 @@
             "type": "boolean",
             "default": true
           }
-        },
-        "required": [
-          "nblocks"
-        ]
+        }
       },
       "COMMAND_RPC_POP_BLOCKS.response_t": {
         "title": "PopBlocksResponse",
@@ -4454,11 +4267,7 @@
               "type": "string"
             }
           }
-        },
-        "required": [
-          "client",
-          "txids"
-        ]
+        }
       },
       "COMMAND_RPC_RELAY_TX.response_t": {
         "title": "RelayTxResponse",
@@ -4518,11 +4327,7 @@
             "type": "boolean",
             "default": true
           }
-        },
-        "required": [
-          "client",
-          "tx_as_hex"
-        ]
+        }
       },
       "COMMAND_RPC_SEND_RAW_TX.response_t": {
         "title": "SendRawTxResponse",
@@ -4619,13 +4424,7 @@
             "minimum": 0,
             "maximum": 4294967295
           }
-        },
-        "required": [
-          "host",
-          "ip",
-          "ban",
-          "seconds"
-        ]
+        }
       },
       "COMMAND_RPC_SETBANS.request_t": {
         "title": "SetbansRequest",
@@ -4637,10 +4436,7 @@
               "$ref": "#/components/schemas/COMMAND_RPC_SETBANS.ban"
             }
           }
-        },
-        "required": [
-          "bans"
-        ]
+        }
       },
       "COMMAND_RPC_SETBANS.response_t": {
         "title": "SetbansResponse",
@@ -4671,11 +4467,7 @@
             "maximum": 9223372036854775807,
             "x-bigint": true
           }
-        },
-        "required": [
-          "limit_down",
-          "limit_up"
-        ]
+        }
       },
       "COMMAND_RPC_SET_LIMIT.response_t": {
         "title": "SetLimitResponse",
@@ -4710,10 +4502,7 @@
           "categories": {
             "type": "string"
           }
-        },
-        "required": [
-          "categories"
-        ]
+        }
       },
       "COMMAND_RPC_SET_LOG_CATEGORIES.response_t": {
         "title": "SetLogCategoriesResponse",
@@ -4738,10 +4527,7 @@
           "visible": {
             "type": "boolean"
           }
-        },
-        "required": [
-          "visible"
-        ]
+        }
       },
       "COMMAND_RPC_SET_LOG_HASH_RATE.response_t": {
         "title": "SetLogHashRateResponse",
@@ -4764,10 +4550,7 @@
             "minimum": -128,
             "maximum": 127
           }
-        },
-        "required": [
-          "level"
-        ]
+        }
       },
       "COMMAND_RPC_SET_LOG_LEVEL.response_t": {
         "title": "SetLogLevelResponse",
@@ -4800,13 +4583,7 @@
           "ignore_battery": {
             "type": "boolean"
           }
-        },
-        "required": [
-          "miner_address",
-          "threads_count",
-          "do_background_mining",
-          "ignore_battery"
-        ]
+        }
       },
       "COMMAND_RPC_START_MINING.response_t": {
         "title": "StartMiningResponse",
@@ -4889,10 +4666,7 @@
           "client": {
             "type": "string"
           }
-        },
-        "required": [
-          "client"
-        ]
+        }
       },
       "COMMAND_RPC_SYNC_INFO.response_t": {
         "title": "SyncInfoResponse",
@@ -4950,8 +4724,6 @@
           "height",
           "target_height",
           "next_needed_pruning_seed",
-          "peers",
-          "spans",
           "overview"
         ]
       },
@@ -5014,11 +4786,7 @@
           "path": {
             "type": "string"
           }
-        },
-        "required": [
-          "command",
-          "path"
-        ]
+        }
       },
       "COMMAND_RPC_UPDATE.response_t": {
         "title": "UpdateResponse",
@@ -5397,11 +5165,7 @@
             "maximum": 18446744073709551615,
             "x-bigint": true
           }
-        },
-        "required": [
-          "amount",
-          "index"
-        ]
+        }
       },
       "peer": {
         "title": "Peer",
@@ -5505,8 +5269,7 @@
           }
         },
         "required": [
-          "id_hash",
-          "txs_hashes"
+          "id_hash"
         ]
       },
       "tx_blob_entry": {
@@ -5728,7 +5491,6 @@
           "num_10m",
           "num_not_relayed",
           "histo_98pc",
-          "histo",
           "num_double_spends"
         ]
       }

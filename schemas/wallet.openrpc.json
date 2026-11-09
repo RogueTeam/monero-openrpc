@@ -3363,11 +3363,7 @@
           "description": {
             "type": "string"
           }
-        },
-        "required": [
-          "address",
-          "description"
-        ]
+        }
       },
       "COMMAND_RPC_ADD_ADDRESS_BOOK_ENTRY.response_t": {
         "title": "AddAddressBookEntryResponse",
@@ -3416,11 +3412,7 @@
           "new_password": {
             "type": "string"
           }
-        },
-        "required": [
-          "old_password",
-          "new_password"
-        ]
+        }
       },
       "COMMAND_RPC_CHANGE_WALLET_PASSWORD.response_t": {
         "title": "ChangeWalletPasswordResponse",
@@ -3440,12 +3432,7 @@
           "signature": {
             "type": "string"
           }
-        },
-        "required": [
-          "address",
-          "message",
-          "signature"
-        ]
+        }
       },
       "COMMAND_RPC_CHECK_RESERVE_PROOF.response_t": {
         "title": "CheckReserveProofResponse",
@@ -3486,12 +3473,7 @@
           "signature": {
             "type": "string"
           }
-        },
-        "required": [
-          "txid",
-          "message",
-          "signature"
-        ]
+        }
       },
       "COMMAND_RPC_CHECK_SPEND_PROOF.response_t": {
         "title": "CheckSpendProofResponse",
@@ -3518,12 +3500,7 @@
           "address": {
             "type": "string"
           }
-        },
-        "required": [
-          "txid",
-          "tx_key",
-          "address"
-        ]
+        }
       },
       "COMMAND_RPC_CHECK_TX_KEY.response_t": {
         "title": "CheckTxKeyResponse",
@@ -3567,13 +3544,7 @@
           "signature": {
             "type": "string"
           }
-        },
-        "required": [
-          "txid",
-          "address",
-          "message",
-          "signature"
-        ]
+        }
       },
       "COMMAND_RPC_CHECK_TX_PROOF.response_t": {
         "title": "CheckTxProofResponse",
@@ -3627,10 +3598,7 @@
           "label": {
             "type": "string"
           }
-        },
-        "required": [
-          "label"
-        ]
+        }
       },
       "COMMAND_RPC_CREATE_ACCOUNT.response_t": {
         "title": "CreateAccountResponse",
@@ -3669,11 +3637,7 @@
           "label": {
             "type": "string"
           }
-        },
-        "required": [
-          "account_index",
-          "label"
-        ]
+        }
       },
       "COMMAND_RPC_CREATE_ADDRESS.response_t": {
         "title": "CreateAddressResponse",
@@ -3704,9 +3668,7 @@
         },
         "required": [
           "address",
-          "address_index",
-          "addresses",
-          "address_indices"
+          "address_index"
         ]
       },
       "COMMAND_RPC_CREATE_WALLET.request_t": {
@@ -3726,12 +3688,7 @@
             "type": "boolean",
             "default": true
           }
-        },
-        "required": [
-          "filename",
-          "password",
-          "language"
-        ]
+        }
       },
       "COMMAND_RPC_CREATE_WALLET.response_t": {
         "title": "CreateWalletResponse",
@@ -3748,10 +3705,7 @@
             "maximum": 18446744073709551615,
             "x-bigint": true
           }
-        },
-        "required": [
-          "index"
-        ]
+        }
       },
       "COMMAND_RPC_DELETE_ADDRESS_BOOK_ENTRY.response_t": {
         "title": "DeleteAddressBookEntryResponse",
@@ -3787,11 +3741,7 @@
           "multisig_txset": {
             "type": "string"
           }
-        },
-        "required": [
-          "unsigned_txset",
-          "multisig_txset"
-        ]
+        }
       },
       "COMMAND_RPC_DESCRIBE_TRANSFER.response_t": {
         "title": "DescribeTransferResponse",
@@ -3808,8 +3758,7 @@
           }
         },
         "required": [
-          "summary",
-          "desc"
+          "summary"
         ]
       },
       "COMMAND_RPC_DESCRIBE_TRANSFER.source": {
@@ -3920,8 +3869,6 @@
           "amount_out",
           "ring_size",
           "unlock_time",
-          "sources",
-          "recipients",
           "payment_id",
           "change_amount",
           "change_address",
@@ -3971,7 +3918,6 @@
         "required": [
           "amount_in",
           "amount_out",
-          "recipients",
           "change_amount",
           "change_address",
           "fee"
@@ -3999,14 +3945,7 @@
           "description": {
             "type": "string"
           }
-        },
-        "required": [
-          "index",
-          "set_address",
-          "address",
-          "set_description",
-          "description"
-        ]
+        }
       },
       "COMMAND_RPC_EDIT_ADDRESS_BOOK_ENTRY.response_t": {
         "title": "EditAddressBookEntryResponse",
@@ -4037,11 +3976,7 @@
             "type": "boolean",
             "default": true
           }
-        },
-        "required": [
-          "n_inputs",
-          "n_outputs"
-        ]
+        }
       },
       "COMMAND_RPC_ESTIMATE_TX_SIZE_AND_WEIGHT.response_t": {
         "title": "EstimateTxSizeAndWeightResponse",
@@ -4082,11 +4017,7 @@
             "type": "boolean",
             "default": false
           }
-        },
-        "required": [
-          "password",
-          "multisig_info"
-        ]
+        }
       },
       "COMMAND_RPC_EXCHANGE_MULTISIG_KEYS.response_t": {
         "title": "ExchangeMultisigKeysResponse",
@@ -4131,8 +4062,7 @@
           }
         },
         "required": [
-          "offset",
-          "signed_key_images"
+          "offset"
         ]
       },
       "COMMAND_RPC_EXPORT_KEY_IMAGES.signed_key_image": {
@@ -4187,10 +4117,7 @@
             "maximum": 4294967295,
             "default": 4294967295
           }
-        },
-        "required": [
-          "all"
-        ]
+        }
       },
       "COMMAND_RPC_EXPORT_OUTPUTS.response_t": {
         "title": "ExportOutputsResponse",
@@ -4211,10 +4138,7 @@
           "key_image": {
             "type": "string"
           }
-        },
-        "required": [
-          "key_image"
-        ]
+        }
       },
       "COMMAND_RPC_FREEZE.response_t": {
         "title": "FreezeResponse",
@@ -4228,10 +4152,7 @@
           "key_image": {
             "type": "string"
           }
-        },
-        "required": [
-          "key_image"
-        ]
+        }
       },
       "COMMAND_RPC_FROZEN.response_t": {
         "title": "FrozenResponse",
@@ -4278,15 +4199,7 @@
           "language": {
             "type": "string"
           }
-        },
-        "required": [
-          "filename",
-          "address",
-          "spendkey",
-          "viewkey",
-          "password",
-          "language"
-        ]
+        }
       },
       "COMMAND_RPC_GENERATE_FROM_KEYS.response": {
         "title": "GenerateFromKeysResponse",
@@ -4321,10 +4234,7 @@
             "description": "allow regular expression filters if set to true",
             "default": false
           }
-        },
-        "required": [
-          "tag"
-        ]
+        }
       },
       "COMMAND_RPC_GET_ACCOUNTS.response_t": {
         "title": "GetAccountsResponse",
@@ -4351,8 +4261,7 @@
         },
         "required": [
           "total_balance",
-          "total_unlocked_balance",
-          "subaddress_accounts"
+          "total_unlocked_balance"
         ]
       },
       "COMMAND_RPC_GET_ACCOUNTS.subaddress_account_info": {
@@ -4416,8 +4325,7 @@
         },
         "required": [
           "tag",
-          "label",
-          "accounts"
+          "label"
         ]
       },
       "COMMAND_RPC_GET_ACCOUNT_TAGS.request_t": {
@@ -4435,10 +4343,7 @@
               "$ref": "#/components/schemas/COMMAND_RPC_GET_ACCOUNT_TAGS.account_tag_info"
             }
           }
-        },
-        "required": [
-          "account_tags"
-        ]
+        }
       },
       "COMMAND_RPC_GET_ADDRESS.address_info": {
         "title": "GetAddressAddressInfo",
@@ -4493,11 +4398,7 @@
             "type": "boolean",
             "default": false
           }
-        },
-        "required": [
-          "account_index",
-          "address_index"
-        ]
+        }
       },
       "COMMAND_RPC_GET_ADDRESS.response_t": {
         "title": "GetAddressResponse",
@@ -4515,8 +4416,7 @@
           }
         },
         "required": [
-          "address",
-          "addresses"
+          "address"
         ]
       },
       "COMMAND_RPC_GET_ADDRESS_BOOK_ENTRY.entry": {
@@ -4555,10 +4455,7 @@
               "x-bigint": true
             }
           }
-        },
-        "required": [
-          "entries"
-        ]
+        }
       },
       "COMMAND_RPC_GET_ADDRESS_BOOK_ENTRY.response_t": {
         "title": "GetAddressBookEntryResponse",
@@ -4570,10 +4467,7 @@
               "$ref": "#/components/schemas/COMMAND_RPC_GET_ADDRESS_BOOK_ENTRY.entry"
             }
           }
-        },
-        "required": [
-          "entries"
-        ]
+        }
       },
       "COMMAND_RPC_GET_ADDRESS_INDEX.request_t": {
         "title": "GetAddressIndexRequest",
@@ -4582,10 +4476,7 @@
           "address": {
             "type": "string"
           }
-        },
-        "required": [
-          "address"
-        ]
+        }
       },
       "COMMAND_RPC_GET_ADDRESS_INDEX.response_t": {
         "title": "GetAddressIndexResponse",
@@ -4606,10 +4497,7 @@
           "key": {
             "type": "string"
           }
-        },
-        "required": [
-          "key"
-        ]
+        }
       },
       "COMMAND_RPC_GET_ATTRIBUTE.response_t": {
         "title": "GetAttributeResponse",
@@ -4711,11 +4599,7 @@
             "type": "boolean",
             "default": false
           }
-        },
-        "required": [
-          "account_index",
-          "address_indices"
-        ]
+        }
       },
       "COMMAND_RPC_GET_BALANCE.response_t": {
         "title": "GetBalanceResponse",
@@ -4759,7 +4643,6 @@
           "balance",
           "unlocked_balance",
           "multisig_import_needed",
-          "per_subaddress",
           "blocks_to_unlock",
           "time_to_unlock"
         ]
@@ -4780,11 +4663,7 @@
             "maximum": 18446744073709551615,
             "x-bigint": true
           }
-        },
-        "required": [
-          "payment_ids",
-          "min_block_height"
-        ]
+        }
       },
       "COMMAND_RPC_GET_BULK_PAYMENTS.response_t": {
         "title": "GetBulkPaymentsResponse",
@@ -4796,10 +4675,7 @@
               "$ref": "#/components/schemas/payment_details"
             }
           }
-        },
-        "required": [
-          "payments"
-        ]
+        }
       },
       "COMMAND_RPC_GET_DEFAULT_FEE_PRIORITY.request_t": {
         "title": "GetDefaultFeePriorityRequest",
@@ -4846,11 +4722,7 @@
               "type": "string"
             }
           }
-        },
-        "required": [
-          "languages",
-          "languages_local"
-        ]
+        }
       },
       "COMMAND_RPC_GET_MULTISIG_KEY_EXCHANGE_BOOSTER.request_t": {
         "title": "GetMultisigKeyExchangeBoosterRequest",
@@ -4875,13 +4747,7 @@
             "minimum": 0,
             "maximum": 4294967295
           }
-        },
-        "required": [
-          "password",
-          "multisig_info",
-          "threshold",
-          "num_signers"
-        ]
+        }
       },
       "COMMAND_RPC_GET_MULTISIG_KEY_EXCHANGE_BOOSTER.response_t": {
         "title": "GetMultisigKeyExchangeBoosterResponse",
@@ -4902,10 +4768,7 @@
           "payment_id": {
             "type": "string"
           }
-        },
-        "required": [
-          "payment_id"
-        ]
+        }
       },
       "COMMAND_RPC_GET_PAYMENTS.response_t": {
         "title": "GetPaymentsResponse",
@@ -4917,10 +4780,7 @@
               "$ref": "#/components/schemas/payment_details"
             }
           }
-        },
-        "required": [
-          "payments"
-        ]
+        }
       },
       "COMMAND_RPC_GET_RESERVE_PROOF.request_t": {
         "title": "GetReserveProofRequest",
@@ -4945,13 +4805,7 @@
           "message": {
             "type": "string"
           }
-        },
-        "required": [
-          "all",
-          "account_index",
-          "amount",
-          "message"
-        ]
+        }
       },
       "COMMAND_RPC_GET_RESERVE_PROOF.response_t": {
         "title": "GetReserveProofResponse",
@@ -4975,11 +4829,7 @@
           "message": {
             "type": "string"
           }
-        },
-        "required": [
-          "txid",
-          "message"
-        ]
+        }
       },
       "COMMAND_RPC_GET_SPEND_PROOF.response_t": {
         "title": "GetSpendProofResponse",
@@ -5048,18 +4898,7 @@
             "type": "boolean",
             "default": false
           }
-        },
-        "required": [
-          "in",
-          "out",
-          "pending",
-          "failed",
-          "pool",
-          "filter_by_height",
-          "min_height",
-          "account_index",
-          "subaddr_indices"
-        ]
+        }
       },
       "COMMAND_RPC_GET_TRANSFERS.response_t": {
         "title": "GetTransfersResponse",
@@ -5095,14 +4934,7 @@
               "$ref": "#/components/schemas/transfer_entry"
             }
           }
-        },
-        "required": [
-          "in",
-          "out",
-          "pending",
-          "failed",
-          "pool"
-        ]
+        }
       },
       "COMMAND_RPC_GET_TRANSFER_BY_TXID.request_t": {
         "title": "GetTransferByTxidRequest",
@@ -5121,10 +4953,7 @@
             "type": "boolean",
             "default": false
           }
-        },
-        "required": [
-          "txid"
-        ]
+        }
       },
       "COMMAND_RPC_GET_TRANSFER_BY_TXID.response_t": {
         "title": "GetTransferByTxidResponse",
@@ -5141,8 +4970,7 @@
           }
         },
         "required": [
-          "transfer",
-          "transfers"
+          "transfer"
         ]
       },
       "COMMAND_RPC_GET_TX_KEY.request_t": {
@@ -5152,10 +4980,7 @@
           "txid": {
             "type": "string"
           }
-        },
-        "required": [
-          "txid"
-        ]
+        }
       },
       "COMMAND_RPC_GET_TX_KEY.response_t": {
         "title": "GetTxKeyResponse",
@@ -5179,10 +5004,7 @@
               "type": "string"
             }
           }
-        },
-        "required": [
-          "txids"
-        ]
+        }
       },
       "COMMAND_RPC_GET_TX_NOTES.response_t": {
         "title": "GetTxNotesResponse",
@@ -5194,10 +5016,7 @@
               "type": "string"
             }
           }
-        },
-        "required": [
-          "notes"
-        ]
+        }
       },
       "COMMAND_RPC_GET_TX_PROOF.request_t": {
         "title": "GetTxProofRequest",
@@ -5212,12 +5031,7 @@
           "message": {
             "type": "string"
           }
-        },
-        "required": [
-          "txid",
-          "address",
-          "message"
-        ]
+        }
       },
       "COMMAND_RPC_GET_TX_PROOF.response_t": {
         "title": "GetTxProofResponse",
@@ -5318,10 +5132,7 @@
               "$ref": "#/components/schemas/COMMAND_RPC_IMPORT_KEY_IMAGES.signed_key_image"
             }
           }
-        },
-        "required": [
-          "signed_key_images"
-        ]
+        }
       },
       "COMMAND_RPC_IMPORT_KEY_IMAGES.response_t": {
         "title": "ImportKeyImagesResponse",
@@ -5362,11 +5173,7 @@
           "signature": {
             "type": "string"
           }
-        },
-        "required": [
-          "key_image",
-          "signature"
-        ]
+        }
       },
       "COMMAND_RPC_IMPORT_MULTISIG.request_t": {
         "title": "ImportMultisigRequest",
@@ -5382,10 +5189,7 @@
             "type": "boolean",
             "default": true
           }
-        },
-        "required": [
-          "info"
-        ]
+        }
       },
       "COMMAND_RPC_IMPORT_MULTISIG.response_t": {
         "title": "ImportMultisigResponse",
@@ -5409,10 +5213,7 @@
           "outputs_data_hex": {
             "type": "string"
           }
-        },
-        "required": [
-          "outputs_data_hex"
-        ]
+        }
       },
       "COMMAND_RPC_IMPORT_OUTPUTS.response_t": {
         "title": "ImportOutputsResponse",
@@ -5453,12 +5254,7 @@
             "type": "boolean",
             "default": false
           }
-        },
-        "required": [
-          "transfer_type",
-          "account_index",
-          "subaddr_indices"
-        ]
+        }
       },
       "COMMAND_RPC_INCOMING_TRANSFERS.response_t": {
         "title": "IncomingTransfersResponse",
@@ -5470,10 +5266,7 @@
               "$ref": "#/components/schemas/transfer_details"
             }
           }
-        },
-        "required": [
-          "transfers"
-        ]
+        }
       },
       "COMMAND_RPC_IS_MULTISIG.request_t": {
         "title": "IsMultisigRequest",
@@ -5524,11 +5317,7 @@
           "label": {
             "type": "string"
           }
-        },
-        "required": [
-          "account_index",
-          "label"
-        ]
+        }
       },
       "COMMAND_RPC_LABEL_ACCOUNT.response_t": {
         "title": "LabelAccountResponse",
@@ -5545,11 +5334,7 @@
           "label": {
             "type": "string"
           }
-        },
-        "required": [
-          "index",
-          "label"
-        ]
+        }
       },
       "COMMAND_RPC_LABEL_ADDRESS.response_t": {
         "title": "LabelAddressResponse",
@@ -5566,11 +5351,7 @@
           "payment_id": {
             "type": "string"
           }
-        },
-        "required": [
-          "standard_address",
-          "payment_id"
-        ]
+        }
       },
       "COMMAND_RPC_MAKE_INTEGRATED_ADDRESS.response_t": {
         "title": "MakeIntegratedAddressResponse",
@@ -5606,12 +5387,7 @@
           "password": {
             "type": "string"
           }
-        },
-        "required": [
-          "multisig_info",
-          "threshold",
-          "password"
-        ]
+        }
       },
       "COMMAND_RPC_MAKE_MULTISIG.response_t": {
         "title": "MakeMultisigResponse",
@@ -5651,14 +5427,7 @@
           "recipient_name": {
             "type": "string"
           }
-        },
-        "required": [
-          "address",
-          "payment_id",
-          "amount",
-          "tx_description",
-          "recipient_name"
-        ]
+        }
       },
       "COMMAND_RPC_MAKE_URI.response_t": {
         "title": "MakeUriResponse",
@@ -5686,11 +5455,7 @@
             "type": "boolean",
             "default": true
           }
-        },
-        "required": [
-          "filename",
-          "password"
-        ]
+        }
       },
       "COMMAND_RPC_OPEN_WALLET.response_t": {
         "title": "OpenWalletResponse",
@@ -5704,10 +5469,7 @@
           "uri": {
             "type": "string"
           }
-        },
-        "required": [
-          "uri"
-        ]
+        }
       },
       "COMMAND_RPC_PARSE_URI.response_t": {
         "title": "ParseUriResponse",
@@ -5724,8 +5486,7 @@
           }
         },
         "required": [
-          "uri",
-          "unknown_parameters"
+          "uri"
         ]
       },
       "COMMAND_RPC_PREPARE_MULTISIG.request_t": {
@@ -5757,10 +5518,7 @@
           "key_type": {
             "type": "string"
           }
-        },
-        "required": [
-          "key_type"
-        ]
+        }
       },
       "COMMAND_RPC_QUERY_KEY.response_t": {
         "title": "QueryKeyResponse",
@@ -5880,14 +5638,7 @@
             "type": "boolean",
             "default": false
           }
-        },
-        "required": [
-          "filename",
-          "seed",
-          "seed_offset",
-          "password",
-          "language"
-        ]
+        }
       },
       "COMMAND_RPC_RESTORE_DETERMINISTIC_WALLET.response_t": {
         "title": "RestoreDeterministicWalletResponse",
@@ -5923,10 +5674,7 @@
               "type": "string"
             }
           }
-        },
-        "required": [
-          "txids"
-        ]
+        }
       },
       "COMMAND_RPC_SCAN_TX.response_t": {
         "title": "ScanTxResponse",
@@ -5947,11 +5695,7 @@
             "type": "string",
             "default": ""
           }
-        },
-        "required": [
-          "background_sync_type",
-          "wallet_password"
-        ]
+        }
       },
       "COMMAND_RPC_SETUP_BACKGROUND_SYNC.response_t": {
         "title": "SetupBackgroundSyncResponse",
@@ -5968,11 +5712,7 @@
           "description": {
             "type": "string"
           }
-        },
-        "required": [
-          "tag",
-          "description"
-        ]
+        }
       },
       "COMMAND_RPC_SET_ACCOUNT_TAG_DESCRIPTION.response_t": {
         "title": "SetAccountTagDescriptionResponse",
@@ -5989,11 +5729,7 @@
           "value": {
             "type": "string"
           }
-        },
-        "required": [
-          "key",
-          "value"
-        ]
+        }
       },
       "COMMAND_RPC_SET_ATTRIBUTE.response_t": {
         "title": "SetAttributeResponse",
@@ -6045,16 +5781,7 @@
             "type": "string",
             "default": ""
           }
-        },
-        "required": [
-          "address",
-          "username",
-          "password",
-          "ssl_private_key_path",
-          "ssl_certificate_path",
-          "ssl_ca_file",
-          "ssl_allowed_fingerprints"
-        ]
+        }
       },
       "COMMAND_RPC_SET_DAEMON.response_t": {
         "title": "SetDaemonResponse",
@@ -6078,12 +5805,7 @@
             "minimum": 0,
             "maximum": 4294967295
           }
-        },
-        "required": [
-          "password",
-          "major_idx",
-          "minor_idx"
-        ]
+        }
       },
       "COMMAND_RPC_SET_SUBADDR_LOOKAHEAD.response_t": {
         "title": "SetSubaddrLookaheadResponse",
@@ -6106,11 +5828,7 @@
               "type": "string"
             }
           }
-        },
-        "required": [
-          "txids",
-          "notes"
-        ]
+        }
       },
       "COMMAND_RPC_SET_TX_NOTES.response_t": {
         "title": "SetTxNotesResponse",
@@ -6139,11 +5857,7 @@
           "signature_type": {
             "type": "string"
           }
-        },
-        "required": [
-          "data",
-          "signature_type"
-        ]
+        }
       },
       "COMMAND_RPC_SIGN.response_t": {
         "title": "SignResponse",
@@ -6164,10 +5878,7 @@
           "tx_data_hex": {
             "type": "string"
           }
-        },
-        "required": [
-          "tx_data_hex"
-        ]
+        }
       },
       "COMMAND_RPC_SIGN_MULTISIG.response_t": {
         "title": "SignMultisigResponse",
@@ -6184,8 +5895,7 @@
           }
         },
         "required": [
-          "tx_data_hex",
-          "tx_hash_list"
+          "tx_data_hex"
         ]
       },
       "COMMAND_RPC_SIGN_TRANSFER.request_t": {
@@ -6203,10 +5913,7 @@
             "type": "boolean",
             "default": false
           }
-        },
-        "required": [
-          "unsigned_txset"
-        ]
+        }
       },
       "COMMAND_RPC_SIGN_TRANSFER.response_t": {
         "title": "SignTransferResponse",
@@ -6235,10 +5942,7 @@
           }
         },
         "required": [
-          "signed_txset",
-          "tx_hash_list",
-          "tx_raw_list",
-          "tx_key_list"
+          "signed_txset"
         ]
       },
       "COMMAND_RPC_SPLIT_INTEGRATED_ADDRESS.request_t": {
@@ -6248,10 +5952,7 @@
           "integrated_address": {
             "type": "string"
           }
-        },
-        "required": [
-          "integrated_address"
-        ]
+        }
       },
       "COMMAND_RPC_SPLIT_INTEGRATED_ADDRESS.response_t": {
         "title": "SplitIntegratedAddressResponse",
@@ -6298,10 +5999,7 @@
             "type": "string",
             "default": ""
           }
-        },
-        "required": [
-          "wallet_password"
-        ]
+        }
       },
       "COMMAND_RPC_STOP_BACKGROUND_SYNC.response_t": {
         "title": "StopBackgroundSyncResponse",
@@ -6335,10 +6033,7 @@
           "tx_data_hex": {
             "type": "string"
           }
-        },
-        "required": [
-          "tx_data_hex"
-        ]
+        }
       },
       "COMMAND_RPC_SUBMIT_MULTISIG.response_t": {
         "title": "SubmitMultisigResponse",
@@ -6350,10 +6045,7 @@
               "type": "string"
             }
           }
-        },
-        "required": [
-          "tx_hash_list"
-        ]
+        }
       },
       "COMMAND_RPC_SUBMIT_TRANSFER.request_t": {
         "title": "SubmitTransferRequest",
@@ -6362,10 +6054,7 @@
           "tx_data_hex": {
             "type": "string"
           }
-        },
-        "required": [
-          "tx_data_hex"
-        ]
+        }
       },
       "COMMAND_RPC_SUBMIT_TRANSFER.response_t": {
         "title": "SubmitTransferResponse",
@@ -6377,10 +6066,7 @@
               "type": "string"
             }
           }
-        },
-        "required": [
-          "tx_hash_list"
-        ]
+        }
       },
       "COMMAND_RPC_SWEEP_ALL.request_t": {
         "title": "SweepAllRequest",
@@ -6455,17 +6141,7 @@
             "type": "boolean",
             "default": false
           }
-        },
-        "required": [
-          "address",
-          "account_index",
-          "subaddr_indices",
-          "priority",
-          "unlock_time",
-          "payment_id",
-          "get_tx_keys",
-          "below_amount"
-        ]
+        }
       },
       "COMMAND_RPC_SWEEP_DUST.request_t": {
         "title": "SweepDustRequest",
@@ -6486,10 +6162,7 @@
             "type": "boolean",
             "default": false
           }
-        },
-        "required": [
-          "get_tx_keys"
-        ]
+        }
       },
       "COMMAND_RPC_SWEEP_SINGLE.request_t": {
         "title": "SweepSingleRequest",
@@ -6544,15 +6217,7 @@
             "type": "boolean",
             "default": false
           }
-        },
-        "required": [
-          "address",
-          "priority",
-          "unlock_time",
-          "payment_id",
-          "get_tx_key",
-          "key_image"
-        ]
+        }
       },
       "COMMAND_RPC_TAG_ACCOUNTS.request_t": {
         "title": "TagAccountsRequest",
@@ -6569,11 +6234,7 @@
               "maximum": 4294967295
             }
           }
-        },
-        "required": [
-          "tag",
-          "accounts"
-        ]
+        }
       },
       "COMMAND_RPC_TAG_ACCOUNTS.response_t": {
         "title": "TagAccountsResponse",
@@ -6587,10 +6248,7 @@
           "key_image": {
             "type": "string"
           }
-        },
-        "required": [
-          "key_image"
-        ]
+        }
       },
       "COMMAND_RPC_THAW.response_t": {
         "title": "ThawResponse",
@@ -6665,16 +6323,7 @@
             "type": "boolean",
             "default": false
           }
-        },
-        "required": [
-          "destinations",
-          "account_index",
-          "subaddr_indices",
-          "priority",
-          "unlock_time",
-          "payment_id",
-          "get_tx_key"
-        ]
+        }
       },
       "COMMAND_RPC_TRANSFER_SPLIT.request_t": {
         "title": "TransferSplitRequest",
@@ -6735,16 +6384,7 @@
             "type": "boolean",
             "default": false
           }
-        },
-        "required": [
-          "destinations",
-          "account_index",
-          "subaddr_indices",
-          "priority",
-          "unlock_time",
-          "payment_id",
-          "get_tx_keys"
-        ]
+        }
       },
       "COMMAND_RPC_UNTAG_ACCOUNTS.request_t": {
         "title": "UntagAccountsRequest",
@@ -6758,10 +6398,7 @@
               "maximum": 4294967295
             }
           }
-        },
-        "required": [
-          "accounts"
-        ]
+        }
       },
       "COMMAND_RPC_UNTAG_ACCOUNTS.response_t": {
         "title": "UntagAccountsResponse",
@@ -6783,10 +6420,7 @@
             "type": "boolean",
             "default": false
           }
-        },
-        "required": [
-          "address"
-        ]
+        }
       },
       "COMMAND_RPC_VALIDATE_ADDRESS.response_t": {
         "title": "ValidateAddressResponse",
@@ -6829,12 +6463,7 @@
           "signature": {
             "type": "string"
           }
-        },
-        "required": [
-          "data",
-          "address",
-          "signature"
-        ]
+        }
       },
       "COMMAND_RPC_VERIFY.response_t": {
         "title": "VerifyResponse",
@@ -6869,10 +6498,7 @@
           "filename": {
             "type": "string"
           }
-        },
-        "required": [
-          "filename"
-        ]
+        }
       },
       "COMMAND_RPC_WALLET_EXISTS.response_t": {
         "title": "WalletExistsResponse",
@@ -6903,10 +6529,7 @@
               "x-bigint": true
             }
           }
-        },
-        "required": [
-          "amounts"
-        ]
+        }
       },
       "key_image_list": {
         "title": "KeyImageList",
@@ -6918,10 +6541,7 @@
               "type": "string"
             }
           }
-        },
-        "required": [
-          "key_images"
-        ]
+        }
       },
       "payment_details": {
         "title": "PaymentDetails",
@@ -7108,16 +6728,8 @@
           }
         },
         "required": [
-          "tx_hash_list",
-          "tx_key_list",
-          "amount_list",
-          "fee_list",
-          "weight_list",
-          "tx_blob_list",
-          "tx_metadata_list",
           "multisig_txset",
-          "unsigned_txset",
-          "spent_key_images_list"
+          "unsigned_txset"
         ]
       },
       "subaddress_index": {
@@ -7190,10 +6802,7 @@
           "hex": {
             "type": "string"
           }
-        },
-        "required": [
-          "hex"
-        ]
+        }
       },
       "tools.wallet_rpc.COMMAND_RPC_RELAY_TX.response_t": {
         "title": "RelayTxResponse",
@@ -7214,10 +6823,7 @@
           "categories": {
             "type": "string"
           }
-        },
-        "required": [
-          "categories"
-        ]
+        }
       },
       "tools.wallet_rpc.COMMAND_RPC_SET_LOG_CATEGORIES.response_t": {
         "title": "SetLogCategoriesResponse",
@@ -7240,10 +6846,7 @@
             "minimum": -128,
             "maximum": 127
           }
-        },
-        "required": [
-          "level"
-        ]
+        }
       },
       "tools.wallet_rpc.COMMAND_RPC_SET_LOG_LEVEL.response_t": {
         "title": "SetLogLevelResponse",
@@ -7266,12 +6869,7 @@
           "ignore_battery": {
             "type": "boolean"
           }
-        },
-        "required": [
-          "threads_count",
-          "do_background_mining",
-          "ignore_battery"
-        ]
+        }
       },
       "tools.wallet_rpc.COMMAND_RPC_START_MINING.response_t": {
         "title": "StartMiningResponse",
@@ -7472,15 +7070,12 @@
           "height",
           "timestamp",
           "amount",
-          "amounts",
           "fee",
           "note",
-          "destinations",
           "type",
           "unlock_time",
           "locked",
           "subaddr_index",
-          "subaddr_indices",
           "address",
           "double_spend_seen"
         ]

@@ -481,9 +481,12 @@ class Builder:
             d = parse_default(args[-1], schema)
             if d is not None:
                 extra["default"] = d
+        # epee doesn't write empty containers at all (keyvalue_serialization_overloads.h:
+        # "if(!container.size()) return true;"), so arrays are never always present.
+        container = "CONTAINER" in m or schema.get("type") == "array"
         if extra:                               # $ref siblings are ignored in draft-07
             schema = {"allOf": [schema], **extra} if "$ref" in schema else {**schema, **extra}
-        optional = "OPT" in m or is_optional_type(ctype) or e["cond"]
+        optional = "OPT" in m or is_optional_type(ctype) or e["cond"] or container
         return wire, schema, not optional
 
     def struct_schema(self, s):
@@ -544,6 +547,20 @@ class Builder:
                                for n in names]
 
 
+def collect_refs(node, schemas, acc):
+    """Names of all component schemas reachable from node."""
+    if isinstance(node, dict):
+        if (ref := node.get("$ref")) and (name := ref.rsplit("/", 1)[-1]) not in acc:
+            acc.add(name)
+            collect_refs(schemas.get(name, {}), schemas, acc)
+        for v in node.values():
+            collect_refs(v, schemas, acc)
+    elif isinstance(node, list):
+        for v in node:
+            collect_refs(v, schemas, acc)
+    return acc
+
+
 def build(repo, target):
     """-> (OpenRPC document, sorted warnings) for one Target in the checkout at repo."""
     reg = Registry()
@@ -563,7 +580,7 @@ def build(repo, target):
     if len(ver) != 2:
         b.warn(f"{target.version_macro}_MAJOR/MINOR not found")
 
-    methods, endpoints, first_seen = [], [], {}
+    methods, endpoints, first_seen, request_side = [], [], {}, set()
     for r in parse_routes(read(target.server), b.warn):
         req, res = b.io(r["command"], "request"), b.io(r["command"], "response")
         if req is None or res is None:
@@ -577,6 +594,8 @@ def build(repo, target):
             extra["x-hidden-in-restricted-mode"] = True
         elif r["cond"]:
             b.warn(f"{r['name']}: unknown route condition {r['cond']}")
+        if "$ref" in req:
+            request_side.add(req["$ref"].rsplit("/", 1)[-1])
         if r["macro"] == "MAP_JON_RPC":
             shape = None if "$ref" in req else positional_shape(impl, r["handler"])
             structure, params = b.params(req, shape, r["name"])
@@ -586,6 +605,21 @@ def build(repo, target):
             endpoints.append({"path": r["name"], "httpMethod": "POST",
                               "encoding": "json" if "JON" in r["macro"] else "epee-binary",
                               "request": req, "response": res, **extra})
+
+    # epee never rejects a request with missing fields (a missing field keeps its
+    # default), so `required` only describes what the server writes. Drop it from
+    # schemas that appear only in requests.
+    response_side = set()
+    for name in list(request_side):
+        collect_refs(b.schemas[name], b.schemas, request_side)
+    for m in methods:
+        collect_refs(m["params"], b.schemas, request_side)
+        collect_refs(m["result"], b.schemas, response_side)
+    for e in endpoints:
+        collect_refs(e["request"], b.schemas, request_side)
+        collect_refs(e["response"], b.schemas, response_side)
+    for name in request_side - response_side:
+        b.schemas[name].pop("required", None)
 
     errors = {name: {"code": int(code), "message": name} for name, code in
               re.findall(r"#define\s+(\w*RPC_ERROR_CODE_\w+)\s+\(?\s*(-?\d+)", read(target.errors))}
