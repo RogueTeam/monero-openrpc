@@ -14,6 +14,7 @@ MONEROD = Target(
           "src/rpc/rpc_handler.h"],
     server="src/rpc/core_rpc_server.h",
     impl="src/rpc/core_rpc_server.cpp",
+    errors="src/rpc/core_rpc_server_error_codes.h",
 )
 
 if __name__ == "__main__":

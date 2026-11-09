@@ -22,6 +22,17 @@ class Target:
     defs: List[str]         # headers with the request/response structs
     server: str             # header with the URI / JSON-RPC route maps
     impl: str               # handler source, read only to count positional params
+    errors: str             # header with the *_RPC_ERROR_CODE_* defines
+
+# Errors epee's JSON-RPC dispatcher returns by itself
+# (contrib/epee/include/net/http_server_handlers_map2.h).
+JSONRPC_ERRORS = {
+    "JSONRPC_PARSE_ERROR": (-32700, "Parse error"),
+    "JSONRPC_INVALID_REQUEST": (-32600, "Invalid Request"),
+    "JSONRPC_METHOD_NOT_FOUND": (-32601, "Method not found"),
+    "JSONRPC_INVALID_PARAMS": (-32602, "Invalid params"),
+    "JSONRPC_INTERNAL_ERROR": (-32603, "Internal error"),
+}
 
 # ----------------------------------------------------------------- C++ types
 STRINGS = {"std::string", "string", "blobdata", "cryptonote::blobdata",
@@ -63,6 +74,26 @@ def is_optional_type(t):
         return parse_type(t)[0].split("::")[-1] == "optional"
     except ValueError:
         return False
+
+
+def parse_default(expr, schema):
+    """KV_SERIALIZE_OPT default expression -> JSON value, or None if not a literal."""
+    e = expr.strip()
+    while (m := re.match(r"^\(\s*[\w:]+\s*\)\s*(.+)$|^static_cast<[^>]+>\((.*)\)$", e, re.S)):
+        e = (m.group(1) or m.group(2)).strip()          # (uint64_t)0, static_cast<T>(x)
+    if e in ("true", "false"):
+        return e == "true"
+    m = re.fullmatch(r"(-?)(0[xX][0-9a-fA-F]+|\d+)[uUlL]*", e)  # 0u, 0xffffffffu
+    if m:
+        v = int(m.group(2), 16 if m.group(2)[:2].lower() == "0x" else 10)
+        return -v if m.group(1) else v
+    if re.fullmatch(r"-?\d*\.\d+[fF]?", e):
+        return float(e.rstrip("fF"))
+    if re.fullmatch(r'"[^"]*"', e):
+        return e[1:-1]
+    if re.fullmatch(r"(?:[\w:]+\s*(?:<.*>)?|decltype\(.*\))\s*\(\s*\)|\{\s*\}", e, re.S):
+        return {"array": [], "string": "", "object": {}}.get(schema.get("type"))
+    return None
 
 
 # ------------------------------------------------------------ header parsing
@@ -416,11 +447,20 @@ class Builder:
         if hit is None:
             self.warn(f"{owner.qualname}: no declaration for serialized member '{var}'")
             return wire, {}, False
-        ctype, ctx, _ = hit
+        ctype, ctx, comment = hit
         if "POD_AS_BLOB" in m:                 # raw bytes, not hex
             schema = {"type": "string", "contentEncoding": "binary"}
         else:
             schema = self.type_schema(ctype, ctx)
+        extra = {}
+        if e["comment"] or comment:
+            extra["description"] = e["comment"] or comment
+        if "OPT" in m and len(args) >= 2:
+            d = parse_default(args[-1], schema)
+            if d is not None:
+                extra["default"] = d
+        if extra:                               # $ref siblings are ignored in draft-07
+            schema = {"allOf": [schema], **extra} if "$ref" in schema else {**schema, **extra}
         optional = "OPT" in m or is_optional_type(ctype) or e["cond"]
         return wire, schema, not optional
 
@@ -467,7 +507,10 @@ class Builder:
         if "$ref" in req:                       # struct: one named param per field
             params = []
             for k, v in self.schemas[req["$ref"].rsplit("/", 1)[-1]]["properties"].items():
-                params.append({"name": k, "schema": v, "required": False})
+                p = {"name": k, "schema": v, "required": False}
+                if v.get("description"):
+                    p["description"] = v["description"]
+                params.append(p)
             return "by-name", params
         if shape == 0:                          # handler never reads the request
             return "either", []
@@ -522,6 +565,10 @@ def build(repo, target):
                               "encoding": "json" if "JON" in r["macro"] else "epee-binary",
                               "request": req, "response": res, **extra})
 
+    errors = {name: {"code": int(code), "message": name} for name, code in
+              re.findall(r"#define\s+(\w*RPC_ERROR_CODE_\w+)\s+\(?\s*(-?\d+)", read(target.errors))}
+    errors.update({n: {"code": c, "message": msg} for n, (c, msg) in JSONRPC_ERRORS.items()})
+
     doc = {
         "openrpc": "1.3.2",
         "info": {"title": target.title,
@@ -529,7 +576,7 @@ def build(repo, target):
                  "description": "Generated from the Monero C++ source."},
         "servers": [{"name": "json_rpc", "url": target.url}],
         "methods": methods,
-        "components": {"schemas": dict(sorted(b.schemas.items()))},
+        "components": {"schemas": dict(sorted(b.schemas.items())), "errors": errors},
         "x-uri-endpoints": endpoints,
     }
     return doc, sorted(set(b.warnings))

@@ -15,6 +15,7 @@ WALLET_RPC = Target(
           "src/cryptonote_basic/subaddress_index.h"],
     server="src/wallet/wallet_rpc_server.h",
     impl="src/wallet/wallet_rpc_server.cpp",
+    errors="src/wallet/wallet_rpc_server_error_codes.h",
 )
 
 if __name__ == "__main__":

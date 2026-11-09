@@ -49,14 +49,16 @@
         {
           "name": "all_accounts",
           "schema": {
-            "type": "boolean"
+            "type": "boolean",
+            "default": false
           },
           "required": false
         },
         {
           "name": "strict",
           "schema": {
-            "type": "boolean"
+            "type": "boolean",
+            "default": false
           },
           "required": false
         }
@@ -94,7 +96,8 @@
         {
           "name": "all_accounts",
           "schema": {
-            "type": "boolean"
+            "type": "boolean",
+            "default": false
           },
           "required": false
         }
@@ -186,14 +189,16 @@
         {
           "name": "all_accounts",
           "schema": {
-            "type": "boolean"
+            "type": "boolean",
+            "default": false
           },
           "required": false
         },
         {
           "name": "strict",
           "schema": {
-            "type": "boolean"
+            "type": "boolean",
+            "default": false
           },
           "required": false
         }
@@ -232,7 +237,8 @@
         {
           "name": "all_accounts",
           "schema": {
-            "type": "boolean"
+            "type": "boolean",
+            "default": false
           },
           "required": false
         }
@@ -261,7 +267,8 @@
           "name": "count",
           "schema": {
             "type": "integer",
-            "minimum": 0
+            "minimum": 0,
+            "default": 1
           },
           "required": false
         },
@@ -313,23 +320,29 @@
         {
           "name": "tag",
           "schema": {
-            "type": "string"
+            "type": "string",
+            "description": "all accounts if empty, otherwise those accounts with this tag"
           },
-          "required": false
+          "required": false,
+          "description": "all accounts if empty, otherwise those accounts with this tag"
         },
         {
           "name": "strict_balances",
           "schema": {
-            "type": "boolean"
+            "type": "boolean",
+            "default": false
           },
           "required": false
         },
         {
           "name": "regexp",
           "schema": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "allow regular expression filters if set to true",
+            "default": false
           },
-          "required": false
+          "required": false,
+          "description": "allow regular expression filters if set to true"
         }
       ],
       "result": {
@@ -595,7 +608,8 @@
             "items": {
               "type": "integer",
               "minimum": 0
-            }
+            },
+            "default": []
           },
           "required": false
         },
@@ -611,7 +625,8 @@
           "name": "ring_size",
           "schema": {
             "type": "integer",
-            "minimum": 0
+            "minimum": 0,
+            "default": 0
           },
           "required": false
         },
@@ -640,21 +655,24 @@
         {
           "name": "do_not_relay",
           "schema": {
-            "type": "boolean"
+            "type": "boolean",
+            "default": false
           },
           "required": false
         },
         {
           "name": "get_tx_hex",
           "schema": {
-            "type": "boolean"
+            "type": "boolean",
+            "default": false
           },
           "required": false
         },
         {
           "name": "get_tx_metadata",
           "schema": {
-            "type": "boolean"
+            "type": "boolean",
+            "default": false
           },
           "required": false
         }
@@ -711,7 +729,8 @@
           "name": "ring_size",
           "schema": {
             "type": "integer",
-            "minimum": 0
+            "minimum": 0,
+            "default": 0
           },
           "required": false
         },
@@ -740,21 +759,24 @@
         {
           "name": "do_not_relay",
           "schema": {
-            "type": "boolean"
+            "type": "boolean",
+            "default": false
           },
           "required": false
         },
         {
           "name": "get_tx_hex",
           "schema": {
-            "type": "boolean"
+            "type": "boolean",
+            "default": false
           },
           "required": false
         },
         {
           "name": "get_tx_metadata",
           "schema": {
-            "type": "boolean"
+            "type": "boolean",
+            "default": false
           },
           "required": false
         }
@@ -780,14 +802,16 @@
         {
           "name": "export_raw",
           "schema": {
-            "type": "boolean"
+            "type": "boolean",
+            "default": false
           },
           "required": false
         },
         {
           "name": "get_tx_keys",
           "schema": {
-            "type": "boolean"
+            "type": "boolean",
+            "default": false
           },
           "required": false
         }
@@ -858,21 +882,24 @@
         {
           "name": "do_not_relay",
           "schema": {
-            "type": "boolean"
+            "type": "boolean",
+            "default": false
           },
           "required": false
         },
         {
           "name": "get_tx_hex",
           "schema": {
-            "type": "boolean"
+            "type": "boolean",
+            "default": false
           },
           "required": false
         },
         {
           "name": "get_tx_metadata",
           "schema": {
-            "type": "boolean"
+            "type": "boolean",
+            "default": false
           },
           "required": false
         }
@@ -898,21 +925,24 @@
         {
           "name": "do_not_relay",
           "schema": {
-            "type": "boolean"
+            "type": "boolean",
+            "default": false
           },
           "required": false
         },
         {
           "name": "get_tx_hex",
           "schema": {
-            "type": "boolean"
+            "type": "boolean",
+            "default": false
           },
           "required": false
         },
         {
           "name": "get_tx_metadata",
           "schema": {
-            "type": "boolean"
+            "type": "boolean",
+            "default": false
           },
           "required": false
         }
@@ -958,7 +988,8 @@
         {
           "name": "subaddr_indices_all",
           "schema": {
-            "type": "boolean"
+            "type": "boolean",
+            "default": false
           },
           "required": false
         },
@@ -974,7 +1005,8 @@
           "name": "ring_size",
           "schema": {
             "type": "integer",
-            "minimum": 0
+            "minimum": 0,
+            "default": 0
           },
           "required": false
         },
@@ -982,7 +1014,8 @@
           "name": "outputs",
           "schema": {
             "type": "integer",
-            "minimum": 0
+            "minimum": 0,
+            "default": 1
           },
           "required": false
         },
@@ -1019,21 +1052,24 @@
         {
           "name": "do_not_relay",
           "schema": {
-            "type": "boolean"
+            "type": "boolean",
+            "default": false
           },
           "required": false
         },
         {
           "name": "get_tx_hex",
           "schema": {
-            "type": "boolean"
+            "type": "boolean",
+            "default": false
           },
           "required": false
         },
         {
           "name": "get_tx_metadata",
           "schema": {
-            "type": "boolean"
+            "type": "boolean",
+            "default": false
           },
           "required": false
         }
@@ -1068,7 +1104,8 @@
           "name": "ring_size",
           "schema": {
             "type": "integer",
-            "minimum": 0
+            "minimum": 0,
+            "default": 0
           },
           "required": false
         },
@@ -1076,7 +1113,8 @@
           "name": "outputs",
           "schema": {
             "type": "integer",
-            "minimum": 0
+            "minimum": 0,
+            "default": 1
           },
           "required": false
         },
@@ -1112,21 +1150,24 @@
         {
           "name": "do_not_relay",
           "schema": {
-            "type": "boolean"
+            "type": "boolean",
+            "default": false
           },
           "required": false
         },
         {
           "name": "get_tx_hex",
           "schema": {
-            "type": "boolean"
+            "type": "boolean",
+            "default": false
           },
           "required": false
         },
         {
           "name": "get_tx_metadata",
           "schema": {
-            "type": "boolean"
+            "type": "boolean",
+            "default": false
           },
           "required": false
         }
@@ -1250,7 +1291,8 @@
         {
           "name": "all_accounts",
           "schema": {
-            "type": "boolean"
+            "type": "boolean",
+            "default": false
           },
           "required": false
         }
@@ -1344,14 +1386,16 @@
         {
           "name": "hard",
           "schema": {
-            "type": "boolean"
+            "type": "boolean",
+            "default": false
           },
           "required": false
         },
         {
           "name": "keep_key_images",
           "schema": {
-            "type": "boolean"
+            "type": "boolean",
+            "default": false
           },
           "required": false
         }
@@ -1661,17 +1705,21 @@
           "name": "account_index",
           "schema": {
             "type": "integer",
-            "minimum": 0
+            "minimum": 0,
+            "description": "ignored when `all` is true"
           },
-          "required": false
+          "required": false,
+          "description": "ignored when `all` is true"
         },
         {
           "name": "amount",
           "schema": {
             "type": "integer",
-            "minimum": 0
+            "minimum": 0,
+            "description": "ignored when `all` is true"
           },
-          "required": false
+          "required": false,
+          "description": "ignored when `all` is true"
         },
         {
           "name": "message",
@@ -1763,7 +1811,8 @@
         {
           "name": "refresh_pool",
           "schema": {
-            "type": "boolean"
+            "type": "boolean",
+            "default": true
           },
           "required": false
         },
@@ -1812,7 +1861,8 @@
         {
           "name": "all_accounts",
           "schema": {
-            "type": "boolean"
+            "type": "boolean",
+            "default": false
           },
           "required": false
         }
@@ -1839,14 +1889,16 @@
           "name": "account_index",
           "schema": {
             "type": "integer",
-            "minimum": 0
+            "minimum": 0,
+            "default": 0
           },
           "required": false
         },
         {
           "name": "all_accounts",
           "schema": {
-            "type": "boolean"
+            "type": "boolean",
+            "default": false
           },
           "required": false
         }
@@ -1873,7 +1925,8 @@
           "name": "account_index",
           "schema": {
             "type": "integer",
-            "minimum": 0
+            "minimum": 0,
+            "default": 0
           },
           "required": false
         },
@@ -1881,7 +1934,8 @@
           "name": "address_index",
           "schema": {
             "type": "integer",
-            "minimum": 0
+            "minimum": 0,
+            "default": 0
           },
           "required": false
         },
@@ -1948,7 +2002,8 @@
           "name": "start",
           "schema": {
             "type": "integer",
-            "minimum": 0
+            "minimum": 0,
+            "default": 0
           },
           "required": false
         },
@@ -1956,7 +2011,8 @@
           "name": "count",
           "schema": {
             "type": "integer",
-            "minimum": 0
+            "minimum": 0,
+            "default": 4294967295
           },
           "required": false
         }
@@ -1994,7 +2050,8 @@
         {
           "name": "all",
           "schema": {
-            "type": "boolean"
+            "type": "boolean",
+            "default": false
           },
           "required": false
         }
@@ -2014,7 +2071,8 @@
           "name": "offset",
           "schema": {
             "type": "integer",
-            "minimum": 0
+            "minimum": 0,
+            "default": 0
           },
           "required": false
         },
@@ -2228,7 +2286,8 @@
           "name": "start_height",
           "schema": {
             "type": "integer",
-            "minimum": 0
+            "minimum": 0,
+            "default": 0
           },
           "required": false
         }
@@ -2247,7 +2306,8 @@
         {
           "name": "enable",
           "schema": {
-            "type": "boolean"
+            "type": "boolean",
+            "default": true
           },
           "required": false
         },
@@ -2255,9 +2315,12 @@
           "name": "period",
           "schema": {
             "type": "integer",
-            "minimum": 0
+            "minimum": 0,
+            "description": "seconds",
+            "default": 0
           },
-          "required": false
+          "required": false,
+          "description": "seconds"
         }
       ],
       "result": {
@@ -2352,7 +2415,8 @@
         {
           "name": "polyseed",
           "schema": {
-            "type": "boolean"
+            "type": "boolean",
+            "default": true
           },
           "required": false
         }
@@ -2392,7 +2456,8 @@
         {
           "name": "polyseed",
           "schema": {
-            "type": "boolean"
+            "type": "boolean",
+            "default": true
           },
           "required": false
         }
@@ -2425,7 +2490,8 @@
         {
           "name": "autosave_current",
           "schema": {
-            "type": "boolean"
+            "type": "boolean",
+            "default": true
           },
           "required": false
         }
@@ -2463,7 +2529,8 @@
         {
           "name": "autosave_current",
           "schema": {
-            "type": "boolean"
+            "type": "boolean",
+            "default": true
           },
           "required": false
         }
@@ -2509,7 +2576,8 @@
           "name": "restore_height",
           "schema": {
             "type": "integer",
-            "minimum": 0
+            "minimum": 0,
+            "default": 0
           },
           "required": false
         },
@@ -2551,7 +2619,8 @@
         {
           "name": "autosave_current",
           "schema": {
-            "type": "boolean"
+            "type": "boolean",
+            "default": true
           },
           "required": false
         },
@@ -2578,7 +2647,8 @@
           "name": "restore_height",
           "schema": {
             "type": "integer",
-            "minimum": 0
+            "minimum": 0,
+            "default": 0
           },
           "required": false
         },
@@ -2620,14 +2690,16 @@
         {
           "name": "autosave_current",
           "schema": {
-            "type": "boolean"
+            "type": "boolean",
+            "default": true
           },
           "required": false
         },
         {
           "name": "enable_multisig_experimental",
           "schema": {
-            "type": "boolean"
+            "type": "boolean",
+            "default": false
           },
           "required": false
         }
@@ -2657,7 +2729,8 @@
         {
           "name": "enable_multisig_experimental",
           "schema": {
-            "type": "boolean"
+            "type": "boolean",
+            "default": false
           },
           "required": false
         }
@@ -2734,7 +2807,8 @@
         {
           "name": "refresh_after_import",
           "schema": {
-            "type": "boolean"
+            "type": "boolean",
+            "default": true
           },
           "required": false
         }
@@ -2770,7 +2844,8 @@
         {
           "name": "force_update_use_with_caution",
           "schema": {
-            "type": "boolean"
+            "type": "boolean",
+            "default": false
           },
           "required": false
         }
@@ -2879,14 +2954,16 @@
         {
           "name": "any_net_type",
           "schema": {
-            "type": "boolean"
+            "type": "boolean",
+            "default": false
           },
           "required": false
         },
         {
           "name": "allow_openalias",
           "schema": {
-            "type": "boolean"
+            "type": "boolean",
+            "default": false
           },
           "required": false
         }
@@ -2926,16 +3003,20 @@
         {
           "name": "trusted",
           "schema": {
-            "type": "boolean"
+            "type": "boolean",
+            "default": false
           },
           "required": false
         },
         {
           "name": "ssl_support",
           "schema": {
-            "type": "string"
+            "type": "string",
+            "description": "disabled, enabled, autodetect",
+            "default": "autodetect"
           },
-          "required": false
+          "required": false,
+          "description": "disabled, enabled, autodetect"
         },
         {
           "name": "ssl_private_key_path",
@@ -2971,14 +3052,16 @@
         {
           "name": "ssl_allow_any_cert",
           "schema": {
-            "type": "boolean"
+            "type": "boolean",
+            "default": false
           },
           "required": false
         },
         {
           "name": "proxy",
           "schema": {
-            "type": "string"
+            "type": "string",
+            "default": ""
           },
           "required": false
         }
@@ -3052,14 +3135,16 @@
           "name": "ring_size",
           "schema": {
             "type": "integer",
-            "minimum": 0
+            "minimum": 0,
+            "default": 0
           },
           "required": false
         },
         {
           "name": "rct",
           "schema": {
-            "type": "boolean"
+            "type": "boolean",
+            "default": true
           },
           "required": false
         }
@@ -3114,7 +3199,8 @@
         {
           "name": "background_cache_password",
           "schema": {
-            "type": "string"
+            "type": "string",
+            "default": ""
           },
           "required": false
         }
@@ -3151,14 +3237,16 @@
         {
           "name": "seed",
           "schema": {
-            "type": "string"
+            "type": "string",
+            "default": ""
           },
           "required": false
         },
         {
           "name": "seed_offset",
           "schema": {
-            "type": "string"
+            "type": "string",
+            "default": ""
           },
           "required": false
         }
@@ -3204,11 +3292,14 @@
         "type": "object",
         "properties": {
           "enable": {
-            "type": "boolean"
+            "type": "boolean",
+            "default": true
           },
           "period": {
             "type": "integer",
-            "minimum": 0
+            "minimum": 0,
+            "description": "seconds",
+            "default": 0
           }
         }
       },
@@ -3397,7 +3488,8 @@
         "type": "object",
         "properties": {
           "autosave_current": {
-            "type": "boolean"
+            "type": "boolean",
+            "default": true
           }
         }
       },
@@ -3424,7 +3516,8 @@
             "minimum": 0
           },
           "address": {
-            "type": "string"
+            "type": "string",
+            "description": "the 0-th address for convenience"
           }
         },
         "required": [
@@ -3441,7 +3534,8 @@
           },
           "count": {
             "type": "integer",
-            "minimum": 0
+            "minimum": 0,
+            "default": 1
           },
           "label": {
             "type": "string"
@@ -3496,7 +3590,8 @@
             "type": "string"
           },
           "polyseed": {
-            "type": "boolean"
+            "type": "boolean",
+            "default": true
           }
         },
         "required": [
@@ -3646,7 +3741,8 @@
           },
           "weight": {
             "type": "integer",
-            "minimum": 0
+            "minimum": 0,
+            "default": 0
           },
           "dummy_outputs": {
             "type": "integer",
@@ -3754,10 +3850,12 @@
           },
           "ring_size": {
             "type": "integer",
-            "minimum": 0
+            "minimum": 0,
+            "default": 0
           },
           "rct": {
-            "type": "boolean"
+            "type": "boolean",
+            "default": true
           }
         },
         "required": [
@@ -3795,7 +3893,8 @@
             }
           },
           "force_update_use_with_caution": {
-            "type": "boolean"
+            "type": "boolean",
+            "default": false
           }
         },
         "required": [
@@ -3822,7 +3921,8 @@
         "type": "object",
         "properties": {
           "all": {
-            "type": "boolean"
+            "type": "boolean",
+            "default": false
           }
         }
       },
@@ -3883,11 +3983,13 @@
           },
           "start": {
             "type": "integer",
-            "minimum": 0
+            "minimum": 0,
+            "default": 0
           },
           "count": {
             "type": "integer",
-            "minimum": 0
+            "minimum": 0,
+            "default": 4294967295
           }
         },
         "required": [
@@ -3947,7 +4049,8 @@
         "properties": {
           "restore_height": {
             "type": "integer",
-            "minimum": 0
+            "minimum": 0,
+            "default": 0
           },
           "filename": {
             "type": "string"
@@ -3965,7 +4068,8 @@
             "type": "string"
           },
           "autosave_current": {
-            "type": "boolean"
+            "type": "boolean",
+            "default": true
           },
           "language": {
             "type": "string"
@@ -3999,13 +4103,17 @@
         "type": "object",
         "properties": {
           "tag": {
-            "type": "string"
+            "type": "string",
+            "description": "all accounts if empty, otherwise those accounts with this tag"
           },
           "strict_balances": {
-            "type": "boolean"
+            "type": "boolean",
+            "default": false
           },
           "regexp": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "allow regular expression filters if set to true",
+            "default": false
           }
         },
         "required": [
@@ -4155,7 +4263,8 @@
             }
           },
           "all_accounts": {
-            "type": "boolean"
+            "type": "boolean",
+            "default": false
           }
         },
         "required": [
@@ -4167,7 +4276,8 @@
         "type": "object",
         "properties": {
           "address": {
-            "type": "string"
+            "type": "string",
+            "description": "to remain compatible with older RPC format"
           },
           "addresses": {
             "type": "array",
@@ -4339,10 +4449,12 @@
             }
           },
           "all_accounts": {
-            "type": "boolean"
+            "type": "boolean",
+            "default": false
           },
           "strict": {
-            "type": "boolean"
+            "type": "boolean",
+            "default": false
           }
         },
         "required": [
@@ -4441,7 +4553,8 @@
         "type": "object",
         "properties": {
           "polyseed": {
-            "type": "boolean"
+            "type": "boolean",
+            "default": true
           }
         }
       },
@@ -4538,11 +4651,13 @@
           },
           "account_index": {
             "type": "integer",
-            "minimum": 0
+            "minimum": 0,
+            "description": "ignored when `all` is true"
           },
           "amount": {
             "type": "integer",
-            "minimum": 0
+            "minimum": 0,
+            "description": "ignored when `all` is true"
           },
           "message": {
             "type": "string"
@@ -4611,7 +4726,8 @@
             "type": "boolean"
           },
           "refresh_pool": {
-            "type": "boolean"
+            "type": "boolean",
+            "default": true
           },
           "filter_by_height": {
             "type": "boolean"
@@ -4636,7 +4752,8 @@
             }
           },
           "all_accounts": {
-            "type": "boolean"
+            "type": "boolean",
+            "default": false
           }
         },
         "required": [
@@ -4701,10 +4818,12 @@
           },
           "account_index": {
             "type": "integer",
-            "minimum": 0
+            "minimum": 0,
+            "default": 0
           },
           "all_accounts": {
-            "type": "boolean"
+            "type": "boolean",
+            "default": false
           }
         },
         "required": [
@@ -4826,10 +4945,12 @@
             "type": "string"
           },
           "wallet_type": {
-            "type": "string"
+            "type": "string",
+            "description": "Normal | Multisig | Watch-Only | Background"
           },
           "seed_type": {
-            "type": "string"
+            "type": "string",
+            "description": "Legacy | Multisig | Polyseed"
           },
           "network_type": {
             "type": "string"
@@ -4876,7 +4997,8 @@
         "properties": {
           "offset": {
             "type": "integer",
-            "minimum": 0
+            "minimum": 0,
+            "default": 0
           },
           "signed_key_images": {
             "type": "array",
@@ -4936,7 +5058,8 @@
             }
           },
           "refresh_after_import": {
-            "type": "boolean"
+            "type": "boolean",
+            "default": true
           }
         },
         "required": [
@@ -4996,7 +5119,8 @@
             }
           },
           "all_accounts": {
-            "type": "boolean"
+            "type": "boolean",
+            "default": false
           }
         },
         "required": [
@@ -5208,7 +5332,8 @@
             "type": "string"
           },
           "autosave_current": {
-            "type": "boolean"
+            "type": "boolean",
+            "default": true
           }
         },
         "required": [
@@ -5253,7 +5378,8 @@
         "type": "object",
         "properties": {
           "enable_multisig_experimental": {
-            "type": "boolean"
+            "type": "boolean",
+            "default": false
           }
         }
       },
@@ -5304,7 +5430,8 @@
         "properties": {
           "start_height": {
             "type": "integer",
-            "minimum": 0
+            "minimum": 0,
+            "default": 0
           }
         }
       },
@@ -5328,10 +5455,12 @@
         "type": "object",
         "properties": {
           "hard": {
-            "type": "boolean"
+            "type": "boolean",
+            "default": false
           },
           "keep_key_images": {
-            "type": "boolean"
+            "type": "boolean",
+            "default": false
           }
         }
       },
@@ -5352,7 +5481,8 @@
         "properties": {
           "restore_height": {
             "type": "integer",
-            "minimum": 0
+            "minimum": 0,
+            "default": 0
           },
           "filename": {
             "type": "string"
@@ -5370,10 +5500,12 @@
             "type": "string"
           },
           "autosave_current": {
-            "type": "boolean"
+            "type": "boolean",
+            "default": true
           },
           "enable_multisig_experimental": {
-            "type": "boolean"
+            "type": "boolean",
+            "default": false
           }
         },
         "required": [
@@ -5435,7 +5567,8 @@
             "type": "string"
           },
           "background_cache_password": {
-            "type": "string"
+            "type": "string",
+            "default": ""
           }
         },
         "required": [
@@ -5498,10 +5631,13 @@
             "type": "string"
           },
           "trusted": {
-            "type": "boolean"
+            "type": "boolean",
+            "default": false
           },
           "ssl_support": {
-            "type": "string"
+            "type": "string",
+            "description": "disabled, enabled, autodetect",
+            "default": "autodetect"
           },
           "ssl_private_key_path": {
             "type": "string"
@@ -5519,10 +5655,12 @@
             }
           },
           "ssl_allow_any_cert": {
-            "type": "boolean"
+            "type": "boolean",
+            "default": false
           },
           "proxy": {
-            "type": "string"
+            "type": "string",
+            "default": ""
           }
         },
         "required": [
@@ -5597,11 +5735,13 @@
           },
           "account_index": {
             "type": "integer",
-            "minimum": 0
+            "minimum": 0,
+            "default": 0
           },
           "address_index": {
             "type": "integer",
-            "minimum": 0
+            "minimum": 0,
+            "default": 0
           },
           "signature_type": {
             "type": "string"
@@ -5659,10 +5799,12 @@
             "type": "string"
           },
           "export_raw": {
-            "type": "boolean"
+            "type": "boolean",
+            "default": false
           },
           "get_tx_keys": {
-            "type": "boolean"
+            "type": "boolean",
+            "default": false
           }
         },
         "required": [
@@ -5746,10 +5888,12 @@
             "type": "string"
           },
           "seed": {
-            "type": "string"
+            "type": "string",
+            "default": ""
           },
           "seed_offset": {
-            "type": "string"
+            "type": "string",
+            "default": ""
           }
         },
         "required": [
@@ -5844,7 +5988,8 @@
             }
           },
           "subaddr_indices_all": {
-            "type": "boolean"
+            "type": "boolean",
+            "default": false
           },
           "priority": {
             "type": "integer",
@@ -5852,11 +5997,13 @@
           },
           "ring_size": {
             "type": "integer",
-            "minimum": 0
+            "minimum": 0,
+            "default": 0
           },
           "outputs": {
             "type": "integer",
-            "minimum": 0
+            "minimum": 0,
+            "default": 1
           },
           "unlock_time": {
             "type": "integer",
@@ -5873,13 +6020,16 @@
             "minimum": 0
           },
           "do_not_relay": {
-            "type": "boolean"
+            "type": "boolean",
+            "default": false
           },
           "get_tx_hex": {
-            "type": "boolean"
+            "type": "boolean",
+            "default": false
           },
           "get_tx_metadata": {
-            "type": "boolean"
+            "type": "boolean",
+            "default": false
           }
         },
         "required": [
@@ -5900,13 +6050,16 @@
             "type": "boolean"
           },
           "do_not_relay": {
-            "type": "boolean"
+            "type": "boolean",
+            "default": false
           },
           "get_tx_hex": {
-            "type": "boolean"
+            "type": "boolean",
+            "default": false
           },
           "get_tx_metadata": {
-            "type": "boolean"
+            "type": "boolean",
+            "default": false
           }
         },
         "required": [
@@ -5925,11 +6078,13 @@
           },
           "ring_size": {
             "type": "integer",
-            "minimum": 0
+            "minimum": 0,
+            "default": 0
           },
           "outputs": {
             "type": "integer",
-            "minimum": 0
+            "minimum": 0,
+            "default": 1
           },
           "unlock_time": {
             "type": "integer",
@@ -5945,13 +6100,16 @@
             "type": "string"
           },
           "do_not_relay": {
-            "type": "boolean"
+            "type": "boolean",
+            "default": false
           },
           "get_tx_hex": {
-            "type": "boolean"
+            "type": "boolean",
+            "default": false
           },
           "get_tx_metadata": {
-            "type": "boolean"
+            "type": "boolean",
+            "default": false
           }
         },
         "required": [
@@ -6026,7 +6184,8 @@
             "items": {
               "type": "integer",
               "minimum": 0
-            }
+            },
+            "default": []
           },
           "priority": {
             "type": "integer",
@@ -6034,7 +6193,8 @@
           },
           "ring_size": {
             "type": "integer",
-            "minimum": 0
+            "minimum": 0,
+            "default": 0
           },
           "unlock_time": {
             "type": "integer",
@@ -6047,13 +6207,16 @@
             "type": "boolean"
           },
           "do_not_relay": {
-            "type": "boolean"
+            "type": "boolean",
+            "default": false
           },
           "get_tx_hex": {
-            "type": "boolean"
+            "type": "boolean",
+            "default": false
           },
           "get_tx_metadata": {
-            "type": "boolean"
+            "type": "boolean",
+            "default": false
           }
         },
         "required": [
@@ -6092,7 +6255,8 @@
           },
           "ring_size": {
             "type": "integer",
-            "minimum": 0
+            "minimum": 0,
+            "default": 0
           },
           "unlock_time": {
             "type": "integer",
@@ -6105,13 +6269,16 @@
             "type": "boolean"
           },
           "do_not_relay": {
-            "type": "boolean"
+            "type": "boolean",
+            "default": false
           },
           "get_tx_hex": {
-            "type": "boolean"
+            "type": "boolean",
+            "default": false
           },
           "get_tx_metadata": {
-            "type": "boolean"
+            "type": "boolean",
+            "default": false
           }
         },
         "required": [
@@ -6150,10 +6317,12 @@
             "type": "string"
           },
           "any_net_type": {
-            "type": "boolean"
+            "type": "boolean",
+            "default": false
           },
           "allow_openalias": {
-            "type": "boolean"
+            "type": "boolean",
+            "default": false
           }
         },
         "required": [
@@ -6406,7 +6575,8 @@
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/amounts_list"
-            }
+            },
+            "default": []
           },
           "fee_list": {
             "type": "array",
@@ -6644,7 +6814,8 @@
             "type": "string"
           },
           "pubkey": {
-            "type": "string"
+            "type": "string",
+            "description": "owned output public key found"
           },
           "block_height": {
             "type": "integer",
@@ -6704,7 +6875,8 @@
           },
           "change_amount": {
             "type": "integer",
-            "minimum": 0
+            "minimum": 0,
+            "default": 0
           },
           "note": {
             "type": "string"
@@ -6742,11 +6914,13 @@
           },
           "confirmations": {
             "type": "integer",
-            "minimum": 0
+            "minimum": 0,
+            "default": 0
           },
           "suggested_confirmations_threshold": {
             "type": "integer",
-            "minimum": 0
+            "minimum": 0,
+            "default": 0
           }
         },
         "required": [
@@ -6795,6 +6969,240 @@
           "tx_description",
           "recipient_name"
         ]
+      }
+    },
+    "errors": {
+      "WALLET_RPC_ERROR_CODE_UNKNOWN_ERROR": {
+        "code": -1,
+        "message": "WALLET_RPC_ERROR_CODE_UNKNOWN_ERROR"
+      },
+      "WALLET_RPC_ERROR_CODE_WRONG_ADDRESS": {
+        "code": -2,
+        "message": "WALLET_RPC_ERROR_CODE_WRONG_ADDRESS"
+      },
+      "WALLET_RPC_ERROR_CODE_DAEMON_IS_BUSY": {
+        "code": -3,
+        "message": "WALLET_RPC_ERROR_CODE_DAEMON_IS_BUSY"
+      },
+      "WALLET_RPC_ERROR_CODE_GENERIC_TRANSFER_ERROR": {
+        "code": -4,
+        "message": "WALLET_RPC_ERROR_CODE_GENERIC_TRANSFER_ERROR"
+      },
+      "WALLET_RPC_ERROR_CODE_WRONG_PAYMENT_ID": {
+        "code": -5,
+        "message": "WALLET_RPC_ERROR_CODE_WRONG_PAYMENT_ID"
+      },
+      "WALLET_RPC_ERROR_CODE_TRANSFER_TYPE": {
+        "code": -6,
+        "message": "WALLET_RPC_ERROR_CODE_TRANSFER_TYPE"
+      },
+      "WALLET_RPC_ERROR_CODE_DENIED": {
+        "code": -7,
+        "message": "WALLET_RPC_ERROR_CODE_DENIED"
+      },
+      "WALLET_RPC_ERROR_CODE_WRONG_TXID": {
+        "code": -8,
+        "message": "WALLET_RPC_ERROR_CODE_WRONG_TXID"
+      },
+      "WALLET_RPC_ERROR_CODE_WRONG_SIGNATURE": {
+        "code": -9,
+        "message": "WALLET_RPC_ERROR_CODE_WRONG_SIGNATURE"
+      },
+      "WALLET_RPC_ERROR_CODE_WRONG_KEY_IMAGE": {
+        "code": -10,
+        "message": "WALLET_RPC_ERROR_CODE_WRONG_KEY_IMAGE"
+      },
+      "WALLET_RPC_ERROR_CODE_WRONG_URI": {
+        "code": -11,
+        "message": "WALLET_RPC_ERROR_CODE_WRONG_URI"
+      },
+      "WALLET_RPC_ERROR_CODE_WRONG_INDEX": {
+        "code": -12,
+        "message": "WALLET_RPC_ERROR_CODE_WRONG_INDEX"
+      },
+      "WALLET_RPC_ERROR_CODE_NOT_OPEN": {
+        "code": -13,
+        "message": "WALLET_RPC_ERROR_CODE_NOT_OPEN"
+      },
+      "WALLET_RPC_ERROR_CODE_ACCOUNT_INDEX_OUT_OF_BOUNDS": {
+        "code": -14,
+        "message": "WALLET_RPC_ERROR_CODE_ACCOUNT_INDEX_OUT_OF_BOUNDS"
+      },
+      "WALLET_RPC_ERROR_CODE_ADDRESS_INDEX_OUT_OF_BOUNDS": {
+        "code": -15,
+        "message": "WALLET_RPC_ERROR_CODE_ADDRESS_INDEX_OUT_OF_BOUNDS"
+      },
+      "WALLET_RPC_ERROR_CODE_TX_NOT_POSSIBLE": {
+        "code": -16,
+        "message": "WALLET_RPC_ERROR_CODE_TX_NOT_POSSIBLE"
+      },
+      "WALLET_RPC_ERROR_CODE_NOT_ENOUGH_MONEY": {
+        "code": -17,
+        "message": "WALLET_RPC_ERROR_CODE_NOT_ENOUGH_MONEY"
+      },
+      "WALLET_RPC_ERROR_CODE_TX_TOO_LARGE": {
+        "code": -18,
+        "message": "WALLET_RPC_ERROR_CODE_TX_TOO_LARGE"
+      },
+      "WALLET_RPC_ERROR_CODE_NOT_ENOUGH_OUTS_TO_MIX": {
+        "code": -19,
+        "message": "WALLET_RPC_ERROR_CODE_NOT_ENOUGH_OUTS_TO_MIX"
+      },
+      "WALLET_RPC_ERROR_CODE_ZERO_DESTINATION": {
+        "code": -20,
+        "message": "WALLET_RPC_ERROR_CODE_ZERO_DESTINATION"
+      },
+      "WALLET_RPC_ERROR_CODE_WALLET_ALREADY_EXISTS": {
+        "code": -21,
+        "message": "WALLET_RPC_ERROR_CODE_WALLET_ALREADY_EXISTS"
+      },
+      "WALLET_RPC_ERROR_CODE_INVALID_PASSWORD": {
+        "code": -22,
+        "message": "WALLET_RPC_ERROR_CODE_INVALID_PASSWORD"
+      },
+      "WALLET_RPC_ERROR_CODE_NO_WALLET_DIR": {
+        "code": -23,
+        "message": "WALLET_RPC_ERROR_CODE_NO_WALLET_DIR"
+      },
+      "WALLET_RPC_ERROR_CODE_NO_TXKEY": {
+        "code": -24,
+        "message": "WALLET_RPC_ERROR_CODE_NO_TXKEY"
+      },
+      "WALLET_RPC_ERROR_CODE_WRONG_KEY": {
+        "code": -25,
+        "message": "WALLET_RPC_ERROR_CODE_WRONG_KEY"
+      },
+      "WALLET_RPC_ERROR_CODE_BAD_HEX": {
+        "code": -26,
+        "message": "WALLET_RPC_ERROR_CODE_BAD_HEX"
+      },
+      "WALLET_RPC_ERROR_CODE_BAD_TX_METADATA": {
+        "code": -27,
+        "message": "WALLET_RPC_ERROR_CODE_BAD_TX_METADATA"
+      },
+      "WALLET_RPC_ERROR_CODE_ALREADY_MULTISIG": {
+        "code": -28,
+        "message": "WALLET_RPC_ERROR_CODE_ALREADY_MULTISIG"
+      },
+      "WALLET_RPC_ERROR_CODE_WATCH_ONLY": {
+        "code": -29,
+        "message": "WALLET_RPC_ERROR_CODE_WATCH_ONLY"
+      },
+      "WALLET_RPC_ERROR_CODE_BAD_MULTISIG_INFO": {
+        "code": -30,
+        "message": "WALLET_RPC_ERROR_CODE_BAD_MULTISIG_INFO"
+      },
+      "WALLET_RPC_ERROR_CODE_NOT_MULTISIG": {
+        "code": -31,
+        "message": "WALLET_RPC_ERROR_CODE_NOT_MULTISIG"
+      },
+      "WALLET_RPC_ERROR_CODE_WRONG_LR": {
+        "code": -32,
+        "message": "WALLET_RPC_ERROR_CODE_WRONG_LR"
+      },
+      "WALLET_RPC_ERROR_CODE_THRESHOLD_NOT_REACHED": {
+        "code": -33,
+        "message": "WALLET_RPC_ERROR_CODE_THRESHOLD_NOT_REACHED"
+      },
+      "WALLET_RPC_ERROR_CODE_BAD_MULTISIG_TX_DATA": {
+        "code": -34,
+        "message": "WALLET_RPC_ERROR_CODE_BAD_MULTISIG_TX_DATA"
+      },
+      "WALLET_RPC_ERROR_CODE_MULTISIG_SIGNATURE": {
+        "code": -35,
+        "message": "WALLET_RPC_ERROR_CODE_MULTISIG_SIGNATURE"
+      },
+      "WALLET_RPC_ERROR_CODE_MULTISIG_SUBMISSION": {
+        "code": -36,
+        "message": "WALLET_RPC_ERROR_CODE_MULTISIG_SUBMISSION"
+      },
+      "WALLET_RPC_ERROR_CODE_NOT_ENOUGH_UNLOCKED_MONEY": {
+        "code": -37,
+        "message": "WALLET_RPC_ERROR_CODE_NOT_ENOUGH_UNLOCKED_MONEY"
+      },
+      "WALLET_RPC_ERROR_CODE_NO_DAEMON_CONNECTION": {
+        "code": -38,
+        "message": "WALLET_RPC_ERROR_CODE_NO_DAEMON_CONNECTION"
+      },
+      "WALLET_RPC_ERROR_CODE_BAD_UNSIGNED_TX_DATA": {
+        "code": -39,
+        "message": "WALLET_RPC_ERROR_CODE_BAD_UNSIGNED_TX_DATA"
+      },
+      "WALLET_RPC_ERROR_CODE_BAD_SIGNED_TX_DATA": {
+        "code": -40,
+        "message": "WALLET_RPC_ERROR_CODE_BAD_SIGNED_TX_DATA"
+      },
+      "WALLET_RPC_ERROR_CODE_SIGNED_SUBMISSION": {
+        "code": -41,
+        "message": "WALLET_RPC_ERROR_CODE_SIGNED_SUBMISSION"
+      },
+      "WALLET_RPC_ERROR_CODE_SIGN_UNSIGNED": {
+        "code": -42,
+        "message": "WALLET_RPC_ERROR_CODE_SIGN_UNSIGNED"
+      },
+      "WALLET_RPC_ERROR_CODE_NON_DETERMINISTIC": {
+        "code": -43,
+        "message": "WALLET_RPC_ERROR_CODE_NON_DETERMINISTIC"
+      },
+      "WALLET_RPC_ERROR_CODE_INVALID_LOG_LEVEL": {
+        "code": -44,
+        "message": "WALLET_RPC_ERROR_CODE_INVALID_LOG_LEVEL"
+      },
+      "WALLET_RPC_ERROR_CODE_ATTRIBUTE_NOT_FOUND": {
+        "code": -45,
+        "message": "WALLET_RPC_ERROR_CODE_ATTRIBUTE_NOT_FOUND"
+      },
+      "WALLET_RPC_ERROR_CODE_ZERO_AMOUNT": {
+        "code": -46,
+        "message": "WALLET_RPC_ERROR_CODE_ZERO_AMOUNT"
+      },
+      "WALLET_RPC_ERROR_CODE_INVALID_SIGNATURE_TYPE": {
+        "code": -47,
+        "message": "WALLET_RPC_ERROR_CODE_INVALID_SIGNATURE_TYPE"
+      },
+      "WALLET_RPC_ERROR_CODE_DISABLED": {
+        "code": -48,
+        "message": "WALLET_RPC_ERROR_CODE_DISABLED"
+      },
+      "WALLET_RPC_ERROR_CODE_PROXY_ALREADY_DEFINED": {
+        "code": -49,
+        "message": "WALLET_RPC_ERROR_CODE_PROXY_ALREADY_DEFINED"
+      },
+      "WALLET_RPC_ERROR_CODE_NONZERO_UNLOCK_TIME": {
+        "code": -50,
+        "message": "WALLET_RPC_ERROR_CODE_NONZERO_UNLOCK_TIME"
+      },
+      "WALLET_RPC_ERROR_CODE_IS_BACKGROUND_WALLET": {
+        "code": -51,
+        "message": "WALLET_RPC_ERROR_CODE_IS_BACKGROUND_WALLET"
+      },
+      "WALLET_RPC_ERROR_CODE_IS_BACKGROUND_SYNCING": {
+        "code": -52,
+        "message": "WALLET_RPC_ERROR_CODE_IS_BACKGROUND_SYNCING"
+      },
+      "WALLET_RPC_ERROR_CODE_INVALID_FEE_PRIORITY": {
+        "code": -53,
+        "message": "WALLET_RPC_ERROR_CODE_INVALID_FEE_PRIORITY"
+      },
+      "JSONRPC_PARSE_ERROR": {
+        "code": -32700,
+        "message": "Parse error"
+      },
+      "JSONRPC_INVALID_REQUEST": {
+        "code": -32600,
+        "message": "Invalid Request"
+      },
+      "JSONRPC_METHOD_NOT_FOUND": {
+        "code": -32601,
+        "message": "Method not found"
+      },
+      "JSONRPC_INVALID_PARAMS": {
+        "code": -32602,
+        "message": "Invalid params"
+      },
+      "JSONRPC_INTERNAL_ERROR": {
+        "code": -32603,
+        "message": "Internal error"
       }
     }
   },

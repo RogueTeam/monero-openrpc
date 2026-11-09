@@ -84,9 +84,11 @@
           "name": "reserve_size",
           "schema": {
             "type": "integer",
-            "minimum": 0
+            "minimum": 0,
+            "description": "max 255 bytes"
           },
-          "required": false
+          "required": false,
+          "description": "max 255 bytes"
         },
         {
           "name": "wallet_address",
@@ -125,9 +127,11 @@
           "name": "reserve_size",
           "schema": {
             "type": "integer",
-            "minimum": 0
+            "minimum": 0,
+            "description": "max 255 bytes"
           },
-          "required": false
+          "required": false,
+          "description": "max 255 bytes"
         },
         {
           "name": "wallet_address",
@@ -311,7 +315,8 @@
           "name": "starting_nonce",
           "schema": {
             "type": "integer",
-            "minimum": 0
+            "minimum": 0,
+            "default": 0
           },
           "required": false
         }
@@ -338,7 +343,8 @@
         {
           "name": "fill_pow_hash",
           "schema": {
-            "type": "boolean"
+            "type": "boolean",
+            "default": false
           },
           "required": false
         }
@@ -364,7 +370,8 @@
         {
           "name": "fill_pow_hash",
           "schema": {
-            "type": "boolean"
+            "type": "boolean",
+            "default": false
           },
           "required": false
         }
@@ -408,7 +415,8 @@
         {
           "name": "fill_pow_hash",
           "schema": {
-            "type": "boolean"
+            "type": "boolean",
+            "default": false
           },
           "required": false
         }
@@ -451,7 +459,8 @@
         {
           "name": "fill_pow_hash",
           "schema": {
-            "type": "boolean"
+            "type": "boolean",
+            "default": false
           },
           "required": false
         }
@@ -486,7 +495,8 @@
         {
           "name": "fill_pow_hash",
           "schema": {
-            "type": "boolean"
+            "type": "boolean",
+            "default": false
           },
           "required": false
         }
@@ -520,7 +530,8 @@
         {
           "name": "fill_pow_hash",
           "schema": {
-            "type": "boolean"
+            "type": "boolean",
+            "default": false
           },
           "required": false
         }
@@ -563,7 +574,8 @@
         {
           "name": "fill_pow_hash",
           "schema": {
-            "type": "boolean"
+            "type": "boolean",
+            "default": false
           },
           "required": false
         }
@@ -605,7 +617,8 @@
         {
           "name": "fill_pow_hash",
           "schema": {
-            "type": "boolean"
+            "type": "boolean",
+            "default": false
           },
           "required": false
         }
@@ -647,7 +660,8 @@
         {
           "name": "fill_pow_hash",
           "schema": {
-            "type": "boolean"
+            "type": "boolean",
+            "default": false
           },
           "required": false
         }
@@ -688,7 +702,8 @@
         {
           "name": "fill_pow_hash",
           "schema": {
-            "type": "boolean"
+            "type": "boolean",
+            "default": false
           },
           "required": false
         }
@@ -1079,7 +1094,8 @@
           "name": "from_height",
           "schema": {
             "type": "integer",
-            "minimum": 0
+            "minimum": 0,
+            "default": 0
           },
           "required": false
         },
@@ -1087,28 +1103,32 @@
           "name": "to_height",
           "schema": {
             "type": "integer",
-            "minimum": 0
+            "minimum": 0,
+            "default": 0
           },
           "required": false
         },
         {
           "name": "cumulative",
           "schema": {
-            "type": "boolean"
+            "type": "boolean",
+            "default": false
           },
           "required": false
         },
         {
           "name": "binary",
           "schema": {
-            "type": "boolean"
+            "type": "boolean",
+            "default": true
           },
           "required": false
         },
         {
           "name": "compress",
           "schema": {
-            "type": "boolean"
+            "type": "boolean",
+            "default": false
           },
           "required": false
         }
@@ -1127,7 +1147,8 @@
         {
           "name": "check",
           "schema": {
-            "type": "boolean"
+            "type": "boolean",
+            "default": false
           },
           "required": false
         }
@@ -1147,7 +1168,8 @@
         {
           "name": "bad_blocks",
           "schema": {
-            "type": "boolean"
+            "type": "boolean",
+            "default": false
           },
           "required": false
         }
@@ -1318,7 +1340,8 @@
         "type": "object",
         "properties": {
           "bad_blocks": {
-            "type": "boolean"
+            "type": "boolean",
+            "default": false
           }
         }
       },
@@ -1373,7 +1396,8 @@
           },
           "starting_nonce": {
             "type": "integer",
-            "minimum": 0
+            "minimum": 0,
+            "default": 0
           }
         },
         "required": [
@@ -1469,7 +1493,8 @@
         "properties": {
           "reserve_size": {
             "type": "integer",
-            "minimum": 0
+            "minimum": 0,
+            "description": "max 255 bytes"
           },
           "wallet_address": {
             "type": "string"
@@ -1519,7 +1544,8 @@
           },
           "cumulative_weight": {
             "type": "integer",
-            "minimum": 0
+            "minimum": 0,
+            "default": 0
           },
           "prev_hash": {
             "type": "string"
@@ -1773,7 +1799,8 @@
           },
           "quantization_mask": {
             "type": "integer",
-            "minimum": 0
+            "minimum": 0,
+            "default": 1
           },
           "fees": {
             "type": "array",
@@ -1805,7 +1832,8 @@
             "minimum": 0
           },
           "fill_pow_hash": {
-            "type": "boolean"
+            "type": "boolean",
+            "default": false
           }
         },
         "required": [
@@ -1945,11 +1973,13 @@
           },
           "requested_info": {
             "type": "integer",
-            "minimum": 0
+            "minimum": 0,
+            "default": 0
           },
           "block_ids": {
             "type": "string",
-            "contentEncoding": "binary"
+            "contentEncoding": "binary",
+            "description": "first 10 blocks id goes sequential, next goes in pow(2,n) offset, like 2, 4, 8, 16, 32, 64 and so on, and the last one is always genesis block"
           },
           "start_height": {
             "type": "integer",
@@ -1959,18 +1989,22 @@
             "type": "boolean"
           },
           "no_miner_tx": {
-            "type": "boolean"
+            "type": "boolean",
+            "default": false
           },
           "block_ids_exclusive": {
-            "type": "boolean"
+            "type": "boolean",
+            "default": false
           },
           "pool_info_since": {
             "type": "integer",
-            "minimum": 0
+            "minimum": 0,
+            "default": 0
           },
           "max_block_count": {
             "type": "integer",
-            "minimum": 0
+            "minimum": 0,
+            "default": 0
           }
         },
         "required": [
@@ -2019,11 +2053,13 @@
           },
           "daemon_time": {
             "type": "integer",
-            "minimum": 0
+            "minimum": 0,
+            "default": 0
           },
           "pool_info_extent": {
             "type": "integer",
-            "minimum": 0
+            "minimum": 0,
+            "default": 0
           },
           "added_pool_txs": {
             "type": "array",
@@ -2080,7 +2116,8 @@
             "minimum": 0
           },
           "fill_pow_hash": {
-            "type": "boolean"
+            "type": "boolean",
+            "default": false
           }
         },
         "required": [
@@ -2132,7 +2169,8 @@
             }
           },
           "fill_pow_hash": {
-            "type": "boolean"
+            "type": "boolean",
+            "default": false
           }
         },
         "required": [
@@ -2183,7 +2221,8 @@
             "minimum": 0
           },
           "fill_pow_hash": {
-            "type": "boolean"
+            "type": "boolean",
+            "default": false
           }
         },
         "required": [
@@ -2314,7 +2353,8 @@
           },
           "block_ids": {
             "type": "string",
-            "contentEncoding": "binary"
+            "contentEncoding": "binary",
+            "description": "first 10 blocks id goes sequential, next goes in pow(2,n) offset, like 2, 4, 8, 16, 32, 64 and so on, and the last one is always genesis block"
           },
           "start_height": {
             "type": "integer",
@@ -2497,7 +2537,8 @@
           },
           "block_weight_limit": {
             "type": "integer",
-            "minimum": 0
+            "minimum": 0,
+            "default": 0
           },
           "block_size_median": {
             "type": "integer",
@@ -2505,7 +2546,8 @@
           },
           "block_weight_median": {
             "type": "integer",
-            "minimum": 0
+            "minimum": 0,
+            "default": 0
           },
           "adjusted_time": {
             "type": "integer",
@@ -2589,7 +2631,8 @@
             "type": "string"
           },
           "fill_pow_hash": {
-            "type": "boolean"
+            "type": "boolean",
+            "default": false
           }
         },
         "required": [
@@ -2806,7 +2849,8 @@
             }
           },
           "get_txid": {
-            "type": "boolean"
+            "type": "boolean",
+            "default": true
           }
         },
         "required": [
@@ -2904,20 +2948,25 @@
           },
           "from_height": {
             "type": "integer",
-            "minimum": 0
+            "minimum": 0,
+            "default": 0
           },
           "to_height": {
             "type": "integer",
-            "minimum": 0
+            "minimum": 0,
+            "default": 0
           },
           "cumulative": {
-            "type": "boolean"
+            "type": "boolean",
+            "default": false
           },
           "binary": {
-            "type": "boolean"
+            "type": "boolean",
+            "default": true
           },
           "compress": {
-            "type": "boolean"
+            "type": "boolean",
+            "default": false
           }
         },
         "required": [
@@ -3048,10 +3097,12 @@
         "type": "object",
         "properties": {
           "public_only": {
-            "type": "boolean"
+            "type": "boolean",
+            "default": true
           },
           "include_blocked": {
-            "type": "boolean"
+            "type": "boolean",
+            "default": false
           }
         }
       },
@@ -3084,13 +3135,16 @@
         "type": "object",
         "properties": {
           "gray": {
-            "type": "boolean"
+            "type": "boolean",
+            "default": false
           },
           "white": {
-            "type": "boolean"
+            "type": "boolean",
+            "default": true
           },
           "include_blocked": {
-            "type": "boolean"
+            "type": "boolean",
+            "default": false
           }
         }
       },
@@ -3200,10 +3254,12 @@
             "type": "boolean"
           },
           "prune": {
-            "type": "boolean"
+            "type": "boolean",
+            "default": false
           },
           "split": {
-            "type": "boolean"
+            "type": "boolean",
+            "default": false
           }
         },
         "required": [
@@ -3229,13 +3285,15 @@
             "type": "array",
             "items": {
               "type": "string"
-            }
+            },
+            "description": "transactions blobs as hex (old compat)"
           },
           "txs_as_json": {
             "type": "array",
             "items": {
               "type": "string"
-            }
+            },
+            "description": "transactions decoded as json (old compat)"
           },
           "txs": {
             "type": "array",
@@ -3247,7 +3305,8 @@
             "type": "array",
             "items": {
               "type": "string"
-            }
+            },
+            "description": "not found transactions"
           }
         },
         "required": [
@@ -3564,20 +3623,24 @@
           },
           "current_height": {
             "type": "integer",
-            "minimum": 0
+            "minimum": 0,
+            "default": 0
           },
           "target_height": {
             "type": "integer",
-            "minimum": 0
+            "minimum": 0,
+            "default": 0
           },
           "hard_forks": {
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/COMMAND_RPC_GET_VERSION.hf_entry"
-            }
+            },
+            "default": []
           },
           "nettype": {
-            "type": "string"
+            "type": "string",
+            "default": ""
           }
         },
         "required": [
@@ -3665,7 +3728,8 @@
         "type": "object",
         "properties": {
           "set": {
-            "type": "boolean"
+            "type": "boolean",
+            "default": true
           },
           "in_peers": {
             "type": "integer",
@@ -3825,7 +3889,8 @@
         "type": "object",
         "properties": {
           "set": {
-            "type": "boolean"
+            "type": "boolean",
+            "default": true
           },
           "out_peers": {
             "type": "integer",
@@ -3860,7 +3925,8 @@
             "minimum": 0
           },
           "keep_txs": {
-            "type": "boolean"
+            "type": "boolean",
+            "default": true
           }
         },
         "required": [
@@ -3887,7 +3953,8 @@
         "type": "object",
         "properties": {
           "check": {
-            "type": "boolean"
+            "type": "boolean",
+            "default": false
           }
         }
       },
@@ -3974,10 +4041,12 @@
             "type": "string"
           },
           "do_not_relay": {
-            "type": "boolean"
+            "type": "boolean",
+            "default": false
           },
           "do_sanity_checks": {
-            "type": "boolean"
+            "type": "boolean",
+            "default": true
           }
         },
         "required": [
@@ -4111,7 +4180,8 @@
         "type": "object",
         "properties": {
           "limit_down": {
-            "type": "integer"
+            "type": "integer",
+            "description": "all limits (for get and set) are kB/s"
           },
           "limit_up": {
             "type": "integer"
@@ -4460,14 +4530,16 @@
         "type": "object",
         "properties": {
           "pruned": {
-            "type": "boolean"
+            "type": "boolean",
+            "default": false
           },
           "block": {
             "type": "string"
           },
           "block_weight": {
             "type": "integer",
-            "minimum": 0
+            "minimum": 0,
+            "default": 0
           },
           "txs": {
             "anyOf": [
@@ -4558,7 +4630,8 @@
           },
           "block_weight": {
             "type": "integer",
-            "minimum": 0
+            "minimum": 0,
+            "default": 0
           },
           "num_txes": {
             "type": "integer",
@@ -4569,7 +4642,8 @@
           },
           "long_term_weight": {
             "type": "integer",
-            "minimum": 0
+            "minimum": 0,
+            "default": 0
           },
           "miner_tx_hash": {
             "type": "string"
@@ -4757,11 +4831,13 @@
           },
           "rpc_port": {
             "type": "integer",
-            "minimum": 0
+            "minimum": 0,
+            "default": 0
           },
           "rpc_credits_per_hash": {
             "type": "integer",
-            "minimum": 0
+            "minimum": 0,
+            "default": 0
           },
           "last_seen": {
             "type": "integer",
@@ -4769,7 +4845,8 @@
           },
           "pruning_seed": {
             "type": "integer",
-            "minimum": 0
+            "minimum": 0,
+            "default": 0
           }
         },
         "required": [
@@ -4847,7 +4924,8 @@
             "type": "string"
           },
           "tx_json": {
-            "type": "string"
+            "type": "string",
+            "description": "TODO - expose this data directly"
           },
           "blob_size": {
             "type": "integer",
@@ -4855,7 +4933,8 @@
           },
           "weight": {
             "type": "integer",
-            "minimum": 0
+            "minimum": 0,
+            "default": 0
           },
           "fee": {
             "type": "integer",
@@ -5007,6 +5086,108 @@
           "histo",
           "num_double_spends"
         ]
+      }
+    },
+    "errors": {
+      "CORE_RPC_ERROR_CODE_WRONG_PARAM": {
+        "code": -1,
+        "message": "CORE_RPC_ERROR_CODE_WRONG_PARAM"
+      },
+      "CORE_RPC_ERROR_CODE_TOO_BIG_HEIGHT": {
+        "code": -2,
+        "message": "CORE_RPC_ERROR_CODE_TOO_BIG_HEIGHT"
+      },
+      "CORE_RPC_ERROR_CODE_TOO_BIG_RESERVE_SIZE": {
+        "code": -3,
+        "message": "CORE_RPC_ERROR_CODE_TOO_BIG_RESERVE_SIZE"
+      },
+      "CORE_RPC_ERROR_CODE_WRONG_WALLET_ADDRESS": {
+        "code": -4,
+        "message": "CORE_RPC_ERROR_CODE_WRONG_WALLET_ADDRESS"
+      },
+      "CORE_RPC_ERROR_CODE_INTERNAL_ERROR": {
+        "code": -5,
+        "message": "CORE_RPC_ERROR_CODE_INTERNAL_ERROR"
+      },
+      "CORE_RPC_ERROR_CODE_WRONG_BLOCKBLOB": {
+        "code": -6,
+        "message": "CORE_RPC_ERROR_CODE_WRONG_BLOCKBLOB"
+      },
+      "CORE_RPC_ERROR_CODE_BLOCK_NOT_ACCEPTED": {
+        "code": -7,
+        "message": "CORE_RPC_ERROR_CODE_BLOCK_NOT_ACCEPTED"
+      },
+      "CORE_RPC_ERROR_CODE_CORE_BUSY": {
+        "code": -9,
+        "message": "CORE_RPC_ERROR_CODE_CORE_BUSY"
+      },
+      "CORE_RPC_ERROR_CODE_WRONG_BLOCKBLOB_SIZE": {
+        "code": -10,
+        "message": "CORE_RPC_ERROR_CODE_WRONG_BLOCKBLOB_SIZE"
+      },
+      "CORE_RPC_ERROR_CODE_UNSUPPORTED_RPC": {
+        "code": -11,
+        "message": "CORE_RPC_ERROR_CODE_UNSUPPORTED_RPC"
+      },
+      "CORE_RPC_ERROR_CODE_MINING_TO_SUBADDRESS": {
+        "code": -12,
+        "message": "CORE_RPC_ERROR_CODE_MINING_TO_SUBADDRESS"
+      },
+      "CORE_RPC_ERROR_CODE_REGTEST_REQUIRED": {
+        "code": -13,
+        "message": "CORE_RPC_ERROR_CODE_REGTEST_REQUIRED"
+      },
+      "CORE_RPC_ERROR_CODE_PAYMENT_REQUIRED": {
+        "code": -14,
+        "message": "CORE_RPC_ERROR_CODE_PAYMENT_REQUIRED"
+      },
+      "CORE_RPC_ERROR_CODE_INVALID_CLIENT": {
+        "code": -15,
+        "message": "CORE_RPC_ERROR_CODE_INVALID_CLIENT"
+      },
+      "CORE_RPC_ERROR_CODE_PAYMENT_TOO_LOW": {
+        "code": -16,
+        "message": "CORE_RPC_ERROR_CODE_PAYMENT_TOO_LOW"
+      },
+      "CORE_RPC_ERROR_CODE_DUPLICATE_PAYMENT": {
+        "code": -17,
+        "message": "CORE_RPC_ERROR_CODE_DUPLICATE_PAYMENT"
+      },
+      "CORE_RPC_ERROR_CODE_STALE_PAYMENT": {
+        "code": -18,
+        "message": "CORE_RPC_ERROR_CODE_STALE_PAYMENT"
+      },
+      "CORE_RPC_ERROR_CODE_RESTRICTED": {
+        "code": -19,
+        "message": "CORE_RPC_ERROR_CODE_RESTRICTED"
+      },
+      "CORE_RPC_ERROR_CODE_UNSUPPORTED_BOOTSTRAP": {
+        "code": -20,
+        "message": "CORE_RPC_ERROR_CODE_UNSUPPORTED_BOOTSTRAP"
+      },
+      "CORE_RPC_ERROR_CODE_PAYMENTS_NOT_ENABLED": {
+        "code": -21,
+        "message": "CORE_RPC_ERROR_CODE_PAYMENTS_NOT_ENABLED"
+      },
+      "JSONRPC_PARSE_ERROR": {
+        "code": -32700,
+        "message": "Parse error"
+      },
+      "JSONRPC_INVALID_REQUEST": {
+        "code": -32600,
+        "message": "Invalid Request"
+      },
+      "JSONRPC_METHOD_NOT_FOUND": {
+        "code": -32601,
+        "message": "Method not found"
+      },
+      "JSONRPC_INVALID_PARAMS": {
+        "code": -32602,
+        "message": "Invalid params"
+      },
+      "JSONRPC_INTERNAL_ERROR": {
+        "code": -32603,
+        "message": "Internal error"
       }
     }
   },
