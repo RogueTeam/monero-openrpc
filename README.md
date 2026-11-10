@@ -18,6 +18,7 @@ The schemas in `schemas/` were generated from `master` at commit `0120dda4` (202
 | `node_schema.py`, `wallet_schema.py` | Where each server's RPC is defined: header paths, version macro, default URL |
 | `rpc_schema.py` | Shared code: the header parser and the OpenRPC builder |
 | `schemas/` | The generated schemas, and the commit they came from |
+| `tests/` | Tests for the generator, with a small fake checkout in `tests/fake_monero/` |
 
 Keep the three `.py` files in the root together; the two scripts import `rpc_schema`. Adding another target means one more small file with its own `Target(...)`.
 
@@ -58,6 +59,15 @@ Monero has no machine-readable RPC spec, and the hand-written docs drift because
 | `x-bigint` | property | 64-bit integer. Amounts are in atomic units (10^12 per XMR), so values above about 9,007 XMR exceed 2^53; don't parse them into JS numbers or doubles |
 | `x-alias-of` | method / endpoint | Same handler as an earlier name (`getblockcount` → `get_block_count`) |
 | `x-hidden-in-restricted-mode` | method / endpoint | Unavailable when the node runs with `--restricted-rpc` |
+
+## Tests
+
+```
+python3 -m unittest discover -s tests
+MONERO_REPO=/path/to/monero python3 -m unittest discover -s tests
+```
+
+The first line runs the generator on `tests/fake_monero`, a tiny checkout with one example of each C++ construct it handles (inherited maps, `if`/`else` branches, hand-written `serialize` calls, positional params, defaults, comments, and so on), plus unit tests for the parser. With `MONERO_REPO` set it also runs on a real checkout, and if that checkout is at the commit in `schemas/source.json`, it checks that `schemas/` is up to date.
 
 ## Using it in CI
 

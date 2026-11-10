@@ -1,0 +1,4 @@
+#pragma once
+
+#define TEST_RPC_ERROR_CODE_UNKNOWN_ERROR -1
+#define TEST_RPC_ERROR_CODE_WRONG_PARAM (-2)
