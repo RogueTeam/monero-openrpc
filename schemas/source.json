@@ -1,0 +1,7 @@
+{
+  "repository": "https://github.com/monero-project/monero",
+  "branch": "master",
+  "commit": "0120dda4d58fa6a7e6c822894fc1d7f4c48f445e",
+  "commit_date": "2026-11-07",
+  "command": "python3 node_schema.py REPO_PATH > schemas/daemon.openrpc.json && python3 wallet_schema.py REPO_PATH > schemas/wallet.openrpc.json"
+}
