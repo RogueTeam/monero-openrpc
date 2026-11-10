@@ -39,7 +39,7 @@ type AddAuxPowResponse struct {
 	BlockhashingBlob  string            `json:"blockhashing_blob"`
 	BlocktemplateBlob string            `json:"blocktemplate_blob"`
 	MerkleRoot        string            `json:"merkle_root"`
-	MerkleTreeDepth   int64             `json:"merkle_tree_depth"`
+	MerkleTreeDepth   uint64            `json:"merkle_tree_depth"`
 	Status            string            `json:"status"`
 }
 
@@ -55,7 +55,7 @@ type BannedResponse struct {
 
 type CalcpowRequest struct {
 	BlockBlob    *string `json:"block_blob,omitempty"`
-	Height       *int64  `json:"height,omitempty"`
+	Height       *uint64 `json:"height,omitempty"`
 	MajorVersion *int64  `json:"major_version,omitempty"`
 	SeedHash     *string `json:"seed_hash,omitempty"`
 }
@@ -77,7 +77,7 @@ type FlushTransactionPoolResponse struct {
 }
 
 type GenerateblocksRequest struct {
-	AmountOfBlocks *int64  `json:"amount_of_blocks,omitempty"`
+	AmountOfBlocks *uint64 `json:"amount_of_blocks,omitempty"`
 	PrevBlock      *string `json:"prev_block,omitempty"`
 	StartingNonce  *int64  `json:"starting_nonce,omitempty"`
 	WalletAddress  *string `json:"wallet_address,omitempty"`
@@ -85,7 +85,7 @@ type GenerateblocksRequest struct {
 
 type GenerateblocksResponse struct {
 	Blocks []string `json:"blocks,omitempty"`
-	Height int64    `json:"height"`
+	Height uint64   `json:"height"`
 	Status string   `json:"status"`
 }
 
@@ -101,7 +101,7 @@ type GetbansBan struct {
 }
 
 type GetblockcountResponse struct {
-	Count  int64  `json:"count"`
+	Count  uint64 `json:"count"`
 	Status string `json:"status"`
 }
 
@@ -109,33 +109,33 @@ type GetblocktemplateRequest struct {
 	ExtraNonce *string `json:"extra_nonce,omitempty"`
 	PrevBlock  *string `json:"prev_block,omitempty"`
 	// max 255 bytes
-	ReserveSize   *int64  `json:"reserve_size,omitempty"`
+	ReserveSize   *uint64 `json:"reserve_size,omitempty"`
 	WalletAddress *string `json:"wallet_address,omitempty"`
 }
 
 type GetblocktemplateResponse struct {
-	BlockhashingBlob  string `json:"blockhashing_blob"`
-	BlocktemplateBlob string `json:"blocktemplate_blob"`
-	CumulativeWeight  *int64 `json:"cumulative_weight,omitempty"`
-	Difficulty        int64  `json:"difficulty"`
-	DifficultyTop64   int64  `json:"difficulty_top64"`
-	ExpectedReward    int64  `json:"expected_reward"`
-	Height            int64  `json:"height"`
-	NextSeedHash      string `json:"next_seed_hash"`
-	PrevHash          string `json:"prev_hash"`
-	ReservedOffset    int64  `json:"reserved_offset"`
-	SeedHash          string `json:"seed_hash"`
-	SeedHeight        int64  `json:"seed_height"`
-	Status            string `json:"status"`
-	WideDifficulty    string `json:"wide_difficulty"`
+	BlockhashingBlob  string  `json:"blockhashing_blob"`
+	BlocktemplateBlob string  `json:"blocktemplate_blob"`
+	CumulativeWeight  *uint64 `json:"cumulative_weight,omitempty"`
+	Difficulty        uint64  `json:"difficulty"`
+	DifficultyTop64   uint64  `json:"difficulty_top64"`
+	ExpectedReward    uint64  `json:"expected_reward"`
+	Height            uint64  `json:"height"`
+	NextSeedHash      string  `json:"next_seed_hash"`
+	PrevHash          string  `json:"prev_hash"`
+	ReservedOffset    uint64  `json:"reserved_offset"`
+	SeedHash          string  `json:"seed_hash"`
+	SeedHeight        uint64  `json:"seed_height"`
+	Status            string  `json:"status"`
+	WideDifficulty    string  `json:"wide_difficulty"`
 }
 
 type GetminerdataResponse struct {
-	AlreadyGeneratedCoins int64                                `json:"already_generated_coins"`
+	AlreadyGeneratedCoins uint64                               `json:"already_generated_coins"`
 	Difficulty            string                               `json:"difficulty"`
-	Height                int64                                `json:"height"`
+	Height                uint64                               `json:"height"`
 	MajorVersion          int64                                `json:"major_version"`
-	MedianWeight          int64                                `json:"median_weight"`
+	MedianWeight          uint64                               `json:"median_weight"`
 	PrevID                string                               `json:"prev_id"`
 	SeedHash              string                               `json:"seed_hash"`
 	Status                string                               `json:"status"`
@@ -143,9 +143,9 @@ type GetminerdataResponse struct {
 }
 
 type GetminerdataResponseTxBacklogEntry struct {
-	Fee    int64  `json:"fee"`
+	Fee    uint64 `json:"fee"`
 	ID     string `json:"id"`
-	Weight int64  `json:"weight"`
+	Weight uint64 `json:"weight"`
 }
 
 type GetAlternateChainsResponse struct {
@@ -156,10 +156,10 @@ type GetAlternateChainsResponse struct {
 type GetAlternateChainsChainInfo struct {
 	BlockHash            string   `json:"block_hash"`
 	BlockHashes          []string `json:"block_hashes,omitempty"`
-	Difficulty           int64    `json:"difficulty"`
-	DifficultyTop64      int64    `json:"difficulty_top64"`
-	Height               int64    `json:"height"`
-	Length               int64    `json:"length"`
+	Difficulty           uint64   `json:"difficulty"`
+	DifficultyTop64      uint64   `json:"difficulty_top64"`
+	Height               uint64   `json:"height"`
+	Length               uint64   `json:"length"`
 	MainChainParentBlock string   `json:"main_chain_parent_block"`
 	WideDifficulty       string   `json:"wide_difficulty"`
 }
@@ -170,36 +170,36 @@ type GetAltBlocksHashesRequest struct {
 
 type GetAltBlocksHashesResponse struct {
 	BlksHashes []string `json:"blks_hashes,omitempty"`
-	Credits    int64    `json:"credits"`
+	Credits    uint64   `json:"credits"`
 	Status     string   `json:"status"`
 	TopHash    string   `json:"top_hash"`
 }
 
 type GetBaseFeeEstimateRequest struct {
 	Client      *string `json:"client,omitempty"`
-	GraceBlocks *int64  `json:"grace_blocks,omitempty"`
+	GraceBlocks *uint64 `json:"grace_blocks,omitempty"`
 }
 
 type GetBaseFeeEstimateResponse struct {
-	Credits          int64   `json:"credits"`
-	Fee              int64   `json:"fee"`
-	Fees             []int64 `json:"fees,omitempty"`
-	QuantizationMask *int64  `json:"quantization_mask,omitempty"`
-	Status           string  `json:"status"`
-	TopHash          string  `json:"top_hash"`
+	Credits          uint64   `json:"credits"`
+	Fee              uint64   `json:"fee"`
+	Fees             []uint64 `json:"fees,omitempty"`
+	QuantizationMask *uint64  `json:"quantization_mask,omitempty"`
+	Status           string   `json:"status"`
+	TopHash          string   `json:"top_hash"`
 }
 
 type GetBlockRequest struct {
 	Client      *string `json:"client,omitempty"`
 	FillPowHash *bool   `json:"fill_pow_hash,omitempty"`
 	Hash        *string `json:"hash,omitempty"`
-	Height      *int64  `json:"height,omitempty"`
+	Height      *uint64 `json:"height,omitempty"`
 }
 
 type GetBlockResponse struct {
 	Blob        string              `json:"blob"`
 	BlockHeader BlockHeaderResponse `json:"block_header"`
-	Credits     int64               `json:"credits"`
+	Credits     uint64              `json:"credits"`
 	JSON        string              `json:"json"`
 	MinerTxHash string              `json:"miner_tx_hash"`
 	Status      string              `json:"status"`
@@ -208,47 +208,47 @@ type GetBlockResponse struct {
 }
 
 type BlockHeaderResponse struct {
-	BlockSize                 int64  `json:"block_size"`
-	BlockWeight               *int64 `json:"block_weight,omitempty"`
-	CumulativeDifficulty      int64  `json:"cumulative_difficulty"`
-	CumulativeDifficultyTop64 int64  `json:"cumulative_difficulty_top64"`
-	Depth                     int64  `json:"depth"`
-	Difficulty                int64  `json:"difficulty"`
-	DifficultyTop64           int64  `json:"difficulty_top64"`
-	Hash                      string `json:"hash"`
-	Height                    int64  `json:"height"`
-	LongTermWeight            *int64 `json:"long_term_weight,omitempty"`
-	MajorVersion              int64  `json:"major_version"`
-	MinerTxHash               string `json:"miner_tx_hash"`
-	MinorVersion              int64  `json:"minor_version"`
-	Nonce                     int64  `json:"nonce"`
-	NumTxes                   int64  `json:"num_txes"`
-	OrphanStatus              bool   `json:"orphan_status"`
-	PowHash                   string `json:"pow_hash"`
-	PrevHash                  string `json:"prev_hash"`
-	Reward                    int64  `json:"reward"`
-	Timestamp                 int64  `json:"timestamp"`
-	WideCumulativeDifficulty  string `json:"wide_cumulative_difficulty"`
-	WideDifficulty            string `json:"wide_difficulty"`
+	BlockSize                 uint64  `json:"block_size"`
+	BlockWeight               *uint64 `json:"block_weight,omitempty"`
+	CumulativeDifficulty      uint64  `json:"cumulative_difficulty"`
+	CumulativeDifficultyTop64 uint64  `json:"cumulative_difficulty_top64"`
+	Depth                     uint64  `json:"depth"`
+	Difficulty                uint64  `json:"difficulty"`
+	DifficultyTop64           uint64  `json:"difficulty_top64"`
+	Hash                      string  `json:"hash"`
+	Height                    uint64  `json:"height"`
+	LongTermWeight            *uint64 `json:"long_term_weight,omitempty"`
+	MajorVersion              int64   `json:"major_version"`
+	MinerTxHash               string  `json:"miner_tx_hash"`
+	MinorVersion              int64   `json:"minor_version"`
+	Nonce                     int64   `json:"nonce"`
+	NumTxes                   uint64  `json:"num_txes"`
+	OrphanStatus              bool    `json:"orphan_status"`
+	PowHash                   string  `json:"pow_hash"`
+	PrevHash                  string  `json:"prev_hash"`
+	Reward                    uint64  `json:"reward"`
+	Timestamp                 uint64  `json:"timestamp"`
+	WideCumulativeDifficulty  string  `json:"wide_cumulative_difficulty"`
+	WideDifficulty            string  `json:"wide_difficulty"`
 }
 
 type GetBlocksByHeightRequest struct {
-	Client  *string `json:"client,omitempty"`
-	Heights []int64 `json:"heights,omitempty"`
+	Client  *string  `json:"client,omitempty"`
+	Heights []uint64 `json:"heights,omitempty"`
 }
 
 type GetBlocksByHeightResponse struct {
 	Blocks  []BlockCompleteEntry `json:"blocks,omitempty"`
-	Credits int64                `json:"credits"`
+	Credits uint64               `json:"credits"`
 	Status  string               `json:"status"`
 	TopHash string               `json:"top_hash"`
 }
 
 type BlockCompleteEntry struct {
-	Block       string `json:"block"`
-	BlockWeight *int64 `json:"block_weight,omitempty"`
-	Pruned      *bool  `json:"pruned,omitempty"`
-	Txs         []Tx   `json:"txs,omitempty"`
+	Block       string  `json:"block"`
+	BlockWeight *uint64 `json:"block_weight,omitempty"`
+	Pruned      *bool   `json:"pruned,omitempty"`
+	Txs         []Tx    `json:"txs,omitempty"`
 }
 
 type TxBlobEntry struct {
@@ -262,25 +262,25 @@ type GetBlocksFastRequest struct {
 	BlockIDS          *string `json:"block_ids,omitempty"`
 	BlockIDSExclusive *bool   `json:"block_ids_exclusive,omitempty"`
 	Client            *string `json:"client,omitempty"`
-	MaxBlockCount     *int64  `json:"max_block_count,omitempty"`
+	MaxBlockCount     *uint64 `json:"max_block_count,omitempty"`
 	NoMinerTx         *bool   `json:"no_miner_tx,omitempty"`
-	PoolInfoSince     *int64  `json:"pool_info_since,omitempty"`
+	PoolInfoSince     *uint64 `json:"pool_info_since,omitempty"`
 	Prune             *bool   `json:"prune,omitempty"`
 	RequestedInfo     *int64  `json:"requested_info,omitempty"`
-	StartHeight       *int64  `json:"start_height,omitempty"`
+	StartHeight       *uint64 `json:"start_height,omitempty"`
 }
 
 type GetBlocksFastResponse struct {
 	AddedPoolTxs            []GetBlocksFastPoolTxInfo         `json:"added_pool_txs,omitempty"`
 	Blocks                  []BlockCompleteEntry              `json:"blocks,omitempty"`
-	Credits                 int64                             `json:"credits"`
-	CurrentHeight           int64                             `json:"current_height"`
-	DaemonTime              *int64                            `json:"daemon_time,omitempty"`
+	Credits                 uint64                            `json:"credits"`
+	CurrentHeight           uint64                            `json:"current_height"`
+	DaemonTime              *uint64                           `json:"daemon_time,omitempty"`
 	OutputIndices           []GetBlocksFastBlockOutputIndices `json:"output_indices,omitempty"`
 	PoolInfoExtent          *int64                            `json:"pool_info_extent,omitempty"`
 	RemainingAddedPoolTxids *string                           `json:"remaining_added_pool_txids,omitempty"`
 	RemovedPoolTxids        *string                           `json:"removed_pool_txids,omitempty"`
-	StartHeight             int64                             `json:"start_height"`
+	StartHeight             uint64                            `json:"start_height"`
 	Status                  string                            `json:"status"`
 	TopBlockHash            *string                           `json:"top_block_hash,omitempty"`
 	TopHash                 string                            `json:"top_hash"`
@@ -297,18 +297,18 @@ type GetBlocksFastBlockOutputIndices struct {
 }
 
 type GetBlocksFastTxOutputIndices struct {
-	Indices []int64 `json:"indices,omitempty"`
+	Indices []uint64 `json:"indices,omitempty"`
 }
 
 type GetBlockHeadersRangeRequest struct {
 	Client      *string `json:"client,omitempty"`
-	EndHeight   *int64  `json:"end_height,omitempty"`
+	EndHeight   *uint64 `json:"end_height,omitempty"`
 	FillPowHash *bool   `json:"fill_pow_hash,omitempty"`
-	StartHeight *int64  `json:"start_height,omitempty"`
+	StartHeight *uint64 `json:"start_height,omitempty"`
 }
 
 type GetBlockHeadersRangeResponse struct {
-	Credits int64                 `json:"credits"`
+	Credits uint64                `json:"credits"`
 	Headers []BlockHeaderResponse `json:"headers,omitempty"`
 	Status  string                `json:"status"`
 	TopHash string                `json:"top_hash"`
@@ -324,7 +324,7 @@ type GetBlockHeaderByHashRequest struct {
 type GetBlockHeaderByHashResponse struct {
 	BlockHeader  BlockHeaderResponse   `json:"block_header"`
 	BlockHeaders []BlockHeaderResponse `json:"block_headers,omitempty"`
-	Credits      int64                 `json:"credits"`
+	Credits      uint64                `json:"credits"`
 	Status       string                `json:"status"`
 	TopHash      string                `json:"top_hash"`
 }
@@ -332,28 +332,28 @@ type GetBlockHeaderByHashResponse struct {
 type GetBlockHeaderByHeightRequest struct {
 	Client      *string `json:"client,omitempty"`
 	FillPowHash *bool   `json:"fill_pow_hash,omitempty"`
-	Height      *int64  `json:"height,omitempty"`
+	Height      *uint64 `json:"height,omitempty"`
 }
 
 type GetBlockHeaderByHeightResponse struct {
 	BlockHeader BlockHeaderResponse `json:"block_header"`
-	Credits     int64               `json:"credits"`
+	Credits     uint64              `json:"credits"`
 	Status      string              `json:"status"`
 	TopHash     string              `json:"top_hash"`
 }
 
 type GetCoinbaseTxSumRequest struct {
 	Client *string `json:"client,omitempty"`
-	Count  *int64  `json:"count,omitempty"`
-	Height *int64  `json:"height,omitempty"`
+	Count  *uint64 `json:"count,omitempty"`
+	Height *uint64 `json:"height,omitempty"`
 }
 
 type GetCoinbaseTxSumResponse struct {
-	Credits             int64  `json:"credits"`
-	EmissionAmount      int64  `json:"emission_amount"`
-	EmissionAmountTop64 int64  `json:"emission_amount_top64"`
-	FeeAmount           int64  `json:"fee_amount"`
-	FeeAmountTop64      int64  `json:"fee_amount_top64"`
+	Credits             uint64 `json:"credits"`
+	EmissionAmount      uint64 `json:"emission_amount"`
+	EmissionAmountTop64 uint64 `json:"emission_amount_top64"`
+	FeeAmount           uint64 `json:"fee_amount"`
+	FeeAmountTop64      uint64 `json:"fee_amount_top64"`
 	Status              string `json:"status"`
 	TopHash             string `json:"top_hash"`
 	WideEmissionAmount  string `json:"wide_emission_amount"`
@@ -368,27 +368,27 @@ type GetConnectionsResponse struct {
 type ConnectionInfo struct {
 	Address           string `json:"address"`
 	AddressType       int64  `json:"address_type"`
-	AvgDownload       int64  `json:"avg_download"`
-	AvgUpload         int64  `json:"avg_upload"`
+	AvgDownload       uint64 `json:"avg_download"`
+	AvgUpload         uint64 `json:"avg_upload"`
 	ConnectionID      string `json:"connection_id"`
-	CurrentDownload   int64  `json:"current_download"`
-	CurrentUpload     int64  `json:"current_upload"`
-	Height            int64  `json:"height"`
+	CurrentDownload   uint64 `json:"current_download"`
+	CurrentUpload     uint64 `json:"current_upload"`
+	Height            uint64 `json:"height"`
 	Host              string `json:"host"`
 	Incoming          bool   `json:"incoming"`
 	IP                string `json:"ip"`
-	LiveTime          int64  `json:"live_time"`
+	LiveTime          uint64 `json:"live_time"`
 	LocalIP           bool   `json:"local_ip"`
 	Localhost         bool   `json:"localhost"`
 	PeerID            string `json:"peer_id"`
 	Port              string `json:"port"`
 	PruningSeed       int64  `json:"pruning_seed"`
-	RecvCount         int64  `json:"recv_count"`
-	RecvIdleTime      int64  `json:"recv_idle_time"`
+	RecvCount         uint64 `json:"recv_count"`
+	RecvIdleTime      uint64 `json:"recv_idle_time"`
 	RPCCreditsPerHash int64  `json:"rpc_credits_per_hash"`
 	RPCPort           int64  `json:"rpc_port"`
-	SendCount         int64  `json:"send_count"`
-	SendIdleTime      int64  `json:"send_idle_time"`
+	SendCount         uint64 `json:"send_count"`
+	SendIdleTime      uint64 `json:"send_idle_time"`
 	State             string `json:"state"`
 	SupportFlags      int64  `json:"support_flags"`
 }
@@ -398,21 +398,21 @@ type GetHashesFastRequest struct {
 	// 64 and so on, and the last one is always genesis block
 	BlockIDS    *string `json:"block_ids,omitempty"`
 	Client      *string `json:"client,omitempty"`
-	StartHeight *int64  `json:"start_height,omitempty"`
+	StartHeight *uint64 `json:"start_height,omitempty"`
 }
 
 type GetHashesFastResponse struct {
-	Credits       int64   `json:"credits"`
-	CurrentHeight int64   `json:"current_height"`
+	Credits       uint64  `json:"credits"`
+	CurrentHeight uint64  `json:"current_height"`
 	MBlockIDS     *string `json:"m_block_ids,omitempty"`
-	StartHeight   int64   `json:"start_height"`
+	StartHeight   uint64  `json:"start_height"`
 	Status        string  `json:"status"`
 	TopHash       string  `json:"top_hash"`
 }
 
 type GetHeightResponse struct {
 	Hash   string `json:"hash"`
-	Height int64  `json:"height"`
+	Height uint64 `json:"height"`
 	Status string `json:"status"`
 }
 
@@ -421,45 +421,45 @@ type GetInfoRequest struct {
 }
 
 type GetInfoResponse struct {
-	AdjustedTime              int64  `json:"adjusted_time"`
-	AltBlocksCount            int64  `json:"alt_blocks_count"`
-	BlockSizeLimit            int64  `json:"block_size_limit"`
-	BlockSizeMedian           int64  `json:"block_size_median"`
-	BlockWeightLimit          *int64 `json:"block_weight_limit,omitempty"`
-	BlockWeightMedian         *int64 `json:"block_weight_median,omitempty"`
-	BusySyncing               bool   `json:"busy_syncing"`
-	Credits                   int64  `json:"credits"`
-	CumulativeDifficulty      int64  `json:"cumulative_difficulty"`
-	CumulativeDifficultyTop64 int64  `json:"cumulative_difficulty_top64"`
-	DatabaseSize              int64  `json:"database_size"`
-	Difficulty                int64  `json:"difficulty"`
-	DifficultyTop64           int64  `json:"difficulty_top64"`
-	FreeSpace                 int64  `json:"free_space"`
-	GreyPeerlistSize          int64  `json:"grey_peerlist_size"`
-	Height                    int64  `json:"height"`
-	IncomingConnectionsCount  int64  `json:"incoming_connections_count"`
-	Mainnet                   bool   `json:"mainnet"`
-	Nettype                   string `json:"nettype"`
-	Offline                   bool   `json:"offline"`
-	OutgoingConnectionsCount  int64  `json:"outgoing_connections_count"`
-	Restricted                bool   `json:"restricted"`
-	RPCConnectionsCount       int64  `json:"rpc_connections_count"`
-	Stagenet                  bool   `json:"stagenet"`
-	StartTime                 int64  `json:"start_time"`
-	Status                    string `json:"status"`
-	Synchronized              bool   `json:"synchronized"`
-	Target                    int64  `json:"target"`
-	TargetHeight              int64  `json:"target_height"`
-	Testnet                   bool   `json:"testnet"`
-	TopBlockHash              string `json:"top_block_hash"`
-	TopHash                   string `json:"top_hash"`
-	TxCount                   int64  `json:"tx_count"`
-	TxPoolSize                int64  `json:"tx_pool_size"`
-	UpdateAvailable           bool   `json:"update_available"`
-	Version                   string `json:"version"`
-	WhitePeerlistSize         int64  `json:"white_peerlist_size"`
-	WideCumulativeDifficulty  string `json:"wide_cumulative_difficulty"`
-	WideDifficulty            string `json:"wide_difficulty"`
+	AdjustedTime              uint64  `json:"adjusted_time"`
+	AltBlocksCount            uint64  `json:"alt_blocks_count"`
+	BlockSizeLimit            uint64  `json:"block_size_limit"`
+	BlockSizeMedian           uint64  `json:"block_size_median"`
+	BlockWeightLimit          *uint64 `json:"block_weight_limit,omitempty"`
+	BlockWeightMedian         *uint64 `json:"block_weight_median,omitempty"`
+	BusySyncing               bool    `json:"busy_syncing"`
+	Credits                   uint64  `json:"credits"`
+	CumulativeDifficulty      uint64  `json:"cumulative_difficulty"`
+	CumulativeDifficultyTop64 uint64  `json:"cumulative_difficulty_top64"`
+	DatabaseSize              uint64  `json:"database_size"`
+	Difficulty                uint64  `json:"difficulty"`
+	DifficultyTop64           uint64  `json:"difficulty_top64"`
+	FreeSpace                 uint64  `json:"free_space"`
+	GreyPeerlistSize          uint64  `json:"grey_peerlist_size"`
+	Height                    uint64  `json:"height"`
+	IncomingConnectionsCount  uint64  `json:"incoming_connections_count"`
+	Mainnet                   bool    `json:"mainnet"`
+	Nettype                   string  `json:"nettype"`
+	Offline                   bool    `json:"offline"`
+	OutgoingConnectionsCount  uint64  `json:"outgoing_connections_count"`
+	Restricted                bool    `json:"restricted"`
+	RPCConnectionsCount       uint64  `json:"rpc_connections_count"`
+	Stagenet                  bool    `json:"stagenet"`
+	StartTime                 uint64  `json:"start_time"`
+	Status                    string  `json:"status"`
+	Synchronized              bool    `json:"synchronized"`
+	Target                    uint64  `json:"target"`
+	TargetHeight              uint64  `json:"target_height"`
+	Testnet                   bool    `json:"testnet"`
+	TopBlockHash              string  `json:"top_block_hash"`
+	TopHash                   string  `json:"top_hash"`
+	TxCount                   uint64  `json:"tx_count"`
+	TxPoolSize                uint64  `json:"tx_pool_size"`
+	UpdateAvailable           bool    `json:"update_available"`
+	Version                   string  `json:"version"`
+	WhitePeerlistSize         uint64  `json:"white_peerlist_size"`
+	WideCumulativeDifficulty  string  `json:"wide_cumulative_difficulty"`
+	WideDifficulty            string  `json:"wide_difficulty"`
 }
 
 type GetLastBlockHeaderRequest struct {
@@ -469,24 +469,24 @@ type GetLastBlockHeaderRequest struct {
 
 type GetLastBlockHeaderResponse struct {
 	BlockHeader BlockHeaderResponse `json:"block_header"`
-	Credits     int64               `json:"credits"`
+	Credits     uint64              `json:"credits"`
 	Status      string              `json:"status"`
 	TopHash     string              `json:"top_hash"`
 }
 
 type GetLimitResponse struct {
-	LimitDown int64  `json:"limit_down"`
-	LimitUp   int64  `json:"limit_up"`
+	LimitDown uint64 `json:"limit_down"`
+	LimitUp   uint64 `json:"limit_up"`
 	Status    string `json:"status"`
 }
 
 type GetNetStatsResponse struct {
-	StartTime       int64  `json:"start_time"`
+	StartTime       uint64 `json:"start_time"`
 	Status          string `json:"status"`
-	TotalBytesIn    int64  `json:"total_bytes_in"`
-	TotalBytesOut   int64  `json:"total_bytes_out"`
-	TotalPacketsIn  int64  `json:"total_packets_in"`
-	TotalPacketsOut int64  `json:"total_packets_out"`
+	TotalBytesIn    uint64 `json:"total_bytes_in"`
+	TotalBytesOut   uint64 `json:"total_bytes_out"`
+	TotalPacketsIn  uint64 `json:"total_packets_in"`
+	TotalPacketsOut uint64 `json:"total_packets_out"`
 }
 
 type GetOutputsRequest struct {
@@ -496,19 +496,19 @@ type GetOutputsRequest struct {
 }
 
 type GetOutputsOut struct {
-	Amount *int64 `json:"amount,omitempty"`
-	Index  *int64 `json:"index,omitempty"`
+	Amount *uint64 `json:"amount,omitempty"`
+	Index  *uint64 `json:"index,omitempty"`
 }
 
 type GetOutputsResponse struct {
-	Credits int64              `json:"credits"`
+	Credits uint64             `json:"credits"`
 	Outs    []GetOutputsOutkey `json:"outs,omitempty"`
 	Status  string             `json:"status"`
 	TopHash string             `json:"top_hash"`
 }
 
 type GetOutputsOutkey struct {
-	Height   int64  `json:"height"`
+	Height   uint64 `json:"height"`
 	Key      string `json:"key"`
 	Mask     string `json:"mask"`
 	Txid     string `json:"txid"`
@@ -522,14 +522,14 @@ type GetOutputsBinRequest struct {
 }
 
 type GetOutputsBinResponse struct {
-	Credits int64                 `json:"credits"`
+	Credits uint64                `json:"credits"`
 	Outs    []GetOutputsBinOutkey `json:"outs,omitempty"`
 	Status  string                `json:"status"`
 	TopHash string                `json:"top_hash"`
 }
 
 type GetOutputsBinOutkey struct {
-	Height   int64  `json:"height"`
+	Height   uint64 `json:"height"`
 	Key      string `json:"key"`
 	Mask     string `json:"mask"`
 	Txid     string `json:"txid"`
@@ -537,53 +537,53 @@ type GetOutputsBinOutkey struct {
 }
 
 type GetOutputDistributionRequest struct {
-	Amounts    []int64 `json:"amounts,omitempty"`
-	Binary     *bool   `json:"binary,omitempty"`
-	Client     *string `json:"client,omitempty"`
-	Compress   *bool   `json:"compress,omitempty"`
-	Cumulative *bool   `json:"cumulative,omitempty"`
-	FromHeight *int64  `json:"from_height,omitempty"`
-	ToHeight   *int64  `json:"to_height,omitempty"`
+	Amounts    []uint64 `json:"amounts,omitempty"`
+	Binary     *bool    `json:"binary,omitempty"`
+	Client     *string  `json:"client,omitempty"`
+	Compress   *bool    `json:"compress,omitempty"`
+	Cumulative *bool    `json:"cumulative,omitempty"`
+	FromHeight *uint64  `json:"from_height,omitempty"`
+	ToHeight   *uint64  `json:"to_height,omitempty"`
 }
 
 type GetOutputDistributionResponse struct {
-	Credits       int64                               `json:"credits"`
+	Credits       uint64                              `json:"credits"`
 	Distributions []GetOutputDistributionDistribution `json:"distributions,omitempty"`
 	Status        string                              `json:"status"`
 	TopHash       string                              `json:"top_hash"`
 }
 
 type GetOutputDistributionDistribution struct {
-	Amount         int64         `json:"amount"`
-	Base           int64         `json:"base"`
+	Amount         uint64        `json:"amount"`
+	Base           uint64        `json:"base"`
 	Binary         bool          `json:"binary"`
 	Compress       bool          `json:"compress"`
 	CompressedData *string       `json:"compressed_data,omitempty"`
 	Distribution   *Distribution `json:"distribution"`
-	StartHeight    int64         `json:"start_height"`
+	StartHeight    uint64        `json:"start_height"`
 }
 
 type GetOutputHistogramRequest struct {
-	Amounts      []int64 `json:"amounts,omitempty"`
-	Client       *string `json:"client,omitempty"`
-	MaxCount     *int64  `json:"max_count,omitempty"`
-	MinCount     *int64  `json:"min_count,omitempty"`
-	RecentCutoff *int64  `json:"recent_cutoff,omitempty"`
-	Unlocked     *bool   `json:"unlocked,omitempty"`
+	Amounts      []uint64 `json:"amounts,omitempty"`
+	Client       *string  `json:"client,omitempty"`
+	MaxCount     *uint64  `json:"max_count,omitempty"`
+	MinCount     *uint64  `json:"min_count,omitempty"`
+	RecentCutoff *uint64  `json:"recent_cutoff,omitempty"`
+	Unlocked     *bool    `json:"unlocked,omitempty"`
 }
 
 type GetOutputHistogramResponse struct {
-	Credits   int64                     `json:"credits"`
+	Credits   uint64                    `json:"credits"`
 	Histogram []GetOutputHistogramEntry `json:"histogram,omitempty"`
 	Status    string                    `json:"status"`
 	TopHash   string                    `json:"top_hash"`
 }
 
 type GetOutputHistogramEntry struct {
-	Amount            int64 `json:"amount"`
-	RecentInstances   int64 `json:"recent_instances"`
-	TotalInstances    int64 `json:"total_instances"`
-	UnlockedInstances int64 `json:"unlocked_instances"`
+	Amount            uint64 `json:"amount"`
+	RecentInstances   uint64 `json:"recent_instances"`
+	TotalInstances    uint64 `json:"total_instances"`
+	UnlockedInstances uint64 `json:"unlocked_instances"`
 }
 
 type GetPeerListRequest struct {
@@ -599,9 +599,9 @@ type GetPeerListResponse struct {
 
 type Peer struct {
 	Host              string `json:"host"`
-	ID                int64  `json:"id"`
+	ID                uint64 `json:"id"`
 	IP                int64  `json:"ip"`
-	LastSeen          int64  `json:"last_seen"`
+	LastSeen          uint64 `json:"last_seen"`
 	Port              int64  `json:"port"`
 	PruningSeed       *int64 `json:"pruning_seed,omitempty"`
 	RPCCreditsPerHash *int64 `json:"rpc_credits_per_hash,omitempty"`
@@ -622,7 +622,7 @@ type GetPublicNodesResponse struct {
 
 type PublicNode struct {
 	Host              string `json:"host"`
-	LastSeen          int64  `json:"last_seen"`
+	LastSeen          uint64 `json:"last_seen"`
 	RPCCreditsPerHash int64  `json:"rpc_credits_per_hash"`
 	RPCPort           int64  `json:"rpc_port"`
 }
@@ -636,7 +636,7 @@ type GetTransactionsRequest struct {
 }
 
 type GetTransactionsResponse struct {
-	Credits int64 `json:"credits"`
+	Credits uint64 `json:"credits"`
 	// not found transactions
 	MissedTx []string               `json:"missed_tx,omitempty"`
 	Status   string                 `json:"status"`
@@ -649,20 +649,20 @@ type GetTransactionsResponse struct {
 }
 
 type GetTransactionsEntry struct {
-	AsHex             string  `json:"as_hex"`
-	AsJSON            string  `json:"as_json"`
-	BlockHeight       *int64  `json:"block_height,omitempty"`
-	BlockTimestamp    *int64  `json:"block_timestamp,omitempty"`
-	Confirmations     *int64  `json:"confirmations,omitempty"`
-	DoubleSpendSeen   bool    `json:"double_spend_seen"`
-	InPool            bool    `json:"in_pool"`
-	OutputIndices     []int64 `json:"output_indices,omitempty"`
-	PrunableAsHex     string  `json:"prunable_as_hex"`
-	PrunableHash      string  `json:"prunable_hash"`
-	PrunedAsHex       string  `json:"pruned_as_hex"`
-	ReceivedTimestamp *int64  `json:"received_timestamp,omitempty"`
-	Relayed           *bool   `json:"relayed,omitempty"`
-	TxHash            string  `json:"tx_hash"`
+	AsHex             string   `json:"as_hex"`
+	AsJSON            string   `json:"as_json"`
+	BlockHeight       *uint64  `json:"block_height,omitempty"`
+	BlockTimestamp    *uint64  `json:"block_timestamp,omitempty"`
+	Confirmations     *uint64  `json:"confirmations,omitempty"`
+	DoubleSpendSeen   bool     `json:"double_spend_seen"`
+	InPool            bool     `json:"in_pool"`
+	OutputIndices     []uint64 `json:"output_indices,omitempty"`
+	PrunableAsHex     string   `json:"prunable_as_hex"`
+	PrunableHash      string   `json:"prunable_hash"`
+	PrunedAsHex       string   `json:"pruned_as_hex"`
+	ReceivedTimestamp *uint64  `json:"received_timestamp,omitempty"`
+	Relayed           *bool    `json:"relayed,omitempty"`
+	TxHash            string   `json:"tx_hash"`
 }
 
 type GetTransactionPoolRequest struct {
@@ -670,7 +670,7 @@ type GetTransactionPoolRequest struct {
 }
 
 type GetTransactionPoolResponse struct {
-	Credits        int64               `json:"credits"`
+	Credits        uint64              `json:"credits"`
 	SpentKeyImages []SpentKeyImageInfo `json:"spent_key_images,omitempty"`
 	Status         string              `json:"status"`
 	TopHash        string              `json:"top_hash"`
@@ -683,23 +683,23 @@ type SpentKeyImageInfo struct {
 }
 
 type TxInfo struct {
-	BlobSize           int64  `json:"blob_size"`
+	BlobSize           uint64 `json:"blob_size"`
 	DoNotRelay         bool   `json:"do_not_relay"`
 	DoubleSpendSeen    bool   `json:"double_spend_seen"`
-	Fee                int64  `json:"fee"`
+	Fee                uint64 `json:"fee"`
 	IDHash             string `json:"id_hash"`
 	KeptByBlock        bool   `json:"kept_by_block"`
-	LastFailedHeight   int64  `json:"last_failed_height"`
+	LastFailedHeight   uint64 `json:"last_failed_height"`
 	LastFailedIDHash   string `json:"last_failed_id_hash"`
-	LastRelayedTime    int64  `json:"last_relayed_time"`
-	MaxUsedBlockHeight int64  `json:"max_used_block_height"`
+	LastRelayedTime    uint64 `json:"last_relayed_time"`
+	MaxUsedBlockHeight uint64 `json:"max_used_block_height"`
 	MaxUsedBlockIDHash string `json:"max_used_block_id_hash"`
-	ReceiveTime        int64  `json:"receive_time"`
+	ReceiveTime        uint64 `json:"receive_time"`
 	Relayed            bool   `json:"relayed"`
 	TxBlob             string `json:"tx_blob"`
 	// TODO - expose this data directly
-	TxJSON string `json:"tx_json"`
-	Weight *int64 `json:"weight,omitempty"`
+	TxJSON string  `json:"tx_json"`
+	Weight *uint64 `json:"weight,omitempty"`
 }
 
 type GetTransactionPoolBacklogRequest struct {
@@ -708,7 +708,7 @@ type GetTransactionPoolBacklogRequest struct {
 
 type GetTransactionPoolBacklogResponse struct {
 	Backlog *string `json:"backlog,omitempty"`
-	Credits int64   `json:"credits"`
+	Credits uint64  `json:"credits"`
 	Status  string  `json:"status"`
 	TopHash string  `json:"top_hash"`
 }
@@ -718,7 +718,7 @@ type GetTransactionPoolHashesRequest struct {
 }
 
 type GetTransactionPoolHashesResponse struct {
-	Credits  int64    `json:"credits"`
+	Credits  uint64   `json:"credits"`
 	Status   string   `json:"status"`
 	TopHash  string   `json:"top_hash"`
 	TxHashes []string `json:"tx_hashes,omitempty"`
@@ -729,7 +729,7 @@ type GetTransactionPoolHashesBinRequest struct {
 }
 
 type GetTransactionPoolHashesBinResponse struct {
-	Credits  int64   `json:"credits"`
+	Credits  uint64  `json:"credits"`
 	Status   string  `json:"status"`
 	TopHash  string  `json:"top_hash"`
 	TxHashes *string `json:"tx_hashes,omitempty"`
@@ -740,7 +740,7 @@ type GetTransactionPoolStatsRequest struct {
 }
 
 type GetTransactionPoolStatsResponse struct {
-	Credits   int64       `json:"credits"`
+	Credits   uint64      `json:"credits"`
 	PoolStats TxpoolStats `json:"pool_stats"`
 	Status    string      `json:"status"`
 	TopHash   string      `json:"top_hash"`
@@ -750,21 +750,21 @@ type TxpoolStats struct {
 	BytesMax        int64         `json:"bytes_max"`
 	BytesMed        int64         `json:"bytes_med"`
 	BytesMin        int64         `json:"bytes_min"`
-	BytesTotal      int64         `json:"bytes_total"`
-	FeeTotal        int64         `json:"fee_total"`
+	BytesTotal      uint64        `json:"bytes_total"`
+	FeeTotal        uint64        `json:"fee_total"`
 	Histo           []TxpoolHisto `json:"histo,omitempty"`
-	Histo98PC       int64         `json:"histo_98pc"`
+	Histo98PC       uint64        `json:"histo_98pc"`
 	Num10M          int64         `json:"num_10m"`
 	NumDoubleSpends int64         `json:"num_double_spends"`
 	NumFailing      int64         `json:"num_failing"`
 	NumNotRelayed   int64         `json:"num_not_relayed"`
-	Oldest          int64         `json:"oldest"`
+	Oldest          uint64        `json:"oldest"`
 	TxsTotal        int64         `json:"txs_total"`
 }
 
 type TxpoolHisto struct {
-	Bytes int64 `json:"bytes"`
-	Txs   int64 `json:"txs"`
+	Bytes uint64 `json:"bytes"`
+	Txs   int64  `json:"txs"`
 }
 
 type GetTxidsLooseRequest struct {
@@ -783,25 +783,25 @@ type GetTxGlobalOutputsIndexesRequest struct {
 }
 
 type GetTxGlobalOutputsIndexesResponse struct {
-	Credits  int64   `json:"credits"`
-	OIndexes []int64 `json:"o_indexes,omitempty"`
-	Status   string  `json:"status"`
-	TopHash  string  `json:"top_hash"`
+	Credits  uint64   `json:"credits"`
+	OIndexes []uint64 `json:"o_indexes,omitempty"`
+	Status   string   `json:"status"`
+	TopHash  string   `json:"top_hash"`
 }
 
 type GetVersionResponse struct {
-	CurrentHeight *int64              `json:"current_height,omitempty"`
+	CurrentHeight *uint64             `json:"current_height,omitempty"`
 	HardForks     []GetVersionHFEntry `json:"hard_forks,omitempty"`
 	Nettype       *string             `json:"nettype,omitempty"`
 	Release       bool                `json:"release"`
 	Status        string              `json:"status"`
-	TargetHeight  *int64              `json:"target_height,omitempty"`
+	TargetHeight  *uint64             `json:"target_height,omitempty"`
 	Version       int64               `json:"version"`
 }
 
 type GetVersionHFEntry struct {
-	Height    int64 `json:"height"`
-	HFVersion int64 `json:"hf_version"`
+	Height    uint64 `json:"height"`
+	HFVersion int64  `json:"hf_version"`
 }
 
 type HardForkInfoRequest struct {
@@ -810,8 +810,8 @@ type HardForkInfoRequest struct {
 }
 
 type HardForkInfoResponse struct {
-	Credits        int64  `json:"credits"`
-	EarliestHeight int64  `json:"earliest_height"`
+	Credits        uint64 `json:"credits"`
+	EarliestHeight uint64 `json:"earliest_height"`
 	Enabled        bool   `json:"enabled"`
 	State          int64  `json:"state"`
 	Status         string `json:"status"`
@@ -839,7 +839,7 @@ type IsKeyImageSpentRequest struct {
 }
 
 type IsKeyImageSpentResponse struct {
-	Credits     int64   `json:"credits"`
+	Credits     uint64  `json:"credits"`
 	SpentStatus []int64 `json:"spent_status,omitempty"`
 	Status      string  `json:"status"`
 	TopHash     string  `json:"top_hash"`
@@ -852,13 +852,13 @@ type MiningStatusResponse struct {
 	BgIgnoreBattery           bool   `json:"bg_ignore_battery"`
 	BgMinIdleSeconds          int64  `json:"bg_min_idle_seconds"`
 	BgTarget                  int64  `json:"bg_target"`
-	BlockReward               int64  `json:"block_reward"`
+	BlockReward               uint64 `json:"block_reward"`
 	BlockTarget               int64  `json:"block_target"`
-	Difficulty                int64  `json:"difficulty"`
-	DifficultyTop64           int64  `json:"difficulty_top64"`
+	Difficulty                uint64 `json:"difficulty"`
+	DifficultyTop64           uint64 `json:"difficulty_top64"`
 	IsBackgroundMiningEnabled bool   `json:"is_background_mining_enabled"`
 	PowAlgorithm              string `json:"pow_algorithm"`
-	Speed                     int64  `json:"speed"`
+	Speed                     uint64 `json:"speed"`
 	Status                    string `json:"status"`
 	ThreadsCount              int64  `json:"threads_count"`
 	WideDifficulty            string `json:"wide_difficulty"`
@@ -875,12 +875,12 @@ type OutPeersResponse struct {
 }
 
 type PopBlocksRequest struct {
-	KeepTxs *bool  `json:"keep_txs,omitempty"`
-	Nblocks *int64 `json:"nblocks,omitempty"`
+	KeepTxs *bool   `json:"keep_txs,omitempty"`
+	Nblocks *uint64 `json:"nblocks,omitempty"`
 }
 
 type PopBlocksResponse struct {
-	Height int64  `json:"height"`
+	Height uint64 `json:"height"`
 	Status string `json:"status"`
 }
 
@@ -900,7 +900,7 @@ type RelayTxRequest struct {
 }
 
 type RelayTxResponse struct {
-	Credits int64  `json:"credits"`
+	Credits uint64 `json:"credits"`
 	Status  string `json:"status"`
 	TopHash string `json:"top_hash"`
 }
@@ -917,7 +917,7 @@ type SendRawTxRequest struct {
 }
 
 type SendRawTxResponse struct {
-	Credits           int64  `json:"credits"`
+	Credits           uint64 `json:"credits"`
 	DoubleSpend       bool   `json:"double_spend"`
 	FeeTooLow         bool   `json:"fee_too_low"`
 	InvalidInput      bool   `json:"invalid_input"`
@@ -991,7 +991,7 @@ type StartMiningRequest struct {
 	DoBackgroundMining *bool   `json:"do_background_mining,omitempty"`
 	IgnoreBattery      *bool   `json:"ignore_battery,omitempty"`
 	MinerAddress       *string `json:"miner_address,omitempty"`
-	ThreadsCount       *int64  `json:"threads_count,omitempty"`
+	ThreadsCount       *uint64 `json:"threads_count,omitempty"`
 }
 
 type StartMiningResponse struct {
@@ -1016,14 +1016,14 @@ type SyncInfoRequest struct {
 }
 
 type SyncInfoResponse struct {
-	Credits               int64          `json:"credits"`
-	Height                int64          `json:"height"`
+	Credits               uint64         `json:"credits"`
+	Height                uint64         `json:"height"`
 	NextNeededPruningSeed int64          `json:"next_needed_pruning_seed"`
 	Overview              string         `json:"overview"`
 	Peers                 []SyncInfoPeer `json:"peers,omitempty"`
 	Spans                 []SyncInfoSpan `json:"spans,omitempty"`
 	Status                string         `json:"status"`
-	TargetHeight          int64          `json:"target_height"`
+	TargetHeight          uint64         `json:"target_height"`
 	TopHash               string         `json:"top_hash"`
 }
 
@@ -1033,12 +1033,12 @@ type SyncInfoPeer struct {
 
 type SyncInfoSpan struct {
 	ConnectionID     string `json:"connection_id"`
-	Nblocks          int64  `json:"nblocks"`
+	Nblocks          uint64 `json:"nblocks"`
 	Rate             int64  `json:"rate"`
 	RemoteAddress    string `json:"remote_address"`
-	Size             int64  `json:"size"`
+	Size             uint64 `json:"size"`
 	Speed            int64  `json:"speed"`
-	StartBlockHeight int64  `json:"start_block_height"`
+	StartBlockHeight uint64 `json:"start_block_height"`
 }
 
 type UpdateRequest struct {

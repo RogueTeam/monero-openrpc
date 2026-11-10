@@ -88,7 +88,7 @@ type AddAddressBookEntryRequest struct {
 }
 
 type AddAddressBookEntryResponse struct {
-	Index int64 `json:"index"`
+	Index uint64 `json:"index"`
 }
 
 type AutoRefreshRequest struct {
@@ -109,9 +109,9 @@ type CheckReserveProofRequest struct {
 }
 
 type CheckReserveProofResponse struct {
-	Good  bool  `json:"good"`
-	Spent int64 `json:"spent"`
-	Total int64 `json:"total"`
+	Good  bool   `json:"good"`
+	Spent uint64 `json:"spent"`
+	Total uint64 `json:"total"`
 }
 
 type CheckSpendProofRequest struct {
@@ -131,9 +131,9 @@ type CheckTxKeyRequest struct {
 }
 
 type CheckTxKeyResponse struct {
-	Confirmations int64 `json:"confirmations"`
-	InPool        bool  `json:"in_pool"`
-	Received      int64 `json:"received"`
+	Confirmations uint64 `json:"confirmations"`
+	InPool        bool   `json:"in_pool"`
+	Received      uint64 `json:"received"`
 }
 
 type CheckTxProofRequest struct {
@@ -144,10 +144,10 @@ type CheckTxProofRequest struct {
 }
 
 type CheckTxProofResponse struct {
-	Confirmations int64 `json:"confirmations"`
-	Good          bool  `json:"good"`
-	InPool        bool  `json:"in_pool"`
-	Received      int64 `json:"received"`
+	Confirmations uint64 `json:"confirmations"`
+	Good          bool   `json:"good"`
+	InPool        bool   `json:"in_pool"`
+	Received      uint64 `json:"received"`
 }
 
 type CloseWalletRequest struct {
@@ -185,7 +185,7 @@ type CreateWalletRequest struct {
 }
 
 type DeleteAddressBookEntryRequest struct {
-	Index *int64 `json:"index,omitempty"`
+	Index *uint64 `json:"index,omitempty"`
 }
 
 type DescribeTransferRequest struct {
@@ -199,46 +199,46 @@ type DescribeTransferResponse struct {
 }
 
 type DescribeTransferTransferDescription struct {
-	AmountIn      int64                       `json:"amount_in"`
-	AmountOut     int64                       `json:"amount_out"`
+	AmountIn      uint64                      `json:"amount_in"`
+	AmountOut     uint64                      `json:"amount_out"`
 	ChangeAddress string                      `json:"change_address"`
-	ChangeAmount  int64                       `json:"change_amount"`
+	ChangeAmount  uint64                      `json:"change_amount"`
 	DummyOutputs  int64                       `json:"dummy_outputs"`
 	Extra         string                      `json:"extra"`
-	Fee           int64                       `json:"fee"`
+	Fee           uint64                      `json:"fee"`
 	PaymentID     string                      `json:"payment_id"`
 	Recipients    []DescribeTransferRecipient `json:"recipients,omitempty"`
 	RingSize      int64                       `json:"ring_size"`
 	Sources       []DescribeTransferSource    `json:"sources,omitempty"`
-	UnlockTime    int64                       `json:"unlock_time"`
-	Weight        *int64                      `json:"weight,omitempty"`
+	UnlockTime    uint64                      `json:"unlock_time"`
+	Weight        *uint64                     `json:"weight,omitempty"`
 }
 
 type DescribeTransferRecipient struct {
 	Address string `json:"address"`
-	Amount  int64  `json:"amount"`
+	Amount  uint64 `json:"amount"`
 }
 
 type DescribeTransferSource struct {
-	Amount      int64  `json:"amount"`
-	GlobalIndex int64  `json:"global_index"`
+	Amount      uint64 `json:"amount"`
+	GlobalIndex uint64 `json:"global_index"`
 	Pubkey      string `json:"pubkey"`
 	Rct         bool   `json:"rct"`
 }
 
 type DescribeTransferTxsetSummary struct {
-	AmountIn      int64                       `json:"amount_in"`
-	AmountOut     int64                       `json:"amount_out"`
+	AmountIn      uint64                      `json:"amount_in"`
+	AmountOut     uint64                      `json:"amount_out"`
 	ChangeAddress string                      `json:"change_address"`
-	ChangeAmount  int64                       `json:"change_amount"`
-	Fee           int64                       `json:"fee"`
+	ChangeAmount  uint64                      `json:"change_amount"`
+	Fee           uint64                      `json:"fee"`
 	Recipients    []DescribeTransferRecipient `json:"recipients,omitempty"`
 }
 
 type EditAddressBookEntryRequest struct {
 	Address        *string `json:"address,omitempty"`
 	Description    *string `json:"description,omitempty"`
-	Index          *int64  `json:"index,omitempty"`
+	Index          *uint64 `json:"index,omitempty"`
 	SetAddress     *bool   `json:"set_address,omitempty"`
 	SetDescription *bool   `json:"set_description,omitempty"`
 }
@@ -251,8 +251,8 @@ type EstimateTxSizeAndWeightRequest struct {
 }
 
 type EstimateTxSizeAndWeightResponse struct {
-	Size   int64 `json:"size"`
-	Weight int64 `json:"weight"`
+	Size   uint64 `json:"size"`
+	Weight uint64 `json:"weight"`
 }
 
 type ExchangeMultisigKeysRequest struct {
@@ -312,7 +312,7 @@ type GenerateFromKeysRequest struct {
 	Filename        *string `json:"filename,omitempty"`
 	Language        *string `json:"language,omitempty"`
 	Password        *string `json:"password,omitempty"`
-	RestoreHeight   *int64  `json:"restore_height,omitempty"`
+	RestoreHeight   *uint64 `json:"restore_height,omitempty"`
 	Spendkey        *string `json:"spendkey,omitempty"`
 	Viewkey         *string `json:"viewkey,omitempty"`
 }
@@ -332,17 +332,17 @@ type GetAccountsRequest struct {
 
 type GetAccountsResponse struct {
 	SubaddressAccounts   []GetAccountsSubaddressAccountInfo `json:"subaddress_accounts,omitempty"`
-	TotalBalance         int64                              `json:"total_balance"`
-	TotalUnlockedBalance int64                              `json:"total_unlocked_balance"`
+	TotalBalance         uint64                             `json:"total_balance"`
+	TotalUnlockedBalance uint64                             `json:"total_unlocked_balance"`
 }
 
 type GetAccountsSubaddressAccountInfo struct {
 	AccountIndex    int64  `json:"account_index"`
-	Balance         int64  `json:"balance"`
+	Balance         uint64 `json:"balance"`
 	BaseAddress     string `json:"base_address"`
 	Label           string `json:"label"`
 	Tag             string `json:"tag"`
-	UnlockedBalance int64  `json:"unlocked_balance"`
+	UnlockedBalance uint64 `json:"unlocked_balance"`
 }
 
 type GetAccountTagsResponse struct {
@@ -376,7 +376,7 @@ type GetAddressAddressInfo struct {
 }
 
 type GetAddressBookEntryRequest struct {
-	Entries []int64 `json:"entries,omitempty"`
+	Entries []uint64 `json:"entries,omitempty"`
 }
 
 type GetAddressBookEntryResponse struct {
@@ -386,7 +386,7 @@ type GetAddressBookEntryResponse struct {
 type GetAddressBookEntryEntry struct {
 	Address     string `json:"address"`
 	Description string `json:"description"`
-	Index       int64  `json:"index"`
+	Index       uint64 `json:"index"`
 }
 
 type GetAddressIndexRequest struct {
@@ -418,28 +418,28 @@ type GetBalanceRequest struct {
 }
 
 type GetBalanceResponse struct {
-	Balance              int64                         `json:"balance"`
-	BlocksToUnlock       int64                         `json:"blocks_to_unlock"`
+	Balance              uint64                        `json:"balance"`
+	BlocksToUnlock       uint64                        `json:"blocks_to_unlock"`
 	MultisigImportNeeded bool                          `json:"multisig_import_needed"`
 	PerSubaddress        []GetBalancePerSubaddressInfo `json:"per_subaddress,omitempty"`
-	TimeToUnlock         int64                         `json:"time_to_unlock"`
-	UnlockedBalance      int64                         `json:"unlocked_balance"`
+	TimeToUnlock         uint64                        `json:"time_to_unlock"`
+	UnlockedBalance      uint64                        `json:"unlocked_balance"`
 }
 
 type GetBalancePerSubaddressInfo struct {
 	AccountIndex      int64  `json:"account_index"`
 	Address           string `json:"address"`
 	AddressIndex      int64  `json:"address_index"`
-	Balance           int64  `json:"balance"`
-	BlocksToUnlock    int64  `json:"blocks_to_unlock"`
+	Balance           uint64 `json:"balance"`
+	BlocksToUnlock    uint64 `json:"blocks_to_unlock"`
 	Label             string `json:"label"`
-	NumUnspentOutputs int64  `json:"num_unspent_outputs"`
-	TimeToUnlock      int64  `json:"time_to_unlock"`
-	UnlockedBalance   int64  `json:"unlocked_balance"`
+	NumUnspentOutputs uint64 `json:"num_unspent_outputs"`
+	TimeToUnlock      uint64 `json:"time_to_unlock"`
+	UnlockedBalance   uint64 `json:"unlocked_balance"`
 }
 
 type GetBulkPaymentsRequest struct {
-	MinBlockHeight *int64   `json:"min_block_height,omitempty"`
+	MinBlockHeight *uint64  `json:"min_block_height,omitempty"`
 	PaymentIDS     []string `json:"payment_ids,omitempty"`
 }
 
@@ -449,13 +449,13 @@ type GetBulkPaymentsResponse struct {
 
 type PaymentDetails struct {
 	Address      string          `json:"address"`
-	Amount       int64           `json:"amount"`
-	BlockHeight  int64           `json:"block_height"`
+	Amount       uint64          `json:"amount"`
+	BlockHeight  uint64          `json:"block_height"`
 	Locked       bool            `json:"locked"`
 	PaymentID    string          `json:"payment_id"`
 	SubaddrIndex SubaddressIndex `json:"subaddr_index"`
 	TxHash       string          `json:"tx_hash"`
-	UnlockTime   int64           `json:"unlock_time"`
+	UnlockTime   uint64          `json:"unlock_time"`
 }
 
 type GetDefaultFeePriorityResponse struct {
@@ -495,7 +495,7 @@ type GetReserveProofRequest struct {
 	AccountIndex *int64 `json:"account_index,omitempty"`
 	All          *bool  `json:"all,omitempty"`
 	// ignored when `all` is true
-	Amount  *int64  `json:"amount,omitempty"`
+	Amount  *uint64 `json:"amount,omitempty"`
 	Message *string `json:"message,omitempty"`
 }
 
@@ -518,8 +518,8 @@ type GetTransfersRequest struct {
 	Failed         *bool   `json:"failed,omitempty"`
 	FilterByHeight *bool   `json:"filter_by_height,omitempty"`
 	In             *bool   `json:"in,omitempty"`
-	MaxHeight      *int64  `json:"max_height,omitempty"`
-	MinHeight      *int64  `json:"min_height,omitempty"`
+	MaxHeight      *uint64 `json:"max_height,omitempty"`
+	MinHeight      *uint64 `json:"min_height,omitempty"`
 	Out            *bool   `json:"out,omitempty"`
 	Pending        *bool   `json:"pending,omitempty"`
 	Pool           *bool   `json:"pool,omitempty"`
@@ -537,29 +537,29 @@ type GetTransfersResponse struct {
 
 type TransferEntry struct {
 	Address                         string                `json:"address"`
-	Amount                          int64                 `json:"amount"`
-	Amounts                         []int64               `json:"amounts,omitempty"`
-	ChangeAmount                    *int64                `json:"change_amount,omitempty"`
-	Confirmations                   *int64                `json:"confirmations,omitempty"`
+	Amount                          uint64                `json:"amount"`
+	Amounts                         []uint64              `json:"amounts,omitempty"`
+	ChangeAmount                    *uint64               `json:"change_amount,omitempty"`
+	Confirmations                   *uint64               `json:"confirmations,omitempty"`
 	Destinations                    []TransferDestination `json:"destinations,omitempty"`
 	DoubleSpendSeen                 bool                  `json:"double_spend_seen"`
-	Fee                             int64                 `json:"fee"`
-	Height                          int64                 `json:"height"`
+	Fee                             uint64                `json:"fee"`
+	Height                          uint64                `json:"height"`
 	Locked                          bool                  `json:"locked"`
 	Note                            string                `json:"note"`
 	PaymentID                       string                `json:"payment_id"`
 	SubaddrIndex                    SubaddressIndex       `json:"subaddr_index"`
 	SubaddrIndices                  []SubaddressIndex     `json:"subaddr_indices,omitempty"`
-	SuggestedConfirmationsThreshold *int64                `json:"suggested_confirmations_threshold,omitempty"`
-	Timestamp                       int64                 `json:"timestamp"`
+	SuggestedConfirmationsThreshold *uint64               `json:"suggested_confirmations_threshold,omitempty"`
+	Timestamp                       uint64                `json:"timestamp"`
 	Txid                            string                `json:"txid"`
 	Type                            string                `json:"type"`
-	UnlockTime                      int64                 `json:"unlock_time"`
+	UnlockTime                      uint64                `json:"unlock_time"`
 }
 
 type TransferDestination struct {
 	Address string `json:"address"`
-	Amount  int64  `json:"amount"`
+	Amount  uint64 `json:"amount"`
 }
 
 type GetTransferByTxidRequest struct {
@@ -602,7 +602,7 @@ type GetTxProofResponse struct {
 type GetWalletInfoResponse struct {
 	Address           string `json:"address"`
 	DaemonAddress     string `json:"daemon_address"`
-	DaemonBlockHeight int64  `json:"daemon_block_height"`
+	DaemonBlockHeight uint64 `json:"daemon_block_height"`
 	DaemonProxy       string `json:"daemon_proxy"`
 	DaemonRPCVersion  int64  `json:"daemon_rpc_version"`
 	DaemonSSL         bool   `json:"daemon_ssl"`
@@ -611,7 +611,7 @@ type GetWalletInfoResponse struct {
 	NetworkType       string `json:"network_type"`
 	// Legacy | Multisig | Polyseed
 	SeedType          string `json:"seed_type"`
-	WalletBlockHeight int64  `json:"wallet_block_height"`
+	WalletBlockHeight uint64 `json:"wallet_block_height"`
 	// Normal | Multisig | Watch-Only | Background
 	WalletType string `json:"wallet_type"`
 }
@@ -627,9 +627,9 @@ type ImportKeyImagesSignedKeyImage struct {
 }
 
 type ImportKeyImagesResponse struct {
-	Height  int64 `json:"height"`
-	Spent   int64 `json:"spent"`
-	Unspent int64 `json:"unspent"`
+	Height  uint64 `json:"height"`
+	Spent   uint64 `json:"spent"`
+	Unspent uint64 `json:"unspent"`
 }
 
 type ImportMultisigRequest struct {
@@ -638,7 +638,7 @@ type ImportMultisigRequest struct {
 }
 
 type ImportMultisigResponse struct {
-	NOutputs int64 `json:"n_outputs"`
+	NOutputs uint64 `json:"n_outputs"`
 }
 
 type ImportOutputsRequest struct {
@@ -646,7 +646,7 @@ type ImportOutputsRequest struct {
 }
 
 type ImportOutputsResponse struct {
-	NumImported int64 `json:"num_imported"`
+	NumImported uint64 `json:"num_imported"`
 }
 
 type IncomingTransfersRequest struct {
@@ -661,10 +661,10 @@ type IncomingTransfersResponse struct {
 }
 
 type TransferDetails struct {
-	Amount      int64  `json:"amount"`
-	BlockHeight int64  `json:"block_height"`
+	Amount      uint64 `json:"amount"`
+	BlockHeight uint64 `json:"block_height"`
 	Frozen      bool   `json:"frozen"`
-	GlobalIndex int64  `json:"global_index"`
+	GlobalIndex uint64 `json:"global_index"`
 	KeyImage    string `json:"key_image"`
 	// owned output public key found
 	Pubkey       string          `json:"pubkey"`
@@ -715,7 +715,7 @@ type MakeMultisigResponse struct {
 
 type MakeURIRequest struct {
 	Address       *string `json:"address,omitempty"`
-	Amount        *int64  `json:"amount,omitempty"`
+	Amount        *uint64 `json:"amount,omitempty"`
 	PaymentID     *string `json:"payment_id,omitempty"`
 	RecipientName *string `json:"recipient_name,omitempty"`
 	TxDescription *string `json:"tx_description,omitempty"`
@@ -742,7 +742,7 @@ type ParseURIResponse struct {
 
 type URISpec struct {
 	Address       string `json:"address"`
-	Amount        int64  `json:"amount"`
+	Amount        uint64 `json:"amount"`
 	PaymentID     string `json:"payment_id"`
 	RecipientName string `json:"recipient_name"`
 	TxDescription string `json:"tx_description"`
@@ -762,17 +762,17 @@ type QueryKeyRequest struct {
 
 type QueryKeyResponse struct {
 	Key                 string `json:"key"`
-	PolyseedBirthday    int64  `json:"polyseed_birthday"`
+	PolyseedBirthday    uint64 `json:"polyseed_birthday"`
 	PolyseedIsEncrypted bool   `json:"polyseed_is_encrypted"`
 }
 
 type RefreshRequest struct {
-	StartHeight *int64 `json:"start_height,omitempty"`
+	StartHeight *uint64 `json:"start_height,omitempty"`
 }
 
 type RefreshResponse struct {
-	BlocksFetched int64 `json:"blocks_fetched"`
-	ReceivedMoney bool  `json:"received_money"`
+	BlocksFetched uint64 `json:"blocks_fetched"`
+	ReceivedMoney bool   `json:"received_money"`
 }
 
 type RescanBlockchainRequest struct {
@@ -786,7 +786,7 @@ type RestoreDeterministicWalletRequest struct {
 	Filename                   *string `json:"filename,omitempty"`
 	Language                   *string `json:"language,omitempty"`
 	Password                   *string `json:"password,omitempty"`
-	RestoreHeight              *int64  `json:"restore_height,omitempty"`
+	RestoreHeight              *uint64 `json:"restore_height,omitempty"`
 	Seed                       *string `json:"seed,omitempty"`
 	SeedOffset                 *string `json:"seed_offset,omitempty"`
 }
@@ -912,18 +912,18 @@ type SubmitTransferResponse struct {
 type SweepAllRequest struct {
 	AccountIndex      *int64  `json:"account_index,omitempty"`
 	Address           *string `json:"address,omitempty"`
-	BelowAmount       *int64  `json:"below_amount,omitempty"`
+	BelowAmount       *uint64 `json:"below_amount,omitempty"`
 	DoNotRelay        *bool   `json:"do_not_relay,omitempty"`
 	GetTxHex          *bool   `json:"get_tx_hex,omitempty"`
 	GetTxKeys         *bool   `json:"get_tx_keys,omitempty"`
 	GetTxMetadata     *bool   `json:"get_tx_metadata,omitempty"`
-	Outputs           *int64  `json:"outputs,omitempty"`
+	Outputs           *uint64 `json:"outputs,omitempty"`
 	PaymentID         *string `json:"payment_id,omitempty"`
 	Priority          *int64  `json:"priority,omitempty"`
-	RingSize          *int64  `json:"ring_size,omitempty"`
+	RingSize          *uint64 `json:"ring_size,omitempty"`
 	SubaddrIndices    []int64 `json:"subaddr_indices,omitempty"`
 	SubaddrIndicesAll *bool   `json:"subaddr_indices_all,omitempty"`
-	UnlockTime        *int64  `json:"unlock_time,omitempty"`
+	UnlockTime        *uint64 `json:"unlock_time,omitempty"`
 }
 
 type SweepDustRequest struct {
@@ -940,11 +940,11 @@ type SweepSingleRequest struct {
 	GetTxKey      *bool   `json:"get_tx_key,omitempty"`
 	GetTxMetadata *bool   `json:"get_tx_metadata,omitempty"`
 	KeyImage      *string `json:"key_image,omitempty"`
-	Outputs       *int64  `json:"outputs,omitempty"`
+	Outputs       *uint64 `json:"outputs,omitempty"`
 	PaymentID     *string `json:"payment_id,omitempty"`
 	Priority      *int64  `json:"priority,omitempty"`
-	RingSize      *int64  `json:"ring_size,omitempty"`
-	UnlockTime    *int64  `json:"unlock_time,omitempty"`
+	RingSize      *uint64 `json:"ring_size,omitempty"`
+	UnlockTime    *uint64 `json:"unlock_time,omitempty"`
 }
 
 type TagAccountsRequest struct {
@@ -965,10 +965,10 @@ type TransferRequest struct {
 	GetTxMetadata          *bool                 `json:"get_tx_metadata,omitempty"`
 	PaymentID              *string               `json:"payment_id,omitempty"`
 	Priority               *int64                `json:"priority,omitempty"`
-	RingSize               *int64                `json:"ring_size,omitempty"`
+	RingSize               *uint64               `json:"ring_size,omitempty"`
 	SubaddrIndices         []int64               `json:"subaddr_indices,omitempty"`
 	SubtractFeeFromOutputs []int64               `json:"subtract_fee_from_outputs,omitempty"`
-	UnlockTime             *int64                `json:"unlock_time,omitempty"`
+	UnlockTime             *uint64               `json:"unlock_time,omitempty"`
 }
 
 type TransferSplitRequest struct {
@@ -980,9 +980,9 @@ type TransferSplitRequest struct {
 	GetTxMetadata  *bool                 `json:"get_tx_metadata,omitempty"`
 	PaymentID      *string               `json:"payment_id,omitempty"`
 	Priority       *int64                `json:"priority,omitempty"`
-	RingSize       *int64                `json:"ring_size,omitempty"`
+	RingSize       *uint64               `json:"ring_size,omitempty"`
 	SubaddrIndices []int64               `json:"subaddr_indices,omitempty"`
-	UnlockTime     *int64                `json:"unlock_time,omitempty"`
+	UnlockTime     *uint64               `json:"unlock_time,omitempty"`
 }
 
 type UntagAccountsRequest struct {
@@ -1026,9 +1026,9 @@ type WalletExistsResponse struct {
 }
 
 type SingleTransferResponse struct {
-	Amount         int64        `json:"amount"`
+	Amount         uint64       `json:"amount"`
 	AmountsByDest  *AmountsList `json:"amounts_by_dest,omitempty"`
-	Fee            int64        `json:"fee"`
+	Fee            uint64       `json:"fee"`
 	MultisigTxset  string       `json:"multisig_txset"`
 	SpentKeyImages KeyImageList `json:"spent_key_images"`
 	TxBlob         string       `json:"tx_blob"`
@@ -1036,11 +1036,11 @@ type SingleTransferResponse struct {
 	TxKey          string       `json:"tx_key"`
 	TxMetadata     string       `json:"tx_metadata"`
 	UnsignedTxset  string       `json:"unsigned_txset"`
-	Weight         int64        `json:"weight"`
+	Weight         uint64       `json:"weight"`
 }
 
 type AmountsList struct {
-	Amounts []int64 `json:"amounts,omitempty"`
+	Amounts []uint64 `json:"amounts,omitempty"`
 }
 
 type KeyImageList struct {
@@ -1048,9 +1048,9 @@ type KeyImageList struct {
 }
 
 type SplitTransferResponse struct {
-	AmountList         []int64        `json:"amount_list,omitempty"`
+	AmountList         []uint64       `json:"amount_list,omitempty"`
 	AmountsByDestList  []AmountsList  `json:"amounts_by_dest_list,omitempty"`
-	FeeList            []int64        `json:"fee_list,omitempty"`
+	FeeList            []uint64       `json:"fee_list,omitempty"`
 	MultisigTxset      string         `json:"multisig_txset"`
 	SpentKeyImagesList []KeyImageList `json:"spent_key_images_list,omitempty"`
 	TxBlobList         []string       `json:"tx_blob_list,omitempty"`
@@ -1058,11 +1058,11 @@ type SplitTransferResponse struct {
 	TxKeyList          []string       `json:"tx_key_list,omitempty"`
 	TxMetadataList     []string       `json:"tx_metadata_list,omitempty"`
 	UnsignedTxset      string         `json:"unsigned_txset"`
-	WeightList         []int64        `json:"weight_list,omitempty"`
+	WeightList         []uint64       `json:"weight_list,omitempty"`
 }
 
 type GetHeightResponse struct {
-	Height int64 `json:"height"`
+	Height uint64 `json:"height"`
 }
 
 type GetVersionResponse struct {
@@ -1091,7 +1091,7 @@ type SetLogLevelRequest struct {
 }
 
 type StartMiningRequest struct {
-	DoBackgroundMining *bool  `json:"do_background_mining,omitempty"`
-	IgnoreBattery      *bool  `json:"ignore_battery,omitempty"`
-	ThreadsCount       *int64 `json:"threads_count,omitempty"`
+	DoBackgroundMining *bool   `json:"do_background_mining,omitempty"`
+	IgnoreBattery      *bool   `json:"ignore_battery,omitempty"`
+	ThreadsCount       *uint64 `json:"threads_count,omitempty"`
 }
