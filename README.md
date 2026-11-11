@@ -1,6 +1,6 @@
 # monero-rpc-schema
 
-Generate an [OpenRPC](https://open-rpc.org/) schema for **monerod** and **monero-wallet-rpc** from the Monero C++ source, instead of writing it by hand.
+Generate an [OpenRPC](https://open-rpc.org/) schema for **monerod** and **monero-wallet-rpc** from the Monero C++ source, instead of writing it by hand. Then generate typed clients from it in the language you use.
 
 ```
 python3 node_schema.py   /path/to/monero > schemas/daemon.openrpc.json
@@ -19,6 +19,8 @@ The schemas in `schemas/` were generated from `master` at commit `0120dda4` (202
 | `rpc_schema.py` | Shared code: the header parser and the OpenRPC builder |
 | `schemas/` | The generated schemas, and the commit they came from |
 | `tests/` | Tests for the generator, with a small fake checkout in `tests/fake_monero/` |
+| `tools/` | Helpers for code generators and tests (below) |
+| `examples/` | A generated Go client, with tests |
 
 Keep the three `.py` files in the root together; the two scripts import `rpc_schema`. Adding another target means one more small file with its own `Target(...)`.
 
@@ -78,6 +80,58 @@ python3 node_schema.py   "$MONERO_REPO" > schemas/daemon.openrpc.json
 python3 wallet_schema.py "$MONERO_REPO" > schemas/wallet.openrpc.json
 git diff --exit-code schemas/
 ```
+
+## Generating clients
+
+Each directory in `examples/` has a `generate.sh` that rebuilds its code from `schemas/`, the generated code itself, and tests. The tests use the request and response examples from the official docs ([monero-docs](https://github.com/monero-project/monero-docs), MIT, commit `9764d8dc`), extracted into `examples/fixtures/` by `tools/make_fixtures.py`. Each example is checked against the schema and marked:
+
+- **ok** (263 of 282): matches the schema. Tests decode it, encode it back, and require the same JSON, which catches wrong field names and types, not just missing fields.
+- **stale** (13): an older example that lacks fields added since. The Go tests require that it still decodes.
+- **docs-mistake** (6): contradicts the source (list below). Tests require that the generated code rejects or changes it, so a fixed docs example shows up as a test failure until the fixtures are regenerated.
+
+| Language | Generator | Generated | Tests | Result |
+|---|---|---|---|---|
+| Go | quicktype 26.0.0 | types + a small JSON-RPC client (`jsonrpc/`) | `go test ./...` | pass: 259 typed docs examples, client tests, `go vet` clean |
+
+To check that the tests can actually fail, I broke the generated Go code on purpose (renamed a field, changed a field's type). Every change made the tests fail.
+
+### Go
+
+```
+cd examples/go && ./generate.sh && go test ./...
+```
+
+`generate.sh` runs three steps you'd also need in your own project:
+
+```
+python3 tools/to_jsonschema.py schemas/daemon.openrpc.json > daemon.schema.json
+quicktype --src-lang schema --lang go --package monerod --just-types-and-package \
+  -o types.go "daemon.schema.json#/definitions/"
+python3 tools/fix_uint64.py go daemon.schema.json types.go
+```
+
+- `to_jsonschema.py` puts the component schemas under `definitions`, keyed by their titles, so the types get readable names (`GetInfoResponse`). Pointed at the OpenRPC file directly, quicktype makes names like `COMMANDRPCGETBANSRequestT`.
+- `fix_uint64.py`: quicktype maps every integer to `int64` and ignores the bounds. Monero sends uint64 values above 2^63−1 (for example `already_generated_coins` = 18186022843595960691 in the docs' `get_miner_data` example). This switches those fields to `uint64`: 184 daemon fields and 93 wallet fields.
+
+```go
+client := jsonrpc.New("http://127.0.0.1:18081")
+var info monerod.GetInfoResponse
+err := client.Call(ctx, "get_info", &monerod.GetInfoRequest{}, &info)
+```
+
+There's no maintained OpenRPC client generator for Go, hence quicktype plus a 100-line client.
+
+## Mistakes in the official docs
+
+Found while building the fixtures and confirmed against the source:
+
+- `flush_cache`: the example sends `bad_txs`, which was removed.
+- `check_reserve_proof`: has no `txid` param.
+- `exchange_multisig_keys`: `multisig_info` is a list, not a string.
+- `get_bulk_payments`: `min_block_height` is a number, not a string. Strings aren't accepted since #11337.
+- `label_address`: the section shows `validate_address`'s params.
+- `get_account_tags`: the example's `params` is `''` instead of an object.
+- `label_account`: the response example shows `account_tags`, but the method returns an empty object.
 
 ## Warnings and limitations
 
