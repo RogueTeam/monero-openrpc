@@ -1,0 +1,2306 @@
+{
+ "source": "Request/response examples from the official Monero docs, github.com/monero-project/monero-docs (MIT License, Copyright (c) 2024-present Monero Community)",
+ "docs_page": "docs/en/rpc-library/monerod-rpc.md",
+ "docs_commit": "9764d8dc9acdaa7962368359aa43ed43e25e9890",
+ "schema": "schemas/daemon.openrpc.json",
+ "schema_version": "3.19",
+ "cases": [
+  {
+   "name": "/get_alt_blocks_hashes",
+   "kind": "response",
+   "protocol": "uri",
+   "type": "GetAltBlocksHashesResponse",
+   "status": "ok",
+   "notes": [],
+   "json": {
+    "blks_hashes": [
+     "dd4998cfe92a959a5a0e4ed72432cf23d7dfc4179cbea871ee2a705d71fb5e25",
+     "f36c3856ffde6a7d06fc832c80ede4ad5b6c8f702c9736dae1e2140d86504db9",
+     "8d0c1f806817259d213c8829ea3356334e0d8fdd3b118e1243756e12dce767bb"
+    ],
+    "credits": 0,
+    "status": "OK",
+    "top_hash": "",
+    "untrusted": false
+   },
+   "known_json": {
+    "blks_hashes": [
+     "dd4998cfe92a959a5a0e4ed72432cf23d7dfc4179cbea871ee2a705d71fb5e25",
+     "f36c3856ffde6a7d06fc832c80ede4ad5b6c8f702c9736dae1e2140d86504db9",
+     "8d0c1f806817259d213c8829ea3356334e0d8fdd3b118e1243756e12dce767bb"
+    ],
+    "credits": 0,
+    "status": "OK",
+    "top_hash": ""
+   }
+  },
+  {
+   "name": "/get_height",
+   "kind": "response",
+   "protocol": "uri",
+   "type": "GetHeightResponse",
+   "status": "ok",
+   "notes": [],
+   "json": {
+    "hash": "7e23a28cfa6df925d5b63940baf60b83c0cbb65da95f49b19e7cf0ce7dd709ce",
+    "height": 2287217,
+    "status": "OK",
+    "untrusted": false
+   },
+   "known_json": {
+    "hash": "7e23a28cfa6df925d5b63940baf60b83c0cbb65da95f49b19e7cf0ce7dd709ce",
+    "height": 2287217,
+    "status": "OK"
+   }
+  },
+  {
+   "name": "/get_limit",
+   "kind": "response",
+   "protocol": "uri",
+   "type": "GetLimitResponse",
+   "status": "ok",
+   "notes": [],
+   "json": {
+    "limit_down": 32768,
+    "limit_up": 128,
+    "status": "OK",
+    "untrusted": false
+   },
+   "known_json": {
+    "limit_down": 32768,
+    "limit_up": 128,
+    "status": "OK"
+   }
+  },
+  {
+   "name": "/get_net_stats",
+   "kind": "response",
+   "protocol": "uri",
+   "type": "GetNetStatsResponse",
+   "status": "ok",
+   "notes": [],
+   "json": {
+    "start_time": 1665147355,
+    "status": "OK",
+    "total_bytes_in": 3743474809,
+    "total_bytes_out": 5932012405,
+    "total_packets_in": 2130592,
+    "total_packets_out": 1010674,
+    "untrusted": false
+   },
+   "known_json": {
+    "start_time": 1665147355,
+    "status": "OK",
+    "total_bytes_in": 3743474809,
+    "total_bytes_out": 5932012405,
+    "total_packets_in": 2130592,
+    "total_packets_out": 1010674
+   }
+  },
+  {
+   "name": "/get_outs",
+   "kind": "request",
+   "protocol": "uri",
+   "type": "GetOutputsRequest",
+   "status": "ok",
+   "notes": [],
+   "json": {
+    "get_txid": true,
+    "outputs": [
+     {
+      "amount": 0,
+      "index": 0
+     }
+    ]
+   },
+   "known_json": {
+    "get_txid": true,
+    "outputs": [
+     {
+      "amount": 0,
+      "index": 0
+     }
+    ]
+   }
+  },
+  {
+   "name": "/get_outs",
+   "kind": "response",
+   "protocol": "uri",
+   "type": "GetOutputsResponse",
+   "status": "ok",
+   "notes": [],
+   "json": {
+    "credits": 0,
+    "outs": [
+     {
+      "height": 1,
+      "key": "ee9b2dbc9bcd99028177414f04a0c3d68a1bcf46ba5fb377bc3d62f85d6fae05",
+      "mask": "a1a7a42155f0abff0353a6008eda2a9b16d9ffcf7584a38933cce3e3976987cd",
+      "txid": "2ee026c6674c2ad08f90c690e831c0381a037812c5dd3e0314e167e9453a7f95",
+      "unlocked": true
+     }
+    ],
+    "status": "OK",
+    "top_hash": "",
+    "untrusted": false
+   },
+   "known_json": {
+    "credits": 0,
+    "outs": [
+     {
+      "height": 1,
+      "key": "ee9b2dbc9bcd99028177414f04a0c3d68a1bcf46ba5fb377bc3d62f85d6fae05",
+      "mask": "a1a7a42155f0abff0353a6008eda2a9b16d9ffcf7584a38933cce3e3976987cd",
+      "txid": "2ee026c6674c2ad08f90c690e831c0381a037812c5dd3e0314e167e9453a7f95",
+      "unlocked": true
+     }
+    ],
+    "status": "OK",
+    "top_hash": ""
+   }
+  },
+  {
+   "name": "/get_public_nodes",
+   "kind": "request",
+   "protocol": "uri",
+   "type": "GetPublicNodesRequest",
+   "status": "ok",
+   "notes": [],
+   "json": {
+    "gray": true
+   },
+   "known_json": {
+    "gray": true
+   }
+  },
+  {
+   "name": "/get_public_nodes",
+   "kind": "response",
+   "protocol": "uri",
+   "type": "GetPublicNodesResponse",
+   "status": "ok",
+   "notes": [],
+   "json": {
+    "gray": [
+     {
+      "host": "142.93.132.1",
+      "last_seen": 0,
+      "rpc_credits_per_hash": 0,
+      "rpc_port": 18089
+     },
+     {
+      "host": "193.142.4.2",
+      "last_seen": 0,
+      "rpc_credits_per_hash": 0,
+      "rpc_port": 19084
+     }
+    ],
+    "status": "OK",
+    "untrusted": false,
+    "white": [
+     {
+      "host": "70.52.75.3",
+      "last_seen": 1722812577,
+      "rpc_credits_per_hash": 0,
+      "rpc_port": 18081
+     },
+     {
+      "host": "::ffff:207.180.221.220",
+      "last_seen": 1722872337,
+      "rpc_credits_per_hash": 0,
+      "rpc_port": 18089
+     },
+     {
+      "host": "zbjkbsxc5munw3qusl7j2hpcmikhqocdf4pqhnhtpzw5nt5jrmofptid.onion:18083",
+      "last_seen": 1720186288,
+      "rpc_credits_per_hash": 0,
+      "rpc_port": 18089
+     }
+    ]
+   },
+   "known_json": {
+    "gray": [
+     {
+      "host": "142.93.132.1",
+      "last_seen": 0,
+      "rpc_credits_per_hash": 0,
+      "rpc_port": 18089
+     },
+     {
+      "host": "193.142.4.2",
+      "last_seen": 0,
+      "rpc_credits_per_hash": 0,
+      "rpc_port": 19084
+     }
+    ],
+    "status": "OK",
+    "white": [
+     {
+      "host": "70.52.75.3",
+      "last_seen": 1722812577,
+      "rpc_credits_per_hash": 0,
+      "rpc_port": 18081
+     },
+     {
+      "host": "::ffff:207.180.221.220",
+      "last_seen": 1722872337,
+      "rpc_credits_per_hash": 0,
+      "rpc_port": 18089
+     },
+     {
+      "host": "zbjkbsxc5munw3qusl7j2hpcmikhqocdf4pqhnhtpzw5nt5jrmofptid.onion:18083",
+      "last_seen": 1720186288,
+      "rpc_credits_per_hash": 0,
+      "rpc_port": 18089
+     }
+    ]
+   }
+  },
+  {
+   "name": "/get_transaction_pool_hashes",
+   "kind": "response",
+   "protocol": "uri",
+   "type": "GetTransactionPoolHashesResponse",
+   "status": "ok",
+   "notes": [],
+   "json": {
+    "credits": 0,
+    "status": "OK",
+    "top_hash": "",
+    "tx_hashes": [
+     "e27bb84f1cf1f47a79578d3bb1f47a81745a4c5a5551622b4e924eb0b83f960d",
+     "b9f76e686f389e126ada5caf47034c57adeef671d8b899cba1ead606c868f819"
+    ],
+    "untrusted": false
+   },
+   "known_json": {
+    "credits": 0,
+    "status": "OK",
+    "top_hash": "",
+    "tx_hashes": [
+     "e27bb84f1cf1f47a79578d3bb1f47a81745a4c5a5551622b4e924eb0b83f960d",
+     "b9f76e686f389e126ada5caf47034c57adeef671d8b899cba1ead606c868f819"
+    ]
+   }
+  },
+  {
+   "name": "/get_transaction_pool_hashes.bin",
+   "kind": "response",
+   "protocol": "uri",
+   "type": "GetTransactionPoolHashesBinResponse",
+   "status": "stale",
+   "notes": [
+    "(root): 'credits' is a required property",
+    "(root): 'top_hash' is a required property"
+   ],
+   "json": {
+    "status": "OK",
+    "tx_hashes": " ... ",
+    "untrusted": false
+   },
+   "missing": [
+    "credits",
+    "top_hash"
+   ]
+  },
+  {
+   "name": "/get_transactions",
+   "kind": "request",
+   "protocol": "uri",
+   "type": "GetTransactionsRequest",
+   "status": "ok",
+   "notes": [],
+   "json": {
+    "txs_hashes": [
+     "d6e48158472848e6687173a91ae6eebfa3e1d778e65252ee99d7515d63090409"
+    ]
+   },
+   "known_json": {
+    "txs_hashes": [
+     "d6e48158472848e6687173a91ae6eebfa3e1d778e65252ee99d7515d63090409"
+    ]
+   }
+  },
+  {
+   "name": "/get_transactions",
+   "kind": "response",
+   "protocol": "uri",
+   "type": "GetTransactionsResponse",
+   "status": "ok",
+   "notes": [],
+   "json": {
+    "credits": 0,
+    "status": "OK",
+    "top_hash": "",
+    "txs": [
+     {
+      "as_hex": "...",
+      "as_json": "",
+      "block_height": 993442,
+      "block_timestamp": 1457749396,
+      "double_spend_seen": false,
+      "in_pool": false,
+      "output_indices": [
+       198769,
+       418598,
+       176616,
+       50345,
+       509
+      ],
+      "prunable_as_hex": "",
+      "prunable_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+      "pruned_as_hex": "",
+      "tx_hash": "d6e48158472848e6687173a91ae6eebfa3e1d778e65252ee99d7515d63090408"
+     }
+    ],
+    "txs_as_hex": [
+     "..."
+    ],
+    "untrusted": false
+   },
+   "known_json": {
+    "credits": 0,
+    "status": "OK",
+    "top_hash": "",
+    "txs": [
+     {
+      "as_hex": "...",
+      "as_json": "",
+      "block_height": 993442,
+      "block_timestamp": 1457749396,
+      "double_spend_seen": false,
+      "in_pool": false,
+      "output_indices": [
+       198769,
+       418598,
+       176616,
+       50345,
+       509
+      ],
+      "prunable_as_hex": "",
+      "prunable_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+      "pruned_as_hex": "",
+      "tx_hash": "d6e48158472848e6687173a91ae6eebfa3e1d778e65252ee99d7515d63090408"
+     }
+    ],
+    "txs_as_hex": [
+     "..."
+    ]
+   }
+  },
+  {
+   "name": "/in_peers",
+   "kind": "request",
+   "protocol": "uri",
+   "type": "InPeersRequest",
+   "status": "ok",
+   "notes": [],
+   "json": {
+    "in_peers": 3232235535
+   },
+   "known_json": {
+    "in_peers": 3232235535
+   }
+  },
+  {
+   "name": "/in_peers",
+   "kind": "response",
+   "protocol": "uri",
+   "type": "InPeersResponse",
+   "status": "ok",
+   "notes": [],
+   "json": {
+    "in_peers": 3232235535,
+    "status": "OK",
+    "untrusted": false
+   },
+   "known_json": {
+    "in_peers": 3232235535,
+    "status": "OK"
+   }
+  },
+  {
+   "name": "/is_key_image_spent",
+   "kind": "request",
+   "protocol": "uri",
+   "type": "IsKeyImageSpentRequest",
+   "status": "ok",
+   "notes": [],
+   "json": {
+    "key_images": [
+     "8d1bd8181bf7d857bdb281e0153d84cd55a3fcaa57c3e570f4a49f935850b5e3",
+     "7319134bfc50668251f5b899c66b005805ee255c136f0e1cecbb0f3a912e09d4"
+    ]
+   },
+   "known_json": {
+    "key_images": [
+     "8d1bd8181bf7d857bdb281e0153d84cd55a3fcaa57c3e570f4a49f935850b5e3",
+     "7319134bfc50668251f5b899c66b005805ee255c136f0e1cecbb0f3a912e09d4"
+    ]
+   }
+  },
+  {
+   "name": "/is_key_image_spent",
+   "kind": "response",
+   "protocol": "uri",
+   "type": "IsKeyImageSpentResponse",
+   "status": "ok",
+   "notes": [],
+   "json": {
+    "credits": 0,
+    "spent_status": [
+     1,
+     1
+    ],
+    "status": "OK",
+    "top_hash": "",
+    "untrusted": false
+   },
+   "known_json": {
+    "credits": 0,
+    "spent_status": [
+     1,
+     1
+    ],
+    "status": "OK",
+    "top_hash": ""
+   }
+  },
+  {
+   "name": "/mining_status",
+   "kind": "response",
+   "protocol": "uri",
+   "type": "MiningStatusResponse",
+   "status": "ok",
+   "notes": [],
+   "json": {
+    "active": true,
+    "address": "47xu3gQpF569au9C2ajo5SSMrWji6xnoE5vhr94EzFRaKAGw6hEGFXYAwVADKuRpzsjiU1PtmaVgcjUJF89ghGPhUXkndHc",
+    "bg_idle_threshold": 0,
+    "bg_ignore_battery": false,
+    "bg_min_idle_seconds": 0,
+    "bg_target": 0,
+    "block_reward": 1181637918707,
+    "block_target": 120,
+    "difficulty": 239928394679,
+    "difficulty_top64": 0,
+    "is_background_mining_enabled": false,
+    "pow_algorithm": "RandomX",
+    "speed": 23,
+    "status": "OK",
+    "threads_count": 1,
+    "untrusted": false,
+    "wide_difficulty": "0x37dcd8c3b7"
+   },
+   "known_json": {
+    "active": true,
+    "address": "47xu3gQpF569au9C2ajo5SSMrWji6xnoE5vhr94EzFRaKAGw6hEGFXYAwVADKuRpzsjiU1PtmaVgcjUJF89ghGPhUXkndHc",
+    "bg_idle_threshold": 0,
+    "bg_ignore_battery": false,
+    "bg_min_idle_seconds": 0,
+    "bg_target": 0,
+    "block_reward": 1181637918707,
+    "block_target": 120,
+    "difficulty": 239928394679,
+    "difficulty_top64": 0,
+    "is_background_mining_enabled": false,
+    "pow_algorithm": "RandomX",
+    "speed": 23,
+    "status": "OK",
+    "threads_count": 1,
+    "wide_difficulty": "0x37dcd8c3b7"
+   }
+  },
+  {
+   "name": "/out_peers",
+   "kind": "request",
+   "protocol": "uri",
+   "type": "OutPeersRequest",
+   "status": "ok",
+   "notes": [],
+   "json": {
+    "out_peers": 3232235535
+   },
+   "known_json": {
+    "out_peers": 3232235535
+   }
+  },
+  {
+   "name": "/out_peers",
+   "kind": "response",
+   "protocol": "uri",
+   "type": "OutPeersResponse",
+   "status": "ok",
+   "notes": [],
+   "json": {
+    "out_peers": 3232235535,
+    "status": "OK",
+    "untrusted": false
+   },
+   "known_json": {
+    "out_peers": 3232235535,
+    "status": "OK"
+   }
+  },
+  {
+   "name": "/pop_blocks",
+   "kind": "request",
+   "protocol": "uri",
+   "type": "PopBlocksRequest",
+   "status": "ok",
+   "notes": [],
+   "json": {
+    "nblocks": 6,
+    "keep_txs": false
+   },
+   "known_json": {
+    "nblocks": 6,
+    "keep_txs": false
+   }
+  },
+  {
+   "name": "/pop_blocks",
+   "kind": "response",
+   "protocol": "uri",
+   "type": "PopBlocksResponse",
+   "status": "ok",
+   "notes": [],
+   "json": {
+    "height": 76482,
+    "status": "OK",
+    "untrusted": false
+   },
+   "known_json": {
+    "height": 76482,
+    "status": "OK"
+   }
+  },
+  {
+   "name": "/save_bc",
+   "kind": "response",
+   "protocol": "uri",
+   "type": "SaveBcResponse",
+   "status": "ok",
+   "notes": [],
+   "json": {
+    "status": "OK",
+    "untrusted": false
+   },
+   "known_json": {
+    "status": "OK"
+   }
+  },
+  {
+   "name": "/send_raw_transaction",
+   "kind": "request",
+   "protocol": "uri",
+   "type": "SendRawTxRequest",
+   "status": "ok",
+   "notes": [],
+   "json": {
+    "tx_as_hex": "de6a3...",
+    "do_not_relay": false
+   },
+   "known_json": {
+    "tx_as_hex": "de6a3...",
+    "do_not_relay": false
+   }
+  },
+  {
+   "name": "/set_limit",
+   "kind": "request",
+   "protocol": "uri",
+   "type": "SetLimitRequest",
+   "status": "ok",
+   "notes": [],
+   "json": {
+    "limit_down": 1024
+   },
+   "known_json": {
+    "limit_down": 1024
+   }
+  },
+  {
+   "name": "/set_limit",
+   "kind": "response",
+   "protocol": "uri",
+   "type": "SetLimitResponse",
+   "status": "ok",
+   "notes": [],
+   "json": {
+    "limit_down": 1024,
+    "limit_up": 128,
+    "status": "OK",
+    "untrusted": false
+   },
+   "known_json": {
+    "limit_down": 1024,
+    "limit_up": 128,
+    "status": "OK"
+   }
+  },
+  {
+   "name": "/set_log_categories",
+   "kind": "request",
+   "protocol": "uri",
+   "type": "SetLogCategoriesRequest",
+   "status": "ok",
+   "notes": [],
+   "json": {
+    "categories": "*:INFO"
+   },
+   "known_json": {
+    "categories": "*:INFO"
+   }
+  },
+  {
+   "name": "/set_log_categories",
+   "kind": "response",
+   "protocol": "uri",
+   "type": "SetLogCategoriesResponse",
+   "status": "ok",
+   "notes": [],
+   "json": {
+    "categories": "*:INFO",
+    "status": "OK",
+    "untrusted": false
+   },
+   "known_json": {
+    "categories": "*:INFO",
+    "status": "OK"
+   }
+  },
+  {
+   "name": "/set_log_hash_rate",
+   "kind": "request",
+   "protocol": "uri",
+   "type": "SetLogHashRateRequest",
+   "status": "ok",
+   "notes": [],
+   "json": {
+    "visible": true
+   },
+   "known_json": {
+    "visible": true
+   }
+  },
+  {
+   "name": "/set_log_hash_rate",
+   "kind": "response",
+   "protocol": "uri",
+   "type": "SetLogHashRateResponse",
+   "status": "ok",
+   "notes": [],
+   "json": {
+    "status": "OK",
+    "untrusted": false
+   },
+   "known_json": {
+    "status": "OK"
+   }
+  },
+  {
+   "name": "/set_log_level",
+   "kind": "request",
+   "protocol": "uri",
+   "type": "SetLogLevelRequest",
+   "status": "ok",
+   "notes": [],
+   "json": {
+    "level": 1
+   },
+   "known_json": {
+    "level": 1
+   }
+  },
+  {
+   "name": "/set_log_level",
+   "kind": "response",
+   "protocol": "uri",
+   "type": "SetLogLevelResponse",
+   "status": "ok",
+   "notes": [],
+   "json": {
+    "status": "OK",
+    "untrusted": false
+   },
+   "known_json": {
+    "status": "OK"
+   }
+  },
+  {
+   "name": "/start_mining",
+   "kind": "request",
+   "protocol": "uri",
+   "type": "StartMiningRequest",
+   "status": "ok",
+   "notes": [],
+   "json": {
+    "do_background_mining": false,
+    "ignore_battery": true,
+    "miner_address": "47xu3gQpF569au9C2ajo5SSMrWji6xnoE5vhr94EzFRaKAGw6hEGFXYAwVADKuRpzsjiU1PtmaVgcjUJF89ghGPhUXkndHc",
+    "threads_count": 1
+   },
+   "known_json": {
+    "do_background_mining": false,
+    "ignore_battery": true,
+    "miner_address": "47xu3gQpF569au9C2ajo5SSMrWji6xnoE5vhr94EzFRaKAGw6hEGFXYAwVADKuRpzsjiU1PtmaVgcjUJF89ghGPhUXkndHc",
+    "threads_count": 1
+   }
+  },
+  {
+   "name": "/start_mining",
+   "kind": "response",
+   "protocol": "uri",
+   "type": "StartMiningResponse",
+   "status": "ok",
+   "notes": [],
+   "json": {
+    "status": "OK",
+    "untrusted": false
+   },
+   "known_json": {
+    "status": "OK"
+   }
+  },
+  {
+   "name": "/stop_daemon",
+   "kind": "response",
+   "protocol": "uri",
+   "type": "StopDaemonResponse",
+   "status": "ok",
+   "notes": [],
+   "json": {
+    "status": "OK"
+   },
+   "known_json": {
+    "status": "OK"
+   }
+  },
+  {
+   "name": "/stop_mining",
+   "kind": "response",
+   "protocol": "uri",
+   "type": "StopMiningResponse",
+   "status": "ok",
+   "notes": [],
+   "json": {
+    "status": "OK",
+    "untrusted": false
+   },
+   "known_json": {
+    "status": "OK"
+   }
+  },
+  {
+   "name": "/update",
+   "kind": "request",
+   "protocol": "uri",
+   "type": "UpdateRequest",
+   "status": "ok",
+   "notes": [],
+   "json": {
+    "command": "check"
+   },
+   "known_json": {
+    "command": "check"
+   }
+  },
+  {
+   "name": "/update",
+   "kind": "response",
+   "protocol": "uri",
+   "type": "UpdateResponse",
+   "status": "ok",
+   "notes": [],
+   "json": {
+    "auto_uri": "",
+    "hash": "",
+    "path": "",
+    "status": "OK",
+    "untrusted": false,
+    "update": false,
+    "user_uri": "",
+    "version": ""
+   },
+   "known_json": {
+    "auto_uri": "",
+    "hash": "",
+    "path": "",
+    "status": "OK",
+    "update": false,
+    "user_uri": "",
+    "version": ""
+   }
+  },
+  {
+   "name": "add_aux_pow",
+   "kind": "request",
+   "protocol": "json-rpc",
+   "type": "AddAuxPowRequest",
+   "status": "ok",
+   "notes": [],
+   "json": {
+    "blocktemplate_blob": " ... ",
+    "aux_pow": [
+     {
+      "id": "3200b4ea97c3b2081cd4190b58e49572b2319fed00d030ad51809dff06b5d8c8",
+      "hash": "7b35762de164b20885e15dbe656b1138db06bb402fa1796f5765a23933d8859a"
+     }
+    ]
+   },
+   "known_json": {
+    "blocktemplate_blob": " ... ",
+    "aux_pow": [
+     {
+      "id": "3200b4ea97c3b2081cd4190b58e49572b2319fed00d030ad51809dff06b5d8c8",
+      "hash": "7b35762de164b20885e15dbe656b1138db06bb402fa1796f5765a23933d8859a"
+     }
+    ]
+   }
+  },
+  {
+   "name": "add_aux_pow",
+   "kind": "response",
+   "protocol": "json-rpc",
+   "type": "AddAuxPowResponse",
+   "status": "ok",
+   "notes": [],
+   "json": {
+    "aux_pow": [
+     {
+      "hash": "7b35762de164b20885e15dbe656b1138db06bb402fa1796f5765a23933d8859a",
+      "id": "3200b4ea97c3b2081cd4190b58e49572b2319fed00d030ad51809dff06b5d8c8"
+     }
+    ],
+    "blockhashing_blob": "1010ee97e2a106e9f8ebe8887e5b609949ac8ea6143e560ed13552b110cb009b21f0cfca1eaccf00000000b2685c1283a646bc9020c758daa443be145b7370ce5a6efacb3e614117032e2c22",
+    "blocktemplate_blob": " ... ",
+    "merkle_root": "7b35762de164b20885e15dbe656b1138db06bb402fa1796f5765a23933d8859a",
+    "merkle_tree_depth": 0,
+    "status": "OK",
+    "untrusted": false
+   },
+   "known_json": {
+    "aux_pow": [
+     {
+      "hash": "7b35762de164b20885e15dbe656b1138db06bb402fa1796f5765a23933d8859a",
+      "id": "3200b4ea97c3b2081cd4190b58e49572b2319fed00d030ad51809dff06b5d8c8"
+     }
+    ],
+    "blockhashing_blob": "1010ee97e2a106e9f8ebe8887e5b609949ac8ea6143e560ed13552b110cb009b21f0cfca1eaccf00000000b2685c1283a646bc9020c758daa443be145b7370ce5a6efacb3e614117032e2c22",
+    "blocktemplate_blob": " ... ",
+    "merkle_root": "7b35762de164b20885e15dbe656b1138db06bb402fa1796f5765a23933d8859a",
+    "merkle_tree_depth": 0,
+    "status": "OK"
+   }
+  },
+  {
+   "name": "banned",
+   "kind": "request",
+   "protocol": "json-rpc",
+   "type": "BannedRequest",
+   "status": "ok",
+   "notes": [],
+   "json": {
+    "address": "95.216.203.255"
+   },
+   "known_json": {
+    "address": "95.216.203.255"
+   }
+  },
+  {
+   "name": "banned",
+   "kind": "response",
+   "protocol": "json-rpc",
+   "type": "BannedResponse",
+   "status": "ok",
+   "notes": [],
+   "json": {
+    "banned": true,
+    "seconds": 690413,
+    "status": "OK"
+   },
+   "known_json": {
+    "banned": true,
+    "seconds": 690413,
+    "status": "OK"
+   }
+  },
+  {
+   "name": "calc_pow",
+   "kind": "request",
+   "protocol": "json-rpc",
+   "type": "CalcpowRequest",
+   "status": "ok",
+   "notes": [],
+   "json": {
+    "major_version": 14,
+    "height": 2286447,
+    "block_blob": "0e0ed286da8006ecdc1aab3033cf1716c52f13f9d8ae0051615a2453643de94643b550d543becd0000000002abc78b0101ffefc68b0101fcfcf0d4b422025014bb4a1eade6622fd781cb1063381cad396efa69719b41aa28b4fce8c7ad4b5f019ce1dc670456b24a5e03c2d9058a2df10fec779e2579753b1847b74ee644f16b023c00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000051399a1bc46a846474f5b33db24eae173a26393b976054ee14f9feefe99925233802867097564c9db7a36af5bb5ed33ab46e63092bd8d32cef121608c3258edd55562812e21cc7e3ac73045745a72f7d74581d9a0849d6f30e8b2923171253e864f4e9ddea3acb5bc755f1c4a878130a70c26297540bc0b7a57affb6b35c1f03d8dbd54ece8457531f8cba15bb74516779c01193e212050423020e45aa2c15dcb",
+    "seed_hash": "d432f499205150873b2572b5f033c9c6e4b7c6f3394bd2dd93822cd7085e7307"
+   },
+   "known_json": {
+    "major_version": 14,
+    "height": 2286447,
+    "block_blob": "0e0ed286da8006ecdc1aab3033cf1716c52f13f9d8ae0051615a2453643de94643b550d543becd0000000002abc78b0101ffefc68b0101fcfcf0d4b422025014bb4a1eade6622fd781cb1063381cad396efa69719b41aa28b4fce8c7ad4b5f019ce1dc670456b24a5e03c2d9058a2df10fec779e2579753b1847b74ee644f16b023c00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000051399a1bc46a846474f5b33db24eae173a26393b976054ee14f9feefe99925233802867097564c9db7a36af5bb5ed33ab46e63092bd8d32cef121608c3258edd55562812e21cc7e3ac73045745a72f7d74581d9a0849d6f30e8b2923171253e864f4e9ddea3acb5bc755f1c4a878130a70c26297540bc0b7a57affb6b35c1f03d8dbd54ece8457531f8cba15bb74516779c01193e212050423020e45aa2c15dcb",
+    "seed_hash": "d432f499205150873b2572b5f033c9c6e4b7c6f3394bd2dd93822cd7085e7307"
+   }
+  },
+  {
+   "name": "calc_pow",
+   "kind": "response",
+   "protocol": "json-rpc",
+   "type": null,
+   "status": "ok",
+   "notes": [],
+   "json": "d0402d6834e26fb94a9ce38c6424d27d2069896a9b8b1ce685d79936bca6e0a8",
+   "known_json": "d0402d6834e26fb94a9ce38c6424d27d2069896a9b8b1ce685d79936bca6e0a8"
+  },
+  {
+   "name": "flush_cache",
+   "kind": "request",
+   "protocol": "json-rpc",
+   "type": "FlushCacheRequest",
+   "status": "docs-mistake",
+   "notes": [
+    "(root): Additional properties are not allowed ('bad_txs' was unexpected)"
+   ],
+   "json": {
+    "bad_txs": true,
+    "bad_blocks": true
+   }
+  },
+  {
+   "name": "flush_cache",
+   "kind": "response",
+   "protocol": "json-rpc",
+   "type": "FlushCacheResponse",
+   "status": "ok",
+   "notes": [],
+   "json": {
+    "status": "OK",
+    "untrusted": false
+   },
+   "known_json": {
+    "status": "OK"
+   }
+  },
+  {
+   "name": "flush_txpool",
+   "kind": "request",
+   "protocol": "json-rpc",
+   "type": "FlushTransactionPoolRequest",
+   "status": "ok",
+   "notes": [],
+   "json": {
+    "txids": [
+     "dc16fa8eaffe1484ca9014ea050e13131d3acf23b419f33bb4cc0b32b6c49308",
+     ""
+    ]
+   },
+   "known_json": {
+    "txids": [
+     "dc16fa8eaffe1484ca9014ea050e13131d3acf23b419f33bb4cc0b32b6c49308",
+     ""
+    ]
+   }
+  },
+  {
+   "name": "flush_txpool",
+   "kind": "response",
+   "protocol": "json-rpc",
+   "type": "FlushTransactionPoolResponse",
+   "status": "ok",
+   "notes": [],
+   "json": {
+    "status": "OK"
+   },
+   "known_json": {
+    "status": "OK"
+   }
+  },
+  {
+   "name": "generateblocks",
+   "kind": "request",
+   "protocol": "json-rpc",
+   "type": "GenerateblocksRequest",
+   "status": "ok",
+   "notes": [],
+   "json": {
+    "amount_of_blocks": 1,
+    "wallet_address": "44AFFq5kSiGBoZ4NMDwYtN18obc8AemS33DBLWs3H7otXft3XjrpDtQGv7SqSsaBYBb98uNbr2VBBEt7f2wfn3RVGQBEP3A",
+    "starting_nonce": 0
+   },
+   "known_json": {
+    "amount_of_blocks": 1,
+    "wallet_address": "44AFFq5kSiGBoZ4NMDwYtN18obc8AemS33DBLWs3H7otXft3XjrpDtQGv7SqSsaBYBb98uNbr2VBBEt7f2wfn3RVGQBEP3A",
+    "starting_nonce": 0
+   }
+  },
+  {
+   "name": "generateblocks",
+   "kind": "response",
+   "protocol": "json-rpc",
+   "type": "GenerateblocksResponse",
+   "status": "ok",
+   "notes": [],
+   "json": {
+    "blocks": [
+     "49b712db7760e3728586f8434ee8bc8d7b3d410dac6bb6e98bf5845c83b917e4"
+    ],
+    "height": 9783,
+    "status": "OK",
+    "untrusted": false
+   },
+   "known_json": {
+    "blocks": [
+     "49b712db7760e3728586f8434ee8bc8d7b3d410dac6bb6e98bf5845c83b917e4"
+    ],
+    "height": 9783,
+    "status": "OK"
+   }
+  },
+  {
+   "name": "get_alternate_chains",
+   "kind": "request",
+   "protocol": "json-rpc",
+   "type": null,
+   "status": "ok",
+   "notes": [],
+   "json": {},
+   "known_json": {}
+  },
+  {
+   "name": "get_alternate_chains",
+   "kind": "response",
+   "protocol": "json-rpc",
+   "type": "GetAlternateChainsResponse",
+   "status": "ok",
+   "notes": [],
+   "json": {
+    "chains": [
+     {
+      "block_hash": "dd4998cfe92a959a5a0e4ed72432cf23d7dfc4179cbea871ee2a705d71fb5e25",
+      "block_hashes": [
+       "dd4998cfe92a959a5a0e4ed72432cf23d7dfc4179cbea871ee2a705d71fb5e25"
+      ],
+      "difficulty": 86227995333492079,
+      "difficulty_top64": 0,
+      "height": 2286736,
+      "length": 1,
+      "main_chain_parent_block": "6da3d2dc86ccc9353d19fc6b05083125f4ca7d22540d938010462f197a3fe590",
+      "wide_difficulty": "0x13257e7a78bfd6f"
+     }
+    ],
+    "status": "OK",
+    "untrusted": false
+   },
+   "known_json": {
+    "chains": [
+     {
+      "block_hash": "dd4998cfe92a959a5a0e4ed72432cf23d7dfc4179cbea871ee2a705d71fb5e25",
+      "block_hashes": [
+       "dd4998cfe92a959a5a0e4ed72432cf23d7dfc4179cbea871ee2a705d71fb5e25"
+      ],
+      "difficulty": 86227995333492079,
+      "difficulty_top64": 0,
+      "height": 2286736,
+      "length": 1,
+      "main_chain_parent_block": "6da3d2dc86ccc9353d19fc6b05083125f4ca7d22540d938010462f197a3fe590",
+      "wide_difficulty": "0x13257e7a78bfd6f"
+     }
+    ],
+    "status": "OK"
+   }
+  },
+  {
+   "name": "get_bans",
+   "kind": "request",
+   "protocol": "json-rpc",
+   "type": null,
+   "status": "ok",
+   "notes": [],
+   "json": {},
+   "known_json": {}
+  },
+  {
+   "name": "get_bans",
+   "kind": "response",
+   "protocol": "json-rpc",
+   "type": "GetbansResponse",
+   "status": "ok",
+   "notes": [],
+   "json": {
+    "bans": [
+     {
+      "host": "102.168.1.51",
+      "ip": 855746662,
+      "seconds": 22
+     },
+     {
+      "host": "192.168.1.50",
+      "ip": 838969536,
+      "seconds": 28
+     }
+    ],
+    "status": "OK",
+    "untrusted": false
+   },
+   "known_json": {
+    "bans": [
+     {
+      "host": "102.168.1.51",
+      "ip": 855746662,
+      "seconds": 22
+     },
+     {
+      "host": "192.168.1.50",
+      "ip": 838969536,
+      "seconds": 28
+     }
+    ],
+    "status": "OK"
+   }
+  },
+  {
+   "name": "get_block",
+   "kind": "request",
+   "protocol": "json-rpc",
+   "type": "GetBlockRequest",
+   "status": "ok",
+   "notes": [],
+   "json": {
+    "hash": "86d421322b700166dde2d7eba1cc8600925ef640abf6c0a2cc8ce0d6dd90abfd"
+   },
+   "known_json": {
+    "hash": "86d421322b700166dde2d7eba1cc8600925ef640abf6c0a2cc8ce0d6dd90abfd"
+   }
+  },
+  {
+   "name": "get_block",
+   "kind": "response",
+   "protocol": "json-rpc",
+   "type": "GetBlockResponse",
+   "status": "ok",
+   "notes": [],
+   "json": {
+    "blob": "1010c58bab9b06b27bdecfc6cd0a46172d136c08831cf67660377ba992332363228b1b722781e7807e07f502cef8a70101ff92f8a7010180e0a596bb1103d7cbf826b665d7a532c316982dc8dbc24f285cbc18bbcc27c7164cd9b3277a85d034019f629d8b36bd16a2bfce3ea80c31dc4d8762c67165aec21845494e32b7582fe00211000000297a787a000000000000000000000000",
+    "block_header": {
+     "block_size": 106,
+     "block_weight": 106,
+     "cumulative_difficulty": 236046001376524168,
+     "cumulative_difficulty_top64": 0,
+     "depth": 40,
+     "difficulty": 313732272488,
+     "difficulty_top64": 0,
+     "hash": "43bd1f2b6556dcafa413d8372974af59e4e8f37dbf74dc6b2a9b7212d0577428",
+     "height": 2751506,
+     "long_term_weight": 176470,
+     "major_version": 16,
+     "miner_tx_hash": "e49b854c5f339d7410a77f2a137281d8042a0ffc7ef9ab24cd670b67139b24cd",
+     "minor_version": 16,
+     "nonce": 4110909056,
+     "num_txes": 0,
+     "orphan_status": false,
+     "pow_hash": "",
+     "prev_hash": "b27bdecfc6cd0a46172d136c08831cf67660377ba992332363228b1b722781e7",
+     "reward": 600000000000,
+     "timestamp": 1667941829,
+     "wide_cumulative_difficulty": "0x3469a966eb2f788",
+     "wide_difficulty": "0x490be69168"
+    },
+    "credits": 0,
+    "json": "{\n  \"major_version\": 16, \n  \"minor_version\": 16, \n  \"timestamp\": 1667941829, \n  \"prev_id\": \"b27bdecfc6cd0a46172d136c08831cf67660377ba992332363228b1b722781e7\", \n  \"nonce\": 4110909056, \n  \"miner_tx\": {\n    \"version\": 2, \n    \"unlock_time\": 2751566, \n    \"vin\": [ {\n        \"gen\": {\n          \"height\": 2751506\n        }\n      }\n    ], \n    \"vout\": [ {\n        \"amount\": 600000000000, \n        \"target\": {\n          \"tagged_key\": {\n            \"key\": \"d7cbf826b665d7a532c316982dc8dbc24f285cbc18bbcc27c7164cd9b3277a85\", \n            \"view_tag\": \"d0\"\n          }\n        }\n      }\n    ], \n    \"extra\": [ 1, 159, 98, 157, 139, 54, 189, 22, 162, 191, 206, 62, 168, 12, 49, 220, 77, 135, 98, 198, 113, 101, 174, 194, 24, 69, 73, 78, 50, 183, 88, 47, 224, 2, 17, 0, 0, 0, 41, 122, 120, 122, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0\n    ], \n    \"rct_signatures\": {\n      \"type\": 0\n    }\n  }, \n  \"tx_hashes\": [ ]\n}",
+    "miner_tx_hash": "e49b854c5f339d7410a77f2a137281d8042a0ffc7ef9ab24cd670b67139b24cd",
+    "status": "OK",
+    "top_hash": "",
+    "untrusted": false
+   },
+   "known_json": {
+    "blob": "1010c58bab9b06b27bdecfc6cd0a46172d136c08831cf67660377ba992332363228b1b722781e7807e07f502cef8a70101ff92f8a7010180e0a596bb1103d7cbf826b665d7a532c316982dc8dbc24f285cbc18bbcc27c7164cd9b3277a85d034019f629d8b36bd16a2bfce3ea80c31dc4d8762c67165aec21845494e32b7582fe00211000000297a787a000000000000000000000000",
+    "block_header": {
+     "block_size": 106,
+     "block_weight": 106,
+     "cumulative_difficulty": 236046001376524168,
+     "cumulative_difficulty_top64": 0,
+     "depth": 40,
+     "difficulty": 313732272488,
+     "difficulty_top64": 0,
+     "hash": "43bd1f2b6556dcafa413d8372974af59e4e8f37dbf74dc6b2a9b7212d0577428",
+     "height": 2751506,
+     "long_term_weight": 176470,
+     "major_version": 16,
+     "miner_tx_hash": "e49b854c5f339d7410a77f2a137281d8042a0ffc7ef9ab24cd670b67139b24cd",
+     "minor_version": 16,
+     "nonce": 4110909056,
+     "num_txes": 0,
+     "orphan_status": false,
+     "pow_hash": "",
+     "prev_hash": "b27bdecfc6cd0a46172d136c08831cf67660377ba992332363228b1b722781e7",
+     "reward": 600000000000,
+     "timestamp": 1667941829,
+     "wide_cumulative_difficulty": "0x3469a966eb2f788",
+     "wide_difficulty": "0x490be69168"
+    },
+    "credits": 0,
+    "json": "{\n  \"major_version\": 16, \n  \"minor_version\": 16, \n  \"timestamp\": 1667941829, \n  \"prev_id\": \"b27bdecfc6cd0a46172d136c08831cf67660377ba992332363228b1b722781e7\", \n  \"nonce\": 4110909056, \n  \"miner_tx\": {\n    \"version\": 2, \n    \"unlock_time\": 2751566, \n    \"vin\": [ {\n        \"gen\": {\n          \"height\": 2751506\n        }\n      }\n    ], \n    \"vout\": [ {\n        \"amount\": 600000000000, \n        \"target\": {\n          \"tagged_key\": {\n            \"key\": \"d7cbf826b665d7a532c316982dc8dbc24f285cbc18bbcc27c7164cd9b3277a85\", \n            \"view_tag\": \"d0\"\n          }\n        }\n      }\n    ], \n    \"extra\": [ 1, 159, 98, 157, 139, 54, 189, 22, 162, 191, 206, 62, 168, 12, 49, 220, 77, 135, 98, 198, 113, 101, 174, 194, 24, 69, 73, 78, 50, 183, 88, 47, 224, 2, 17, 0, 0, 0, 41, 122, 120, 122, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0\n    ], \n    \"rct_signatures\": {\n      \"type\": 0\n    }\n  }, \n  \"tx_hashes\": [ ]\n}",
+    "miner_tx_hash": "e49b854c5f339d7410a77f2a137281d8042a0ffc7ef9ab24cd670b67139b24cd",
+    "status": "OK",
+    "top_hash": ""
+   }
+  },
+  {
+   "name": "get_block_count",
+   "kind": "request",
+   "protocol": "json-rpc",
+   "type": null,
+   "status": "ok",
+   "notes": [],
+   "json": {},
+   "known_json": {}
+  },
+  {
+   "name": "get_block_count",
+   "kind": "response",
+   "protocol": "json-rpc",
+   "type": "GetblockcountResponse",
+   "status": "ok",
+   "notes": [],
+   "json": {
+    "count": 993163,
+    "status": "OK",
+    "untrusted": false
+   },
+   "known_json": {
+    "count": 993163,
+    "status": "OK"
+   }
+  },
+  {
+   "name": "get_block_header_by_hash",
+   "kind": "request",
+   "protocol": "json-rpc",
+   "type": "GetBlockHeaderByHashRequest",
+   "status": "ok",
+   "notes": [],
+   "json": {
+    "hash": "e22cf75f39ae720e8b71b3d120a5ac03f0db50bba6379e2850975b4859190bc6"
+   },
+   "known_json": {
+    "hash": "e22cf75f39ae720e8b71b3d120a5ac03f0db50bba6379e2850975b4859190bc6"
+   }
+  },
+  {
+   "name": "get_block_header_by_hash",
+   "kind": "response",
+   "protocol": "json-rpc",
+   "type": "GetBlockHeaderByHashResponse",
+   "status": "ok",
+   "notes": [],
+   "json": {
+    "block_header": {
+     "block_size": 210,
+     "block_weight": 210,
+     "cumulative_difficulty": 754734824984346,
+     "cumulative_difficulty_top64": 0,
+     "depth": 1374113,
+     "difficulty": 815625611,
+     "difficulty_top64": 0,
+     "hash": "e22cf75f39ae720e8b71b3d120a5ac03f0db50bba6379e2850975b4859190bc6",
+     "height": 912345,
+     "long_term_weight": 210,
+     "major_version": 1,
+     "miner_tx_hash": "c7da3965f25c19b8eb7dd8db48dcd4e7c885e2491db77e289f0609bf8e08ec30",
+     "minor_version": 2,
+     "nonce": 1646,
+     "num_txes": 0,
+     "orphan_status": false,
+     "pow_hash": "",
+     "prev_hash": "b61c58b2e0be53fad5ef9d9731a55e8a81d972b8d90ed07c04fd37ca6403ff78",
+     "reward": 7388968946286,
+     "timestamp": 1452793716,
+     "wide_cumulative_difficulty": "0x2ae6d65248f1a",
+     "wide_difficulty": "0x309d758b"
+    },
+    "credits": 0,
+    "status": "OK",
+    "top_hash": "",
+    "untrusted": false
+   },
+   "known_json": {
+    "block_header": {
+     "block_size": 210,
+     "block_weight": 210,
+     "cumulative_difficulty": 754734824984346,
+     "cumulative_difficulty_top64": 0,
+     "depth": 1374113,
+     "difficulty": 815625611,
+     "difficulty_top64": 0,
+     "hash": "e22cf75f39ae720e8b71b3d120a5ac03f0db50bba6379e2850975b4859190bc6",
+     "height": 912345,
+     "long_term_weight": 210,
+     "major_version": 1,
+     "miner_tx_hash": "c7da3965f25c19b8eb7dd8db48dcd4e7c885e2491db77e289f0609bf8e08ec30",
+     "minor_version": 2,
+     "nonce": 1646,
+     "num_txes": 0,
+     "orphan_status": false,
+     "pow_hash": "",
+     "prev_hash": "b61c58b2e0be53fad5ef9d9731a55e8a81d972b8d90ed07c04fd37ca6403ff78",
+     "reward": 7388968946286,
+     "timestamp": 1452793716,
+     "wide_cumulative_difficulty": "0x2ae6d65248f1a",
+     "wide_difficulty": "0x309d758b"
+    },
+    "credits": 0,
+    "status": "OK",
+    "top_hash": ""
+   }
+  },
+  {
+   "name": "get_block_header_by_height",
+   "kind": "request",
+   "protocol": "json-rpc",
+   "type": "GetBlockHeaderByHeightRequest",
+   "status": "ok",
+   "notes": [],
+   "json": {
+    "height": 912345
+   },
+   "known_json": {
+    "height": 912345
+   }
+  },
+  {
+   "name": "get_block_header_by_height",
+   "kind": "response",
+   "protocol": "json-rpc",
+   "type": "GetBlockHeaderByHeightResponse",
+   "status": "ok",
+   "notes": [],
+   "json": {
+    "block_header": {
+     "block_size": 210,
+     "block_weight": 210,
+     "cumulative_difficulty": 754734824984346,
+     "cumulative_difficulty_top64": 0,
+     "depth": 1374118,
+     "difficulty": 815625611,
+     "difficulty_top64": 0,
+     "hash": "e22cf75f39ae720e8b71b3d120a5ac03f0db50bba6379e2850975b4859190bc6",
+     "height": 912345,
+     "long_term_weight": 210,
+     "major_version": 1,
+     "miner_tx_hash": "c7da3965f25c19b8eb7dd8db48dcd4e7c885e2491db77e289f0609bf8e08ec30",
+     "minor_version": 2,
+     "nonce": 1646,
+     "num_txes": 0,
+     "orphan_status": false,
+     "pow_hash": "",
+     "prev_hash": "b61c58b2e0be53fad5ef9d9731a55e8a81d972b8d90ed07c04fd37ca6403ff78",
+     "reward": 7388968946286,
+     "timestamp": 1452793716,
+     "wide_cumulative_difficulty": "0x2ae6d65248f1a",
+     "wide_difficulty": "0x309d758b"
+    },
+    "credits": 0,
+    "status": "OK",
+    "top_hash": "",
+    "untrusted": false
+   },
+   "known_json": {
+    "block_header": {
+     "block_size": 210,
+     "block_weight": 210,
+     "cumulative_difficulty": 754734824984346,
+     "cumulative_difficulty_top64": 0,
+     "depth": 1374118,
+     "difficulty": 815625611,
+     "difficulty_top64": 0,
+     "hash": "e22cf75f39ae720e8b71b3d120a5ac03f0db50bba6379e2850975b4859190bc6",
+     "height": 912345,
+     "long_term_weight": 210,
+     "major_version": 1,
+     "miner_tx_hash": "c7da3965f25c19b8eb7dd8db48dcd4e7c885e2491db77e289f0609bf8e08ec30",
+     "minor_version": 2,
+     "nonce": 1646,
+     "num_txes": 0,
+     "orphan_status": false,
+     "pow_hash": "",
+     "prev_hash": "b61c58b2e0be53fad5ef9d9731a55e8a81d972b8d90ed07c04fd37ca6403ff78",
+     "reward": 7388968946286,
+     "timestamp": 1452793716,
+     "wide_cumulative_difficulty": "0x2ae6d65248f1a",
+     "wide_difficulty": "0x309d758b"
+    },
+    "credits": 0,
+    "status": "OK",
+    "top_hash": ""
+   }
+  },
+  {
+   "name": "get_block_headers_range",
+   "kind": "request",
+   "protocol": "json-rpc",
+   "type": "GetBlockHeadersRangeRequest",
+   "status": "ok",
+   "notes": [],
+   "json": {
+    "start_height": 1545999,
+    "end_height": 1546000
+   },
+   "known_json": {
+    "start_height": 1545999,
+    "end_height": 1546000
+   }
+  },
+  {
+   "name": "get_block_headers_range",
+   "kind": "response",
+   "protocol": "json-rpc",
+   "type": "GetBlockHeadersRangeResponse",
+   "status": "ok",
+   "notes": [],
+   "json": {
+    "credits": 0,
+    "headers": [
+     {
+      "block_size": 301413,
+      "block_weight": 301413,
+      "cumulative_difficulty": 13185267971483472,
+      "cumulative_difficulty_top64": 0,
+      "depth": 740464,
+      "difficulty": 134636057921,
+      "difficulty_top64": 0,
+      "hash": "86d1d20a40cefcf3dd410ff6967e0491613b77bf73ea8f1bf2e335cf9cf7d57a",
+      "height": 1545999,
+      "long_term_weight": 301413,
+      "major_version": 6,
+      "miner_tx_hash": "9909c6f8a5267f043c3b2b079fb4eacc49ef9c1dee1c028eeb1a259b95e6e1d9",
+      "minor_version": 6,
+      "nonce": 3246403956,
+      "num_txes": 20,
+      "orphan_status": false,
+      "pow_hash": "",
+      "prev_hash": "0ef6e948f77b8f8806621003f5de24b1bcbea150bc0e376835aea099674a5db5",
+      "reward": 5025593029981,
+      "timestamp": 1523002893,
+      "wide_cumulative_difficulty": "0x2ed7ee6db56750",
+      "wide_difficulty": "0x1f58ef3541"
+     },
+     {
+      "block_size": 13322,
+      "block_weight": 13322,
+      "cumulative_difficulty": 13185402687569710,
+      "cumulative_difficulty_top64": 0,
+      "depth": 740463,
+      "difficulty": 134716086238,
+      "difficulty_top64": 0,
+      "hash": "b408bf4cfcd7de13e7e370c84b8314c85b24f0ba4093ca1d6eeb30b35e34e91a",
+      "height": 1546000,
+      "long_term_weight": 13322,
+      "major_version": 7,
+      "miner_tx_hash": "7f749c7c64acb35ef427c7454c45e6688781fbead9bbf222cb12ad1a96a4e8f6",
+      "minor_version": 7,
+      "nonce": 3737164176,
+      "num_txes": 1,
+      "orphan_status": false,
+      "pow_hash": "",
+      "prev_hash": "86d1d20a40cefcf3dd410ff6967e0491613b77bf73ea8f1bf2e335cf9cf7d57a",
+      "reward": 4851952181070,
+      "timestamp": 1523002931,
+      "wide_cumulative_difficulty": "0x2ed80dcb69bf2e",
+      "wide_difficulty": "0x1f5db457de"
+     }
+    ],
+    "status": "OK",
+    "top_hash": "",
+    "untrusted": false
+   },
+   "known_json": {
+    "credits": 0,
+    "headers": [
+     {
+      "block_size": 301413,
+      "block_weight": 301413,
+      "cumulative_difficulty": 13185267971483472,
+      "cumulative_difficulty_top64": 0,
+      "depth": 740464,
+      "difficulty": 134636057921,
+      "difficulty_top64": 0,
+      "hash": "86d1d20a40cefcf3dd410ff6967e0491613b77bf73ea8f1bf2e335cf9cf7d57a",
+      "height": 1545999,
+      "long_term_weight": 301413,
+      "major_version": 6,
+      "miner_tx_hash": "9909c6f8a5267f043c3b2b079fb4eacc49ef9c1dee1c028eeb1a259b95e6e1d9",
+      "minor_version": 6,
+      "nonce": 3246403956,
+      "num_txes": 20,
+      "orphan_status": false,
+      "pow_hash": "",
+      "prev_hash": "0ef6e948f77b8f8806621003f5de24b1bcbea150bc0e376835aea099674a5db5",
+      "reward": 5025593029981,
+      "timestamp": 1523002893,
+      "wide_cumulative_difficulty": "0x2ed7ee6db56750",
+      "wide_difficulty": "0x1f58ef3541"
+     },
+     {
+      "block_size": 13322,
+      "block_weight": 13322,
+      "cumulative_difficulty": 13185402687569710,
+      "cumulative_difficulty_top64": 0,
+      "depth": 740463,
+      "difficulty": 134716086238,
+      "difficulty_top64": 0,
+      "hash": "b408bf4cfcd7de13e7e370c84b8314c85b24f0ba4093ca1d6eeb30b35e34e91a",
+      "height": 1546000,
+      "long_term_weight": 13322,
+      "major_version": 7,
+      "miner_tx_hash": "7f749c7c64acb35ef427c7454c45e6688781fbead9bbf222cb12ad1a96a4e8f6",
+      "minor_version": 7,
+      "nonce": 3737164176,
+      "num_txes": 1,
+      "orphan_status": false,
+      "pow_hash": "",
+      "prev_hash": "86d1d20a40cefcf3dd410ff6967e0491613b77bf73ea8f1bf2e335cf9cf7d57a",
+      "reward": 4851952181070,
+      "timestamp": 1523002931,
+      "wide_cumulative_difficulty": "0x2ed80dcb69bf2e",
+      "wide_difficulty": "0x1f5db457de"
+     }
+    ],
+    "status": "OK",
+    "top_hash": ""
+   }
+  },
+  {
+   "name": "get_block_template",
+   "kind": "request",
+   "protocol": "json-rpc",
+   "type": "GetblocktemplateRequest",
+   "status": "ok",
+   "notes": [],
+   "json": {
+    "wallet_address": "44GBHzv6ZyQdJkjqZje6KLZ3xSyN1hBSFAnLP6EAqJtCRVzMzZmeXTC2AHKDS9aEDTRKmo6a6o9r9j86pYfhCWDkKjbtcns",
+    "reserve_size": 60
+   },
+   "known_json": {
+    "wallet_address": "44GBHzv6ZyQdJkjqZje6KLZ3xSyN1hBSFAnLP6EAqJtCRVzMzZmeXTC2AHKDS9aEDTRKmo6a6o9r9j86pYfhCWDkKjbtcns",
+    "reserve_size": 60
+   }
+  },
+  {
+   "name": "get_block_template",
+   "kind": "response",
+   "protocol": "json-rpc",
+   "type": "GetblocktemplateResponse",
+   "status": "ok",
+   "notes": [],
+   "json": {
+    "blockhashing_blob": "0e0ed286da8006ecdc1aab3033cf1716c52f13f9d8ae0051615a2453643de94643b550d543becd00000000d130d22cf308b308498bbc16e2e955e7dbd691e6a8fab805f98ad82e6faa8bcc06",
+    "blocktemplate_blob": "0e0ed286da8006ecdc1aab3033cf1716c52f13f9d8ae0051615a2453643de94643b550d543becd0000000002abc78b0101ffefc68b0101fcfcf0d4b422025014bb4a1eade6622fd781cb1063381cad396efa69719b41aa28b4fce8c7ad4b5f019ce1dc670456b24a5e03c2d9058a2df10fec779e2579753b1847b74ee644f16b023c00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000051399a1bc46a846474f5b33db24eae173a26393b976054ee14f9feefe99925233802867097564c9db7a36af5bb5ed33ab46e63092bd8d32cef121608c3258edd55562812e21cc7e3ac73045745a72f7d74581d9a0849d6f30e8b2923171253e864f4e9ddea3acb5bc755f1c4a878130a70c26297540bc0b7a57affb6b35c1f03d8dbd54ece8457531f8cba15bb74516779c01193e212050423020e45aa2c15dcb",
+    "difficulty": 226807339040,
+    "difficulty_top64": 0,
+    "expected_reward": 1182367759996,
+    "height": 2286447,
+    "next_seed_hash": "",
+    "prev_hash": "ecdc1aab3033cf1716c52f13f9d8ae0051615a2453643de94643b550d543becd",
+    "reserved_offset": 130,
+    "seed_hash": "d432f499205150873b2572b5f033c9c6e4b7c6f3394bd2dd93822cd7085e7307",
+    "seed_height": 2285568,
+    "status": "OK",
+    "untrusted": false,
+    "wide_difficulty": "0x34cec55820"
+   },
+   "known_json": {
+    "blockhashing_blob": "0e0ed286da8006ecdc1aab3033cf1716c52f13f9d8ae0051615a2453643de94643b550d543becd00000000d130d22cf308b308498bbc16e2e955e7dbd691e6a8fab805f98ad82e6faa8bcc06",
+    "blocktemplate_blob": "0e0ed286da8006ecdc1aab3033cf1716c52f13f9d8ae0051615a2453643de94643b550d543becd0000000002abc78b0101ffefc68b0101fcfcf0d4b422025014bb4a1eade6622fd781cb1063381cad396efa69719b41aa28b4fce8c7ad4b5f019ce1dc670456b24a5e03c2d9058a2df10fec779e2579753b1847b74ee644f16b023c00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000051399a1bc46a846474f5b33db24eae173a26393b976054ee14f9feefe99925233802867097564c9db7a36af5bb5ed33ab46e63092bd8d32cef121608c3258edd55562812e21cc7e3ac73045745a72f7d74581d9a0849d6f30e8b2923171253e864f4e9ddea3acb5bc755f1c4a878130a70c26297540bc0b7a57affb6b35c1f03d8dbd54ece8457531f8cba15bb74516779c01193e212050423020e45aa2c15dcb",
+    "difficulty": 226807339040,
+    "difficulty_top64": 0,
+    "expected_reward": 1182367759996,
+    "height": 2286447,
+    "next_seed_hash": "",
+    "prev_hash": "ecdc1aab3033cf1716c52f13f9d8ae0051615a2453643de94643b550d543becd",
+    "reserved_offset": 130,
+    "seed_hash": "d432f499205150873b2572b5f033c9c6e4b7c6f3394bd2dd93822cd7085e7307",
+    "seed_height": 2285568,
+    "status": "OK",
+    "wide_difficulty": "0x34cec55820"
+   }
+  },
+  {
+   "name": "get_coinbase_tx_sum",
+   "kind": "request",
+   "protocol": "json-rpc",
+   "type": "GetCoinbaseTxSumRequest",
+   "status": "ok",
+   "notes": [],
+   "json": {
+    "height": 1563078,
+    "count": 2
+   },
+   "known_json": {
+    "height": 1563078,
+    "count": 2
+   }
+  },
+  {
+   "name": "get_coinbase_tx_sum",
+   "kind": "response",
+   "protocol": "json-rpc",
+   "type": "GetCoinbaseTxSumResponse",
+   "status": "ok",
+   "notes": [],
+   "json": {
+    "credits": 0,
+    "emission_amount": 9471836197320,
+    "emission_amount_top64": 0,
+    "fee_amount": 0,
+    "fee_amount_top64": 0,
+    "status": "OK",
+    "top_hash": "",
+    "untrusted": false,
+    "wide_emission_amount": "0x89d556e91c8",
+    "wide_fee_amount": "0x0"
+   },
+   "known_json": {
+    "credits": 0,
+    "emission_amount": 9471836197320,
+    "emission_amount_top64": 0,
+    "fee_amount": 0,
+    "fee_amount_top64": 0,
+    "status": "OK",
+    "top_hash": "",
+    "wide_emission_amount": "0x89d556e91c8",
+    "wide_fee_amount": "0x0"
+   }
+  },
+  {
+   "name": "get_connections",
+   "kind": "request",
+   "protocol": "json-rpc",
+   "type": null,
+   "status": "ok",
+   "notes": [],
+   "json": {},
+   "known_json": {}
+  },
+  {
+   "name": "get_fee_estimate",
+   "kind": "request",
+   "protocol": "json-rpc",
+   "type": "GetBaseFeeEstimateRequest",
+   "status": "ok",
+   "notes": [],
+   "json": {},
+   "known_json": {}
+  },
+  {
+   "name": "get_fee_estimate",
+   "kind": "response",
+   "protocol": "json-rpc",
+   "type": "GetBaseFeeEstimateResponse",
+   "status": "ok",
+   "notes": [],
+   "json": {
+    "credits": 0,
+    "fee": 7874,
+    "fees": [
+     20000,
+     80000,
+     320000,
+     4000000
+    ],
+    "quantization_mask": 10000,
+    "status": "OK",
+    "top_hash": "",
+    "untrusted": false
+   },
+   "known_json": {
+    "credits": 0,
+    "fee": 7874,
+    "fees": [
+     20000,
+     80000,
+     320000,
+     4000000
+    ],
+    "quantization_mask": 10000,
+    "status": "OK",
+    "top_hash": ""
+   }
+  },
+  {
+   "name": "get_info",
+   "kind": "request",
+   "protocol": "json-rpc",
+   "type": "GetAltBlocksHashesRequest",
+   "status": "ok",
+   "notes": [],
+   "json": {},
+   "known_json": {}
+  },
+  {
+   "name": "get_info",
+   "kind": "response",
+   "protocol": "json-rpc",
+   "type": "GetInfoResponse",
+   "status": "stale",
+   "notes": [
+    "(root): 'restricted' is a required property"
+   ],
+   "json": {
+    "adjusted_time": 1612090533,
+    "alt_blocks_count": 2,
+    "block_size_limit": 600000,
+    "block_size_median": 300000,
+    "block_weight_limit": 600000,
+    "block_weight_median": 300000,
+    "bootstrap_daemon_address": "",
+    "busy_syncing": false,
+    "credits": 0,
+    "cumulative_difficulty": 86168732847545368,
+    "cumulative_difficulty_top64": 0,
+    "database_size": 34329849856,
+    "difficulty": 225889137349,
+    "difficulty_top64": 0,
+    "free_space": 10795802624,
+    "grey_peerlist_size": 4999,
+    "height": 2286472,
+    "height_without_bootstrap": 2286472,
+    "incoming_connections_count": 85,
+    "mainnet": true,
+    "nettype": "mainnet",
+    "offline": false,
+    "outgoing_connections_count": 16,
+    "rpc_connections_count": 1,
+    "stagenet": false,
+    "start_time": 1611915662,
+    "status": "OK",
+    "synchronized": true,
+    "target": 120,
+    "target_height": 2286464,
+    "testnet": false,
+    "top_block_hash": "b92720d8315b96e32020d04e14a0c54cc13e057d4a5beb4501be490d306fdd8f",
+    "top_hash": "",
+    "tx_count": 11239803,
+    "tx_pool_size": 21,
+    "untrusted": false,
+    "update_available": false,
+    "version": "0.17.1.9-release",
+    "was_bootstrap_ever_used": false,
+    "white_peerlist_size": 1000,
+    "wide_cumulative_difficulty": "0x1322201881f9c18",
+    "wide_difficulty": "0x34980ab2c5"
+   },
+   "missing": [
+    "restricted"
+   ]
+  },
+  {
+   "name": "get_last_block_header",
+   "kind": "request",
+   "protocol": "json-rpc",
+   "type": "GetLastBlockHeaderRequest",
+   "status": "ok",
+   "notes": [],
+   "json": {},
+   "known_json": {}
+  },
+  {
+   "name": "get_last_block_header",
+   "kind": "response",
+   "protocol": "json-rpc",
+   "type": "GetLastBlockHeaderResponse",
+   "status": "ok",
+   "notes": [],
+   "json": {
+    "block_header": {
+     "block_size": 5500,
+     "block_weight": 5500,
+     "cumulative_difficulty": 86164894009456483,
+     "cumulative_difficulty_top64": 0,
+     "depth": 0,
+     "difficulty": 227026389695,
+     "difficulty_top64": 0,
+     "hash": "a6ad87cf357a1aac1ee1d7cb0afa4c2e653b0b1ab7d5bf6af310333e43c59dd0",
+     "height": 2286454,
+     "long_term_weight": 5500,
+     "major_version": 14,
+     "miner_tx_hash": "a474f87de1645ff14c5e90c477b07f9bc86a22fb42909caa0705239298da96d0",
+     "minor_version": 14,
+     "nonce": 249602367,
+     "num_txes": 3,
+     "orphan_status": false,
+     "pow_hash": "",
+     "prev_hash": "fa17fefe1d05da775a61a3dc33d9e199d12af167ef0ab37e52b51e8487b50f25",
+     "reward": 1181337498013,
+     "timestamp": 1612088597,
+     "wide_cumulative_difficulty": "0x1321e83bb8af763",
+     "wide_difficulty": "0x34dbd3cabf"
+    },
+    "credits": 0,
+    "status": "OK",
+    "top_hash": "",
+    "untrusted": false
+   },
+   "known_json": {
+    "block_header": {
+     "block_size": 5500,
+     "block_weight": 5500,
+     "cumulative_difficulty": 86164894009456483,
+     "cumulative_difficulty_top64": 0,
+     "depth": 0,
+     "difficulty": 227026389695,
+     "difficulty_top64": 0,
+     "hash": "a6ad87cf357a1aac1ee1d7cb0afa4c2e653b0b1ab7d5bf6af310333e43c59dd0",
+     "height": 2286454,
+     "long_term_weight": 5500,
+     "major_version": 14,
+     "miner_tx_hash": "a474f87de1645ff14c5e90c477b07f9bc86a22fb42909caa0705239298da96d0",
+     "minor_version": 14,
+     "nonce": 249602367,
+     "num_txes": 3,
+     "orphan_status": false,
+     "pow_hash": "",
+     "prev_hash": "fa17fefe1d05da775a61a3dc33d9e199d12af167ef0ab37e52b51e8487b50f25",
+     "reward": 1181337498013,
+     "timestamp": 1612088597,
+     "wide_cumulative_difficulty": "0x1321e83bb8af763",
+     "wide_difficulty": "0x34dbd3cabf"
+    },
+    "credits": 0,
+    "status": "OK",
+    "top_hash": ""
+   }
+  },
+  {
+   "name": "get_miner_data",
+   "kind": "request",
+   "protocol": "json-rpc",
+   "type": null,
+   "status": "ok",
+   "notes": [],
+   "json": {},
+   "known_json": {}
+  },
+  {
+   "name": "get_miner_data",
+   "kind": "response",
+   "protocol": "json-rpc",
+   "type": "GetminerdataResponse",
+   "status": "ok",
+   "notes": [],
+   "json": {
+    "already_generated_coins": 18186022843595960691,
+    "difficulty": "0x48afae42de",
+    "height": 2731375,
+    "major_version": 16,
+    "median_weight": 300000,
+    "prev_id": "78d50c5894d187c4946d54410990ca59a75017628174a9e8c7055fa4ca5c7c6d",
+    "seed_hash": "a6b869d50eca3a43ec26fe4c369859cf36ae37ce6ecb76457d31ffeb8a6ca8a6",
+    "status": "OK",
+    "tx_backlog": [
+     {
+      "fee": 30700000,
+      "id": "9868490d6bb9207fdd9cf17ca1f6c791b92ca97de0365855ea5c089f67c22208",
+      "weight": 1535
+     },
+     {
+      "fee": 44280000,
+      "id": "b6000b02bbec71e18ad704bcae09fb6e5ae86d897ced14a718753e76e86c0a0a",
+      "weight": 2214
+     }
+    ],
+    "untrusted": false
+   },
+   "known_json": {
+    "already_generated_coins": 18186022843595960691,
+    "difficulty": "0x48afae42de",
+    "height": 2731375,
+    "major_version": 16,
+    "median_weight": 300000,
+    "prev_id": "78d50c5894d187c4946d54410990ca59a75017628174a9e8c7055fa4ca5c7c6d",
+    "seed_hash": "a6b869d50eca3a43ec26fe4c369859cf36ae37ce6ecb76457d31ffeb8a6ca8a6",
+    "status": "OK",
+    "tx_backlog": [
+     {
+      "fee": 30700000,
+      "id": "9868490d6bb9207fdd9cf17ca1f6c791b92ca97de0365855ea5c089f67c22208",
+      "weight": 1535
+     },
+     {
+      "fee": 44280000,
+      "id": "b6000b02bbec71e18ad704bcae09fb6e5ae86d897ced14a718753e76e86c0a0a",
+      "weight": 2214
+     }
+    ]
+   }
+  },
+  {
+   "name": "get_output_distribution",
+   "kind": "request",
+   "protocol": "json-rpc",
+   "type": "GetOutputDistributionRequest",
+   "status": "ok",
+   "notes": [],
+   "json": {
+    "amounts": [
+     628780000
+    ],
+    "from_height": 1462078
+   },
+   "known_json": {
+    "amounts": [
+     628780000
+    ],
+    "from_height": 1462078
+   }
+  },
+  {
+   "name": "get_output_histogram",
+   "kind": "request",
+   "protocol": "json-rpc",
+   "type": "GetOutputHistogramRequest",
+   "status": "ok",
+   "notes": [],
+   "json": {
+    "amounts": [
+     20000000000
+    ]
+   },
+   "known_json": {
+    "amounts": [
+     20000000000
+    ]
+   }
+  },
+  {
+   "name": "get_output_histogram",
+   "kind": "response",
+   "protocol": "json-rpc",
+   "type": "GetOutputHistogramResponse",
+   "status": "ok",
+   "notes": [],
+   "json": {
+    "credits": 0,
+    "histogram": [
+     {
+      "amount": 20000000000,
+      "recent_instances": 0,
+      "total_instances": 381477,
+      "unlocked_instances": 0
+     }
+    ],
+    "status": "OK",
+    "top_hash": "",
+    "untrusted": false
+   },
+   "known_json": {
+    "credits": 0,
+    "histogram": [
+     {
+      "amount": 20000000000,
+      "recent_instances": 0,
+      "total_instances": 381477,
+      "unlocked_instances": 0
+     }
+    ],
+    "status": "OK",
+    "top_hash": ""
+   }
+  },
+  {
+   "name": "get_txids_loose",
+   "kind": "request",
+   "protocol": "json-rpc",
+   "type": "GetTxidsLooseRequest",
+   "status": "ok",
+   "notes": [],
+   "json": {
+    "txid_template": "0000000000000000000000000000000000000000000000000000000085fcb5b1",
+    "num_matching_bits": 32
+   },
+   "known_json": {
+    "txid_template": "0000000000000000000000000000000000000000000000000000000085fcb5b1",
+    "num_matching_bits": 32
+   }
+  },
+  {
+   "name": "get_txids_loose",
+   "kind": "response",
+   "protocol": "json-rpc",
+   "type": "GetTxidsLooseResponse",
+   "status": "ok",
+   "notes": [],
+   "json": {
+    "status": "OK",
+    "txids": [
+     "b072590f24c9066668ce811dc244d7e65c2e413540540b451616e08385fcb5b1"
+    ]
+   },
+   "known_json": {
+    "status": "OK",
+    "txids": [
+     "b072590f24c9066668ce811dc244d7e65c2e413540540b451616e08385fcb5b1"
+    ]
+   }
+  },
+  {
+   "name": "get_txpool_backlog",
+   "kind": "request",
+   "protocol": "json-rpc",
+   "type": "GetAltBlocksHashesRequest",
+   "status": "ok",
+   "notes": [],
+   "json": {},
+   "known_json": {}
+  },
+  {
+   "name": "get_txpool_backlog",
+   "kind": "response",
+   "protocol": "json-rpc",
+   "type": "GetTransactionPoolBacklogResponse",
+   "status": "stale",
+   "notes": [
+    "(root): 'credits' is a required property",
+    "(root): 'top_hash' is a required property"
+   ],
+   "json": {
+    "backlog": "...Binary...",
+    "status": "OK",
+    "untrusted": false
+   },
+   "missing": [
+    "credits",
+    "top_hash"
+   ]
+  },
+  {
+   "name": "get_version",
+   "kind": "request",
+   "protocol": "json-rpc",
+   "type": null,
+   "status": "ok",
+   "notes": [],
+   "json": {},
+   "known_json": {}
+  },
+  {
+   "name": "hard_fork_info",
+   "kind": "request",
+   "protocol": "json-rpc",
+   "type": "HardForkInfoRequest",
+   "status": "ok",
+   "notes": [],
+   "json": {},
+   "known_json": {}
+  },
+  {
+   "name": "hard_fork_info",
+   "kind": "response",
+   "protocol": "json-rpc",
+   "type": "HardForkInfoResponse",
+   "status": "ok",
+   "notes": [],
+   "json": {
+    "credits": 0,
+    "earliest_height": 2210720,
+    "enabled": true,
+    "state": 2,
+    "status": "OK",
+    "threshold": 0,
+    "top_hash": "",
+    "untrusted": false,
+    "version": 14,
+    "votes": 10080,
+    "voting": 14,
+    "window": 10080
+   },
+   "known_json": {
+    "credits": 0,
+    "earliest_height": 2210720,
+    "enabled": true,
+    "state": 2,
+    "status": "OK",
+    "threshold": 0,
+    "top_hash": "",
+    "version": 14,
+    "votes": 10080,
+    "voting": 14,
+    "window": 10080
+   }
+  },
+  {
+   "name": "on_get_block_hash",
+   "kind": "request",
+   "protocol": "json-rpc",
+   "type": null,
+   "status": "ok",
+   "notes": [],
+   "json": [
+    912345
+   ],
+   "known_json": [
+    912345
+   ]
+  },
+  {
+   "name": "on_get_block_hash",
+   "kind": "response",
+   "protocol": "json-rpc",
+   "type": null,
+   "status": "ok",
+   "notes": [],
+   "json": "e22cf75f39ae720e8b71b3d120a5ac03f0db50bba6379e2850975b4859190bc6",
+   "known_json": "e22cf75f39ae720e8b71b3d120a5ac03f0db50bba6379e2850975b4859190bc6"
+  },
+  {
+   "name": "prune_blockchain",
+   "kind": "request",
+   "protocol": "json-rpc",
+   "type": "PruneBlockchainRequest",
+   "status": "ok",
+   "notes": [],
+   "json": {
+    "check": true
+   },
+   "known_json": {
+    "check": true
+   }
+  },
+  {
+   "name": "prune_blockchain",
+   "kind": "response",
+   "protocol": "json-rpc",
+   "type": "PruneBlockchainResponse",
+   "status": "ok",
+   "notes": [],
+   "json": {
+    "pruned": true,
+    "pruning_seed": 387,
+    "status": "OK",
+    "untrusted": false
+   },
+   "known_json": {
+    "pruned": true,
+    "pruning_seed": 387,
+    "status": "OK"
+   }
+  },
+  {
+   "name": "relay_tx",
+   "kind": "request",
+   "protocol": "json-rpc",
+   "type": "RelayTxRequest",
+   "status": "ok",
+   "notes": [],
+   "json": {
+    "txids": [
+     "9fd75c429cbe52da9a52f2ffc5fbd107fe7fd2099c0d8de274dc8a67e0c98613"
+    ]
+   },
+   "known_json": {
+    "txids": [
+     "9fd75c429cbe52da9a52f2ffc5fbd107fe7fd2099c0d8de274dc8a67e0c98613"
+    ]
+   }
+  },
+  {
+   "name": "relay_tx",
+   "kind": "response",
+   "protocol": "json-rpc",
+   "type": "RelayTxResponse",
+   "status": "stale",
+   "notes": [
+    "(root): 'credits' is a required property",
+    "(root): 'top_hash' is a required property"
+   ],
+   "json": {
+    "status": "OK"
+   },
+   "missing": [
+    "credits",
+    "top_hash"
+   ]
+  },
+  {
+   "name": "set_bans",
+   "kind": "request",
+   "protocol": "json-rpc",
+   "type": "SetbansRequest",
+   "status": "ok",
+   "notes": [],
+   "json": {
+    "bans": [
+     {
+      "ip": 838969536,
+      "ban": true,
+      "seconds": 30
+     }
+    ]
+   },
+   "known_json": {
+    "bans": [
+     {
+      "ip": 838969536,
+      "ban": true,
+      "seconds": 30
+     }
+    ]
+   }
+  },
+  {
+   "name": "set_bans",
+   "kind": "response",
+   "protocol": "json-rpc",
+   "type": "SetbansResponse",
+   "status": "ok",
+   "notes": [],
+   "json": {
+    "status": "OK",
+    "untrusted": false
+   },
+   "known_json": {
+    "status": "OK"
+   }
+  },
+  {
+   "name": "submit_block",
+   "kind": "request",
+   "protocol": "json-rpc",
+   "type": null,
+   "status": "ok",
+   "notes": [],
+   "json": [
+    "0707e6bdfedc053771512f1bc27c62731ae9e8f2443db64ce742f4e57f5cf8d393de28551e441a0000000002fb830a01ffbf830a018cfe88bee283060274c0aae2ef5730e680308d9c00b6da59187ad0352efe3c71d36eeeb28782f29f2501bd56b952c3ddc3e350c2631d3a5086cac172c56893831228b17de296ff4669de020200000000"
+   ],
+   "known_json": [
+    "0707e6bdfedc053771512f1bc27c62731ae9e8f2443db64ce742f4e57f5cf8d393de28551e441a0000000002fb830a01ffbf830a018cfe88bee283060274c0aae2ef5730e680308d9c00b6da59187ad0352efe3c71d36eeeb28782f29f2501bd56b952c3ddc3e350c2631d3a5086cac172c56893831228b17de296ff4669de020200000000"
+   ]
+  },
+  {
+   "name": "submit_block",
+   "kind": "error",
+   "protocol": "json-rpc",
+   "type": null,
+   "status": "ok",
+   "notes": [],
+   "json": {
+    "code": -7,
+    "message": "Block not accepted"
+   }
+  },
+  {
+   "name": "sync_info",
+   "kind": "request",
+   "protocol": "json-rpc",
+   "type": "GetAltBlocksHashesRequest",
+   "status": "ok",
+   "notes": [],
+   "json": {},
+   "known_json": {}
+  }
+ ]
+}

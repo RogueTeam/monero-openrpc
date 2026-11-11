@@ -14,7 +14,8 @@ gen() { # gen SCHEMA PACKAGE
     $QUICKTYPE --src-lang schema --lang go --package "$2" --just-types-and-package \
         -o "$2/types.go" "$TMP/$1.schema.json#/definitions/"
     python3 "$ROOT/tools/fix_uint64.py" go "$TMP/$1.schema.json" "$2/types.go"
-    gofmt -w "$2/types.go"
+    python3 registry.py "$2" "$2/types.go" > "$2/registry_test.go"
+    gofmt -w "$2/types.go" "$2/registry_test.go"
 }
 
 gen daemon monerod

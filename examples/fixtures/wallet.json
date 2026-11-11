@@ -1,0 +1,3471 @@
+{
+ "source": "Request/response examples from the official Monero docs, github.com/monero-project/monero-docs (MIT License, Copyright (c) 2024-present Monero Community)",
+ "docs_page": "docs/en/rpc-library/wallet-rpc.md",
+ "docs_commit": "9764d8dc9acdaa7962368359aa43ed43e25e9890",
+ "schema": "schemas/wallet.openrpc.json",
+ "schema_version": "1.38",
+ "cases": [
+  {
+   "name": "add_address_book",
+   "kind": "request",
+   "protocol": "json-rpc",
+   "type": "AddAddressBookEntryRequest",
+   "status": "ok",
+   "notes": [],
+   "json": {
+    "address": "78P16M3XmFRGcWFCcsgt1WcTntA1jzcq31seQX1Eg92j8VQ99NPivmdKam4J5CKNAD7KuNWcq5xUPgoWczChzdba5WLwQ4j",
+    "description": "Third account"
+   },
+   "known_json": {
+    "address": "78P16M3XmFRGcWFCcsgt1WcTntA1jzcq31seQX1Eg92j8VQ99NPivmdKam4J5CKNAD7KuNWcq5xUPgoWczChzdba5WLwQ4j",
+    "description": "Third account"
+   }
+  },
+  {
+   "name": "add_address_book",
+   "kind": "response",
+   "protocol": "json-rpc",
+   "type": "AddAddressBookEntryResponse",
+   "status": "ok",
+   "notes": [],
+   "json": {
+    "index": 1
+   },
+   "known_json": {
+    "index": 1
+   }
+  },
+  {
+   "name": "auto_refresh",
+   "kind": "request",
+   "protocol": "json-rpc",
+   "type": "AutoRefreshRequest",
+   "status": "ok",
+   "notes": [],
+   "json": {
+    "enable": true,
+    "period": 10
+   },
+   "known_json": {
+    "enable": true,
+    "period": 10
+   }
+  },
+  {
+   "name": "auto_refresh",
+   "kind": "response",
+   "protocol": "json-rpc",
+   "type": "AutoRefreshResponse",
+   "status": "ok",
+   "notes": [],
+   "json": {},
+   "known_json": {}
+  },
+  {
+   "name": "change_wallet_password",
+   "kind": "request",
+   "protocol": "json-rpc",
+   "type": "ChangeWalletPasswordRequest",
+   "status": "ok",
+   "notes": [],
+   "json": {
+    "old_password": "theCurrentSecretPassPhrase",
+    "new_password": "theNewSecretPassPhrase"
+   },
+   "known_json": {
+    "old_password": "theCurrentSecretPassPhrase",
+    "new_password": "theNewSecretPassPhrase"
+   }
+  },
+  {
+   "name": "change_wallet_password",
+   "kind": "response",
+   "protocol": "json-rpc",
+   "type": "ChangeWalletPasswordResponse",
+   "status": "ok",
+   "notes": [],
+   "json": {},
+   "known_json": {}
+  },
+  {
+   "name": "check_reserve_proof",
+   "kind": "request",
+   "protocol": "json-rpc",
+   "type": "CheckReserveProofRequest",
+   "status": "docs-mistake",
+   "notes": [
+    "(root): Additional properties are not allowed ('txid' was unexpected)"
+   ],
+   "json": {
+    "txid": "19d5089f9469db3d90aca9024dfcb17ce94b948300101c8345a5e9f7257353be",
+    "message": "wrong message",
+    "signature": "SpendProofV1aSh8Todhk54736iXgV6vJAFP7egxByuMWZeyNDaN2JY737S95X5zz5mNMQSuCNSLjjhi5HJCsndpNWSNVsuThxwv285qy1KkUrLFRkxMSCjfL6bbycYN33ScZ5UB4Fzseceo1ndpL393T1q638VmcU3a56dhNHF1RPZFiGPS61FA78nXFSqE9uoKCCoHkEz83M1dQVhxZV5CEPF2P6VioGTKgprLCH9vvj9k1ivd4SX19L2VSMc3zD1u3mkR24ioETvxBoLeBSpxMoikyZ6inhuPm8yYo9YWyFtQK4XYfAV9mJ9knz5fUPXR8vvh7KJCAg4dqeJXTVb4mbMzYtsSZXHd6ouWoyCd6qMALdW8pKhgMCHcVYMWp9X9WHZuCo9rsRjRpg15sJUw7oJg1JoGiVgj8P4JeGDjnZHnmLVa5bpJhVCbMhyM7JLXNQJzFWTGC27TQBbthxCfQaKdusYnvZnKPDJWSeceYEFzepUnsWhQtyhbb73FzqgWC4eKEFKAZJqT2LuuSoxmihJ9acnFK7Ze23KTVYgDyMKY61VXADxmSrBvwUtxCaW4nQtnbMxiPMNnDMzeixqsFMBtN72j5UqhiLRY99k6SE7Qf5f29haNSBNSXCFFHChPKNTwJrehkofBdKUhh2VGPqZDNoefWUwfudeu83t85bmjv8Q3LrQSkFgFjRT5tLo8TMawNXoZCrQpyZrEvnodMDDUUNf3NL7rxyv3gM1KrTWjYaWXFU2RAsFee2Q2MTwUW7hR25cJvSFuB1BX2bfkoCbiMk923tHZGU2g7rSKF1GDDkXAc1EvFFD4iGbh1Q5t6hPRhBV8PEncdcCWGq5uAL5D4Bjr6VXG8uNeCy5oYWNgbZ5JRSfm7QEhPv8Fy9AKMgmCxDGMF9dVEaU6tw2BAnJavQdfrxChbDBeQXzCbCfep6oei6n2LZdE5Q84wp7eoQFE5Cwuo23tHkbJCaw2njFi3WGBbA7uGZaGHJPyB2rofTWBiSUXZnP2hiE9bjJghAcDm1M4LVLfWvhZmFEnyeru3VWMETnetz1BYLUC5MJGFXuhnHwWh7F6r74FDyhdswYop4eWPbyrXMXmUQEccTGd2NaT8g2VHADZ76gMC6BjWESvcnz2D4n8XwdmM7ZQ1jFwhuXrBfrb1dwRasyXxxHMGAC2onatNiExyeQ9G1W5LwqNLAh9hvcaNTGaYKYXoceVzLkgm6e5WMkLsCwuZXvB"
+   }
+  },
+  {
+   "name": "check_reserve_proof",
+   "kind": "response",
+   "protocol": "json-rpc",
+   "type": "CheckReserveProofResponse",
+   "status": "ok",
+   "notes": [],
+   "json": {
+    "good": true,
+    "spent": 0,
+    "total": 100000000000
+   },
+   "known_json": {
+    "good": true,
+    "spent": 0,
+    "total": 100000000000
+   }
+  },
+  {
+   "name": "check_spend_proof",
+   "kind": "request",
+   "protocol": "json-rpc",
+   "type": "CheckSpendProofRequest",
+   "status": "ok",
+   "notes": [],
+   "json": {
+    "txid": "19d5089f9469db3d90aca9024dfcb17ce94b948300101c8345a5e9f7257353be",
+    "message": "wrong message",
+    "signature": "SpendProofV1aSh8Todhk54736iXgV6vJAFP7egxByuMWZeyNDaN2JY737S95X5zz5mNMQSuCNSLjjhi5HJCsndpNWSNVsuThxwv285qy1KkUrLFRkxMSCjfL6bbycYN33ScZ5UB4Fzseceo1ndpL393T1q638VmcU3a56dhNHF1RPZFiGPS61FA78nXFSqE9uoKCCoHkEz83M1dQVhxZV5CEPF2P6VioGTKgprLCH9vvj9k1ivd4SX19L2VSMc3zD1u3mkR24ioETvxBoLeBSpxMoikyZ6inhuPm8yYo9YWyFtQK4XYfAV9mJ9knz5fUPXR8vvh7KJCAg4dqeJXTVb4mbMzYtsSZXHd6ouWoyCd6qMALdW8pKhgMCHcVYMWp9X9WHZuCo9rsRjRpg15sJUw7oJg1JoGiVgj8P4JeGDjnZHnmLVa5bpJhVCbMhyM7JLXNQJzFWTGC27TQBbthxCfQaKdusYnvZnKPDJWSeceYEFzepUnsWhQtyhbb73FzqgWC4eKEFKAZJqT2LuuSoxmihJ9acnFK7Ze23KTVYgDyMKY61VXADxmSrBvwUtxCaW4nQtnbMxiPMNnDMzeixqsFMBtN72j5UqhiLRY99k6SE7Qf5f29haNSBNSXCFFHChPKNTwJrehkofBdKUhh2VGPqZDNoefWUwfudeu83t85bmjv8Q3LrQSkFgFjRT5tLo8TMawNXoZCrQpyZrEvnodMDDUUNf3NL7rxyv3gM1KrTWjYaWXFU2RAsFee2Q2MTwUW7hR25cJvSFuB1BX2bfkoCbiMk923tHZGU2g7rSKF1GDDkXAc1EvFFD4iGbh1Q5t6hPRhBV8PEncdcCWGq5uAL5D4Bjr6VXG8uNeCy5oYWNgbZ5JRSfm7QEhPv8Fy9AKMgmCxDGMF9dVEaU6tw2BAnJavQdfrxChbDBeQXzCbCfep6oei6n2LZdE5Q84wp7eoQFE5Cwuo23tHkbJCaw2njFi3WGBbA7uGZaGHJPyB2rofTWBiSUXZnP2hiE9bjJghAcDm1M4LVLfWvhZmFEnyeru3VWMETnetz1BYLUC5MJGFXuhnHwWh7F6r74FDyhdswYop4eWPbyrXMXmUQEccTGd2NaT8g2VHADZ76gMC6BjWESvcnz2D4n8XwdmM7ZQ1jFwhuXrBfrb1dwRasyXxxHMGAC2onatNiExyeQ9G1W5LwqNLAh9hvcaNTGaYKYXoceVzLkgm6e5WMkLsCwuZXvB"
+   },
+   "known_json": {
+    "txid": "19d5089f9469db3d90aca9024dfcb17ce94b948300101c8345a5e9f7257353be",
+    "message": "wrong message",
+    "signature": "SpendProofV1aSh8Todhk54736iXgV6vJAFP7egxByuMWZeyNDaN2JY737S95X5zz5mNMQSuCNSLjjhi5HJCsndpNWSNVsuThxwv285qy1KkUrLFRkxMSCjfL6bbycYN33ScZ5UB4Fzseceo1ndpL393T1q638VmcU3a56dhNHF1RPZFiGPS61FA78nXFSqE9uoKCCoHkEz83M1dQVhxZV5CEPF2P6VioGTKgprLCH9vvj9k1ivd4SX19L2VSMc3zD1u3mkR24ioETvxBoLeBSpxMoikyZ6inhuPm8yYo9YWyFtQK4XYfAV9mJ9knz5fUPXR8vvh7KJCAg4dqeJXTVb4mbMzYtsSZXHd6ouWoyCd6qMALdW8pKhgMCHcVYMWp9X9WHZuCo9rsRjRpg15sJUw7oJg1JoGiVgj8P4JeGDjnZHnmLVa5bpJhVCbMhyM7JLXNQJzFWTGC27TQBbthxCfQaKdusYnvZnKPDJWSeceYEFzepUnsWhQtyhbb73FzqgWC4eKEFKAZJqT2LuuSoxmihJ9acnFK7Ze23KTVYgDyMKY61VXADxmSrBvwUtxCaW4nQtnbMxiPMNnDMzeixqsFMBtN72j5UqhiLRY99k6SE7Qf5f29haNSBNSXCFFHChPKNTwJrehkofBdKUhh2VGPqZDNoefWUwfudeu83t85bmjv8Q3LrQSkFgFjRT5tLo8TMawNXoZCrQpyZrEvnodMDDUUNf3NL7rxyv3gM1KrTWjYaWXFU2RAsFee2Q2MTwUW7hR25cJvSFuB1BX2bfkoCbiMk923tHZGU2g7rSKF1GDDkXAc1EvFFD4iGbh1Q5t6hPRhBV8PEncdcCWGq5uAL5D4Bjr6VXG8uNeCy5oYWNgbZ5JRSfm7QEhPv8Fy9AKMgmCxDGMF9dVEaU6tw2BAnJavQdfrxChbDBeQXzCbCfep6oei6n2LZdE5Q84wp7eoQFE5Cwuo23tHkbJCaw2njFi3WGBbA7uGZaGHJPyB2rofTWBiSUXZnP2hiE9bjJghAcDm1M4LVLfWvhZmFEnyeru3VWMETnetz1BYLUC5MJGFXuhnHwWh7F6r74FDyhdswYop4eWPbyrXMXmUQEccTGd2NaT8g2VHADZ76gMC6BjWESvcnz2D4n8XwdmM7ZQ1jFwhuXrBfrb1dwRasyXxxHMGAC2onatNiExyeQ9G1W5LwqNLAh9hvcaNTGaYKYXoceVzLkgm6e5WMkLsCwuZXvB"
+   }
+  },
+  {
+   "name": "check_spend_proof",
+   "kind": "response",
+   "protocol": "json-rpc",
+   "type": "CheckSpendProofResponse",
+   "status": "ok",
+   "notes": [],
+   "json": {
+    "good": true
+   },
+   "known_json": {
+    "good": true
+   }
+  },
+  {
+   "name": "check_tx_key",
+   "kind": "request",
+   "protocol": "json-rpc",
+   "type": "CheckTxKeyRequest",
+   "status": "ok",
+   "notes": [],
+   "json": {
+    "txid": "19d5089f9469db3d90aca9024dfcb17ce94b948300101c8345a5e9f7257353be",
+    "tx_key": "feba662cf8fb6d0d0da18fc9b70ab28e01cc76311278fdd7fe7ab16360762b06",
+    "address": "7BnERTpvL5MbCLtj5n9No7J5oE5hHiB3tVCK5cjSvCsYWD2WRJLFuWeKTLiXo5QJqt2ZwUaLy2Vh1Ad51K7FNgqcHgjW85o"
+   },
+   "known_json": {
+    "txid": "19d5089f9469db3d90aca9024dfcb17ce94b948300101c8345a5e9f7257353be",
+    "tx_key": "feba662cf8fb6d0d0da18fc9b70ab28e01cc76311278fdd7fe7ab16360762b06",
+    "address": "7BnERTpvL5MbCLtj5n9No7J5oE5hHiB3tVCK5cjSvCsYWD2WRJLFuWeKTLiXo5QJqt2ZwUaLy2Vh1Ad51K7FNgqcHgjW85o"
+   }
+  },
+  {
+   "name": "check_tx_key",
+   "kind": "response",
+   "protocol": "json-rpc",
+   "type": "CheckTxKeyResponse",
+   "status": "ok",
+   "notes": [],
+   "json": {
+    "confirmations": 0,
+    "in_pool": false,
+    "received": 1000000000000
+   },
+   "known_json": {
+    "confirmations": 0,
+    "in_pool": false,
+    "received": 1000000000000
+   }
+  },
+  {
+   "name": "check_tx_proof",
+   "kind": "request",
+   "protocol": "json-rpc",
+   "type": "CheckTxProofRequest",
+   "status": "ok",
+   "notes": [],
+   "json": {
+    "txid": "19d5089f9469db3d90aca9024dfcb17ce94b948300101c8345a5e9f7257353be",
+    "address": "7BnERTpvL5MbCLtj5n9No7J5oE5hHiB3tVCK5cjSvCsYWD2WRJLFuWeKTLiXo5QJqt2ZwUaLy2Vh1Ad51K7FNgqcHgjW85o",
+    "message": "wrong message",
+    "signature": "InProofV13vqBCT6dpSAXkypZmSEMPGVnNRFDX2vscUYeVS4WnSVnV5BwLs31T9q6Etfj9Wts6tAxSAS4gkMeSYzzLS7Gt4vvCSQRh9niGJMUDJsB5hTzb2XJiCkUzWkkcjLFBBRVD5QZ"
+   },
+   "known_json": {
+    "txid": "19d5089f9469db3d90aca9024dfcb17ce94b948300101c8345a5e9f7257353be",
+    "address": "7BnERTpvL5MbCLtj5n9No7J5oE5hHiB3tVCK5cjSvCsYWD2WRJLFuWeKTLiXo5QJqt2ZwUaLy2Vh1Ad51K7FNgqcHgjW85o",
+    "message": "wrong message",
+    "signature": "InProofV13vqBCT6dpSAXkypZmSEMPGVnNRFDX2vscUYeVS4WnSVnV5BwLs31T9q6Etfj9Wts6tAxSAS4gkMeSYzzLS7Gt4vvCSQRh9niGJMUDJsB5hTzb2XJiCkUzWkkcjLFBBRVD5QZ"
+   }
+  },
+  {
+   "name": "check_tx_proof",
+   "kind": "response",
+   "protocol": "json-rpc",
+   "type": "CheckTxProofResponse",
+   "status": "ok",
+   "notes": [],
+   "json": {
+    "confirmations": 482,
+    "good": true,
+    "in_pool": false,
+    "received": 1000000000000
+   },
+   "known_json": {
+    "confirmations": 482,
+    "good": true,
+    "in_pool": false,
+    "received": 1000000000000
+   }
+  },
+  {
+   "name": "close_wallet",
+   "kind": "request",
+   "protocol": "json-rpc",
+   "type": "CloseWalletRequest",
+   "status": "ok",
+   "notes": [],
+   "json": {},
+   "known_json": {}
+  },
+  {
+   "name": "close_wallet",
+   "kind": "response",
+   "protocol": "json-rpc",
+   "type": "CloseWalletResponse",
+   "status": "ok",
+   "notes": [],
+   "json": {},
+   "known_json": {}
+  },
+  {
+   "name": "create_account",
+   "kind": "request",
+   "protocol": "json-rpc",
+   "type": "CreateAccountRequest",
+   "status": "ok",
+   "notes": [],
+   "json": {
+    "label": "Secondary account"
+   },
+   "known_json": {
+    "label": "Secondary account"
+   }
+  },
+  {
+   "name": "create_account",
+   "kind": "response",
+   "protocol": "json-rpc",
+   "type": "CreateAccountResponse",
+   "status": "ok",
+   "notes": [],
+   "json": {
+    "account_index": 1,
+    "address": "77Vx9cs1VPicFndSVgYUvTdLCJEZw9h81hXLMYsjBCXSJfUehLa9TDW3Ffh45SQa7xb6dUs18mpNxfUhQGqfwXPSMrvKhVp"
+   },
+   "known_json": {
+    "account_index": 1,
+    "address": "77Vx9cs1VPicFndSVgYUvTdLCJEZw9h81hXLMYsjBCXSJfUehLa9TDW3Ffh45SQa7xb6dUs18mpNxfUhQGqfwXPSMrvKhVp"
+   }
+  },
+  {
+   "name": "create_address",
+   "kind": "request",
+   "protocol": "json-rpc",
+   "type": "CreateAddressRequest",
+   "status": "ok",
+   "notes": [],
+   "json": {
+    "account_index": 0,
+    "label": "new-subs",
+    "count": 2
+   },
+   "known_json": {
+    "account_index": 0,
+    "label": "new-subs",
+    "count": 2
+   }
+  },
+  {
+   "name": "create_address",
+   "kind": "response",
+   "protocol": "json-rpc",
+   "type": "CreateAddressResponse",
+   "status": "ok",
+   "notes": [],
+   "json": {
+    "address": "7BG5jr9QS5sGMdpbBrZEwVLZjSKJGJBsXdZLt8wiXyhhLjy7x2LZxsrAnHTgD8oG46ZtLjUGic2pWc96GFkGNPQQDA3Dt7Q",
+    "address_index": 5,
+    "address_indices": [
+     5,
+     6
+    ],
+    "addresses": [
+     "7BG5jr9QS5sGMdpbBrZEwVLZjSKJGJBsXdZLt8wiXyhhLjy7x2LZxsrAnHTgD8oG46ZtLjUGic2pWc96GFkGNPQQDA3Dt7Q",
+     "72sRxcVHmxV9RSpEJoSyukj4z2zjk3AhmRJabPSonGHZepYfyFDiKKtPvreg7kYiFHMHFG9Wi4Hqg9uKzP44aieQJVccLnc"
+    ]
+   },
+   "known_json": {
+    "address": "7BG5jr9QS5sGMdpbBrZEwVLZjSKJGJBsXdZLt8wiXyhhLjy7x2LZxsrAnHTgD8oG46ZtLjUGic2pWc96GFkGNPQQDA3Dt7Q",
+    "address_index": 5,
+    "address_indices": [
+     5,
+     6
+    ],
+    "addresses": [
+     "7BG5jr9QS5sGMdpbBrZEwVLZjSKJGJBsXdZLt8wiXyhhLjy7x2LZxsrAnHTgD8oG46ZtLjUGic2pWc96GFkGNPQQDA3Dt7Q",
+     "72sRxcVHmxV9RSpEJoSyukj4z2zjk3AhmRJabPSonGHZepYfyFDiKKtPvreg7kYiFHMHFG9Wi4Hqg9uKzP44aieQJVccLnc"
+    ]
+   }
+  },
+  {
+   "name": "create_wallet",
+   "kind": "request",
+   "protocol": "json-rpc",
+   "type": "CreateWalletRequest",
+   "status": "ok",
+   "notes": [],
+   "json": {
+    "filename": "mytestwallet",
+    "password": "mytestpassword",
+    "language": "English"
+   },
+   "known_json": {
+    "filename": "mytestwallet",
+    "password": "mytestpassword",
+    "language": "English"
+   }
+  },
+  {
+   "name": "create_wallet",
+   "kind": "response",
+   "protocol": "json-rpc",
+   "type": "CreateWalletResponse",
+   "status": "ok",
+   "notes": [],
+   "json": {},
+   "known_json": {}
+  },
+  {
+   "name": "delete_address_book",
+   "kind": "request",
+   "protocol": "json-rpc",
+   "type": "DeleteAddressBookEntryRequest",
+   "status": "ok",
+   "notes": [],
+   "json": {
+    "index": 1
+   },
+   "known_json": {
+    "index": 1
+   }
+  },
+  {
+   "name": "delete_address_book",
+   "kind": "response",
+   "protocol": "json-rpc",
+   "type": "DeleteAddressBookEntryResponse",
+   "status": "ok",
+   "notes": [],
+   "json": {},
+   "known_json": {}
+  },
+  {
+   "name": "describe_transfer",
+   "kind": "request",
+   "protocol": "json-rpc",
+   "type": "DescribeTransferRequest",
+   "status": "ok",
+   "notes": [],
+   "json": {
+    "unsigned_txset": "...long hex..."
+   },
+   "known_json": {
+    "unsigned_txset": "...long hex..."
+   }
+  },
+  {
+   "name": "describe_transfer",
+   "kind": "response",
+   "protocol": "json-rpc",
+   "type": "DescribeTransferResponse",
+   "status": "stale",
+   "notes": [
+    "(root): 'summary' is a required property"
+   ],
+   "json": {
+    "desc": [
+     {
+      "amount_in": 886489038634812,
+      "amount_out": 886455352051344,
+      "change_address": "5BqWeZrK944YesCy5VdmBneWeaSZutEijFVAKjpVHeVd4unsCSM55CjgViQsK9WFNHK1eZgcCuZ3fRqYpzKDokqSUmQfJzvswQs13AAidJ",
+      "change_amount": 4976287087263,
+      "dummy_outputs": 0,
+      "extra": "01b998f16459bcbac9c92074d3128d10724f10b74f5a7b1ec8e5a1e7f1150544020209010000000000000000",
+      "fee": 33686583468,
+      "payment_id": "0000000000000000",
+      "recipients": [
+       {
+        "address": "0b057f69acc1552014cb157138e5c4dd495347d333f68ff0af70494b979aed10",
+        "amount": 881479064964081
+       }
+      ],
+      "ring_size": 11,
+      "unlock_time": 0
+     }
+    ]
+   },
+   "missing": [
+    "summary"
+   ]
+  },
+  {
+   "name": "edit_address_book",
+   "kind": "request",
+   "protocol": "json-rpc",
+   "type": "EditAddressBookEntryRequest",
+   "status": "ok",
+   "notes": [],
+   "json": {
+    "index": 0,
+    "set_address": true,
+    "address": "0b057f69acc1552014cb157138e5c4dd495347d333f68ff0af70494b979aed10",
+    "set_description": true,
+    "description": "Example description."
+   },
+   "known_json": {
+    "index": 0,
+    "set_address": true,
+    "address": "0b057f69acc1552014cb157138e5c4dd495347d333f68ff0af70494b979aed10",
+    "set_description": true,
+    "description": "Example description."
+   }
+  },
+  {
+   "name": "edit_address_book",
+   "kind": "response",
+   "protocol": "json-rpc",
+   "type": "EditAddressBookEntryResponse",
+   "status": "ok",
+   "notes": [],
+   "json": {},
+   "known_json": {}
+  },
+  {
+   "name": "estimate_tx_size_and_weight",
+   "kind": "request",
+   "protocol": "json-rpc",
+   "type": "EstimateTxSizeAndWeightRequest",
+   "status": "ok",
+   "notes": [],
+   "json": {
+    "n_inputs": 1,
+    "n_outputs": 2,
+    "ring_size": 16,
+    "rct": true
+   },
+   "known_json": {
+    "n_inputs": 1,
+    "n_outputs": 2,
+    "ring_size": 16,
+    "rct": true
+   }
+  },
+  {
+   "name": "estimate_tx_size_and_weight",
+   "kind": "response",
+   "protocol": "json-rpc",
+   "type": "EstimateTxSizeAndWeightResponse",
+   "status": "ok",
+   "notes": [],
+   "json": {
+    "size": 1630,
+    "weight": 1630
+   },
+   "known_json": {
+    "size": 1630,
+    "weight": 1630
+   }
+  },
+  {
+   "name": "exchange_multisig_keys",
+   "kind": "request",
+   "protocol": "json-rpc",
+   "type": "ExchangeMultisigKeysRequest",
+   "status": "docs-mistake",
+   "notes": [
+    "multisig_info: 'MultisigxV2R1hSyd7Zdx5A92zWF7E9487XQg8zZRDYM6c9aNfEShmCKoUx9ftccXZvH9cRcadd5veh6mwk9sXuGzWZRo57MdvSkJi3ABLt8wZPv8FTkBqVDVcgUdXm4tS81HdJ5WQXboQJJQQd5JKoySKJ4S9x"
+   ],
+   "json": {
+    "password": "",
+    "multisig_info": "MultisigxV2R1hSyd7Zdx5A92zWF7E9487XQg8zZRDYM6c9aNfEShmCKoUx9ftccXZvH9cRcadd5veh6mwk9sXuGzWZRo57MdvSkJi3ABLt8wZPv8FTkBqVDVcgUdXm4tS81HdJ5WQXboQJJQQd5JKoySKJ4S9xHGojL2i3VUvbWAyduaWGjMK4hrLQA1"
+   }
+  },
+  {
+   "name": "exchange_multisig_keys",
+   "kind": "response",
+   "protocol": "json-rpc",
+   "type": "ExchangeMultisigKeysResponse",
+   "status": "ok",
+   "notes": [],
+   "json": {
+    "address": "55TZyExQSnbiTrJCrgZZucFAmvfyaKK9vMca7tNmzP3NLdykxBrYvdsWPQbM7aw52HQ4VsvBxJDKuKGuuaTZw8DqFdhsJrL",
+    "multisig_info": "MultisigxV2Rn1LVZfU8ySEo1APrEQz2G5jYLLyEabZ8a2KK7C4uak9KT7wCdTjztLy8A9XUiregzXU5STWvNJwuDURA7zuw7wLQxcYaJctpXt1pCUmPQnciHoNd8NcxvYKUCbeAnER2UGcrQFYwrX9ftXLb5mSrfRQ6ieL1PUSfvcw5kV8LCTQvpc5FqMaX5LHU196NDTwEmD9UkYnjgsmgFpGR5ZPpMUr6ky56vHyH"
+   },
+   "known_json": {
+    "address": "55TZyExQSnbiTrJCrgZZucFAmvfyaKK9vMca7tNmzP3NLdykxBrYvdsWPQbM7aw52HQ4VsvBxJDKuKGuuaTZw8DqFdhsJrL",
+    "multisig_info": "MultisigxV2Rn1LVZfU8ySEo1APrEQz2G5jYLLyEabZ8a2KK7C4uak9KT7wCdTjztLy8A9XUiregzXU5STWvNJwuDURA7zuw7wLQxcYaJctpXt1pCUmPQnciHoNd8NcxvYKUCbeAnER2UGcrQFYwrX9ftXLb5mSrfRQ6ieL1PUSfvcw5kV8LCTQvpc5FqMaX5LHU196NDTwEmD9UkYnjgsmgFpGR5ZPpMUr6ky56vHyH"
+   }
+  },
+  {
+   "name": "export_key_images",
+   "kind": "request",
+   "protocol": "json-rpc",
+   "type": "ExportKeyImagesRequest",
+   "status": "ok",
+   "notes": [],
+   "json": {},
+   "known_json": {}
+  },
+  {
+   "name": "export_multisig_info",
+   "kind": "request",
+   "protocol": "json-rpc",
+   "type": null,
+   "status": "ok",
+   "notes": [],
+   "json": {},
+   "known_json": {}
+  },
+  {
+   "name": "export_multisig_info",
+   "kind": "response",
+   "protocol": "json-rpc",
+   "type": "ExportMultisigResponse",
+   "status": "ok",
+   "notes": [],
+   "json": {
+    "info": "4d6f6e65726f206d756c7469736967206578706f72740105cf6442b09b75f5eca9d846771fe1a879c9a97ab0553ffbcec64b1148eb7832b51e7898d7944c41cee000415c5a98f4f80dc0efdae379a98805bb6eacae743446f6f421cd03e129eb5b27d6e3b73eb6929201507c1ae706c1a9ecd26ac8601932415b0b6f49cbbfd712e47d01262c59980a8f9a8be776f2bf585f1477a6df63d6364614d941ecfdcb6e958a390eb9aa7c87f056673d73bc7c5f0ab1f74a682e902e48a3322c0413bb7f6fd67404f13fb8e313f70a0ce568c853206751a334ef490068d3c8ca0e"
+   },
+   "known_json": {
+    "info": "4d6f6e65726f206d756c7469736967206578706f72740105cf6442b09b75f5eca9d846771fe1a879c9a97ab0553ffbcec64b1148eb7832b51e7898d7944c41cee000415c5a98f4f80dc0efdae379a98805bb6eacae743446f6f421cd03e129eb5b27d6e3b73eb6929201507c1ae706c1a9ecd26ac8601932415b0b6f49cbbfd712e47d01262c59980a8f9a8be776f2bf585f1477a6df63d6364614d941ecfdcb6e958a390eb9aa7c87f056673d73bc7c5f0ab1f74a682e902e48a3322c0413bb7f6fd67404f13fb8e313f70a0ce568c853206751a334ef490068d3c8ca0e"
+   }
+  },
+  {
+   "name": "export_outputs",
+   "kind": "request",
+   "protocol": "json-rpc",
+   "type": "ExportOutputsRequest",
+   "status": "ok",
+   "notes": [],
+   "json": {},
+   "known_json": {}
+  },
+  {
+   "name": "export_outputs",
+   "kind": "response",
+   "protocol": "json-rpc",
+   "type": "ExportOutputsResponse",
+   "status": "ok",
+   "notes": [],
+   "json": {
+    "outputs_data_hex": "...outputs..."
+   },
+   "known_json": {
+    "outputs_data_hex": "...outputs..."
+   }
+  },
+  {
+   "name": "freeze",
+   "kind": "request",
+   "protocol": "json-rpc",
+   "type": "FreezeRequest",
+   "status": "ok",
+   "notes": [],
+   "json": {
+    "key_image": "d0071ab34ab7f567f9b54303ed684de6cd5ed969a6b6c4bf352d25242f0b3da9"
+   },
+   "known_json": {
+    "key_image": "d0071ab34ab7f567f9b54303ed684de6cd5ed969a6b6c4bf352d25242f0b3da9"
+   }
+  },
+  {
+   "name": "freeze",
+   "kind": "response",
+   "protocol": "json-rpc",
+   "type": "FreezeResponse",
+   "status": "ok",
+   "notes": [],
+   "json": {},
+   "known_json": {}
+  },
+  {
+   "name": "frozen",
+   "kind": "request",
+   "protocol": "json-rpc",
+   "type": "FreezeRequest",
+   "status": "ok",
+   "notes": [],
+   "json": {
+    "key_image": "d0071ab34ab7f567f9b54303ed684de6cd5ed969a6b6c4bf352d25242f0b3da9"
+   },
+   "known_json": {
+    "key_image": "d0071ab34ab7f567f9b54303ed684de6cd5ed969a6b6c4bf352d25242f0b3da9"
+   }
+  },
+  {
+   "name": "frozen",
+   "kind": "response",
+   "protocol": "json-rpc",
+   "type": "FrozenResponse",
+   "status": "ok",
+   "notes": [],
+   "json": {
+    "frozen": true
+   },
+   "known_json": {
+    "frozen": true
+   }
+  },
+  {
+   "name": "generate_from_keys",
+   "kind": "request",
+   "protocol": "json-rpc",
+   "type": "GenerateFromKeysRequest",
+   "status": "ok",
+   "notes": [],
+   "json": {
+    "restore_height": 0,
+    "filename": "wallet_name",
+    "address": "42gt8cXJSHAL4up8XoZh7fikVuswDU7itAoaCjSQyo6fFoeTQpAcAwrQ1cs8KvFynLFSBdabhmk7HEe3HS7UsAz4LYnVPYM",
+    "spendkey": "11d3fd247672c4cb29b6e38791dcf07629cd2d68d868f0b78811ce584a6b0d01",
+    "viewkey": "97cf64f2cd6c930242e9bed5f14f8f16a33047229aca3eababf4af7e8d113209",
+    "password": "pass",
+    "autosave_current": true
+   },
+   "known_json": {
+    "restore_height": 0,
+    "filename": "wallet_name",
+    "address": "42gt8cXJSHAL4up8XoZh7fikVuswDU7itAoaCjSQyo6fFoeTQpAcAwrQ1cs8KvFynLFSBdabhmk7HEe3HS7UsAz4LYnVPYM",
+    "spendkey": "11d3fd247672c4cb29b6e38791dcf07629cd2d68d868f0b78811ce584a6b0d01",
+    "viewkey": "97cf64f2cd6c930242e9bed5f14f8f16a33047229aca3eababf4af7e8d113209",
+    "password": "pass",
+    "autosave_current": true
+   }
+  },
+  {
+   "name": "generate_from_keys",
+   "kind": "response",
+   "protocol": "json-rpc",
+   "type": "GenerateFromKeysResponse",
+   "status": "ok",
+   "notes": [],
+   "json": {
+    "address": "42gt8cXJSHAL4up8XoZh7fikVuswDU7itAoaCjSQyo6fFoeTQpAcAwrQ1cs8KvFynLFSBdabhmk7HEe3HS7UsAz4LYnVPYM",
+    "info": "Wallet has been generated successfully."
+   },
+   "known_json": {
+    "address": "42gt8cXJSHAL4up8XoZh7fikVuswDU7itAoaCjSQyo6fFoeTQpAcAwrQ1cs8KvFynLFSBdabhmk7HEe3HS7UsAz4LYnVPYM",
+    "info": "Wallet has been generated successfully."
+   }
+  },
+  {
+   "name": "get_account_tags",
+   "kind": "request",
+   "protocol": "json-rpc",
+   "type": null,
+   "status": "docs-mistake",
+   "notes": [
+    "(root): '' is not of type 'object'"
+   ],
+   "json": ""
+  },
+  {
+   "name": "get_account_tags",
+   "kind": "response",
+   "protocol": "json-rpc",
+   "type": "GetAccountTagsResponse",
+   "status": "ok",
+   "notes": [],
+   "json": {
+    "account_tags": [
+     {
+      "accounts": [
+       0
+      ],
+      "label": "Test tag",
+      "tag": "myTag"
+     }
+    ]
+   },
+   "known_json": {
+    "account_tags": [
+     {
+      "accounts": [
+       0
+      ],
+      "label": "Test tag",
+      "tag": "myTag"
+     }
+    ]
+   }
+  },
+  {
+   "name": "get_accounts",
+   "kind": "request",
+   "protocol": "json-rpc",
+   "type": "GetAccountsRequest",
+   "status": "ok",
+   "notes": [],
+   "json": {
+    "tag": "myTag"
+   },
+   "known_json": {
+    "tag": "myTag"
+   }
+  },
+  {
+   "name": "get_accounts",
+   "kind": "response",
+   "protocol": "json-rpc",
+   "type": "GetAccountsResponse",
+   "status": "ok",
+   "notes": [],
+   "json": {
+    "subaddress_accounts": [
+     {
+      "account_index": 0,
+      "balance": 157663195572433688,
+      "base_address": "55LTR8KniP4LQGJSPtbYDacR7dz8RBFnsfAKMaMuwUNYX6aQbBcovzDPyrQF9KXF9tVU6Xk3K8no1BywnJX6GvZX8yJsXvt",
+      "label": "Primary account",
+      "tag": "myTag",
+      "unlocked_balance": 157443303037455077
+     },
+     {
+      "account_index": 1,
+      "balance": 0,
+      "base_address": "77Vx9cs1VPicFndSVgYUvTdLCJEZw9h81hXLMYsjBCXSJfUehLa9TDW3Ffh45SQa7xb6dUs18mpNxfUhQGqfwXPSMrvKhVp",
+      "label": "Secondary account",
+      "tag": "myTag",
+      "unlocked_balance": 0
+     }
+    ],
+    "total_balance": 157663195572433688,
+    "total_unlocked_balance": 157443303037455077
+   },
+   "known_json": {
+    "subaddress_accounts": [
+     {
+      "account_index": 0,
+      "balance": 157663195572433688,
+      "base_address": "55LTR8KniP4LQGJSPtbYDacR7dz8RBFnsfAKMaMuwUNYX6aQbBcovzDPyrQF9KXF9tVU6Xk3K8no1BywnJX6GvZX8yJsXvt",
+      "label": "Primary account",
+      "tag": "myTag",
+      "unlocked_balance": 157443303037455077
+     },
+     {
+      "account_index": 1,
+      "balance": 0,
+      "base_address": "77Vx9cs1VPicFndSVgYUvTdLCJEZw9h81hXLMYsjBCXSJfUehLa9TDW3Ffh45SQa7xb6dUs18mpNxfUhQGqfwXPSMrvKhVp",
+      "label": "Secondary account",
+      "tag": "myTag",
+      "unlocked_balance": 0
+     }
+    ],
+    "total_balance": 157663195572433688,
+    "total_unlocked_balance": 157443303037455077
+   }
+  },
+  {
+   "name": "get_address",
+   "kind": "request",
+   "protocol": "json-rpc",
+   "type": "GetAddressRequest",
+   "status": "ok",
+   "notes": [],
+   "json": {
+    "account_index": 0,
+    "address_index": [
+     0,
+     1,
+     4
+    ]
+   },
+   "known_json": {
+    "account_index": 0,
+    "address_index": [
+     0,
+     1,
+     4
+    ]
+   }
+  },
+  {
+   "name": "get_address",
+   "kind": "response",
+   "protocol": "json-rpc",
+   "type": "GetAddressResponse",
+   "status": "stale",
+   "notes": [
+    "addresses/0: 'account_index' is a required property",
+    "addresses/1: 'account_index' is a required property",
+    "addresses/2: 'account_index' is a required property"
+   ],
+   "json": {
+    "address": "55LTR8KniP4LQGJSPtbYDacR7dz8RBFnsfAKMaMuwUNYX6aQbBcovzDPyrQF9KXF9tVU6Xk3K8no1BywnJX6GvZX8yJsXvt",
+    "addresses": [
+     {
+      "address": "55LTR8KniP4LQGJSPtbYDacR7dz8RBFnsfAKMaMuwUNYX6aQbBcovzDPyrQF9KXF9tVU6Xk3K8no1BywnJX6GvZX8yJsXvt",
+      "address_index": 0,
+      "label": "Primary account",
+      "used": true
+     },
+     {
+      "address": "7BnERTpvL5MbCLtj5n9No7J5oE5hHiB3tVCK5cjSvCsYWD2WRJLFuWeKTLiXo5QJqt2ZwUaLy2Vh1Ad51K7FNgqcHgjW85o",
+      "address_index": 1,
+      "label": "",
+      "used": true
+     },
+     {
+      "address": "77xa6Dha7kzCQuvmd8iB5VYoMkdenwCNRU9khGhExXQ8KLL3z1N1ZATBD1sFPenyHWT9cm4fVFnCAUApY53peuoZFtwZiw5",
+      "address_index": 4,
+      "label": "test2",
+      "used": true
+     }
+    ]
+   },
+   "missing": [
+    "addresses/0/account_index",
+    "addresses/1/account_index",
+    "addresses/2/account_index"
+   ]
+  },
+  {
+   "name": "get_address_book",
+   "kind": "request",
+   "protocol": "json-rpc",
+   "type": "GetAddressBookEntryRequest",
+   "status": "ok",
+   "notes": [],
+   "json": {
+    "entries": [
+     0,
+     1
+    ]
+   },
+   "known_json": {
+    "entries": [
+     0,
+     1
+    ]
+   }
+  },
+  {
+   "name": "get_address_book",
+   "kind": "response",
+   "protocol": "json-rpc",
+   "type": "GetAddressBookEntryResponse",
+   "status": "ok",
+   "notes": [],
+   "json": {
+    "entries": [
+     {
+      "address": "77Vx9cs1VPicFndSVgYUvTdLCJEZw9h81hXLMYsjBCXSJfUehLa9TDW3Ffh45SQa7xb6dUs18mpNxfUhQGqfwXPSMrvKhVp",
+      "description": "Second account",
+      "index": 0
+     },
+     {
+      "address": "78P16M3XmFRGcWFCcsgt1WcTntA1jzcq31seQX1Eg92j8VQ99NPivmdKam4J5CKNAD7KuNWcq5xUPgoWczChzdba5WLwQ4j",
+      "description": "Third account",
+      "index": 1
+     }
+    ]
+   },
+   "known_json": {
+    "entries": [
+     {
+      "address": "77Vx9cs1VPicFndSVgYUvTdLCJEZw9h81hXLMYsjBCXSJfUehLa9TDW3Ffh45SQa7xb6dUs18mpNxfUhQGqfwXPSMrvKhVp",
+      "description": "Second account",
+      "index": 0
+     },
+     {
+      "address": "78P16M3XmFRGcWFCcsgt1WcTntA1jzcq31seQX1Eg92j8VQ99NPivmdKam4J5CKNAD7KuNWcq5xUPgoWczChzdba5WLwQ4j",
+      "description": "Third account",
+      "index": 1
+     }
+    ]
+   }
+  },
+  {
+   "name": "get_address_index",
+   "kind": "request",
+   "protocol": "json-rpc",
+   "type": "GetAddressIndexRequest",
+   "status": "ok",
+   "notes": [],
+   "json": {
+    "address": "7BnERTpvL5MbCLtj5n9No7J5oE5hHiB3tVCK5cjSvCsYWD2WRJLFuWeKTLiXo5QJqt2ZwUaLy2Vh1Ad51K7FNgqcHgjW85o"
+   },
+   "known_json": {
+    "address": "7BnERTpvL5MbCLtj5n9No7J5oE5hHiB3tVCK5cjSvCsYWD2WRJLFuWeKTLiXo5QJqt2ZwUaLy2Vh1Ad51K7FNgqcHgjW85o"
+   }
+  },
+  {
+   "name": "get_address_index",
+   "kind": "response",
+   "protocol": "json-rpc",
+   "type": "GetAddressIndexResponse",
+   "status": "ok",
+   "notes": [],
+   "json": {
+    "index": {
+     "major": 0,
+     "minor": 1
+    }
+   },
+   "known_json": {
+    "index": {
+     "major": 0,
+     "minor": 1
+    }
+   }
+  },
+  {
+   "name": "get_attribute",
+   "kind": "request",
+   "protocol": "json-rpc",
+   "type": "GetAttributeRequest",
+   "status": "ok",
+   "notes": [],
+   "json": {
+    "key": "my_attribute"
+   },
+   "known_json": {
+    "key": "my_attribute"
+   }
+  },
+  {
+   "name": "get_attribute",
+   "kind": "response",
+   "protocol": "json-rpc",
+   "type": "GetAttributeResponse",
+   "status": "ok",
+   "notes": [],
+   "json": {
+    "value": "my_value"
+   },
+   "known_json": {
+    "value": "my_value"
+   }
+  },
+  {
+   "name": "get_balance",
+   "kind": "request",
+   "protocol": "json-rpc",
+   "type": "GetBalanceRequest",
+   "status": "ok",
+   "notes": [],
+   "json": {
+    "account_index": 0,
+    "address_indices": [
+     0,
+     1
+    ]
+   },
+   "known_json": {
+    "account_index": 0,
+    "address_indices": [
+     0,
+     1
+    ]
+   }
+  },
+  {
+   "name": "get_balance",
+   "kind": "response",
+   "protocol": "json-rpc",
+   "type": "GetBalanceResponse",
+   "status": "ok",
+   "notes": [],
+   "json": {
+    "balance": 157443303037455077,
+    "blocks_to_unlock": 0,
+    "multisig_import_needed": false,
+    "per_subaddress": [
+     {
+      "account_index": 0,
+      "address": "55LTR8KniP4LQGJSPtbYDacR7dz8RBFnsfAKMaMuwUNYX6aQbBcovzDPyrQF9KXF9tVU6Xk3K8no1BywnJX6GvZX8yJsXvt",
+      "address_index": 0,
+      "balance": 157360317826255077,
+      "blocks_to_unlock": 0,
+      "label": "Primary account",
+      "num_unspent_outputs": 5281,
+      "time_to_unlock": 0,
+      "unlocked_balance": 157360317826255077
+     },
+     {
+      "account_index": 0,
+      "address": "7BnERTpvL5MbCLtj5n9No7J5oE5hHiB3tVCK5cjSvCsYWD2WRJLFuWeKTLiXo5QJqt2ZwUaLy2Vh1Ad51K7FNgqcHgjW85o",
+      "address_index": 1,
+      "balance": 59985211200000,
+      "blocks_to_unlock": 0,
+      "label": "",
+      "num_unspent_outputs": 1,
+      "time_to_unlock": 0,
+      "unlocked_balance": 59985211200000
+     }
+    ],
+    "time_to_unlock": 0,
+    "unlocked_balance": 157443303037455077
+   },
+   "known_json": {
+    "balance": 157443303037455077,
+    "blocks_to_unlock": 0,
+    "multisig_import_needed": false,
+    "per_subaddress": [
+     {
+      "account_index": 0,
+      "address": "55LTR8KniP4LQGJSPtbYDacR7dz8RBFnsfAKMaMuwUNYX6aQbBcovzDPyrQF9KXF9tVU6Xk3K8no1BywnJX6GvZX8yJsXvt",
+      "address_index": 0,
+      "balance": 157360317826255077,
+      "blocks_to_unlock": 0,
+      "label": "Primary account",
+      "num_unspent_outputs": 5281,
+      "time_to_unlock": 0,
+      "unlocked_balance": 157360317826255077
+     },
+     {
+      "account_index": 0,
+      "address": "7BnERTpvL5MbCLtj5n9No7J5oE5hHiB3tVCK5cjSvCsYWD2WRJLFuWeKTLiXo5QJqt2ZwUaLy2Vh1Ad51K7FNgqcHgjW85o",
+      "address_index": 1,
+      "balance": 59985211200000,
+      "blocks_to_unlock": 0,
+      "label": "",
+      "num_unspent_outputs": 1,
+      "time_to_unlock": 0,
+      "unlocked_balance": 59985211200000
+     }
+    ],
+    "time_to_unlock": 0,
+    "unlocked_balance": 157443303037455077
+   }
+  },
+  {
+   "name": "get_bulk_payments",
+   "kind": "request",
+   "protocol": "json-rpc",
+   "type": "GetBulkPaymentsRequest",
+   "status": "docs-mistake",
+   "notes": [
+    "min_block_height: '120000' is not of type 'integer'"
+   ],
+   "json": {
+    "payment_ids": [
+     "60900e5603bf96e3"
+    ],
+    "min_block_height": "120000"
+   }
+  },
+  {
+   "name": "get_bulk_payments",
+   "kind": "response",
+   "protocol": "json-rpc",
+   "type": "GetBulkPaymentsResponse",
+   "status": "stale",
+   "notes": [
+    "payments/0: 'locked' is a required property"
+   ],
+   "json": {
+    "payments": [
+     {
+      "address": "55LTR8KniP4LQGJSPtbYDacR7dz8RBFnsfAKMaMuwUNYX6aQbBcovzDPyrQF9KXF9tVU6Xk3K8no1BywnJX6GvZX8yJsXvt",
+      "amount": 1000000000000,
+      "block_height": 127606,
+      "payment_id": "60900e5603bf96e3",
+      "subaddr_index": {
+       "major": 0,
+       "minor": 0
+      },
+      "tx_hash": "3292e83ad28fc1cc7bc26dbd38862308f4588680fbf93eae3e803cddd1bd614f",
+      "unlock_time": 0
+     }
+    ]
+   },
+   "missing": [
+    "payments/0/locked"
+   ]
+  },
+  {
+   "name": "get_default_fee_priority",
+   "kind": "request",
+   "protocol": "json-rpc",
+   "type": null,
+   "status": "ok",
+   "notes": [],
+   "json": {},
+   "known_json": {}
+  },
+  {
+   "name": "get_default_fee_priority",
+   "kind": "response",
+   "protocol": "json-rpc",
+   "type": "GetDefaultFeePriorityResponse",
+   "status": "ok",
+   "notes": [],
+   "json": {
+    "priority": 2
+   },
+   "known_json": {
+    "priority": 2
+   }
+  },
+  {
+   "name": "get_height",
+   "kind": "request",
+   "protocol": "json-rpc",
+   "type": null,
+   "status": "ok",
+   "notes": [],
+   "json": {},
+   "known_json": {}
+  },
+  {
+   "name": "get_height",
+   "kind": "response",
+   "protocol": "json-rpc",
+   "type": "GetHeightResponse",
+   "status": "ok",
+   "notes": [],
+   "json": {
+    "height": 145545
+   },
+   "known_json": {
+    "height": 145545
+   }
+  },
+  {
+   "name": "get_languages",
+   "kind": "request",
+   "protocol": "json-rpc",
+   "type": "GetLanguagesRequest",
+   "status": "ok",
+   "notes": [],
+   "json": {},
+   "known_json": {}
+  },
+  {
+   "name": "get_languages",
+   "kind": "response",
+   "protocol": "json-rpc",
+   "type": "GetLanguagesResponse",
+   "status": "ok",
+   "notes": [],
+   "json": {
+    "languages": [
+     "Deutsch",
+     "English",
+     "Espa\u00f1ol",
+     "Fran\u00e7ais",
+     "Italiano",
+     "Nederlands",
+     "Portugu\u00eas",
+     "\u0440\u0443\u0441\u0441\u043a\u0438\u0439 \u044f\u0437\u044b\u043a",
+     "\u65e5\u672c\u8a9e",
+     "\u7b80\u4f53\u4e2d\u6587 (\u4e2d\u56fd)",
+     "Esperanto",
+     "Lojban"
+    ]
+   },
+   "known_json": {
+    "languages": [
+     "Deutsch",
+     "English",
+     "Espa\u00f1ol",
+     "Fran\u00e7ais",
+     "Italiano",
+     "Nederlands",
+     "Portugu\u00eas",
+     "\u0440\u0443\u0441\u0441\u043a\u0438\u0439 \u044f\u0437\u044b\u043a",
+     "\u65e5\u672c\u8a9e",
+     "\u7b80\u4f53\u4e2d\u6587 (\u4e2d\u56fd)",
+     "Esperanto",
+     "Lojban"
+    ]
+   }
+  },
+  {
+   "name": "get_payments",
+   "kind": "request",
+   "protocol": "json-rpc",
+   "type": "GetPaymentsRequest",
+   "status": "ok",
+   "notes": [],
+   "json": {
+    "payment_id": "60900e5603bf96e3"
+   },
+   "known_json": {
+    "payment_id": "60900e5603bf96e3"
+   }
+  },
+  {
+   "name": "get_payments",
+   "kind": "response",
+   "protocol": "json-rpc",
+   "type": "GetPaymentsResponse",
+   "status": "ok",
+   "notes": [],
+   "json": {
+    "payments": [
+     {
+      "address": "55LTR8KniP4LQGJSPtbYDacR7dz8RBFnsfAKMaMuwUNYX6aQbBcovzDPyrQF9KXF9tVU6Xk3K8no1BywnJX6GvZX8yJsXvt",
+      "amount": 1000000000000,
+      "block_height": 127606,
+      "payment_id": "60900e5603bf96e3",
+      "subaddr_index": {
+       "major": 0,
+       "minor": 0
+      },
+      "tx_hash": "3292e83ad28fc1cc7bc26dbd38862308f4588680fbf93eae3e803cddd1bd614f",
+      "unlock_time": 0,
+      "locked": false
+     }
+    ]
+   },
+   "known_json": {
+    "payments": [
+     {
+      "address": "55LTR8KniP4LQGJSPtbYDacR7dz8RBFnsfAKMaMuwUNYX6aQbBcovzDPyrQF9KXF9tVU6Xk3K8no1BywnJX6GvZX8yJsXvt",
+      "amount": 1000000000000,
+      "block_height": 127606,
+      "payment_id": "60900e5603bf96e3",
+      "subaddr_index": {
+       "major": 0,
+       "minor": 0
+      },
+      "tx_hash": "3292e83ad28fc1cc7bc26dbd38862308f4588680fbf93eae3e803cddd1bd614f",
+      "unlock_time": 0,
+      "locked": false
+     }
+    ]
+   }
+  },
+  {
+   "name": "get_reserve_proof",
+   "kind": "request",
+   "protocol": "json-rpc",
+   "type": "GetReserveProofRequest",
+   "status": "ok",
+   "notes": [],
+   "json": {
+    "all": false,
+    "account_index": 0,
+    "amount": 100000000000
+   },
+   "known_json": {
+    "all": false,
+    "account_index": 0,
+    "amount": 100000000000
+   }
+  },
+  {
+   "name": "get_reserve_proof",
+   "kind": "response",
+   "protocol": "json-rpc",
+   "type": "GetReserveProofResponse",
+   "status": "ok",
+   "notes": [],
+   "json": {
+    "signature": "ReserveProofV11BZ23sBt9sZJeGccf84mzyAmNCP3KzYbE1111112VKmH111118NfCYJQjZ6c46gT2kXgcHCaSSZeL8sRdzqjqx7i1e7FQfQGu2o113UYFVdwzHQi3iENDPa76Kn1BvywbKz3bMkXdZkBEEhBSF4kjjGaiMJ1ucKb6wvMVC4A8sA4nZEdL2Mk3wBucJCYTZwKqA8i1M113kqakDkG25FrjiDqdQTCYz2wDBmfKxF3eQiV5FWzZ6HmAyxnqTWUiMWukP9A3Edy3ZXqjP1b23dhz7Mbj39bBxe3ZeDNu9HnTSqYvHNRyqCkeUMJpHyQweqjGUJ1DSfFYr33J1E7MkhMnEi1o7trqWjVix32XLetYfePG73yvHbS24837L7Q64i5n1LSpd9yMiQZ3Dyaysi5y6jPx7TpAvnSqBFtuCciKoNzaXoA3dqt9cuVFZTXzdXKqdt3cXcVJMNxY8RvKPVQHhUur94Lpo1nSpxf7BN5a5rHrbZFqoZszsZmiWikYPkLX72XUdw6NWjLrTBxSy7KuPYH86c6udPEXLo2xgN6XHMBMBJzt8FqqK7EcpNUBkuHm2AtpGkf9CABY3oSjDQoRF5n4vNLd3qUaxNsG4XJ12L9gJ7GrK273BxkfEA8fDdxPrb1gpespbgEnCTuZHqj1A"
+   },
+   "known_json": {
+    "signature": "ReserveProofV11BZ23sBt9sZJeGccf84mzyAmNCP3KzYbE1111112VKmH111118NfCYJQjZ6c46gT2kXgcHCaSSZeL8sRdzqjqx7i1e7FQfQGu2o113UYFVdwzHQi3iENDPa76Kn1BvywbKz3bMkXdZkBEEhBSF4kjjGaiMJ1ucKb6wvMVC4A8sA4nZEdL2Mk3wBucJCYTZwKqA8i1M113kqakDkG25FrjiDqdQTCYz2wDBmfKxF3eQiV5FWzZ6HmAyxnqTWUiMWukP9A3Edy3ZXqjP1b23dhz7Mbj39bBxe3ZeDNu9HnTSqYvHNRyqCkeUMJpHyQweqjGUJ1DSfFYr33J1E7MkhMnEi1o7trqWjVix32XLetYfePG73yvHbS24837L7Q64i5n1LSpd9yMiQZ3Dyaysi5y6jPx7TpAvnSqBFtuCciKoNzaXoA3dqt9cuVFZTXzdXKqdt3cXcVJMNxY8RvKPVQHhUur94Lpo1nSpxf7BN5a5rHrbZFqoZszsZmiWikYPkLX72XUdw6NWjLrTBxSy7KuPYH86c6udPEXLo2xgN6XHMBMBJzt8FqqK7EcpNUBkuHm2AtpGkf9CABY3oSjDQoRF5n4vNLd3qUaxNsG4XJ12L9gJ7GrK273BxkfEA8fDdxPrb1gpespbgEnCTuZHqj1A"
+   }
+  },
+  {
+   "name": "get_spend_proof",
+   "kind": "request",
+   "protocol": "json-rpc",
+   "type": "GetSpendProofRequest",
+   "status": "ok",
+   "notes": [],
+   "json": {
+    "txid": "19d5089f9469db3d90aca9024dfcb17ce94b948300101c8345a5e9f7257353be",
+    "message": "this is my transaction"
+   },
+   "known_json": {
+    "txid": "19d5089f9469db3d90aca9024dfcb17ce94b948300101c8345a5e9f7257353be",
+    "message": "this is my transaction"
+   }
+  },
+  {
+   "name": "get_spend_proof",
+   "kind": "response",
+   "protocol": "json-rpc",
+   "type": "GetSpendProofResponse",
+   "status": "ok",
+   "notes": [],
+   "json": {
+    "signature": "SpendProofV1aSh8Todhk54736iXgV6vJAFP7egxByuMWZeyNDaN2JY737S95X5zz5mNMQSuCNSLjjhi5HJCsndpNWSNVsuThxwv285qy1KkUrLFRkxMSCjfL6bbycYN33ScZ5UB4Fzseceo1ndpL393T1q638VmcU3a56dhNHF1RPZFiGPS61FA78nXFSqE9uoKCCoHkEz83M1dQVhxZV5CEPF2P6VioGTKgprLCH9vvj9k1ivd4SX19L2VSMc3zD1u3mkR24ioETvxBoLeBSpxMoikyZ6inhuPm8yYo9YWyFtQK4XYfAV9mJ9knz5fUPXR8vvh7KJCAg4dqeJXTVb4mbMzYtsSZXHd6ouWoyCd6qMALdW8pKhgMCHcVYMWp9X9WHZuCo9rsRjRpg15sJUw7oJg1JoGiVgj8P4JeGDjnZHnmLVa5bpJhVCbMhyM7JLXNQJzFWTGC27TQBbthxCfQaKdusYnvZnKPDJWSeceYEFzepUnsWhQtyhbb73FzqgWC4eKEFKAZJqT2LuuSoxmihJ9acnFK7Ze23KTVYgDyMKY61VXADxmSrBvwUtxCaW4nQtnbMxiPMNnDMzeixqsFMBtN72j5UqhiLRY99k6SE7Qf5f29haNSBNSXCFFHChPKNTwJrehkofBdKUhh2VGPqZDNoefWUwfudeu83t85bmjv8Q3LrQSkFgFjRT5tLo8TMawNXoZCrQpyZrEvnodMDDUUNf3NL7rxyv3gM1KrTWjYaWXFU2RAsFee2Q2MTwUW7hR25cJvSFuB1BX2bfkoCbiMk923tHZGU2g7rSKF1GDDkXAc1EvFFD4iGbh1Q5t6hPRhBV8PEncdcCWGq5uAL5D4Bjr6VXG8uNeCy5oYWNgbZ5JRSfm7QEhPv8Fy9AKMgmCxDGMF9dVEaU6tw2BAnJavQdfrxChbDBeQXzCbCfep6oei6n2LZdE5Q84wp7eoQFE5Cwuo23tHkbJCaw2njFi3WGBbA7uGZaGHJPyB2rofTWBiSUXZnP2hiE9bjJghAcDm1M4LVLfWvhZmFEnyeru3VWMETnetz1BYLUC5MJGFXuhnHwWh7F6r74FDyhdswYop4eWPbyrXMXmUQEccTGd2NaT8g2VHADZ76gMC6BjWESvcnz2D4n8XwdmM7ZQ1jFwhuXrBfrb1dwRasyXxxHMGAC2onatNiExyeQ9G1W5LwqNLAh9hvcaNTGaYKYXoceVzLkgm6e5WMkLsCwuZXvB"
+   },
+   "known_json": {
+    "signature": "SpendProofV1aSh8Todhk54736iXgV6vJAFP7egxByuMWZeyNDaN2JY737S95X5zz5mNMQSuCNSLjjhi5HJCsndpNWSNVsuThxwv285qy1KkUrLFRkxMSCjfL6bbycYN33ScZ5UB4Fzseceo1ndpL393T1q638VmcU3a56dhNHF1RPZFiGPS61FA78nXFSqE9uoKCCoHkEz83M1dQVhxZV5CEPF2P6VioGTKgprLCH9vvj9k1ivd4SX19L2VSMc3zD1u3mkR24ioETvxBoLeBSpxMoikyZ6inhuPm8yYo9YWyFtQK4XYfAV9mJ9knz5fUPXR8vvh7KJCAg4dqeJXTVb4mbMzYtsSZXHd6ouWoyCd6qMALdW8pKhgMCHcVYMWp9X9WHZuCo9rsRjRpg15sJUw7oJg1JoGiVgj8P4JeGDjnZHnmLVa5bpJhVCbMhyM7JLXNQJzFWTGC27TQBbthxCfQaKdusYnvZnKPDJWSeceYEFzepUnsWhQtyhbb73FzqgWC4eKEFKAZJqT2LuuSoxmihJ9acnFK7Ze23KTVYgDyMKY61VXADxmSrBvwUtxCaW4nQtnbMxiPMNnDMzeixqsFMBtN72j5UqhiLRY99k6SE7Qf5f29haNSBNSXCFFHChPKNTwJrehkofBdKUhh2VGPqZDNoefWUwfudeu83t85bmjv8Q3LrQSkFgFjRT5tLo8TMawNXoZCrQpyZrEvnodMDDUUNf3NL7rxyv3gM1KrTWjYaWXFU2RAsFee2Q2MTwUW7hR25cJvSFuB1BX2bfkoCbiMk923tHZGU2g7rSKF1GDDkXAc1EvFFD4iGbh1Q5t6hPRhBV8PEncdcCWGq5uAL5D4Bjr6VXG8uNeCy5oYWNgbZ5JRSfm7QEhPv8Fy9AKMgmCxDGMF9dVEaU6tw2BAnJavQdfrxChbDBeQXzCbCfep6oei6n2LZdE5Q84wp7eoQFE5Cwuo23tHkbJCaw2njFi3WGBbA7uGZaGHJPyB2rofTWBiSUXZnP2hiE9bjJghAcDm1M4LVLfWvhZmFEnyeru3VWMETnetz1BYLUC5MJGFXuhnHwWh7F6r74FDyhdswYop4eWPbyrXMXmUQEccTGd2NaT8g2VHADZ76gMC6BjWESvcnz2D4n8XwdmM7ZQ1jFwhuXrBfrb1dwRasyXxxHMGAC2onatNiExyeQ9G1W5LwqNLAh9hvcaNTGaYKYXoceVzLkgm6e5WMkLsCwuZXvB"
+   }
+  },
+  {
+   "name": "get_transfer_by_txid",
+   "kind": "request",
+   "protocol": "json-rpc",
+   "type": "GetTransferByTxidRequest",
+   "status": "ok",
+   "notes": [],
+   "json": {
+    "txid": "c36258a276018c3a4bc1f195a7fb530f50cd63a4fa765fb7c6f7f49fc051762a"
+   },
+   "known_json": {
+    "txid": "c36258a276018c3a4bc1f195a7fb530f50cd63a4fa765fb7c6f7f49fc051762a"
+   }
+  },
+  {
+   "name": "get_transfer_by_txid",
+   "kind": "response",
+   "protocol": "json-rpc",
+   "type": "GetTransferByTxidResponse",
+   "status": "ok",
+   "notes": [],
+   "json": {
+    "transfer": {
+     "address": "53zii2WaqQwZU4oUsCUcrHgaSv2CrUGCSFJLdQnkLPyH7ZLPYHjtoHhi14dqjF6jywNRknYLwbate2eGv8TuZcS7GuR7wMY",
+     "amount": 100000000000,
+     "amounts": [
+      100000000000
+     ],
+     "confirmations": 19,
+     "double_spend_seen": false,
+     "fee": 53840000,
+     "height": 1140109,
+     "locked": false,
+     "note": "",
+     "payment_id": "0000000000000000",
+     "subaddr_index": {
+      "major": 0,
+      "minor": 0
+     },
+     "subaddr_indices": [
+      {
+       "major": 0,
+       "minor": 0
+      }
+     ],
+     "suggested_confirmations_threshold": 1,
+     "timestamp": 1658360753,
+     "txid": "765f7124d01bd2eb2d4e7e59aa44a28c24339a41e4009f463955b087017b0ca3",
+     "type": "in",
+     "unlock_time": 0
+    },
+    "transfers": [
+     {
+      "address": "53zii2WaqQwZU4oUsCUcrHgaSv2CrUGCSFJLdQnkLPyH7ZLPYHjtoHhi14dqjF6jywNRknYLwbate2eGv8TuZcS7GuR7wMY",
+      "amount": 100000000000,
+      "amounts": [
+       100000000000
+      ],
+      "confirmations": 19,
+      "double_spend_seen": false,
+      "fee": 53840000,
+      "height": 1140109,
+      "locked": false,
+      "note": "",
+      "payment_id": "0000000000000000",
+      "subaddr_index": {
+       "major": 0,
+       "minor": 0
+      },
+      "subaddr_indices": [
+       {
+        "major": 0,
+        "minor": 0
+       }
+      ],
+      "suggested_confirmations_threshold": 1,
+      "timestamp": 1658360753,
+      "txid": "765f7124d01bd2eb2d4e7e59aa44a28c24339a41e4009f463955b087017b0ca3",
+      "type": "in",
+      "unlock_time": 0
+     }
+    ]
+   },
+   "known_json": {
+    "transfer": {
+     "address": "53zii2WaqQwZU4oUsCUcrHgaSv2CrUGCSFJLdQnkLPyH7ZLPYHjtoHhi14dqjF6jywNRknYLwbate2eGv8TuZcS7GuR7wMY",
+     "amount": 100000000000,
+     "amounts": [
+      100000000000
+     ],
+     "confirmations": 19,
+     "double_spend_seen": false,
+     "fee": 53840000,
+     "height": 1140109,
+     "locked": false,
+     "note": "",
+     "payment_id": "0000000000000000",
+     "subaddr_index": {
+      "major": 0,
+      "minor": 0
+     },
+     "subaddr_indices": [
+      {
+       "major": 0,
+       "minor": 0
+      }
+     ],
+     "suggested_confirmations_threshold": 1,
+     "timestamp": 1658360753,
+     "txid": "765f7124d01bd2eb2d4e7e59aa44a28c24339a41e4009f463955b087017b0ca3",
+     "type": "in",
+     "unlock_time": 0
+    },
+    "transfers": [
+     {
+      "address": "53zii2WaqQwZU4oUsCUcrHgaSv2CrUGCSFJLdQnkLPyH7ZLPYHjtoHhi14dqjF6jywNRknYLwbate2eGv8TuZcS7GuR7wMY",
+      "amount": 100000000000,
+      "amounts": [
+       100000000000
+      ],
+      "confirmations": 19,
+      "double_spend_seen": false,
+      "fee": 53840000,
+      "height": 1140109,
+      "locked": false,
+      "note": "",
+      "payment_id": "0000000000000000",
+      "subaddr_index": {
+       "major": 0,
+       "minor": 0
+      },
+      "subaddr_indices": [
+       {
+        "major": 0,
+        "minor": 0
+       }
+      ],
+      "suggested_confirmations_threshold": 1,
+      "timestamp": 1658360753,
+      "txid": "765f7124d01bd2eb2d4e7e59aa44a28c24339a41e4009f463955b087017b0ca3",
+      "type": "in",
+      "unlock_time": 0
+     }
+    ]
+   }
+  },
+  {
+   "name": "get_transfers",
+   "kind": "request",
+   "protocol": "json-rpc",
+   "type": "GetTransfersRequest",
+   "status": "ok",
+   "notes": [],
+   "json": {
+    "in": true,
+    "account_index": 1
+   },
+   "known_json": {
+    "in": true,
+    "account_index": 1
+   }
+  },
+  {
+   "name": "get_transfers",
+   "kind": "response",
+   "protocol": "json-rpc",
+   "type": "GetTransfersResponse",
+   "status": "ok",
+   "notes": [],
+   "json": {
+    "in": [
+     {
+      "address": "77Vx9cs1VPicFndSVgYUvTdLCJEZw9h81hXLMYsjBCXSJfUehLa9TDW3Ffh45SQa7xb6dUs18mpNxfUhQGqfwXPSMrvKhVp",
+      "amount": 200000000000,
+      "amounts": [
+       200000000000
+      ],
+      "confirmations": 1,
+      "double_spend_seen": false,
+      "fee": 21650200000,
+      "height": 153624,
+      "locked": false,
+      "note": "",
+      "payment_id": "0000000000000000",
+      "subaddr_index": {
+       "major": 1,
+       "minor": 0
+      },
+      "subaddr_indices": [
+       {
+        "major": 1,
+        "minor": 0
+       }
+      ],
+      "suggested_confirmations_threshold": 1,
+      "timestamp": 1535918400,
+      "txid": "c36258a276018c3a4bc1f195a7fb530f50cd63a4fa765fb7c6f7f49fc051762a",
+      "type": "in",
+      "unlock_time": 0
+     }
+    ]
+   },
+   "known_json": {
+    "in": [
+     {
+      "address": "77Vx9cs1VPicFndSVgYUvTdLCJEZw9h81hXLMYsjBCXSJfUehLa9TDW3Ffh45SQa7xb6dUs18mpNxfUhQGqfwXPSMrvKhVp",
+      "amount": 200000000000,
+      "amounts": [
+       200000000000
+      ],
+      "confirmations": 1,
+      "double_spend_seen": false,
+      "fee": 21650200000,
+      "height": 153624,
+      "locked": false,
+      "note": "",
+      "payment_id": "0000000000000000",
+      "subaddr_index": {
+       "major": 1,
+       "minor": 0
+      },
+      "subaddr_indices": [
+       {
+        "major": 1,
+        "minor": 0
+       }
+      ],
+      "suggested_confirmations_threshold": 1,
+      "timestamp": 1535918400,
+      "txid": "c36258a276018c3a4bc1f195a7fb530f50cd63a4fa765fb7c6f7f49fc051762a",
+      "type": "in",
+      "unlock_time": 0
+     }
+    ]
+   }
+  },
+  {
+   "name": "get_tx_key",
+   "kind": "request",
+   "protocol": "json-rpc",
+   "type": "GetTxKeyRequest",
+   "status": "ok",
+   "notes": [],
+   "json": {
+    "txid": "19d5089f9469db3d90aca9024dfcb17ce94b948300101c8345a5e9f7257353be"
+   },
+   "known_json": {
+    "txid": "19d5089f9469db3d90aca9024dfcb17ce94b948300101c8345a5e9f7257353be"
+   }
+  },
+  {
+   "name": "get_tx_key",
+   "kind": "response",
+   "protocol": "json-rpc",
+   "type": "GetTxKeyResponse",
+   "status": "ok",
+   "notes": [],
+   "json": {
+    "tx_key": "feba662cf8fb6d0d0da18fc9b70ab28e01cc76311278fdd7fe7ab16360762b06"
+   },
+   "known_json": {
+    "tx_key": "feba662cf8fb6d0d0da18fc9b70ab28e01cc76311278fdd7fe7ab16360762b06"
+   }
+  },
+  {
+   "name": "get_tx_notes",
+   "kind": "request",
+   "protocol": "json-rpc",
+   "type": "GetTxNotesRequest",
+   "status": "ok",
+   "notes": [],
+   "json": {
+    "txids": [
+     "3292e83ad28fc1cc7bc26dbd38862308f4588680fbf93eae3e803cddd1bd614f"
+    ]
+   },
+   "known_json": {
+    "txids": [
+     "3292e83ad28fc1cc7bc26dbd38862308f4588680fbf93eae3e803cddd1bd614f"
+    ]
+   }
+  },
+  {
+   "name": "get_tx_notes",
+   "kind": "response",
+   "protocol": "json-rpc",
+   "type": "GetTxNotesResponse",
+   "status": "ok",
+   "notes": [],
+   "json": {
+    "notes": [
+     "This is an example"
+    ]
+   },
+   "known_json": {
+    "notes": [
+     "This is an example"
+    ]
+   }
+  },
+  {
+   "name": "get_tx_proof",
+   "kind": "request",
+   "protocol": "json-rpc",
+   "type": "GetTxProofRequest",
+   "status": "ok",
+   "notes": [],
+   "json": {
+    "txid": "19d5089f9469db3d90aca9024dfcb17ce94b948300101c8345a5e9f7257353be",
+    "address": "7BnERTpvL5MbCLtj5n9No7J5oE5hHiB3tVCK5cjSvCsYWD2WRJLFuWeKTLiXo5QJqt2ZwUaLy2Vh1Ad51K7FNgqcHgjW85o",
+    "message": "this is my transaction"
+   },
+   "known_json": {
+    "txid": "19d5089f9469db3d90aca9024dfcb17ce94b948300101c8345a5e9f7257353be",
+    "address": "7BnERTpvL5MbCLtj5n9No7J5oE5hHiB3tVCK5cjSvCsYWD2WRJLFuWeKTLiXo5QJqt2ZwUaLy2Vh1Ad51K7FNgqcHgjW85o",
+    "message": "this is my transaction"
+   }
+  },
+  {
+   "name": "get_tx_proof",
+   "kind": "response",
+   "protocol": "json-rpc",
+   "type": "GetTxProofResponse",
+   "status": "ok",
+   "notes": [],
+   "json": {
+    "signature": "InProofV13vqBCT6dpSAXkypZmSEMPGVnNRFDX2vscUYeVS4WnSVnV5BwLs31T9q6Etfj9Wts6tAxSAS4gkMeSYzzLS7Gt4vvCSQRh9niGJMUDJsB5hTzb2XJiCkUzWkkcjLFBBRVD5QZ"
+   },
+   "known_json": {
+    "signature": "InProofV13vqBCT6dpSAXkypZmSEMPGVnNRFDX2vscUYeVS4WnSVnV5BwLs31T9q6Etfj9Wts6tAxSAS4gkMeSYzzLS7Gt4vvCSQRh9niGJMUDJsB5hTzb2XJiCkUzWkkcjLFBBRVD5QZ"
+   }
+  },
+  {
+   "name": "get_version",
+   "kind": "request",
+   "protocol": "json-rpc",
+   "type": null,
+   "status": "ok",
+   "notes": [],
+   "json": {},
+   "known_json": {}
+  },
+  {
+   "name": "get_version",
+   "kind": "response",
+   "protocol": "json-rpc",
+   "type": "GetVersionResponse",
+   "status": "stale",
+   "notes": [
+    "(root): 'release' is a required property"
+   ],
+   "json": {
+    "version": 65539
+   },
+   "missing": [
+    "release"
+   ]
+  },
+  {
+   "name": "get_wallet_info",
+   "kind": "request",
+   "protocol": "json-rpc",
+   "type": null,
+   "status": "ok",
+   "notes": [],
+   "json": {},
+   "known_json": {}
+  },
+  {
+   "name": "get_wallet_info",
+   "kind": "response",
+   "protocol": "json-rpc",
+   "type": "GetWalletInfoResponse",
+   "status": "ok",
+   "notes": [],
+   "json": {
+    "address": "45Ps9mEFLZQ5hqrFVMsH7gXvydddfW5EnA185A2oQL69SzSVKTGxXAGebDaWqs2uNSUYmGoQMTLeT9QPxtwfXEh45nSwxz1",
+    "daemon_address": "http://localhost:18081",
+    "daemon_block_height": 3772996,
+    "daemon_proxy": "",
+    "daemon_rpc_version": 196624,
+    "daemon_ssl": true,
+    "description": "",
+    "filename": "/wallets/mainnet/testwallet",
+    "network_type": "Mainnet",
+    "seed_type": "Legacy",
+    "wallet_block_height": 3772996,
+    "wallet_type": "Normal"
+   },
+   "known_json": {
+    "address": "45Ps9mEFLZQ5hqrFVMsH7gXvydddfW5EnA185A2oQL69SzSVKTGxXAGebDaWqs2uNSUYmGoQMTLeT9QPxtwfXEh45nSwxz1",
+    "daemon_address": "http://localhost:18081",
+    "daemon_block_height": 3772996,
+    "daemon_proxy": "",
+    "daemon_rpc_version": 196624,
+    "daemon_ssl": true,
+    "description": "",
+    "filename": "/wallets/mainnet/testwallet",
+    "network_type": "Mainnet",
+    "seed_type": "Legacy",
+    "wallet_block_height": 3772996,
+    "wallet_type": "Normal"
+   }
+  },
+  {
+   "name": "import_key_images",
+   "kind": "request",
+   "protocol": "json-rpc",
+   "type": "ImportKeyImagesRequest",
+   "status": "ok",
+   "notes": [],
+   "json": {
+    "signed_key_images": [
+     {
+      "key_image": "cd35239b72a35e26a57ed17400c0b66944a55de9d5bda0f21190fed17f8ea876",
+      "signature": "c9d736869355da2538ab4af188279f84138c958edbae3c5caf388a63cd8e780b8c5a1aed850bd79657df659422c463608ea4e0c730ba9b662c906ae933816d00"
+     },
+     {
+      "key_image": "65158a8ee5a3b32009b85a307d85b375175870e560e08de313531c7dbbe6fc19",
+      "signature": "c96e40d09dfc45cfc5ed0b76bfd7ca793469588bb0cf2b4d7b45ef23d40fd4036057b397828062e31700dc0c2da364f50cd142295a8405b9fe97418b4b745d0c"
+     }
+    ]
+   },
+   "known_json": {
+    "signed_key_images": [
+     {
+      "key_image": "cd35239b72a35e26a57ed17400c0b66944a55de9d5bda0f21190fed17f8ea876",
+      "signature": "c9d736869355da2538ab4af188279f84138c958edbae3c5caf388a63cd8e780b8c5a1aed850bd79657df659422c463608ea4e0c730ba9b662c906ae933816d00"
+     },
+     {
+      "key_image": "65158a8ee5a3b32009b85a307d85b375175870e560e08de313531c7dbbe6fc19",
+      "signature": "c96e40d09dfc45cfc5ed0b76bfd7ca793469588bb0cf2b4d7b45ef23d40fd4036057b397828062e31700dc0c2da364f50cd142295a8405b9fe97418b4b745d0c"
+     }
+    ]
+   }
+  },
+  {
+   "name": "import_key_images",
+   "kind": "response",
+   "protocol": "json-rpc",
+   "type": "ImportKeyImagesResponse",
+   "status": "ok",
+   "notes": [],
+   "json": {
+    "height": 76428,
+    "spent": 62708953408711,
+    "unspent": 0
+   },
+   "known_json": {
+    "height": 76428,
+    "spent": 62708953408711,
+    "unspent": 0
+   }
+  },
+  {
+   "name": "import_multisig_info",
+   "kind": "request",
+   "protocol": "json-rpc",
+   "type": "ImportMultisigRequest",
+   "status": "ok",
+   "notes": [],
+   "json": {
+    "info": [
+     "...multisig_info..."
+    ]
+   },
+   "known_json": {
+    "info": [
+     "...multisig_info..."
+    ]
+   }
+  },
+  {
+   "name": "import_multisig_info",
+   "kind": "response",
+   "protocol": "json-rpc",
+   "type": "ImportMultisigResponse",
+   "status": "ok",
+   "notes": [],
+   "json": {
+    "n_outputs": 35
+   },
+   "known_json": {
+    "n_outputs": 35
+   }
+  },
+  {
+   "name": "import_outputs",
+   "kind": "request",
+   "protocol": "json-rpc",
+   "type": "ImportOutputsRequest",
+   "status": "ok",
+   "notes": [],
+   "json": {
+    "outputs_data_hex": "...outputs..."
+   },
+   "known_json": {
+    "outputs_data_hex": "...outputs..."
+   }
+  },
+  {
+   "name": "import_outputs",
+   "kind": "response",
+   "protocol": "json-rpc",
+   "type": "ImportOutputsResponse",
+   "status": "ok",
+   "notes": [],
+   "json": {
+    "num_imported": 6400
+   },
+   "known_json": {
+    "num_imported": 6400
+   }
+  },
+  {
+   "name": "incoming_transfers",
+   "kind": "request",
+   "protocol": "json-rpc",
+   "type": "IncomingTransfersRequest",
+   "status": "ok",
+   "notes": [],
+   "json": {
+    "transfer_type": "unavailable",
+    "account_index": 0,
+    "subaddr_indices": [
+     3
+    ]
+   },
+   "known_json": {
+    "transfer_type": "unavailable",
+    "account_index": 0,
+    "subaddr_indices": [
+     3
+    ]
+   }
+  },
+  {
+   "name": "incoming_transfers",
+   "kind": "response",
+   "protocol": "json-rpc",
+   "type": "IncomingTransfersResponse",
+   "status": "stale",
+   "notes": [
+    "transfers/1: 'block_height' is a required property"
+   ],
+   "json": {
+    "transfers": [
+     {
+      "amount": 60000000000000,
+      "block_height": 2758159,
+      "global_index": 122405,
+      "key_image": "768f5144777eb23477ab7acf83562581d690abaf98ca897c03a9d2b900eb479b",
+      "spent": true,
+      "subaddr_index": {
+       "major": 0,
+       "minor": 3
+      },
+      "tx_hash": "f53401f21c6a43e44d5dd7a90eba5cf580012ad0e15d050059136f8a0da34f6b",
+      "pubkey": "253c35abc9e88268df40e622376572adedd391f667ef8db9f3d20789f733b35a",
+      "frozen": false,
+      "unlocked": false
+     },
+     {
+      "amount": 27126892247503,
+      "blockheight": 2758161,
+      "global_index": 594994,
+      "key_image": "7e561394806afd1be61980cc3431f6ef3569fa9151cd8d234f8ec13aa145695e",
+      "spent": false,
+      "subaddr_index": {
+       "major": 0,
+       "minor": 3
+      },
+      "tx_hash": "106d4391a031e5b735ded555862fec63233e34e5fa4fc7edcfdbe461c275ae5b",
+      "pubkey": "c1544f7fe535a643bb2c4bebdcbcfd2b7c16681de298c2f4712d4f67273e9472",
+      "frozen": false,
+      "unlocked": true
+     },
+     {
+      "amount": 27169374733655,
+      "block_height": 2758670,
+      "global_index": 594997,
+      "key_image": "e76c0a3bfeaae35e4173712f782eb34011198e26b990225b71aa787c8ba8a157",
+      "spent": false,
+      "subaddr_index": {
+       "major": 0,
+       "minor": 3
+      },
+      "tx_hash": "0bd959b59117ee1254bd8e5aa8e77ec04ef744144a1ffb2d5c1eb9380a719621",
+      "pubkey": "99cb6ec639ee514c00758934aab69c965c4ff0dbc136d9199011a683be1e6df1",
+      "frozen": false,
+      "unlocked": true
+     }
+    ]
+   },
+   "missing": [
+    "transfers/1/block_height"
+   ]
+  },
+  {
+   "name": "is_multisig",
+   "kind": "request",
+   "protocol": "json-rpc",
+   "type": null,
+   "status": "ok",
+   "notes": [],
+   "json": {},
+   "known_json": {}
+  },
+  {
+   "name": "is_multisig",
+   "kind": "response",
+   "protocol": "json-rpc",
+   "type": "IsMultisigResponse",
+   "status": "ok",
+   "notes": [],
+   "json": {
+    "multisig": false,
+    "kex_is_done": false,
+    "ready": false,
+    "threshold": 0,
+    "total": 0
+   },
+   "known_json": {
+    "multisig": false,
+    "kex_is_done": false,
+    "ready": false,
+    "threshold": 0,
+    "total": 0
+   }
+  },
+  {
+   "name": "label_account",
+   "kind": "request",
+   "protocol": "json-rpc",
+   "type": "LabelAccountRequest",
+   "status": "ok",
+   "notes": [],
+   "json": {
+    "account_index": 0,
+    "label": "Primary account"
+   },
+   "known_json": {
+    "account_index": 0,
+    "label": "Primary account"
+   }
+  },
+  {
+   "name": "label_account",
+   "kind": "response",
+   "protocol": "json-rpc",
+   "type": "LabelAccountResponse",
+   "status": "ok",
+   "notes": [],
+   "json": {
+    "account_tags": [
+     {
+      "accounts": [
+       0,
+       1
+      ],
+      "label": "",
+      "tag": "myTag"
+     }
+    ]
+   },
+   "known_json": {}
+  },
+  {
+   "name": "label_address",
+   "kind": "request",
+   "protocol": "json-rpc",
+   "type": "LabelAddressRequest",
+   "status": "docs-mistake",
+   "notes": [
+    "(root): Additional properties are not allowed ('address', 'allow_openalias', 'any_net_type' were unexpected)"
+   ],
+   "json": {
+    "address": "42go2d3XqA9Mx4HjZoqr93BHspcMxwAUBivs3yJKV1FyTycEcbgjNyEaGNEcgnUE9DDDAXNanzB16YgMt88Sa8cFSm2QcHK",
+    "any_net_type": true,
+    "allow_openalias": true
+   }
+  },
+  {
+   "name": "label_address",
+   "kind": "response",
+   "protocol": "json-rpc",
+   "type": "LabelAddressResponse",
+   "status": "ok",
+   "notes": [],
+   "json": {},
+   "known_json": {}
+  },
+  {
+   "name": "make_integrated_address",
+   "kind": "request",
+   "protocol": "json-rpc",
+   "type": "MakeIntegratedAddressRequest",
+   "status": "ok",
+   "notes": [],
+   "json": {
+    "standard_address": "55LTR8KniP4LQGJSPtbYDacR7dz8RBFnsfAKMaMuwUNYX6aQbBcovzDPyrQF9KXF9tVU6Xk3K8no1BywnJX6GvZX8yJsXvt"
+   },
+   "known_json": {
+    "standard_address": "55LTR8KniP4LQGJSPtbYDacR7dz8RBFnsfAKMaMuwUNYX6aQbBcovzDPyrQF9KXF9tVU6Xk3K8no1BywnJX6GvZX8yJsXvt"
+   }
+  },
+  {
+   "name": "make_integrated_address",
+   "kind": "response",
+   "protocol": "json-rpc",
+   "type": "MakeIntegratedAddressResponse",
+   "status": "ok",
+   "notes": [],
+   "json": {
+    "integrated_address": "5F38Rw9HKeaLQGJSPtbYDacR7dz8RBFnsfAKMaMuwUNYX6aQbBcovzDPyrQF9KXF9tVU6Xk3K8no1BywnJX6GvZXCkbHUXdPHyiUeRyokn",
+    "payment_id": "420fa29b2d9a49f5"
+   },
+   "known_json": {
+    "integrated_address": "5F38Rw9HKeaLQGJSPtbYDacR7dz8RBFnsfAKMaMuwUNYX6aQbBcovzDPyrQF9KXF9tVU6Xk3K8no1BywnJX6GvZXCkbHUXdPHyiUeRyokn",
+    "payment_id": "420fa29b2d9a49f5"
+   }
+  },
+  {
+   "name": "make_multisig",
+   "kind": "request",
+   "protocol": "json-rpc",
+   "type": "MakeMultisigRequest",
+   "status": "ok",
+   "notes": [],
+   "json": {
+    "multisig_info": [
+     "MultisigV1MTVm4DZAdJw1PyVutpSy8Q4WisZBCFRAaZY7hhQnMwr5AZ4swzThyaSiVVQM5FHj1JQi3zPKhQ4k81BZkPSEaFjwRJtbfqfJcVvCqRnmBVcWVxhnihX5s8fZWBCjKrzT3CS95spG4dzNzJSUcjheAkLzCpVmSzGtgwMhAS3Vuz9Pas24",
+     "MultisigV1TEx58ycKCd6ADCfxF8hALpcdSRAkhZTi1bu4Rs6FdRC98EdB1LY7TAkMxasM55khFgcxrSXivaSr5FCMyJGHmojm1eE4HpGWPeZKv6cgCTThRzC4u6bkkSoFQdbzWN92yn1XEjuP2XQrGHk81mG2LMeyB51MWKJAVF99Pg9mX2BpmYFj"
+    ],
+    "threshold": 2
+   },
+   "known_json": {
+    "multisig_info": [
+     "MultisigV1MTVm4DZAdJw1PyVutpSy8Q4WisZBCFRAaZY7hhQnMwr5AZ4swzThyaSiVVQM5FHj1JQi3zPKhQ4k81BZkPSEaFjwRJtbfqfJcVvCqRnmBVcWVxhnihX5s8fZWBCjKrzT3CS95spG4dzNzJSUcjheAkLzCpVmSzGtgwMhAS3Vuz9Pas24",
+     "MultisigV1TEx58ycKCd6ADCfxF8hALpcdSRAkhZTi1bu4Rs6FdRC98EdB1LY7TAkMxasM55khFgcxrSXivaSr5FCMyJGHmojm1eE4HpGWPeZKv6cgCTThRzC4u6bkkSoFQdbzWN92yn1XEjuP2XQrGHk81mG2LMeyB51MWKJAVF99Pg9mX2BpmYFj"
+    ],
+    "threshold": 2
+   }
+  },
+  {
+   "name": "make_multisig",
+   "kind": "response",
+   "protocol": "json-rpc",
+   "type": "MakeMultisigResponse",
+   "status": "ok",
+   "notes": [],
+   "json": {
+    "address": "55SoZTKH7D39drxfgT62k8T4adVFjmDLUXnbzEKYf1MoYwnmTNKKaqGfxm4sqeKCHXQ5up7PVxrkoeRzXu83d8xYURouMod",
+    "multisig_info": ""
+   },
+   "known_json": {
+    "address": "55SoZTKH7D39drxfgT62k8T4adVFjmDLUXnbzEKYf1MoYwnmTNKKaqGfxm4sqeKCHXQ5up7PVxrkoeRzXu83d8xYURouMod",
+    "multisig_info": ""
+   }
+  },
+  {
+   "name": "make_uri",
+   "kind": "request",
+   "protocol": "json-rpc",
+   "type": "MakeUriRequest",
+   "status": "ok",
+   "notes": [],
+   "json": {
+    "address": "55LTR8KniP4LQGJSPtbYDacR7dz8RBFnsfAKMaMuwUNYX6aQbBcovzDPyrQF9KXF9tVU6Xk3K8no1BywnJX6GvZX8yJsXvt",
+    "amount": 10,
+    "payment_id": "420fa29b2d9a49f5",
+    "tx_description": "Testing out the make_uri function.",
+    "recipient_name": "el00ruobuob Stagenet wallet"
+   },
+   "known_json": {
+    "address": "55LTR8KniP4LQGJSPtbYDacR7dz8RBFnsfAKMaMuwUNYX6aQbBcovzDPyrQF9KXF9tVU6Xk3K8no1BywnJX6GvZX8yJsXvt",
+    "amount": 10,
+    "payment_id": "420fa29b2d9a49f5",
+    "tx_description": "Testing out the make_uri function.",
+    "recipient_name": "el00ruobuob Stagenet wallet"
+   }
+  },
+  {
+   "name": "make_uri",
+   "kind": "response",
+   "protocol": "json-rpc",
+   "type": "MakeUriResponse",
+   "status": "ok",
+   "notes": [],
+   "json": {
+    "uri": "monero:55LTR8KniP4LQGJSPtbYDacR7dz8RBFnsfAKMaMuwUNYX6aQbBcovzDPyrQF9KXF9tVU6Xk3K8no1BywnJX6GvZX8yJsXvt?tx_payment_id=420fa29b2d9a49f5&tx_amount=0.000000000010&recipient_name=el00ruobuob%20Stagenet%20wallet&tx_description=Testing%20out%20the%20make_uri%20function."
+   },
+   "known_json": {
+    "uri": "monero:55LTR8KniP4LQGJSPtbYDacR7dz8RBFnsfAKMaMuwUNYX6aQbBcovzDPyrQF9KXF9tVU6Xk3K8no1BywnJX6GvZX8yJsXvt?tx_payment_id=420fa29b2d9a49f5&tx_amount=0.000000000010&recipient_name=el00ruobuob%20Stagenet%20wallet&tx_description=Testing%20out%20the%20make_uri%20function."
+   }
+  },
+  {
+   "name": "open_wallet",
+   "kind": "request",
+   "protocol": "json-rpc",
+   "type": "OpenWalletRequest",
+   "status": "ok",
+   "notes": [],
+   "json": {
+    "filename": "mytestwallet",
+    "password": "mytestpassword"
+   },
+   "known_json": {
+    "filename": "mytestwallet",
+    "password": "mytestpassword"
+   }
+  },
+  {
+   "name": "open_wallet",
+   "kind": "response",
+   "protocol": "json-rpc",
+   "type": "OpenWalletResponse",
+   "status": "ok",
+   "notes": [],
+   "json": {},
+   "known_json": {}
+  },
+  {
+   "name": "parse_uri",
+   "kind": "request",
+   "protocol": "json-rpc",
+   "type": "ParseUriRequest",
+   "status": "ok",
+   "notes": [],
+   "json": {
+    "uri": "monero:55LTR8KniP4LQGJSPtbYDacR7dz8RBFnsfAKMaMuwUNYX6aQbBcovzDPyrQF9KXF9tVU6Xk3K8no1BywnJX6GvZX8yJsXvt?tx_payment_id=420fa29b2d9a49f5&tx_amount=0.000000000010&recipient_name=el00ruobuob%20Stagenet%20wallet&tx_description=Testing%20out%20the%20make_uri%20function."
+   },
+   "known_json": {
+    "uri": "monero:55LTR8KniP4LQGJSPtbYDacR7dz8RBFnsfAKMaMuwUNYX6aQbBcovzDPyrQF9KXF9tVU6Xk3K8no1BywnJX6GvZX8yJsXvt?tx_payment_id=420fa29b2d9a49f5&tx_amount=0.000000000010&recipient_name=el00ruobuob%20Stagenet%20wallet&tx_description=Testing%20out%20the%20make_uri%20function."
+   }
+  },
+  {
+   "name": "parse_uri",
+   "kind": "response",
+   "protocol": "json-rpc",
+   "type": "ParseUriResponse",
+   "status": "ok",
+   "notes": [],
+   "json": {
+    "uri": {
+     "address": "55LTR8KniP4LQGJSPtbYDacR7dz8RBFnsfAKMaMuwUNYX6aQbBcovzDPyrQF9KXF9tVU6Xk3K8no1BywnJX6GvZX8yJsXvt",
+     "amount": 10,
+     "payment_id": "420fa29b2d9a49f5",
+     "recipient_name": "el00ruobuob Stagenet wallet",
+     "tx_description": "Testing out the make_uri function."
+    }
+   },
+   "known_json": {
+    "uri": {
+     "address": "55LTR8KniP4LQGJSPtbYDacR7dz8RBFnsfAKMaMuwUNYX6aQbBcovzDPyrQF9KXF9tVU6Xk3K8no1BywnJX6GvZX8yJsXvt",
+     "amount": 10,
+     "payment_id": "420fa29b2d9a49f5",
+     "recipient_name": "el00ruobuob Stagenet wallet",
+     "tx_description": "Testing out the make_uri function."
+    }
+   }
+  },
+  {
+   "name": "prepare_multisig",
+   "kind": "request",
+   "protocol": "json-rpc",
+   "type": "PrepareMultisigRequest",
+   "status": "ok",
+   "notes": [],
+   "json": {},
+   "known_json": {}
+  },
+  {
+   "name": "prepare_multisig",
+   "kind": "response",
+   "protocol": "json-rpc",
+   "type": "PrepareMultisigResponse",
+   "status": "ok",
+   "notes": [],
+   "json": {
+    "multisig_info": "MultisigV1BFdxQ653cQHB8wsj9WJQd2VdnjxK89g5M94dKPBNw22reJnyJYKrz6rJeXdjFwJ3Mz6n4qNQLd6eqUZKLiNzJFi3UPNVcTjtkG2aeSys9sYkvYYKMZ7chCxvoEXVgm74KKUcUu4V8xveCBFadFuZs8shnxBWHbcwFr5AziLr2mE7KHJT"
+   },
+   "known_json": {
+    "multisig_info": "MultisigV1BFdxQ653cQHB8wsj9WJQd2VdnjxK89g5M94dKPBNw22reJnyJYKrz6rJeXdjFwJ3Mz6n4qNQLd6eqUZKLiNzJFi3UPNVcTjtkG2aeSys9sYkvYYKMZ7chCxvoEXVgm74KKUcUu4V8xveCBFadFuZs8shnxBWHbcwFr5AziLr2mE7KHJT"
+   }
+  },
+  {
+   "name": "query_key",
+   "kind": "request",
+   "protocol": "json-rpc",
+   "type": "QueryKeyRequest",
+   "status": "ok",
+   "notes": [],
+   "json": {
+    "key_type": "mnemonic"
+   },
+   "known_json": {
+    "key_type": "mnemonic"
+   }
+  },
+  {
+   "name": "query_key",
+   "kind": "response",
+   "protocol": "json-rpc",
+   "type": "QueryKeyResponse",
+   "status": "stale",
+   "notes": [
+    "(root): 'polyseed_birthday' is a required property",
+    "(root): 'polyseed_is_encrypted' is a required property"
+   ],
+   "json": {
+    "key": "0a1a38f6d246e894600a3e27238a064bf5e8d91801df47a17107596b1378e501"
+   },
+   "missing": [
+    "polyseed_birthday",
+    "polyseed_is_encrypted"
+   ]
+  },
+  {
+   "name": "refresh",
+   "kind": "request",
+   "protocol": "json-rpc",
+   "type": "RefreshRequest",
+   "status": "ok",
+   "notes": [],
+   "json": {
+    "start_height": 100000
+   },
+   "known_json": {
+    "start_height": 100000
+   }
+  },
+  {
+   "name": "refresh",
+   "kind": "response",
+   "protocol": "json-rpc",
+   "type": "RefreshResponse",
+   "status": "ok",
+   "notes": [],
+   "json": {
+    "blocks_fetched": 24,
+    "received_money": true
+   },
+   "known_json": {
+    "blocks_fetched": 24,
+    "received_money": true
+   }
+  },
+  {
+   "name": "relay_tx",
+   "kind": "request",
+   "protocol": "json-rpc",
+   "type": "RelayTxRequest",
+   "status": "ok",
+   "notes": [],
+   "json": {
+    "hex": "...tx_metadata..."
+   },
+   "known_json": {
+    "hex": "...tx_metadata..."
+   }
+  },
+  {
+   "name": "relay_tx",
+   "kind": "response",
+   "protocol": "json-rpc",
+   "type": "RelayTxResponse",
+   "status": "ok",
+   "notes": [],
+   "json": {
+    "tx_hash": "1c42dcc5672bb09bccf33fb1e9ab4a498af59a6dbd33b3d0cfb289b9e0e25fa5"
+   },
+   "known_json": {
+    "tx_hash": "1c42dcc5672bb09bccf33fb1e9ab4a498af59a6dbd33b3d0cfb289b9e0e25fa5"
+   }
+  },
+  {
+   "name": "rescan_blockchain",
+   "kind": "request",
+   "protocol": "json-rpc",
+   "type": "RescanBlockchainRequest",
+   "status": "ok",
+   "notes": [],
+   "json": {},
+   "known_json": {}
+  },
+  {
+   "name": "rescan_blockchain",
+   "kind": "response",
+   "protocol": "json-rpc",
+   "type": "RescanBlockchainResponse",
+   "status": "ok",
+   "notes": [],
+   "json": {},
+   "known_json": {}
+  },
+  {
+   "name": "rescan_spent",
+   "kind": "request",
+   "protocol": "json-rpc",
+   "type": null,
+   "status": "ok",
+   "notes": [],
+   "json": {},
+   "known_json": {}
+  },
+  {
+   "name": "rescan_spent",
+   "kind": "response",
+   "protocol": "json-rpc",
+   "type": "RescanSpentResponse",
+   "status": "ok",
+   "notes": [],
+   "json": {},
+   "known_json": {}
+  },
+  {
+   "name": "restore_deterministic_wallet",
+   "kind": "request",
+   "protocol": "json-rpc",
+   "type": "RestoreDeterministicWalletRequest",
+   "status": "ok",
+   "notes": [],
+   "json": {
+    "filename": "My Wallet",
+    "password": "mypassword123",
+    "seed": "awkward vogue odometer amply bagpipe kisses poker aspire slug eluded hydrogen selfish later toolbox enigma wolf tweezers eluded gnome soprano ladder broken jukebox lordship aspire",
+    "restore_height": 0,
+    "language": "English",
+    "seed_offset": "",
+    "autosave_current": true
+   },
+   "known_json": {
+    "filename": "My Wallet",
+    "password": "mypassword123",
+    "seed": "awkward vogue odometer amply bagpipe kisses poker aspire slug eluded hydrogen selfish later toolbox enigma wolf tweezers eluded gnome soprano ladder broken jukebox lordship aspire",
+    "restore_height": 0,
+    "language": "English",
+    "seed_offset": "",
+    "autosave_current": true
+   }
+  },
+  {
+   "name": "restore_deterministic_wallet",
+   "kind": "response",
+   "protocol": "json-rpc",
+   "type": "RestoreDeterministicWalletResponse",
+   "status": "ok",
+   "notes": [],
+   "json": {
+    "address": "9wB1Jc5fy5hjTkFBnv4UNY3WfhUswhx8M7uWjZrwRBzH2uatJcn8AqiKEHWuSNrnapApCzzTxP4iSiV3y3pqYcRbDHNboJK",
+    "info": "Wallet has been restored successfully.",
+    "seed": "awkward vogue odometer amply bagpipe kisses poker aspire slug eluded hydrogen selfish later toolbox enigma wolf tweezers eluded gnome soprano ladder broken jukebox lordship aspire",
+    "was_deprecated": false
+   },
+   "known_json": {
+    "address": "9wB1Jc5fy5hjTkFBnv4UNY3WfhUswhx8M7uWjZrwRBzH2uatJcn8AqiKEHWuSNrnapApCzzTxP4iSiV3y3pqYcRbDHNboJK",
+    "info": "Wallet has been restored successfully.",
+    "seed": "awkward vogue odometer amply bagpipe kisses poker aspire slug eluded hydrogen selfish later toolbox enigma wolf tweezers eluded gnome soprano ladder broken jukebox lordship aspire",
+    "was_deprecated": false
+   }
+  },
+  {
+   "name": "scan_tx",
+   "kind": "request",
+   "protocol": "json-rpc",
+   "type": "GetTxNotesRequest",
+   "status": "ok",
+   "notes": [],
+   "json": {
+    "txids": [
+     "7313fb7f9d26454866abacc98d17662bea468421178ec577661610003bf0193e"
+    ]
+   },
+   "known_json": {
+    "txids": [
+     "7313fb7f9d26454866abacc98d17662bea468421178ec577661610003bf0193e"
+    ]
+   }
+  },
+  {
+   "name": "scan_tx",
+   "kind": "response",
+   "protocol": "json-rpc",
+   "type": "ScanTxResponse",
+   "status": "ok",
+   "notes": [],
+   "json": {},
+   "known_json": {}
+  },
+  {
+   "name": "set_account_tag_description",
+   "kind": "request",
+   "protocol": "json-rpc",
+   "type": "SetAccountTagDescriptionRequest",
+   "status": "ok",
+   "notes": [],
+   "json": {
+    "tag": "myTag",
+    "description": "Test tag"
+   },
+   "known_json": {
+    "tag": "myTag",
+    "description": "Test tag"
+   }
+  },
+  {
+   "name": "set_account_tag_description",
+   "kind": "response",
+   "protocol": "json-rpc",
+   "type": "SetAccountTagDescriptionResponse",
+   "status": "ok",
+   "notes": [],
+   "json": {},
+   "known_json": {}
+  },
+  {
+   "name": "set_attribute",
+   "kind": "request",
+   "protocol": "json-rpc",
+   "type": "SetAttributeRequest",
+   "status": "ok",
+   "notes": [],
+   "json": {
+    "key": "my_attribute",
+    "value": "my_value"
+   },
+   "known_json": {
+    "key": "my_attribute",
+    "value": "my_value"
+   }
+  },
+  {
+   "name": "set_attribute",
+   "kind": "response",
+   "protocol": "json-rpc",
+   "type": "SetAttributeResponse",
+   "status": "ok",
+   "notes": [],
+   "json": {},
+   "known_json": {}
+  },
+  {
+   "name": "set_daemon",
+   "kind": "request",
+   "protocol": "json-rpc",
+   "type": "SetDaemonRequest",
+   "status": "ok",
+   "notes": [],
+   "json": {
+    "address": "http://localhost:18081",
+    "trusted": true,
+    "ssl_support": "enabled",
+    "ssl_private_key_path": "path/to/ssl/key",
+    "ssl_certificate_path": "path/to/ssl/certificate",
+    "ssl_ca_file": "path/to/ssl/ca/file",
+    "ssl_allowed_fingerprints": [
+     "85:A7:68:29:BE:73:49:80:84:91:7A:BB:1F:F1:AD:7E:43:FE:CC:B8"
+    ],
+    "ssl_allow_any_cert": true
+   },
+   "known_json": {
+    "address": "http://localhost:18081",
+    "trusted": true,
+    "ssl_support": "enabled",
+    "ssl_private_key_path": "path/to/ssl/key",
+    "ssl_certificate_path": "path/to/ssl/certificate",
+    "ssl_ca_file": "path/to/ssl/ca/file",
+    "ssl_allowed_fingerprints": [
+     "85:A7:68:29:BE:73:49:80:84:91:7A:BB:1F:F1:AD:7E:43:FE:CC:B8"
+    ],
+    "ssl_allow_any_cert": true
+   }
+  },
+  {
+   "name": "set_daemon",
+   "kind": "response",
+   "protocol": "json-rpc",
+   "type": "SetDaemonResponse",
+   "status": "ok",
+   "notes": [],
+   "json": {},
+   "known_json": {}
+  },
+  {
+   "name": "set_log_categories",
+   "kind": "request",
+   "protocol": "json-rpc",
+   "type": "SetLogCategoriesRequest",
+   "status": "ok",
+   "notes": [],
+   "json": {
+    "categories": "*:WARNING"
+   },
+   "known_json": {
+    "categories": "*:WARNING"
+   }
+  },
+  {
+   "name": "set_log_categories",
+   "kind": "response",
+   "protocol": "json-rpc",
+   "type": "SetLogCategoriesResponse",
+   "status": "ok",
+   "notes": [],
+   "json": {
+    "categories": "*:WARNING"
+   },
+   "known_json": {
+    "categories": "*:WARNING"
+   }
+  },
+  {
+   "name": "set_log_level",
+   "kind": "request",
+   "protocol": "json-rpc",
+   "type": "SetLogLevelRequest",
+   "status": "ok",
+   "notes": [],
+   "json": {
+    "level": 2
+   },
+   "known_json": {
+    "level": 2
+   }
+  },
+  {
+   "name": "set_log_level",
+   "kind": "response",
+   "protocol": "json-rpc",
+   "type": "SetLogLevelResponse",
+   "status": "ok",
+   "notes": [],
+   "json": {},
+   "known_json": {}
+  },
+  {
+   "name": "set_subaddress_lookahead",
+   "kind": "request",
+   "protocol": "json-rpc",
+   "type": "SetSubaddrLookaheadRequest",
+   "status": "ok",
+   "notes": [],
+   "json": {
+    "major_idx": 1,
+    "minor_idx": 10000,
+    "password": "mytestpassword"
+   },
+   "known_json": {
+    "major_idx": 1,
+    "minor_idx": 10000,
+    "password": "mytestpassword"
+   }
+  },
+  {
+   "name": "set_subaddress_lookahead",
+   "kind": "response",
+   "protocol": "json-rpc",
+   "type": "SetSubaddrLookaheadResponse",
+   "status": "ok",
+   "notes": [],
+   "json": {},
+   "known_json": {}
+  },
+  {
+   "name": "set_tx_notes",
+   "kind": "request",
+   "protocol": "json-rpc",
+   "type": "SetTxNotesRequest",
+   "status": "ok",
+   "notes": [],
+   "json": {
+    "txids": [
+     "3292e83ad28fc1cc7bc26dbd38862308f4588680fbf93eae3e803cddd1bd614f"
+    ],
+    "notes": [
+     "This is an example"
+    ]
+   },
+   "known_json": {
+    "txids": [
+     "3292e83ad28fc1cc7bc26dbd38862308f4588680fbf93eae3e803cddd1bd614f"
+    ],
+    "notes": [
+     "This is an example"
+    ]
+   }
+  },
+  {
+   "name": "set_tx_notes",
+   "kind": "response",
+   "protocol": "json-rpc",
+   "type": "SetTxNotesResponse",
+   "status": "ok",
+   "notes": [],
+   "json": {},
+   "known_json": {}
+  },
+  {
+   "name": "setup_background_sync",
+   "kind": "request",
+   "protocol": "json-rpc",
+   "type": "SetupBackgroundSyncRequest",
+   "status": "ok",
+   "notes": [],
+   "json": {
+    "background_sync_type": "custom-background-password",
+    "wallet_password": "spendPassword",
+    "background_cache_password": "viewPassword"
+   },
+   "known_json": {
+    "background_sync_type": "custom-background-password",
+    "wallet_password": "spendPassword",
+    "background_cache_password": "viewPassword"
+   }
+  },
+  {
+   "name": "setup_background_sync",
+   "kind": "response",
+   "protocol": "json-rpc",
+   "type": "SetupBackgroundSyncResponse",
+   "status": "ok",
+   "notes": [],
+   "json": {},
+   "known_json": {}
+  },
+  {
+   "name": "sign",
+   "kind": "request",
+   "protocol": "json-rpc",
+   "type": "SignRequest",
+   "status": "ok",
+   "notes": [],
+   "json": {
+    "data": "This is sample data to be signed"
+   },
+   "known_json": {
+    "data": "This is sample data to be signed"
+   }
+  },
+  {
+   "name": "sign",
+   "kind": "response",
+   "protocol": "json-rpc",
+   "type": "SignResponse",
+   "status": "ok",
+   "notes": [],
+   "json": {
+    "signature": "SigV14K6G151gycjiGxjQ74tKX6A2LwwghvuHjcDeuRFQio5LS6Gb27BNxjYQY1dPuUvXkEbGQUkiHSVLPj4nJAHRrrw3"
+   },
+   "known_json": {
+    "signature": "SigV14K6G151gycjiGxjQ74tKX6A2LwwghvuHjcDeuRFQio5LS6Gb27BNxjYQY1dPuUvXkEbGQUkiHSVLPj4nJAHRrrw3"
+   }
+  },
+  {
+   "name": "sign_multisig",
+   "kind": "request",
+   "protocol": "json-rpc",
+   "type": "SignMultisigRequest",
+   "status": "ok",
+   "notes": [],
+   "json": {
+    "tx_data_hex": "...multisig_txset..."
+   },
+   "known_json": {
+    "tx_data_hex": "...multisig_txset..."
+   }
+  },
+  {
+   "name": "sign_multisig",
+   "kind": "response",
+   "protocol": "json-rpc",
+   "type": "SignMultisigResponse",
+   "status": "ok",
+   "notes": [],
+   "json": {
+    "tx_data_hex": "...multisig_txset...",
+    "tx_hash_list": [
+     "4996091b61c1be112c1097fd5e97d8ff8b28f0e5e62e1137a8c831bacf034f2d"
+    ]
+   },
+   "known_json": {
+    "tx_data_hex": "...multisig_txset...",
+    "tx_hash_list": [
+     "4996091b61c1be112c1097fd5e97d8ff8b28f0e5e62e1137a8c831bacf034f2d"
+    ]
+   }
+  },
+  {
+   "name": "sign_transfer",
+   "kind": "request",
+   "protocol": "json-rpc",
+   "type": "SignTransferRequest",
+   "status": "ok",
+   "notes": [],
+   "json": {
+    "unsigned_txset": "...long_hex..."
+   },
+   "known_json": {
+    "unsigned_txset": "...long_hex..."
+   }
+  },
+  {
+   "name": "sign_transfer",
+   "kind": "response",
+   "protocol": "json-rpc",
+   "type": "SignTransferResponse",
+   "status": "stale",
+   "notes": [
+    "(root): 'signed_txset' is a required property"
+   ],
+   "json": {
+    "amount": 1000000000000,
+    "fee": 15202740000,
+    "multisig_txset": "",
+    "tx_blob": "...long_hex...",
+    "tx_hash": "c648ba0a049e5ce4ec21361dbf6e4b21eac0f828eea9090215de86c76b31d0a4",
+    "tx_key": "",
+    "tx_metadata": "",
+    "unsigned_txset": "...long_hex..."
+   },
+   "missing": [
+    "signed_txset"
+   ]
+  },
+  {
+   "name": "split_integrated_address",
+   "kind": "request",
+   "protocol": "json-rpc",
+   "type": "SplitIntegratedAddressRequest",
+   "status": "ok",
+   "notes": [],
+   "json": {
+    "integrated_address": "5F38Rw9HKeaLQGJSPtbYDacR7dz8RBFnsfAKMaMuwUNYX6aQbBcovzDPyrQF9KXF9tVU6Xk3K8no1BywnJX6GvZXCkbHUXdPHyiUeRyokn"
+   },
+   "known_json": {
+    "integrated_address": "5F38Rw9HKeaLQGJSPtbYDacR7dz8RBFnsfAKMaMuwUNYX6aQbBcovzDPyrQF9KXF9tVU6Xk3K8no1BywnJX6GvZXCkbHUXdPHyiUeRyokn"
+   }
+  },
+  {
+   "name": "split_integrated_address",
+   "kind": "response",
+   "protocol": "json-rpc",
+   "type": "SplitIntegratedAddressResponse",
+   "status": "ok",
+   "notes": [],
+   "json": {
+    "is_subaddress": false,
+    "payment_id": "420fa29b2d9a49f5",
+    "standard_address": "55LTR8KniP4LQGJSPtbYDacR7dz8RBFnsfAKMaMuwUNYX6aQbBcovzDPyrQF9KXF9tVU6Xk3K8no1BywnJX6GvZX8yJsXvt"
+   },
+   "known_json": {
+    "is_subaddress": false,
+    "payment_id": "420fa29b2d9a49f5",
+    "standard_address": "55LTR8KniP4LQGJSPtbYDacR7dz8RBFnsfAKMaMuwUNYX6aQbBcovzDPyrQF9KXF9tVU6Xk3K8no1BywnJX6GvZX8yJsXvt"
+   }
+  },
+  {
+   "name": "start_background_sync",
+   "kind": "request",
+   "protocol": "json-rpc",
+   "type": null,
+   "status": "ok",
+   "notes": [],
+   "json": {},
+   "known_json": {}
+  },
+  {
+   "name": "start_background_sync",
+   "kind": "response",
+   "protocol": "json-rpc",
+   "type": "StartBackgroundSyncResponse",
+   "status": "ok",
+   "notes": [],
+   "json": {},
+   "known_json": {}
+  },
+  {
+   "name": "start_mining",
+   "kind": "request",
+   "protocol": "json-rpc",
+   "type": "StartMiningRequest",
+   "status": "ok",
+   "notes": [],
+   "json": {
+    "threads_count": 1,
+    "do_background_mining": true,
+    "ignore_battery": false
+   },
+   "known_json": {
+    "threads_count": 1,
+    "do_background_mining": true,
+    "ignore_battery": false
+   }
+  },
+  {
+   "name": "start_mining",
+   "kind": "response",
+   "protocol": "json-rpc",
+   "type": "StartMiningResponse",
+   "status": "ok",
+   "notes": [],
+   "json": {},
+   "known_json": {}
+  },
+  {
+   "name": "stop_background_sync",
+   "kind": "request",
+   "protocol": "json-rpc",
+   "type": "StopBackgroundSyncRequest",
+   "status": "ok",
+   "notes": [],
+   "json": {
+    "wallet_password": ""
+   },
+   "known_json": {
+    "wallet_password": ""
+   }
+  },
+  {
+   "name": "stop_background_sync",
+   "kind": "response",
+   "protocol": "json-rpc",
+   "type": "StopBackgroundSyncResponse",
+   "status": "ok",
+   "notes": [],
+   "json": {},
+   "known_json": {}
+  },
+  {
+   "name": "stop_mining",
+   "kind": "request",
+   "protocol": "json-rpc",
+   "type": null,
+   "status": "ok",
+   "notes": [],
+   "json": {},
+   "known_json": {}
+  },
+  {
+   "name": "stop_mining",
+   "kind": "response",
+   "protocol": "json-rpc",
+   "type": "StopMiningResponse",
+   "status": "ok",
+   "notes": [],
+   "json": {},
+   "known_json": {}
+  },
+  {
+   "name": "stop_wallet",
+   "kind": "request",
+   "protocol": "json-rpc",
+   "type": null,
+   "status": "ok",
+   "notes": [],
+   "json": {},
+   "known_json": {}
+  },
+  {
+   "name": "stop_wallet",
+   "kind": "response",
+   "protocol": "json-rpc",
+   "type": "StopWalletResponse",
+   "status": "ok",
+   "notes": [],
+   "json": {},
+   "known_json": {}
+  },
+  {
+   "name": "store",
+   "kind": "request",
+   "protocol": "json-rpc",
+   "type": null,
+   "status": "ok",
+   "notes": [],
+   "json": {},
+   "known_json": {}
+  },
+  {
+   "name": "store",
+   "kind": "response",
+   "protocol": "json-rpc",
+   "type": "StoreResponse",
+   "status": "ok",
+   "notes": [],
+   "json": {},
+   "known_json": {}
+  },
+  {
+   "name": "submit_multisig",
+   "kind": "request",
+   "protocol": "json-rpc",
+   "type": "SignMultisigRequest",
+   "status": "ok",
+   "notes": [],
+   "json": {
+    "tx_data_hex": "...tx_data_hex..."
+   },
+   "known_json": {
+    "tx_data_hex": "...tx_data_hex..."
+   }
+  },
+  {
+   "name": "submit_multisig",
+   "kind": "response",
+   "protocol": "json-rpc",
+   "type": "SubmitMultisigResponse",
+   "status": "ok",
+   "notes": [],
+   "json": {
+    "tx_hash_list": [
+     "4996091b61c1be112c1097fd5e97d8ff8b28f0e5e62e1137a8c831bacf034f2d"
+    ]
+   },
+   "known_json": {
+    "tx_hash_list": [
+     "4996091b61c1be112c1097fd5e97d8ff8b28f0e5e62e1137a8c831bacf034f2d"
+    ]
+   }
+  },
+  {
+   "name": "submit_transfer",
+   "kind": "request",
+   "protocol": "json-rpc",
+   "type": "SignMultisigRequest",
+   "status": "ok",
+   "notes": [],
+   "json": {
+    "tx_data_hex": "...long_hex..."
+   },
+   "known_json": {
+    "tx_data_hex": "...long_hex..."
+   }
+  },
+  {
+   "name": "submit_transfer",
+   "kind": "response",
+   "protocol": "json-rpc",
+   "type": "SubmitTransferResponse",
+   "status": "ok",
+   "notes": [],
+   "json": {
+    "tx_hash_list": [
+     "40fad7c828bb383ac02648732f7afce9adc520ba5629e1f5d9c03f584ac53d74"
+    ]
+   },
+   "known_json": {
+    "tx_hash_list": [
+     "40fad7c828bb383ac02648732f7afce9adc520ba5629e1f5d9c03f584ac53d74"
+    ]
+   }
+  },
+  {
+   "name": "sweep_all",
+   "kind": "request",
+   "protocol": "json-rpc",
+   "type": "SweepAllRequest",
+   "status": "ok",
+   "notes": [],
+   "json": {
+    "address": "55LTR8KniP4LQGJSPtbYDacR7dz8RBFnsfAKMaMuwUNYX6aQbBcovzDPyrQF9KXF9tVU6Xk3K8no1BywnJX6GvZX8yJsXvt",
+    "subaddr_indices": [
+     4
+    ],
+    "get_tx_keys": true
+   },
+   "known_json": {
+    "address": "55LTR8KniP4LQGJSPtbYDacR7dz8RBFnsfAKMaMuwUNYX6aQbBcovzDPyrQF9KXF9tVU6Xk3K8no1BywnJX6GvZX8yJsXvt",
+    "subaddr_indices": [
+     4
+    ],
+    "get_tx_keys": true
+   }
+  },
+  {
+   "name": "sweep_all",
+   "kind": "response",
+   "protocol": "json-rpc",
+   "type": "SplitTransferResponse",
+   "status": "ok",
+   "notes": [],
+   "json": {
+    "amount_list": [
+     9985885770000
+    ],
+    "fee_list": [
+     14114230000
+    ],
+    "multisig_txset": "",
+    "spent_key_images_list": [
+     {
+      "key_images": [
+       "cea4f54494d4cc28c006af7551b57a49eb6e8aac966ffa7b169f32298213c6ca"
+      ]
+     }
+    ],
+    "tx_hash_list": [
+     "ab4b6b65cc8cd8c9dd317d0b90d97582d68d0aa1637b0065b05b61f9a66ea5c5"
+    ],
+    "tx_key_list": [
+     "b9b4b39d3bb3062ddb85ec0266d4df39058f4c86077d99309f218ce4d76af607"
+    ],
+    "unsigned_txset": "",
+    "weight_list": [
+     6414
+    ]
+   },
+   "known_json": {
+    "amount_list": [
+     9985885770000
+    ],
+    "fee_list": [
+     14114230000
+    ],
+    "multisig_txset": "",
+    "spent_key_images_list": [
+     {
+      "key_images": [
+       "cea4f54494d4cc28c006af7551b57a49eb6e8aac966ffa7b169f32298213c6ca"
+      ]
+     }
+    ],
+    "tx_hash_list": [
+     "ab4b6b65cc8cd8c9dd317d0b90d97582d68d0aa1637b0065b05b61f9a66ea5c5"
+    ],
+    "tx_key_list": [
+     "b9b4b39d3bb3062ddb85ec0266d4df39058f4c86077d99309f218ce4d76af607"
+    ],
+    "unsigned_txset": "",
+    "weight_list": [
+     6414
+    ]
+   }
+  },
+  {
+   "name": "sweep_dust",
+   "kind": "request",
+   "protocol": "json-rpc",
+   "type": "SweepDustRequest",
+   "status": "ok",
+   "notes": [],
+   "json": {
+    "get_tx_keys": true
+   },
+   "known_json": {
+    "get_tx_keys": true
+   }
+  },
+  {
+   "name": "sweep_dust",
+   "kind": "response",
+   "protocol": "json-rpc",
+   "type": "SplitTransferResponse",
+   "status": "ok",
+   "notes": [],
+   "json": {
+    "multisig_txset": "",
+    "unsigned_txset": ""
+   },
+   "known_json": {
+    "multisig_txset": "",
+    "unsigned_txset": ""
+   }
+  },
+  {
+   "name": "sweep_single",
+   "kind": "request",
+   "protocol": "json-rpc",
+   "type": "SweepSingleRequest",
+   "status": "ok",
+   "notes": [],
+   "json": {
+    "address": "74Jsocx8xbpTBEjm3ncKE5LBQbiJouyCDaGhgSiebpvNDXZnTAbW2CmUR5SsBeae2pNk9WMVuz6jegkC4krUyqRjA6VjoLD",
+    "key_image": "a7834459ef795d2efb6f665d2fd758c8d9288989d8d4c712a68f8023f7804a5e",
+    "get_tx_key": true
+   },
+   "known_json": {
+    "address": "74Jsocx8xbpTBEjm3ncKE5LBQbiJouyCDaGhgSiebpvNDXZnTAbW2CmUR5SsBeae2pNk9WMVuz6jegkC4krUyqRjA6VjoLD",
+    "key_image": "a7834459ef795d2efb6f665d2fd758c8d9288989d8d4c712a68f8023f7804a5e",
+    "get_tx_key": true
+   }
+  },
+  {
+   "name": "sweep_single",
+   "kind": "response",
+   "protocol": "json-rpc",
+   "type": "SingleTransferResponse",
+   "status": "ok",
+   "notes": [],
+   "json": {
+    "amount": 27126892247503,
+    "spent_key_images": {
+     "key_images": [
+      "a7834459ef795d2efb6f665d2fd758c8d9288989d8d4c712a68f8023f7804a5e"
+     ]
+    },
+    "fee": 14111630000,
+    "multisig_txset": "",
+    "tx_blob": "",
+    "tx_hash": "106d4391a031e5b735ded555862fec63233e34e5fa4fc7edcfdbe461c275ae5b",
+    "tx_key": "222e62ffd46a15c92184d6d9cccec5eafbddd19884c0f4f8f10e068015947e05",
+    "tx_metadata": "",
+    "unsigned_txset": "",
+    "weight": 1528
+   },
+   "known_json": {
+    "amount": 27126892247503,
+    "spent_key_images": {
+     "key_images": [
+      "a7834459ef795d2efb6f665d2fd758c8d9288989d8d4c712a68f8023f7804a5e"
+     ]
+    },
+    "fee": 14111630000,
+    "multisig_txset": "",
+    "tx_blob": "",
+    "tx_hash": "106d4391a031e5b735ded555862fec63233e34e5fa4fc7edcfdbe461c275ae5b",
+    "tx_key": "222e62ffd46a15c92184d6d9cccec5eafbddd19884c0f4f8f10e068015947e05",
+    "tx_metadata": "",
+    "unsigned_txset": "",
+    "weight": 1528
+   }
+  },
+  {
+   "name": "tag_accounts",
+   "kind": "request",
+   "protocol": "json-rpc",
+   "type": "TagAccountsRequest",
+   "status": "ok",
+   "notes": [],
+   "json": {
+    "tag": "myTag",
+    "accounts": [
+     0,
+     1
+    ]
+   },
+   "known_json": {
+    "tag": "myTag",
+    "accounts": [
+     0,
+     1
+    ]
+   }
+  },
+  {
+   "name": "tag_accounts",
+   "kind": "response",
+   "protocol": "json-rpc",
+   "type": "TagAccountsResponse",
+   "status": "ok",
+   "notes": [],
+   "json": {},
+   "known_json": {}
+  },
+  {
+   "name": "thaw",
+   "kind": "request",
+   "protocol": "json-rpc",
+   "type": "FreezeRequest",
+   "status": "ok",
+   "notes": [],
+   "json": {
+    "key_image": "d0071ab34ab7f567f9b54303ed684de6cd5ed969a6b6c4bf352d25242f0b3da9"
+   },
+   "known_json": {
+    "key_image": "d0071ab34ab7f567f9b54303ed684de6cd5ed969a6b6c4bf352d25242f0b3da9"
+   }
+  },
+  {
+   "name": "thaw",
+   "kind": "response",
+   "protocol": "json-rpc",
+   "type": "ThawResponse",
+   "status": "ok",
+   "notes": [],
+   "json": {},
+   "known_json": {}
+  },
+  {
+   "name": "transfer",
+   "kind": "request",
+   "protocol": "json-rpc",
+   "type": "TransferRequest",
+   "status": "ok",
+   "notes": [],
+   "json": {
+    "destinations": [
+     {
+      "amount": 10000000000,
+      "address": "5AVBTfFcsVjfxN4VqGqykY69M2bDd6a8F6ZMt27qFbAHJX6VKzkcH5XW9d6VGQVk7mD4H11q6GDeA3v8aRdzGZrnBqdMxpB"
+     },
+     {
+      "amount": 30000000000,
+      "address": "73a4nWuvkYoYoksGurDjKZQcZkmaxLaKbbeiKzHnMmqKivrCzq5Q2JtJG1UZNZFqLPbQ3MiXCk2Q5bdwdUNSr7X9QrPubkn"
+     }
+    ],
+    "subtract_fee_from_outputs": [
+     0,
+     1
+    ]
+   },
+   "known_json": {
+    "destinations": [
+     {
+      "amount": 10000000000,
+      "address": "5AVBTfFcsVjfxN4VqGqykY69M2bDd6a8F6ZMt27qFbAHJX6VKzkcH5XW9d6VGQVk7mD4H11q6GDeA3v8aRdzGZrnBqdMxpB"
+     },
+     {
+      "amount": 30000000000,
+      "address": "73a4nWuvkYoYoksGurDjKZQcZkmaxLaKbbeiKzHnMmqKivrCzq5Q2JtJG1UZNZFqLPbQ3MiXCk2Q5bdwdUNSr7X9QrPubkn"
+     }
+    ],
+    "subtract_fee_from_outputs": [
+     0,
+     1
+    ]
+   }
+  },
+  {
+   "name": "transfer",
+   "kind": "response",
+   "protocol": "json-rpc",
+   "type": "SingleTransferResponse",
+   "status": "stale",
+   "notes": [
+    "(root): 'spent_key_images' is a required property",
+    "(root): 'weight' is a required property"
+   ],
+   "json": {
+    "amount": 300000000000,
+    "fee": 86897600000,
+    "multisig_txset": "",
+    "tx_blob": "",
+    "tx_hash": "7663438de4f72b25a0e395b770ea9ecf7108cd2f0c4b75be0b14a103d3362be9",
+    "tx_key": "25c9d8ec20045c80c93d665c9d3684aab7335f8b2cd02e1ba2638485afd1c70e236c4bdd7a2f1cb511dbf466f13421bdf8df988b7b969c448ca6239d7251490e4bf1bbf9f6ffacffdcdc93b9d1648ec499eada4d6b4e02ce92d4a1c0452e5d009fbbbf15b549df8856205a4c7bda6338d82c823f911acd00cb75850b198c5803",
+    "tx_metadata": "",
+    "unsigned_txset": ""
+   },
+   "missing": [
+    "spent_key_images",
+    "weight"
+   ]
+  },
+  {
+   "name": "transfer_split",
+   "kind": "request",
+   "protocol": "json-rpc",
+   "type": "TransferSplitRequest",
+   "status": "ok",
+   "notes": [],
+   "json": {
+    "destinations": [
+     {
+      "amount": 1000000000000,
+      "address": "7BnERTpvL5MbCLtj5n9No7J5oE5hHiB3tVCK5cjSvCsYWD2WRJLFuWeKTLiXo5QJqt2ZwUaLy2Vh1Ad51K7FNgqcHgjW85o"
+     },
+     {
+      "amount": 2000000000000,
+      "address": "75sNpRwUtekcJGejMuLSGA71QFuK1qcCVLZnYRTfQLgFU5nJ7xiAHtR5ihioS53KMe8pBhH61moraZHyLoG4G7fMER8xkNv"
+     }
+    ],
+    "account_index": 0,
+    "subaddr_indices": [
+     0
+    ],
+    "priority": 0,
+    "ring_size": 7,
+    "get_tx_keys": true
+   },
+   "known_json": {
+    "destinations": [
+     {
+      "amount": 1000000000000,
+      "address": "7BnERTpvL5MbCLtj5n9No7J5oE5hHiB3tVCK5cjSvCsYWD2WRJLFuWeKTLiXo5QJqt2ZwUaLy2Vh1Ad51K7FNgqcHgjW85o"
+     },
+     {
+      "amount": 2000000000000,
+      "address": "75sNpRwUtekcJGejMuLSGA71QFuK1qcCVLZnYRTfQLgFU5nJ7xiAHtR5ihioS53KMe8pBhH61moraZHyLoG4G7fMER8xkNv"
+     }
+    ],
+    "account_index": 0,
+    "subaddr_indices": [
+     0
+    ],
+    "priority": 0,
+    "ring_size": 7,
+    "get_tx_keys": true
+   }
+  },
+  {
+   "name": "transfer_split",
+   "kind": "response",
+   "protocol": "json-rpc",
+   "type": "SplitTransferResponse",
+   "status": "ok",
+   "notes": [],
+   "json": {
+    "amount_list": [
+     3000000000000
+    ],
+    "fee_list": [
+     473710000
+    ],
+    "weight_list": [
+     51456
+    ],
+    "multisig_txset": "",
+    "tx_hash_list": [
+     "4adcdc1af3f665770cdf8fb7a380887cd07ac53c2b771bd18df5ca375d5e7540"
+    ],
+    "tx_key_list": [
+     "5b455c0f97168be652a2c03c5c68a064bb84cdae4ddef01b5c48d73a0bbb27075fb714f2ca19ea6c8ff592417e606addea6deb1d6530e2969f75681ffcbfc4075677b94a8c9197963ae38fa6f543ee68f0a4c4bbda4c453f39538f00b28e980ea08509730b51c004960101ba2f3adbc34cbbdff0d5af9dba061b523090debd06"
+    ],
+    "unsigned_txset": "",
+    "spent_key_images_list": [
+     {
+      "key_images": [
+       "cea4f54494d4cc28c006af7551b57a49eb6e8aac966ffa7b169f32298213c6ca"
+      ]
+     }
+    ]
+   },
+   "known_json": {
+    "amount_list": [
+     3000000000000
+    ],
+    "fee_list": [
+     473710000
+    ],
+    "weight_list": [
+     51456
+    ],
+    "multisig_txset": "",
+    "tx_hash_list": [
+     "4adcdc1af3f665770cdf8fb7a380887cd07ac53c2b771bd18df5ca375d5e7540"
+    ],
+    "tx_key_list": [
+     "5b455c0f97168be652a2c03c5c68a064bb84cdae4ddef01b5c48d73a0bbb27075fb714f2ca19ea6c8ff592417e606addea6deb1d6530e2969f75681ffcbfc4075677b94a8c9197963ae38fa6f543ee68f0a4c4bbda4c453f39538f00b28e980ea08509730b51c004960101ba2f3adbc34cbbdff0d5af9dba061b523090debd06"
+    ],
+    "unsigned_txset": "",
+    "spent_key_images_list": [
+     {
+      "key_images": [
+       "cea4f54494d4cc28c006af7551b57a49eb6e8aac966ffa7b169f32298213c6ca"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "name": "untag_accounts",
+   "kind": "request",
+   "protocol": "json-rpc",
+   "type": "UntagAccountsRequest",
+   "status": "ok",
+   "notes": [],
+   "json": {
+    "accounts": [
+     1
+    ]
+   },
+   "known_json": {
+    "accounts": [
+     1
+    ]
+   }
+  },
+  {
+   "name": "untag_accounts",
+   "kind": "response",
+   "protocol": "json-rpc",
+   "type": "UntagAccountsResponse",
+   "status": "ok",
+   "notes": [],
+   "json": {},
+   "known_json": {}
+  },
+  {
+   "name": "verify",
+   "kind": "request",
+   "protocol": "json-rpc",
+   "type": "VerifyRequest",
+   "status": "ok",
+   "notes": [],
+   "json": {
+    "data": "This is sample data to be signed",
+    "address": "55LTR8KniP4LQGJSPtbYDacR7dz8RBFnsfAKMaMuwUNYX6aQbBcovzDPyrQF9KXF9tVU6Xk3K8no1BywnJX6GvZX8yJsXvt",
+    "signature": "SigV14K6G151gycjiGxjQ74tKX6A2LwwghvuHjcDeuRFQio5LS6Gb27BNxjYQY1dPuUvXkEbGQUkiHSVLPj4nJAHRrrw3"
+   },
+   "known_json": {
+    "data": "This is sample data to be signed",
+    "address": "55LTR8KniP4LQGJSPtbYDacR7dz8RBFnsfAKMaMuwUNYX6aQbBcovzDPyrQF9KXF9tVU6Xk3K8no1BywnJX6GvZX8yJsXvt",
+    "signature": "SigV14K6G151gycjiGxjQ74tKX6A2LwwghvuHjcDeuRFQio5LS6Gb27BNxjYQY1dPuUvXkEbGQUkiHSVLPj4nJAHRrrw3"
+   }
+  },
+  {
+   "name": "verify",
+   "kind": "response",
+   "protocol": "json-rpc",
+   "type": "VerifyResponse",
+   "status": "stale",
+   "notes": [
+    "(root): 'old' is a required property",
+    "(root): 'signature_type' is a required property",
+    "(root): 'version' is a required property"
+   ],
+   "json": {
+    "good": true
+   },
+   "missing": [
+    "old",
+    "signature_type",
+    "version"
+   ]
+  },
+  {
+   "name": "wallet_exists",
+   "kind": "request",
+   "protocol": "json-rpc",
+   "type": "WalletExistsRequest",
+   "status": "ok",
+   "notes": [],
+   "json": {
+    "filename": "mytestwallet"
+   },
+   "known_json": {
+    "filename": "mytestwallet"
+   }
+  },
+  {
+   "name": "wallet_exists",
+   "kind": "response",
+   "protocol": "json-rpc",
+   "type": "WalletExistsResponse",
+   "status": "ok",
+   "notes": [],
+   "json": {
+    "keys_file_exists": true,
+    "wallet_file_exists": true
+   },
+   "known_json": {
+    "keys_file_exists": true,
+    "wallet_file_exists": true
+   }
+  }
+ ]
+}

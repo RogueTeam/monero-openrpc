@@ -4,7 +4,14 @@ import (
 	"encoding/json"
 	"math"
 	"testing"
+
+	"monero-rpc-examples/internal/fixturetest"
 )
+
+// Every request/response example in the official docs decodes into the generated types.
+func TestDocsExamples(t *testing.T) {
+	fixturetest.Run(t, "../../fixtures/daemon.json", newOf)
+}
 
 // uint64 fields must hold values above 2^63-1 (quicktype alone would generate int64).
 func TestUint64AboveInt64(t *testing.T) {
