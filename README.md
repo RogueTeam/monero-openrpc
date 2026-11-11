@@ -20,7 +20,7 @@ The schemas in `schemas/` were generated from `master` at commit `0120dda4` (202
 | `schemas/` | The generated schemas, and the commit they came from |
 | `tests/` | Tests for the generator, with a small fake checkout in `tests/fake_monero/` |
 | `tools/` | Helpers for code generators and tests (below) |
-| `examples/` | Generated clients for Go and Python, each with tests |
+| `examples/` | Generated clients for Go, Python and Rust, each with tests |
 
 Keep the three `.py` files in the root together; the two scripts import `rpc_schema`. Adding another target means one more small file with its own `Target(...)`.
 
@@ -86,15 +86,16 @@ git diff --exit-code schemas/
 Each directory in `examples/` has a `generate.sh` that rebuilds its code from `schemas/`, the generated code itself, and tests. The tests use the request and response examples from the official docs ([monero-docs](https://github.com/monero-project/monero-docs), MIT, commit `9764d8dc`), extracted into `examples/fixtures/` by `tools/make_fixtures.py`. Each example is checked against the schema and marked:
 
 - **ok** (263 of 282): matches the schema. Tests decode it, encode it back, and require the same JSON, which catches wrong field names and types, not just missing fields.
-- **stale** (13): an older example that lacks fields added since. The Go tests require that it still decodes; the Python tests require that the fields reported missing are exactly the new ones.
+- **stale** (13): an older example that lacks fields added since. The Go tests require that it still decodes; the Python and Rust tests require that the fields reported missing are exactly the new ones.
 - **docs-mistake** (6): contradicts the source (list below). Tests require that the generated code rejects or changes it, so a fixed docs example shows up as a test failure until the fixtures are regenerated.
 
 | Language | Generator | Generated | Tests | Result |
 |---|---|---|---|---|
 | Go | quicktype 26.0.0 | types + a small JSON-RPC client (`jsonrpc/`) | `go test ./...` | pass: 259 typed docs examples, client tests, `go vet` clean |
 | Python | datamodel-code-generator 0.91.0 | pydantic v2 models + a small client | `python -m unittest` | pass |
+| Rust | quicktype 26.0.0 | serde types + JSON-RPC envelope helpers | `cargo test` | pass: 259 typed docs examples, 8 unit tests |
 
-To check that the tests can actually fail, I broke the generated code on purpose in each language (renamed a field, changed a field's type). Every change made the tests fail.
+To check that the tests can actually fail, I broke the generated code on purpose in each language (renamed a field, changed a field's type; in Rust also switched a uint64 field back to `i64`). Every change made the tests fail.
 
 ### Go
 
@@ -135,6 +136,14 @@ pydantic's `int` has no size limit, so uint64 needs no fix, and the bounds from 
 node = Client("http://127.0.0.1:18081")
 info = node.call("get_info", m.GetInfoRequest(), m.GetInfoResponse)
 ```
+
+### Rust
+
+```
+cd examples/rust && ./generate.sh && cargo test
+```
+
+Same steps as Go, with `--lang rust --visibility public --skip-serializing-none --derive-partial-eq` and `fix_uint64.py rust` (`i64` → `u64`, the same 184 and 93 fields). Required fields aren't `Option`, so serde rejects a response that lacks one. There's no HTTP client in the example: `jsonrpc::request` builds the body and `jsonrpc::parse_response` reads the reply, so you can use any HTTP crate.
 
 ## Mistakes in the official docs
 

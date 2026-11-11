@@ -2,9 +2,10 @@
 """Fix quicktype output so unsigned 64-bit fields can hold every value Monero sends.
 
   python3 tools/fix_uint64.py go   daemon.schema.json types.go
+  python3 tools/fix_uint64.py rust daemon.schema.json types.rs
 
-quicktype maps every JSON Schema integer to int64 in Go and ignores the
-bounds. Monero sends uint64 values above 2^63-1 (for example
+quicktype maps every JSON Schema integer to a signed 64-bit type (Go int64, Rust i64)
+and ignores the bounds. Monero sends uint64 values above 2^63-1 (for example
 already_generated_coins = 18186022843595960691), which those types can't decode. This
 switches every field whose schema has maximum > 2^63-1 to the unsigned type.
 The file is edited in place; the number of changed fields goes to stderr.
@@ -51,12 +52,31 @@ def fix_go(lines, defs, by_name):
     return changed
 
 
+def fix_rust(lines, defs, by_name):
+    struct, rename, changed = None, None, 0
+    field = re.compile(r"^(\s+pub\s+(?:r#)?(\w+)\s*:\s*)(.+?),\s*$")
+    for i, line in enumerate(lines):
+        if (m := re.match(r"^pub struct (\w+) \{", line)):
+            struct, rename = by_name.get(m.group(1).lower()), None
+        elif line.startswith("}"):
+            struct = None
+        elif struct and (m := re.search(r'#\[serde\(rename = "([^"]+)"\)\]', line)):
+            rename = m.group(1)
+        elif struct and (m := field.match(line)):
+            prop = struct.get("properties", {}).get(rename or m.group(2))
+            if prop is not None and "i64" in m.group(3) and unsigned64(prop, defs):
+                lines[i] = m.group(1) + re.sub(r"\bi64\b", "u64", m.group(3)) + ","
+                changed += 1
+            rename = None
+    return changed
+
+
 if __name__ == "__main__":
-    if len(sys.argv) != 4 or sys.argv[1] != "go":
+    if len(sys.argv) != 4 or sys.argv[1] not in ("go", "rust"):
         sys.exit(__doc__)
     lang, schema_path, code_path = sys.argv[1:]
     defs, by_name = load_defs(schema_path)
     lines = open(code_path).read().split("\n")
-    changed = fix_go(lines, defs, by_name)
+    changed = (fix_go if lang == "go" else fix_rust)(lines, defs, by_name)
     open(code_path, "w").write("\n".join(lines))
     print(f"{code_path}: {changed} fields changed to unsigned 64-bit", file=sys.stderr)
