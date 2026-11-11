@@ -69,7 +69,7 @@ python3 -m unittest discover -s tests
 MONERO_REPO=/path/to/monero python3 -m unittest discover -s tests
 ```
 
-The first line runs the generator on `tests/fake_monero`, a tiny checkout with one example of each C++ construct it handles (inherited maps, `if`/`else` branches, hand-written `serialize` calls, positional params, defaults, comments, and so on), plus unit tests for the parser. With `MONERO_REPO` set it also runs on a real checkout, and if that checkout is at the commit in `schemas/source.json`, it checks that `schemas/` is up to date.
+`make test` runs these plus every example's tests (needs Go, Rust, Node.js and pydantic). The first line runs the generator on `tests/fake_monero`, a tiny checkout with one example of each C++ construct it handles (inherited maps, `if`/`else` branches, hand-written `serialize` calls, positional params, defaults, comments, and so on), plus unit tests for the parser. With `MONERO_REPO` set it also runs on a real checkout, and if that checkout is at the commit in `schemas/source.json`, it checks that `schemas/` is up to date.
 
 ## Using it in CI
 
@@ -95,6 +95,7 @@ Each directory in `examples/` has a `generate.sh` that rebuilds its code from `s
 | Python | datamodel-code-generator 0.91.0 | pydantic v2 models + a small client | `python -m unittest` | pass |
 | Rust | quicktype 26.0.0 | serde types + JSON-RPC envelope helpers | `cargo test` | pass: 259 typed docs examples, 8 unit tests |
 | TypeScript | @open-rpc/generator 2.1.1 | full client | `npm test` | pass: 226 docs examples type-checked, 113 calls through a fake server; 3 marked TODO for generator bugs |
+| Java, C# | quicktype 26.0.0 | types | none | not tested (see below) |
 
 To check that the tests can actually fail, I broke the generated code on purpose in each language (renamed a field, changed a field's type; in Rust also switched a uint64 field back to `i64`, in TypeScript renamed a param in the embedded schema). Every change made the tests fail.
 
@@ -161,6 +162,22 @@ This uses the official OpenRPC generator, which builds a complete client. Two pr
   ```
 
 Also, `JSON.parse` loses precision on numbers above 2^53 (fields marked `x-bigint`). The generated client covers JSON-RPC methods only, not the `x-uri-endpoints`.
+
+### Java and C# (not tested)
+
+quicktype generates both, but I couldn't build them here (Maven Central and NuGet weren't reachable), so treat this as a starting point:
+
+```
+quicktype --src-lang schema --lang java   --package monero.rpc        -o src/ "daemon.schema.json#/definitions/"
+quicktype --src-lang schema --lang csharp --namespace Monero.Rpc --framework SystemTextJson \
+  -o Monerod.cs "daemon.schema.json#/definitions/"
+```
+
+Both map integers to signed `long`, so uint64 fields above 2^63−1 (like `already_generated_coins`) will overflow. `fix_uint64.py` only handles Go and Rust; for Java you'd want `BigInteger` and for C# `ulong` on the fields whose `maximum` is above 2^63−1.
+
+### Older nodes
+
+The examples are generated from `master`. A strict decoder (Rust, pydantic) rejects a response from an older node that lacks a field added since. Generate from the tag your nodes run (`git checkout v0.18.5.4`), or relax those fields.
 
 ## Mistakes in the official docs
 
