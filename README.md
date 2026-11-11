@@ -20,7 +20,7 @@ The schemas in `schemas/` were generated from `master` at commit `0120dda4` (202
 | `schemas/` | The generated schemas, and the commit they came from |
 | `tests/` | Tests for the generator, with a small fake checkout in `tests/fake_monero/` |
 | `tools/` | Helpers for code generators and tests (below) |
-| `examples/` | Generated clients for Go, Python and Rust, each with tests |
+| `examples/` | Generated clients for Go, Python, Rust and TypeScript, each with tests |
 
 Keep the three `.py` files in the root together; the two scripts import `rpc_schema`. Adding another target means one more small file with its own `Target(...)`.
 
@@ -94,8 +94,9 @@ Each directory in `examples/` has a `generate.sh` that rebuilds its code from `s
 | Go | quicktype 26.0.0 | types + a small JSON-RPC client (`jsonrpc/`) | `go test ./...` | pass: 259 typed docs examples, client tests, `go vet` clean |
 | Python | datamodel-code-generator 0.91.0 | pydantic v2 models + a small client | `python -m unittest` | pass |
 | Rust | quicktype 26.0.0 | serde types + JSON-RPC envelope helpers | `cargo test` | pass: 259 typed docs examples, 8 unit tests |
+| TypeScript | @open-rpc/generator 2.1.1 | full client | `npm test` | pass: 226 docs examples type-checked, 113 calls through a fake server; 3 marked TODO for generator bugs |
 
-To check that the tests can actually fail, I broke the generated code on purpose in each language (renamed a field, changed a field's type; in Rust also switched a uint64 field back to `i64`). Every change made the tests fail.
+To check that the tests can actually fail, I broke the generated code on purpose in each language (renamed a field, changed a field's type; in Rust also switched a uint64 field back to `i64`, in TypeScript renamed a param in the embedded schema). Every change made the tests fail.
 
 ### Go
 
@@ -144,6 +145,22 @@ cd examples/rust && ./generate.sh && cargo test
 ```
 
 Same steps as Go, with `--lang rust --visibility public --skip-serializing-none --derive-partial-eq` and `fix_uint64.py rust` (`i64` → `u64`, the same 184 and 93 fields). Required fields aren't `Option`, so serde rejects a response that lacks one. There's no HTTP client in the example: `jsonrpc::request` builds the body and `jsonrpc::parse_response` reads the reply, so you can use any HTTP crate.
+
+### TypeScript / JavaScript
+
+```
+cd examples/typescript && npm install && ./generate.sh && npm test
+```
+
+This uses the official OpenRPC generator, which builds a complete client. Two problems come from the tool, not the schema, and are kept visible as TODO tests:
+
+- Wallet `get_transfers` has a param named `in`, a reserved word, so the generated code doesn't compile. `generate.sh` renames it in the generated type; the request still uses the name from the schema.
+- The generated client passes its arguments to the validator from `@open-rpc/schema-utils-js` as an array, but for by-name methods the validator looks each param up by name. So by-name params are never validated (a docs example sending a string where an integer belongs goes out unchecked), and wallet `get_address_book`, whose param is named `entries`, is checked against `Array.prototype.entries` and always rejected. Call it through the transport instead:
+  ```ts
+  await client.rpc.request({ method: "get_address_book", params: { entries: [0, 1] } });
+  ```
+
+Also, `JSON.parse` loses precision on numbers above 2^53 (fields marked `x-bigint`). The generated client covers JSON-RPC methods only, not the `x-uri-endpoints`.
 
 ## Mistakes in the official docs
 

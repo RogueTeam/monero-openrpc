@@ -1,3 +1,6 @@
 __pycache__/
 .venv/
 examples/rust/target/
+examples/typescript/node_modules/
+examples/typescript/build/
+examples/typescript/test/typecheck.ts

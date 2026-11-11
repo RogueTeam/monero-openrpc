@@ -1,0 +1,23 @@
+{
+  "name": "monero-rpc-examples",
+  "version": "0.1.0",
+  "private": true,
+  "description": "TypeScript clients for monerod and monero-wallet-rpc, generated from ../../schemas with @open-rpc/generator",
+  "type": "module",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "pretest": "node test/make_typecheck.mjs && tsc -p tsconfig.json",
+    "test": "node --test test/client.test.mjs"
+  },
+  "dependencies": {
+    "@open-rpc/client-js": "1.8.1",
+    "@open-rpc/meta-schema": "1.14.9",
+    "@open-rpc/schema-utils-js": "2.1.2",
+    "lodash": "^4.17.21"
+  },
+  "devDependencies": {
+    "@types/lodash": "^4.17.0",
+    "@types/node": "^22.0.0",
+    "typescript": "~5.9.0"
+  }
+}
